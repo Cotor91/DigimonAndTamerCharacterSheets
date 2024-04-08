@@ -5558,7 +5558,7 @@
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(18, 20);
             this.label117.TabIndex = 14;
-            this.label117.Text = "0";
+            this.label117.Text = "3";
             this.label117.Click += new System.EventHandler(this.label117_Click);
             // 
             // label118
@@ -5567,9 +5567,9 @@
             this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.label118.Location = new System.Drawing.Point(138, 279);
             this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(129, 20);
+            this.label118.Size = new System.Drawing.Size(117, 20);
             this.label118.TabIndex = 13;
-            this.label118.Text = "Digital Frame:";
+            this.label118.Text = "Bond Points:";
             // 
             // Betrayal
             // 
