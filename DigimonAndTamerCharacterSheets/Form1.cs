@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using DigimonAndTamerCharacterSheets.Enums;
 
 namespace DigimonAndTamerCharacterSheets
 {
@@ -4652,11 +4653,17 @@ namespace DigimonAndTamerCharacterSheets
                 // If no crap
                 else
                 {
-                    DarkCheck = 0; ;
+                    DarkCheck = 0;
                 }
 
                 // Diet Check
-
+                if (
+                    !int.TryParse(StrengthDiet.Text, out int DietStrength) ||
+                    !int.TryParse(AgilityDiet.Text, out int DietAgility) ||
+                    !int.TryParse(VibesDiet.Text, out int DietVibes) ||
+                    !int.TryParse(WitsDiet.Text, out int DietWits) ||
+                    !int.TryParse(EducationDiet.Text, out int DietEducation)
+                ) { return; }
                 Diet maxDiet = Enum.Parse(typeof(Diet), [DietStrength, DietAgility, DietVibes, DietWits, DietEducation].Select((x, idx) => (x, idx)).Max().idx)
 
                 if (ChampionSelect.Checked == true)
