@@ -222,6 +222,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 // Restart Lifespan
                 RemainingLife.Text = MaximumLife.Text;
+                Digivolve.Enabled = false;
             }
         }
 
@@ -3229,7 +3230,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton14_CheckedChanged_3(object sender, EventArgs e)
         {
-
+            Digivolve.Enabled = true;
         }
 
         private void radioButton12_CheckedChanged_2(object sender, EventArgs e)
@@ -4531,6 +4532,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 // Restart Lifespan
                 RemainingLife.Text = MaximumLife.Text;
+                Digivolve.Enabled = false;
             }
 
         }

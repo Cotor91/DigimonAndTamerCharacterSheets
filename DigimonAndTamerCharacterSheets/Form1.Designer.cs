@@ -545,6 +545,7 @@
             // 
             // Digivolve
             // 
+            this.Digivolve.Enabled = false;
             this.Digivolve.Location = new System.Drawing.Point(1253, 417);
             this.Digivolve.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Digivolve.Name = "Digivolve";
