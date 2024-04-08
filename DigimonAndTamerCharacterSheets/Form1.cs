@@ -4683,7 +4683,7 @@ namespace DigimonAndTamerCharacterSheets
                             {
                                 RecordRookie = "Agumon";
 
-                                if (maxDiet = DietStrength)
+                                if (maxDiet == Diet.DietStrength)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
                                     Partner.Text = "Greymon";
