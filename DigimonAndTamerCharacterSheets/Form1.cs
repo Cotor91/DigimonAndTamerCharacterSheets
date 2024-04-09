@@ -15,7 +15,7 @@ namespace DigimonAndTamerCharacterSheets
     public partial class Form1 : Form
     {
         private string xmlFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CharacterInformation.xml");
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -687,20 +687,21 @@ namespace DigimonAndTamerCharacterSheets
         {
 
             // Compare prior maximum to current value
-            if (HighestCarry < CarryTrack.Value) {
+            if (HighestCarry < CarryTrack.Value)
+            {
                 HighestCarry++;
                 CarryTrack.Value = HighestCarry;
 
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { CarryTrack, ThrowTrack, HoldTrack, BalanceTrack, ParkourTrack, ReflexTrack, PerformTrack, IntimidateTrack, PersuadeTrack, InvestigationTrack, EmpathyTrack, IngenuityTrack, TechnologyTrack, OccultismTrack, SocietyTrack };
 
-            DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Carry skill?", "Skill Increase", MessageBoxButtons.YesNo);
-            if (BoostCarry == DialogResult.Yes)
-            {
-                // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                MessageBox.Show("Carry skill increased!");
-                foreach (TrackBar track in tracks)
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Carry skill?", "Skill Increase", MessageBoxButtons.YesNo);
+                if (BoostCarry == DialogResult.Yes)
                 {
+                    // Perform actions if user clicked Yes (e.g., display message, update skill points)
+                    MessageBox.Show("Carry skill increased!");
+                    foreach (TrackBar track in tracks)
+                    {
                         CarryTrack.Value = HighestCarry;
                         HoldTrack.Value = HighestHold;
                         ThrowTrack.Value = HighestThrow;
@@ -717,12 +718,12 @@ namespace DigimonAndTamerCharacterSheets
                         OccultismTrack.Value = HighestOccultism;
                         SocietyTrack.Value = HighestSociety;
                         track.Enabled = false;
+                    }
                 }
-            }
-            else
-            {
-                CarryTrack.Value--;
-                HighestCarry--;
+                else
+                {
+                    CarryTrack.Value--;
+                    HighestCarry--;
                 }
             }
 
@@ -735,7 +736,7 @@ namespace DigimonAndTamerCharacterSheets
             int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
 
             // Output the halvedValue to the text box
-            StrengthStat.Text = halvedValue.ToString();            
+            StrengthStat.Text = halvedValue.ToString();
         }
 
         // Carry Calculations
@@ -2250,7 +2251,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 // Output the halvedValue to the text box
                 KnowledgeStat.Text = halvedValue.ToString();
-                
+
             }
         }
 
@@ -4670,7 +4671,7 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     int RemainingLifespan;
                     int.TryParse(RemainingLife.Text, out RemainingLifespan);
-                    RemainingLifespan = RemainingLifespan -1;
+                    RemainingLifespan = RemainingLifespan - 1;
                     RemainingLife.Text = RemainingLifespan.ToString();
 
                     if (ChampionLevel.Text == "________")
@@ -4767,7 +4768,7 @@ namespace DigimonAndTamerCharacterSheets
                         }
                     }
                     else
-                    {                    }
+                    { }
                 }
 
             }
@@ -4867,7 +4868,7 @@ namespace DigimonAndTamerCharacterSheets
             int.TryParse(Day.Text, out DayCount);
             DayCount = DayCount + 1;
             Day.Text = DayCount.ToString();
-            
+
         }
 
         private void groupBox16_Enter(object sender, EventArgs e)
@@ -5210,26 +5211,58 @@ namespace DigimonAndTamerCharacterSheets
             QualityItems = QualityItems.Take(QualityIndex).ToArray();
             QuantityItems = QuantityItems.Take(QuantityIndex).ToArray();
 
-            // Constructing a String from the arrays
-            StringBuilder inventoryText = new StringBuilder();
+            int totalStrengthIncrease = 0;
+            int totalAgilityIncrease = 0;
 
+            // Assuming UpdateInventory_Click has already been called and categorized the items
+            foreach (string item in QualityItems)
+            {
+                // Extract numerical value after "+" symbol
+                string[] itemParts = item.Split(new[] { @"\s*+\s*" }, 2, StringSplitOptions.RemoveEmptyEntries);
 
+                // Ensure there are at least two parts (name and value)
+                if (itemParts.Length > 1)
+                {
+                    // Exclude last character
+                    string valueString = itemParts[1].Substring(0, itemParts[1].Length - 1);
+                    // Attempt to parse the value
+                    int value = int.Parse(valueString);
 
+                    if (itemParts[0].Contains("Strength"))
+                    {
+                        totalStrengthIncrease = totalStrengthIncrease + value;
+                    }
+                    else if (itemParts[0].Contains("Agility"))
+                    {
+                        totalAgilityIncrease = totalAgilityIncrease + value;
+                    }
+                }
+                else
+                {
+                    // Handle cases where the item doesn't contain "+" or has an unexpected format
+                    // (log an error, ignore the item, etc.)
+                }
 
-            // Append formatted content for quality items
-            inventoryText.Append("");
-            inventoryText.Append(string.Join(",", QualityItems.Where(item => !string.IsNullOrEmpty(item))));
-            inventoryText.Append(",");
+                // Constructing a String from the arrays
+                StringBuilder inventoryText = new StringBuilder();
 
-            // Append formatted content for quantity items
-            inventoryText.Append("");
-            inventoryText.Append(string.Join(",", QuantityItems.Where(item => !string.IsNullOrEmpty(item))));
-            inventoryText.Append(",");
+                // Append formatted content for quality items
+                inventoryText.AppendLine("Total Strength Increase: " + totalStrengthIncrease);
+                inventoryText.AppendLine("Total Agility Increase: " + totalAgilityIncrease);
+                inventoryText.Append("");
+                inventoryText.Append(string.Join(",", QualityItems.Where(itemPart => !string.IsNullOrEmpty(item))));
+                inventoryText.Append(",");
 
-            // Assign the final string to ReadableInventory.Text
-            ReadableInventory.Text = "";
-            ReadableInventory.Text = inventoryText.ToString();
+                // Append formatted content for quantity items
+                inventoryText.Append("");
+                inventoryText.Append(string.Join(",", QuantityItems.Where(itemPart => !string.IsNullOrEmpty(item))));
+                inventoryText.Append("");
 
+                // Assign the final string to ReadableInventory.Text
+                ReadableInventory.Text = "";
+                ReadableInventory.Text = inventoryText.ToString();
+
+            }
         }
     }
 }
