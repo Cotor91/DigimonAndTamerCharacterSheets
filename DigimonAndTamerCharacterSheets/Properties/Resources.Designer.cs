@@ -213,6 +213,16 @@ namespace DigimonAndTamerCharacterSheets.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PoopMistake {
+            get {
+                object obj = ResourceManager.GetObject("PoopMistake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pride {
             get {
                 object obj = ResourceManager.GetObject("Pride", resourceCulture);
@@ -256,6 +266,16 @@ namespace DigimonAndTamerCharacterSheets.Properties {
         internal static System.Drawing.Bitmap Sincerity {
             get {
                 object obj = ResourceManager.GetObject("Sincerity", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SparedMistake {
+            get {
+                object obj = ResourceManager.GetObject("SparedMistake", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

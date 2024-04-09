@@ -1,4 +1,4 @@
-﻿namespace DigimonAndTamerCharacterSheets.Enums;
+﻿namespace DigimonAndTamerCharacterSheets.Enums{
 public enum Diet
 {
     Strength,
@@ -6,4 +6,5 @@ public enum Diet
     Vibes,
     Wits,
     Education
+}
 }

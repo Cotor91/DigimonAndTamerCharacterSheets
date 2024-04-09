@@ -127,9 +127,6 @@
   <data name="Independance" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Independance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Champion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Champion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Compromise" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Compromise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -139,8 +136,8 @@
   <data name="Courage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Courage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clarity" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clarity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Champion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Champion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Knowledge" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Knowledge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,11 +151,17 @@
   <data name="Hope" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hope.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="PoopMistake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PoopMistake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Humility" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Humility.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Justice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Justice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Clarity" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clarity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Levity" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Levity.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,10 +181,13 @@
   <data name="Ultimate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ultimate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DigiviceStatHolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DigiviceStatHolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pride" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pride.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DigiviceStatHolder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DigiviceStatHolder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SparedMistake" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SparedMistake.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -4689,25 +4689,25 @@ namespace DigimonAndTamerCharacterSheets
                                     Partner.Text = "Greymon";
                                     ChampionLevel.Text = "Greymon";
                                 }
-                                else if (MaxDiet == "DietAgility")
+                                else if (maxDiet == Diet.Agility)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
                                     Partner.Text = "Tuskmon";
                                     ChampionLevel.Text = "Tuskmon";
                                 }
-                                else if (MaxDiet == "DietVibes")
+                                else if (maxDiet == Diet.Vibes)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
                                     Partner.Text = "Growlmon";
                                     ChampionLevel.Text = "Growlmon";
                                 }
-                                else if (MaxDiet == "DietWits")
+                                else if (maxDiet == Diet.Wits)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
                                     Partner.Text = "Flarizamon";
                                     ChampionLevel.Text = "Flarizamon";
                                 }
-                                else if (MaxDiet == "DietEducation")
+                                else if (maxDiet == Diet.Education)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
                                     Partner.Text = "Tyrannomon";
@@ -4726,31 +4726,31 @@ namespace DigimonAndTamerCharacterSheets
                             {
                                 RecordRookie = "Commandramon";
 
-                                if (MaxDiet == "DietStrength")
+                                if (maxDiet == Diet.Strength)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Hi-Commandramon");
                                     Partner.Text = "Hi-Commandramon";
                                     ChampionLevel.Text = "Hi-Commandramon";
                                 }
-                                else if (MaxDiet == "DietAgility")
+                                else if (maxDiet == Diet.Agility)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Centarumon");
                                     Partner.Text = "Centarumon";
                                     ChampionLevel.Text = "Centarumon";
                                 }
-                                else if (MaxDiet == "DietVibes")
+                                else if (maxDiet == Diet.Vibes)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Deputymon");
                                     Partner.Text = "Deputymon";
                                     ChampionLevel.Text = "Deputymon";
                                 }
-                                else if (MaxDiet == "DietWits")
+                                else if (maxDiet == Diet.Wits)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Sealsdramon");
                                     Partner.Text = "Sealsdramon";
                                     ChampionLevel.Text = "Sealsdramon";
                                 }
-                                else if (MaxDiet == "DietEducation")
+                                else if (maxDiet == Diet.Education)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Clockmon");
                                     Partner.Text = "Clockmon";
