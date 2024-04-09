@@ -193,7 +193,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.ReadableInventory = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.CharacterName = new System.Windows.Forms.TextBox();
@@ -234,6 +234,8 @@
             this.InfoExtractTrack = new System.Windows.Forms.TrackBar();
             this.ErrorScanTrack = new System.Windows.Forms.TrackBar();
             this.DigimonMoves = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label62 = new System.Windows.Forms.Label();
@@ -460,8 +462,7 @@
             this.Impulse = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
             this.LevelUp = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UpdateInventory = new System.Windows.Forms.Button();
             this.TamerDigimon.SuspendLayout();
             this.TamerSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SocietyTrack)).BeginInit();
@@ -2112,6 +2113,7 @@
             // TamerStats
             // 
             this.TamerStats.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.TamerStats.Controls.Add(this.UpdateInventory);
             this.TamerStats.Controls.Add(this.label172);
             this.TamerStats.Controls.Add(this.label171);
             this.TamerStats.Controls.Add(this.label170);
@@ -2127,7 +2129,7 @@
             this.TamerStats.Controls.Add(this.label16);
             this.TamerStats.Controls.Add(this.label14);
             this.TamerStats.Controls.Add(this.label15);
-            this.TamerStats.Controls.Add(this.richTextBox1);
+            this.TamerStats.Controls.Add(this.ReadableInventory);
             this.TamerStats.Controls.Add(this.label13);
             this.TamerStats.Controls.Add(this.label12);
             this.TamerStats.Controls.Add(this.CharacterName);
@@ -2455,14 +2457,15 @@
             this.label15.Text = "Character Class";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
-            // richTextBox1
+            // ReadableInventory
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(431, 302);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(705, 296);
-            this.richTextBox1.TabIndex = 85;
-            this.richTextBox1.Text = "";
+            this.ReadableInventory.Location = new System.Drawing.Point(431, 302);
+            this.ReadableInventory.Margin = new System.Windows.Forms.Padding(4);
+            this.ReadableInventory.Name = "ReadableInventory";
+            this.ReadableInventory.Size = new System.Drawing.Size(705, 296);
+            this.ReadableInventory.TabIndex = 85;
+            this.ReadableInventory.Text = "";
+            this.ReadableInventory.TextChanged += new System.EventHandler(this.ReadableInventory_TextChanged);
             // 
             // label13
             // 
@@ -2946,6 +2949,27 @@
             this.DigimonMoves.TabIndex = 3;
             this.DigimonMoves.Text = "Digimon Moves";
             this.DigimonMoves.Click += new System.EventHandler(this.DigimonMoves_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.textBox1.Location = new System.Drawing.Point(568, 571);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(56, 41);
+            this.textBox1.TabIndex = 104;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.Location = new System.Drawing.Point(348, 577);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(165, 34);
+            this.button5.TabIndex = 103;
+            this.button5.Text = "Gaurd";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // button28
             // 
@@ -5639,26 +5663,16 @@
             this.LevelUp.UseVisualStyleBackColor = true;
             this.LevelUp.Click += new System.EventHandler(this.button22_Click_4);
             // 
-            // button5
+            // UpdateInventory
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(348, 577);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 34);
-            this.button5.TabIndex = 103;
-            this.button5.Text = "Gaurd";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox1.Location = new System.Drawing.Point(568, 571);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 41);
-            this.textBox1.TabIndex = 104;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UpdateInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.UpdateInventory.Location = new System.Drawing.Point(555, 255);
+            this.UpdateInventory.Name = "UpdateInventory";
+            this.UpdateInventory.Size = new System.Drawing.Size(110, 36);
+            this.UpdateInventory.TabIndex = 98;
+            this.UpdateInventory.Text = "Update";
+            this.UpdateInventory.UseVisualStyleBackColor = true;
+            this.UpdateInventory.Click += new System.EventHandler(this.UpdateInventory_Click);
             // 
             // Form1
             // 
@@ -5792,7 +5806,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox ReadableInventory;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox CharacterName;
@@ -6192,6 +6206,7 @@
         private System.Windows.Forms.TextBox EducationDiet;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button UpdateInventory;
     }
 }
 

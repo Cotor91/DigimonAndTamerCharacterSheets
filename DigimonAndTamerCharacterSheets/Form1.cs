@@ -5174,5 +5174,62 @@ namespace DigimonAndTamerCharacterSheets
         {
 
         }
+
+        private void ReadableInventory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateInventory_Click(object sender, EventArgs e)
+        {
+            // Read in text, splitting it at ",", and put them into an array
+            string InventoryItems = ReadableInventory.Text;
+            string[] Items = InventoryItems.Split(',');
+
+            // Split into two arrays, QualityItems and Quantity Items, based on whether they contain + or *
+            string[] QualityItems = new string[Items.Length];
+            string[] QuantityItems = new string[Items.Length];
+
+            int QualityIndex = 0;
+            int QuantityIndex = 0;
+
+            // Loop through each inventory item
+            foreach (string item in Items)
+            {
+                if (item.Contains("+"))
+                {
+                    QualityItems[QualityIndex++] = item;
+                }
+                else if (item.Contains("*"))
+                {
+                    QuantityItems[QuantityIndex++] = item;
+                }
+            }
+
+            // Shorten arrays if necessary (optional)
+            QualityItems = QualityItems.Take(QualityIndex).ToArray();
+            QuantityItems = QuantityItems.Take(QuantityIndex).ToArray();
+
+            // Constructing a String from the arrays
+            StringBuilder inventoryText = new StringBuilder();
+
+
+
+
+            // Append formatted content for quality items
+            inventoryText.Append("");
+            inventoryText.Append(string.Join(",", QualityItems.Where(item => !string.IsNullOrEmpty(item))));
+            inventoryText.Append(",");
+
+            // Append formatted content for quantity items
+            inventoryText.Append("");
+            inventoryText.Append(string.Join(",", QuantityItems.Where(item => !string.IsNullOrEmpty(item))));
+            inventoryText.Append(",");
+
+            // Assign the final string to ReadableInventory.Text
+            ReadableInventory.Text = "";
+            ReadableInventory.Text = inventoryText.ToString();
+
+        }
     }
 }
