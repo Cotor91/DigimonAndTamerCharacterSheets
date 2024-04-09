@@ -4664,7 +4664,7 @@ namespace DigimonAndTamerCharacterSheets
                     !int.TryParse(WitsDiet.Text, out int DietWits) ||
                     !int.TryParse(EducationDiet.Text, out int DietEducation)
                 ) { return; }
-                Diet maxDiet = Enum.Parse(typeof(Diet), [DietStrength, DietAgility, DietVibes, DietWits, DietEducation].Select((x, idx) => (x, idx)).Max().idx)
+                Diet maxDiet = (Diet)new int[] { DietStrength, DietAgility, DietVibes, DietWits, DietEducation }.Select((x, idx) => (x, idx)).Max().idx;
 
                 if (ChampionSelect.Checked == true)
                 {
@@ -4683,7 +4683,7 @@ namespace DigimonAndTamerCharacterSheets
                             {
                                 RecordRookie = "Agumon";
 
-                                if (maxDiet == Diet.DietStrength)
+                                if (maxDiet == Diet.Strength)
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
                                     Partner.Text = "Greymon";
