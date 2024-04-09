@@ -452,7 +452,7 @@
             this.RemainingLife = new System.Windows.Forms.Label();
             this.label121 = new System.Windows.Forms.Label();
             this.label119 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
+            this.DigiBond = new System.Windows.Forms.Label();
             this.label118 = new System.Windows.Forms.Label();
             this.Betrayal = new System.Windows.Forms.Label();
             this.label116 = new System.Windows.Forms.Label();
@@ -460,6 +460,8 @@
             this.Impulse = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
             this.LevelUp = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TamerDigimon.SuspendLayout();
             this.TamerSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SocietyTrack)).BeginInit();
@@ -2929,6 +2931,8 @@
             // DigimonMoves
             // 
             this.DigimonMoves.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.DigimonMoves.Controls.Add(this.textBox1);
+            this.DigimonMoves.Controls.Add(this.button5);
             this.DigimonMoves.Controls.Add(this.button28);
             this.DigimonMoves.Controls.Add(this.groupBox8);
             this.DigimonMoves.Controls.Add(this.groupBox9);
@@ -2946,7 +2950,7 @@
             // button28
             // 
             this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button28.Location = new System.Drawing.Point(517, 575);
+            this.button28.Location = new System.Drawing.Point(677, 577);
             this.button28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(165, 34);
@@ -4862,7 +4866,7 @@
             this.DigimonLifecycle.Controls.Add(this.RemainingLife);
             this.DigimonLifecycle.Controls.Add(this.label121);
             this.DigimonLifecycle.Controls.Add(this.label119);
-            this.DigimonLifecycle.Controls.Add(this.label117);
+            this.DigimonLifecycle.Controls.Add(this.DigiBond);
             this.DigimonLifecycle.Controls.Add(this.label118);
             this.DigimonLifecycle.Controls.Add(this.Betrayal);
             this.DigimonLifecycle.Controls.Add(this.label116);
@@ -5550,16 +5554,16 @@
             this.label119.TabIndex = 54;
             this.label119.Text = "Care Mistakes";
             // 
-            // label117
+            // DigiBond
             // 
-            this.label117.AutoSize = true;
-            this.label117.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label117.Location = new System.Drawing.Point(303, 279);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(18, 20);
-            this.label117.TabIndex = 14;
-            this.label117.Text = "3";
-            this.label117.Click += new System.EventHandler(this.label117_Click);
+            this.DigiBond.AutoSize = true;
+            this.DigiBond.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DigiBond.Location = new System.Drawing.Point(303, 279);
+            this.DigiBond.Name = "DigiBond";
+            this.DigiBond.Size = new System.Drawing.Size(18, 20);
+            this.DigiBond.TabIndex = 14;
+            this.DigiBond.Text = "3";
+            this.DigiBond.Click += new System.EventHandler(this.label117_Click);
             // 
             // label118
             // 
@@ -5635,6 +5639,27 @@
             this.LevelUp.UseVisualStyleBackColor = true;
             this.LevelUp.Click += new System.EventHandler(this.button22_Click_4);
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.Location = new System.Drawing.Point(348, 577);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(165, 34);
+            this.button5.TabIndex = 103;
+            this.button5.Text = "Gaurd";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.textBox1.Location = new System.Drawing.Point(568, 571);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(56, 41);
+            this.textBox1.TabIndex = 104;
+            this.textBox1.Text = "0";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -5691,6 +5716,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.InfoExtractTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorScanTrack)).EndInit();
             this.DigimonMoves.ResumeLayout(false);
+            this.DigimonMoves.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);
@@ -5890,7 +5916,7 @@
         private System.Windows.Forms.Label label112;
         private System.Windows.Forms.Label Impulse;
         private System.Windows.Forms.Label label114;
-        private System.Windows.Forms.Label label117;
+        private System.Windows.Forms.Label DigiBond;
         private System.Windows.Forms.Label label118;
         private System.Windows.Forms.Label label119;
         private System.Windows.Forms.Label MaximumLife;
@@ -6164,6 +6190,8 @@
         private System.Windows.Forms.TextBox StrengthDiet;
         private System.Windows.Forms.RadioButton EducationMeal;
         private System.Windows.Forms.TextBox EducationDiet;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button5;
     }
 }
 

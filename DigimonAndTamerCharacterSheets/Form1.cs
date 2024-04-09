@@ -4783,8 +4783,6 @@ namespace DigimonAndTamerCharacterSheets
             int LevelCount;
             int.TryParse(CharacterLevel.Text, out LevelCount);
             int.TryParse(Day.Text, out DayCount);
-            DayCount = DayCount + 1;
-            Day.Text = DayCount.ToString();
 
 
             // Unlock Champion Evolutions
@@ -4856,6 +4854,9 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     ToiletOne.Checked = false;
                 }
+
+                // Digi-Bond Replenished
+                DigiBond.Text = "5";
             }
         }
 
