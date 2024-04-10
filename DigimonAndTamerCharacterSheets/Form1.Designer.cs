@@ -234,7 +234,7 @@
             this.InfoExtractTrack = new System.Windows.Forms.TrackBar();
             this.ErrorScanTrack = new System.Windows.Forms.TrackBar();
             this.DigimonMoves = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.StratPoints = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
@@ -244,7 +244,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.label65 = new System.Windows.Forms.Label();
-            this.button30 = new System.Windows.Forms.Button();
+            this.SpecialAttack = new System.Windows.Forms.Button();
             this.label66 = new System.Windows.Forms.Label();
             this.label74 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
@@ -262,7 +262,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.SuperAttack = new System.Windows.Forms.Button();
             this.label51 = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
@@ -277,7 +277,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
-            this.button31 = new System.Windows.Forms.Button();
+            this.BasicAttack = new System.Windows.Forms.Button();
             this.label84 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
             this.label85 = new System.Windows.Forms.Label();
@@ -300,7 +300,7 @@
             this.label79 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
-            this.button27 = new System.Windows.Forms.Button();
+            this.StandardAttack = new System.Windows.Forms.Button();
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.DigimonStats = new System.Windows.Forms.TabPage();
@@ -2934,7 +2934,7 @@
             // DigimonMoves
             // 
             this.DigimonMoves.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.DigimonMoves.Controls.Add(this.textBox1);
+            this.DigimonMoves.Controls.Add(this.StratPoints);
             this.DigimonMoves.Controls.Add(this.button5);
             this.DigimonMoves.Controls.Add(this.button28);
             this.DigimonMoves.Controls.Add(this.groupBox8);
@@ -2950,15 +2950,16 @@
             this.DigimonMoves.Text = "Digimon Moves";
             this.DigimonMoves.Click += new System.EventHandler(this.DigimonMoves_Click);
             // 
-            // textBox1
+            // StratPoints
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox1.Location = new System.Drawing.Point(568, 571);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 41);
-            this.textBox1.TabIndex = 104;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.StratPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.StratPoints.Location = new System.Drawing.Point(568, 571);
+            this.StratPoints.Name = "StratPoints";
+            this.StratPoints.Size = new System.Drawing.Size(56, 41);
+            this.StratPoints.TabIndex = 104;
+            this.StratPoints.Text = "0";
+            this.StratPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.StratPoints.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
             // button5
             // 
@@ -2970,6 +2971,7 @@
             this.button5.TabIndex = 103;
             this.button5.Text = "Gaurd";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_3);
             // 
             // button28
             // 
@@ -2990,7 +2992,7 @@
             this.groupBox8.Controls.Add(this.label22);
             this.groupBox8.Controls.Add(this.label64);
             this.groupBox8.Controls.Add(this.label65);
-            this.groupBox8.Controls.Add(this.button30);
+            this.groupBox8.Controls.Add(this.SpecialAttack);
             this.groupBox8.Controls.Add(this.label66);
             this.groupBox8.Controls.Add(this.label74);
             this.groupBox8.Controls.Add(this.label67);
@@ -3075,16 +3077,17 @@
             this.label65.Text = "___";
             this.label65.Click += new System.EventHandler(this.label65_Click);
             // 
-            // button30
+            // SpecialAttack
             // 
-            this.button30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button30.Location = new System.Drawing.Point(377, 164);
-            this.button30.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(165, 34);
-            this.button30.TabIndex = 122;
-            this.button30.Text = "Activate";
-            this.button30.UseVisualStyleBackColor = true;
+            this.SpecialAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SpecialAttack.Location = new System.Drawing.Point(377, 164);
+            this.SpecialAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SpecialAttack.Name = "SpecialAttack";
+            this.SpecialAttack.Size = new System.Drawing.Size(165, 34);
+            this.SpecialAttack.TabIndex = 122;
+            this.SpecialAttack.Text = "Activate";
+            this.SpecialAttack.UseVisualStyleBackColor = true;
+            this.SpecialAttack.Click += new System.EventHandler(this.SpecialAttack_Click);
             // 
             // label66
             // 
@@ -3182,7 +3185,7 @@
             this.groupBox9.Controls.Add(this.label24);
             this.groupBox9.Controls.Add(this.label49);
             this.groupBox9.Controls.Add(this.label50);
-            this.groupBox9.Controls.Add(this.button3);
+            this.groupBox9.Controls.Add(this.SuperAttack);
             this.groupBox9.Controls.Add(this.label51);
             this.groupBox9.Controls.Add(this.label61);
             this.groupBox9.Controls.Add(this.label56);
@@ -3284,16 +3287,17 @@
             this.label50.TabIndex = 127;
             this.label50.Text = "Hit:";
             // 
-            // button3
+            // SuperAttack
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button3.Location = new System.Drawing.Point(377, 164);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 34);
-            this.button3.TabIndex = 122;
-            this.button3.Text = "Activate";
-            this.button3.UseVisualStyleBackColor = true;
+            this.SuperAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.SuperAttack.Location = new System.Drawing.Point(377, 164);
+            this.SuperAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.SuperAttack.Name = "SuperAttack";
+            this.SuperAttack.Size = new System.Drawing.Size(165, 34);
+            this.SuperAttack.TabIndex = 122;
+            this.SuperAttack.Text = "Activate";
+            this.SuperAttack.UseVisualStyleBackColor = true;
+            this.SuperAttack.Click += new System.EventHandler(this.SuperAttack_Click);
             // 
             // label51
             // 
@@ -3376,7 +3380,7 @@
             this.groupBox10.Controls.Add(this.label21);
             this.groupBox10.Controls.Add(this.label82);
             this.groupBox10.Controls.Add(this.label83);
-            this.groupBox10.Controls.Add(this.button31);
+            this.groupBox10.Controls.Add(this.BasicAttack);
             this.groupBox10.Controls.Add(this.label84);
             this.groupBox10.Controls.Add(this.label91);
             this.groupBox10.Controls.Add(this.label85);
@@ -3463,16 +3467,17 @@
             this.label83.Text = "___";
             this.label83.Click += new System.EventHandler(this.label83_Click);
             // 
-            // button31
+            // BasicAttack
             // 
-            this.button31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button31.Location = new System.Drawing.Point(377, 164);
-            this.button31.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(165, 34);
-            this.button31.TabIndex = 135;
-            this.button31.Text = "Activate";
-            this.button31.UseVisualStyleBackColor = true;
+            this.BasicAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BasicAttack.Location = new System.Drawing.Point(377, 164);
+            this.BasicAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BasicAttack.Name = "BasicAttack";
+            this.BasicAttack.Size = new System.Drawing.Size(165, 34);
+            this.BasicAttack.TabIndex = 135;
+            this.BasicAttack.Text = "Activate";
+            this.BasicAttack.UseVisualStyleBackColor = true;
+            this.BasicAttack.Click += new System.EventHandler(this.BasicAttack_Click);
             // 
             // label84
             // 
@@ -3575,7 +3580,7 @@
             this.groupBox11.Controls.Add(this.label79);
             this.groupBox11.Controls.Add(this.label26);
             this.groupBox11.Controls.Add(this.label53);
-            this.groupBox11.Controls.Add(this.button27);
+            this.groupBox11.Controls.Add(this.StandardAttack);
             this.groupBox11.Controls.Add(this.label54);
             this.groupBox11.Controls.Add(this.label55);
             this.groupBox11.Location = new System.Drawing.Point(628, 74);
@@ -3731,16 +3736,17 @@
             this.label53.TabIndex = 110;
             this.label53.Text = "Part Fail:";
             // 
-            // button27
+            // StandardAttack
             // 
-            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button27.Location = new System.Drawing.Point(377, 164);
-            this.button27.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(165, 34);
-            this.button27.TabIndex = 90;
-            this.button27.Text = "Activate";
-            this.button27.UseVisualStyleBackColor = true;
+            this.StandardAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.StandardAttack.Location = new System.Drawing.Point(377, 164);
+            this.StandardAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.StandardAttack.Name = "StandardAttack";
+            this.StandardAttack.Size = new System.Drawing.Size(165, 34);
+            this.StandardAttack.TabIndex = 90;
+            this.StandardAttack.Text = "Activate";
+            this.StandardAttack.UseVisualStyleBackColor = true;
+            this.StandardAttack.Click += new System.EventHandler(this.StandardAttack_Click);
             // 
             // label54
             // 
@@ -5857,7 +5863,7 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button StandardAttack;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label69;
@@ -5870,7 +5876,7 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Button SpecialAttack;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label74;
         private System.Windows.Forms.Label label67;
@@ -5884,7 +5890,7 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button SuperAttack;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Label label56;
@@ -5896,7 +5902,7 @@
         private System.Windows.Forms.Label label81;
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.Button BasicAttack;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label label85;
@@ -6204,7 +6210,7 @@
         private System.Windows.Forms.TextBox StrengthDiet;
         private System.Windows.Forms.RadioButton EducationMeal;
         private System.Windows.Forms.TextBox EducationDiet;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox StratPoints;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button UpdateInventory;
     }

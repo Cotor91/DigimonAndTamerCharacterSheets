@@ -3606,9 +3606,11 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
+        int GaurdPoints;
+
         private void label117_Click(object sender, EventArgs e)
         {
-
+            StratPoints.Text = DigiBond.Text;
         }
 
         private void label111_Click(object sender, EventArgs e)
@@ -4779,6 +4781,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void Value_Click(object sender, EventArgs e)
         {
+
             // Increment Days
             int DayCount;
             int LevelCount;
@@ -4858,6 +4861,9 @@ namespace DigimonAndTamerCharacterSheets
 
                 // Digi-Bond Replenished
                 DigiBond.Text = "5";
+                
+                // Strategy Points
+                StratPoints.Text = "";
             }
         }
 
@@ -5263,6 +5269,60 @@ namespace DigimonAndTamerCharacterSheets
                 ReadableInventory.Text = inventoryText.ToString();
 
             }
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+            int StratBond;
+            int.TryParse(DigiBond.Text, out StratBond);
+            StratBond = StratBond + GaurdPoints;
+            StratPoints.Text = StratBond.ToString();
+
+            if (StratBond > 0)
+            {
+                BasicAttack.Enabled = true;
+                StandardAttack.Enabled = true;
+                SpecialAttack.Enabled = true;
+                SuperAttack.Enabled = true;
+            }
+            if (StratBond < 1)
+            {
+                BasicAttack.Enabled = false;
+                StandardAttack.Enabled = false;
+                SpecialAttack.Enabled = false;
+                SuperAttack.Enabled = false;
+            }
+
+        }
+
+        private void button5_Click_3(object sender, EventArgs e)
+        {
+            GaurdPoints++;
+            StratPoints.Text = "";
+        }
+
+        private void BasicAttack_Click(object sender, EventArgs e)
+        {
+            GaurdPoints--;
+            StratPoints.Text = "";
+        }
+
+        private void StandardAttack_Click(object sender, EventArgs e)
+        {
+            GaurdPoints--;
+            StratPoints.Text = "";
+        }
+
+        private void SpecialAttack_Click(object sender, EventArgs e)
+        {
+            GaurdPoints--;
+            StratPoints.Text = "";
+        }
+
+        private void SuperAttack_Click(object sender, EventArgs e)
+        {
+            GaurdPoints--;
+            StratPoints.Text = "";
         }
     }
 }
