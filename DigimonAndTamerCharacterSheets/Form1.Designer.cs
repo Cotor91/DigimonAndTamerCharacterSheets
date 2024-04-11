@@ -3087,6 +3087,7 @@
             // 
             // EducationDiet
             // 
+            this.EducationDiet.Enabled = false;
             this.EducationDiet.Location = new System.Drawing.Point(503, 553);
             this.EducationDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EducationDiet.Name = "EducationDiet";
@@ -3107,6 +3108,7 @@
             // 
             // WitsDiet
             // 
+            this.WitsDiet.Enabled = false;
             this.WitsDiet.Location = new System.Drawing.Point(503, 425);
             this.WitsDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.WitsDiet.Name = "WitsDiet";
@@ -3127,6 +3129,7 @@
             // 
             // VibesDiet
             // 
+            this.VibesDiet.Enabled = false;
             this.VibesDiet.Location = new System.Drawing.Point(503, 299);
             this.VibesDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VibesDiet.Name = "VibesDiet";
@@ -3147,6 +3150,7 @@
             // 
             // AgilityDiet
             // 
+            this.AgilityDiet.Enabled = false;
             this.AgilityDiet.Location = new System.Drawing.Point(503, 172);
             this.AgilityDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AgilityDiet.Name = "AgilityDiet";
@@ -3167,6 +3171,7 @@
             // 
             // StrengthDiet
             // 
+            this.StrengthDiet.Enabled = false;
             this.StrengthDiet.Location = new System.Drawing.Point(503, 46);
             this.StrengthDiet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.StrengthDiet.Name = "StrengthDiet";
