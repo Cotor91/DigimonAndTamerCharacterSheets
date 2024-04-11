@@ -198,6 +198,8 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button1_Click(object sender, EventArgs e)
         {
+            GaurdPoints = 0;
+            StratPoints.Text = "";
             int lifespanOver;
             if (int.TryParse(RemainingLife.Text, out lifespanOver) && lifespanOver < 1)
             {
@@ -2673,6 +2675,18 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button4_Click(object sender, EventArgs e)
         {
+            int FoodBonding;
+            int.TryParse(DigiBond.Text, out FoodBonding);
+            if (FoodBonding < 4)
+            {
+                FoodBonding = FoodBonding + 2;
+            } else
+            {
+                FoodBonding = 5;
+            }
+            DigiBond.Text = FoodBonding.ToString();
+            StratPoints.Text = "";
+
             // Undo last boost
             if (LastMeal == "Strength")
             {
@@ -2785,7 +2799,6 @@ namespace DigimonAndTamerCharacterSheets
             {
 
             };
-
 
 
         }
@@ -3817,7 +3830,53 @@ namespace DigimonAndTamerCharacterSheets
                     DigimonEducation.Text = "2";
 
                     // Agumon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Headbutt";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "2";
+                    BasicElement.Text = "Slamming";
 
+                    //Standard Move
+                    StandardAttack.Text = "Claw Attack";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardDiceMin.Text = "3";
+                    StandardDiceMax.Text = "5";
+                    StandardElement.Text = "Slashing";
+
+                    //Special Move
+                    SpecialAttack.Text = "Pepper Breath";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialDiceMin.Text = "6";
+                    SpecialDiceMax.Text = "8";
+                    SpecialElement.Text = "Fire";
+
+                    //Super Move
+                    SuperAttack.Text = "Spitfire Blast";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperDiceMin.Text = "9";
+                    SuperDiceMax.Text = "10";
+                    SuperElement.Text = "Fire";
 
                     // Agumon Quirks
                     CurrentQuirkOne.Text = "";
@@ -3875,6 +3934,49 @@ namespace DigimonAndTamerCharacterSheets
                     DigimonEducation.Text = "2";
 
                     // Commandramon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Helmet Bash";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "2";
+
+                    //Standard Move
+                    StandardAttack.Text = "M16 Assassin";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardDiceMin.Text = "3";
+                    StandardDiceMax.Text = "5";
+
+                    //Special Move
+                    SpecialAttack.Text = "DCD Bomb";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialDiceMin.Text = "6";
+                    SpecialDiceMax.Text = "8";
+
+                    //Super Move
+                    SuperAttack.Text = "Sniper Tag";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperDiceMin.Text = "9";
+                    SuperDiceMax.Text = "10";
 
                     // Commandramon Quirks
                     CurrentQuirkOne.Text = "";
@@ -5280,17 +5382,17 @@ namespace DigimonAndTamerCharacterSheets
 
             if (StratBond > 0)
             {
-                BasicAttack.Enabled = true;
-                StandardAttack.Enabled = true;
-                SpecialAttack.Enabled = true;
-                SuperAttack.Enabled = true;
+                ActBasicAttack.Enabled = true;
+                ActStandardAttack.Enabled = true;
+                ActSpecialAttack.Enabled = true;
+                ActSuperAttack.Enabled = true;
             }
             if (StratBond < 1)
             {
-                BasicAttack.Enabled = false;
-                StandardAttack.Enabled = false;
-                SpecialAttack.Enabled = false;
-                SuperAttack.Enabled = false;
+                ActBasicAttack.Enabled = false;
+                ActStandardAttack.Enabled = false;
+                ActSpecialAttack.Enabled = false;
+                ActSuperAttack.Enabled = false;
             }
 
         }
@@ -5323,6 +5425,118 @@ namespace DigimonAndTamerCharacterSheets
         {
             GaurdPoints--;
             StratPoints.Text = "";
+        }
+
+        private void label72_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            // Read in the dice ranges for the moves
+            int MinBasic;
+            int MaxBasic;
+            int MinStandard;
+            int MaxStandard;
+            int MinSpecial;
+            int MaxSpecial;
+            int MinSuper;
+            int MaxSuper;
+            int.TryParse(BasicDiceMin.Text, out MinBasic);
+            int.TryParse(BasicDiceMax.Text, out MaxBasic);
+            int.TryParse(StandardDiceMin.Text, out MinStandard);
+            int.TryParse(StandardDiceMax.Text, out MaxStandard);
+            int.TryParse(SpecialDiceMin.Text, out MinSpecial);
+            int.TryParse(SpecialDiceMax.Text, out MaxSpecial);
+            int.TryParse(SuperDiceMin.Text, out MinSuper);
+            int.TryParse(SuperDiceMax.Text, out MaxSuper);
+
+            Random random = new Random();
+            int DiceResult = random.Next(1, 11);
+
+            if (DiceResult >= MinBasic && DiceResult <= MaxBasic)
+            {
+                MessageBox.Show("Basic");
+            }
+            else if (DiceResult >= MinStandard && DiceResult <= MaxStandard)
+            {
+                MessageBox.Show("Standard");
+            }
+            else if (DiceResult >= MinSpecial && DiceResult <= MaxSpecial)
+            {
+                MessageBox.Show("Special");
+            }
+            else if (DiceResult >= MinSuper && DiceResult <= MaxSuper)
+            {
+                MessageBox.Show("Super");
+            }
+
+        }
+
+        private void StandardAttack_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label87_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label84_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int BondScore;
+            int.TryParse(DigiBond.Text, out BondScore);
+            if (BondScore > 0)
+            {
+                BondScore--;
+            }
+            DigiBond.Text = BondScore.ToString();
+            StratPoints.Text = "";
+        }
+
+        private void GainBond_Click(object sender, EventArgs e)
+        {
+            int BondScore;
+            int.TryParse(DigiBond.Text, out BondScore);
+            if (BondScore < 5)
+            {
+                BondScore++;
+            }
+            DigiBond.Text = BondScore.ToString();
+            StratPoints.Text = "";
+        }
+
+        private void SpecialDiceMax_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label104_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label122_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
