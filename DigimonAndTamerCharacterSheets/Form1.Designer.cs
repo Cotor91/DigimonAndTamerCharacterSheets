@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Digivolve = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.HaveMeal = new System.Windows.Forms.Button();
             this.TamerDigimon = new System.Windows.Forms.TabControl();
             this.TamerAttackRoll = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
@@ -347,8 +347,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.StratPoints = new System.Windows.Forms.TextBox();
             this.TargetArmour = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
+            this.GaurdAction = new System.Windows.Forms.Button();
+            this.AutoSelect = new System.Windows.Forms.Button();
             this.SpecialAttack = new System.Windows.Forms.GroupBox();
             this.SpecialDiceMax = new System.Windows.Forms.Label();
             this.label122 = new System.Windows.Forms.Label();
@@ -587,16 +587,17 @@
             this.Digivolve.UseVisualStyleBackColor = true;
             this.Digivolve.Click += new System.EventHandler(this.Digivolve_Click);
             // 
-            // button4
+            // HaveMeal
             // 
-            this.button4.Location = new System.Drawing.Point(1253, 154);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(148, 86);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "New Meal";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.HaveMeal.Enabled = false;
+            this.HaveMeal.Location = new System.Drawing.Point(1253, 154);
+            this.HaveMeal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.HaveMeal.Name = "HaveMeal";
+            this.HaveMeal.Size = new System.Drawing.Size(148, 86);
+            this.HaveMeal.TabIndex = 23;
+            this.HaveMeal.Text = "New Meal";
+            this.HaveMeal.UseVisualStyleBackColor = true;
+            this.HaveMeal.Click += new System.EventHandler(this.button4_Click);
             // 
             // TamerDigimon
             // 
@@ -669,9 +670,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(98, 552);
+            this.button3.Location = new System.Drawing.Point(82, 552);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 41);
+            this.button3.Size = new System.Drawing.Size(118, 41);
             this.button3.TabIndex = 174;
             this.button3.Text = "Attack";
             this.button3.UseVisualStyleBackColor = true;
@@ -3147,6 +3148,7 @@
             // EducationMeal
             // 
             this.EducationMeal.AutoSize = true;
+            this.EducationMeal.Enabled = false;
             this.EducationMeal.Location = new System.Drawing.Point(515, 530);
             this.EducationMeal.Name = "EducationMeal";
             this.EducationMeal.Size = new System.Drawing.Size(17, 16);
@@ -3168,6 +3170,7 @@
             // WitsMeal
             // 
             this.WitsMeal.AutoSize = true;
+            this.WitsMeal.Enabled = false;
             this.WitsMeal.Location = new System.Drawing.Point(515, 402);
             this.WitsMeal.Name = "WitsMeal";
             this.WitsMeal.Size = new System.Drawing.Size(17, 16);
@@ -3189,6 +3192,7 @@
             // VibesMeal
             // 
             this.VibesMeal.AutoSize = true;
+            this.VibesMeal.Enabled = false;
             this.VibesMeal.Location = new System.Drawing.Point(515, 276);
             this.VibesMeal.Name = "VibesMeal";
             this.VibesMeal.Size = new System.Drawing.Size(17, 16);
@@ -3210,6 +3214,7 @@
             // AgilityMeal
             // 
             this.AgilityMeal.AutoSize = true;
+            this.AgilityMeal.Enabled = false;
             this.AgilityMeal.Location = new System.Drawing.Point(515, 149);
             this.AgilityMeal.Name = "AgilityMeal";
             this.AgilityMeal.Size = new System.Drawing.Size(17, 16);
@@ -3231,6 +3236,7 @@
             // StrengthMeal
             // 
             this.StrengthMeal.AutoSize = true;
+            this.StrengthMeal.Enabled = false;
             this.StrengthMeal.Location = new System.Drawing.Point(515, 23);
             this.StrengthMeal.Name = "StrengthMeal";
             this.StrengthMeal.Size = new System.Drawing.Size(17, 16);
@@ -3251,6 +3257,7 @@
             // 
             // DigimonEducationRoll
             // 
+            this.DigimonEducationRoll.Enabled = false;
             this.DigimonEducationRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DigimonEducationRoll.Location = new System.Drawing.Point(555, 587);
             this.DigimonEducationRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3263,6 +3270,7 @@
             // 
             // DigimonWitsRoll
             // 
+            this.DigimonWitsRoll.Enabled = false;
             this.DigimonWitsRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DigimonWitsRoll.Location = new System.Drawing.Point(555, 459);
             this.DigimonWitsRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3275,6 +3283,7 @@
             // 
             // DigimonAgilityRoll
             // 
+            this.DigimonAgilityRoll.Enabled = false;
             this.DigimonAgilityRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DigimonAgilityRoll.Location = new System.Drawing.Point(555, 207);
             this.DigimonAgilityRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3287,6 +3296,7 @@
             // 
             // DigimonStrengthRoll
             // 
+            this.DigimonStrengthRoll.Enabled = false;
             this.DigimonStrengthRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DigimonStrengthRoll.Location = new System.Drawing.Point(555, 83);
             this.DigimonStrengthRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -3299,6 +3309,7 @@
             // 
             // DigimonVibesRoll
             // 
+            this.DigimonVibesRoll.Enabled = false;
             this.DigimonVibesRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.DigimonVibesRoll.Location = new System.Drawing.Point(555, 335);
             this.DigimonVibesRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -4173,8 +4184,8 @@
             this.DigimonMoves.Controls.Add(this.label21);
             this.DigimonMoves.Controls.Add(this.StratPoints);
             this.DigimonMoves.Controls.Add(this.TargetArmour);
-            this.DigimonMoves.Controls.Add(this.button5);
-            this.DigimonMoves.Controls.Add(this.button28);
+            this.DigimonMoves.Controls.Add(this.GaurdAction);
+            this.DigimonMoves.Controls.Add(this.AutoSelect);
             this.DigimonMoves.Controls.Add(this.SpecialAttack);
             this.DigimonMoves.Controls.Add(this.SuperAttack);
             this.DigimonMoves.Controls.Add(this.BasicAttack);
@@ -4305,29 +4316,31 @@
             this.TargetArmour.Text = "0";
             this.TargetArmour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button5
+            // GaurdAction
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(351, 570);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(165, 34);
-            this.button5.TabIndex = 103;
-            this.button5.Text = "Gaurd";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_3);
+            this.GaurdAction.Enabled = false;
+            this.GaurdAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GaurdAction.Location = new System.Drawing.Point(351, 570);
+            this.GaurdAction.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GaurdAction.Name = "GaurdAction";
+            this.GaurdAction.Size = new System.Drawing.Size(165, 34);
+            this.GaurdAction.TabIndex = 103;
+            this.GaurdAction.Text = "Gaurd";
+            this.GaurdAction.UseVisualStyleBackColor = true;
+            this.GaurdAction.Click += new System.EventHandler(this.button5_Click_3);
             // 
-            // button28
+            // AutoSelect
             // 
-            this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button28.Location = new System.Drawing.Point(680, 570);
-            this.button28.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(165, 34);
-            this.button28.TabIndex = 91;
-            this.button28.Text = "Auto-Select";
-            this.button28.UseVisualStyleBackColor = true;
-            this.button28.Click += new System.EventHandler(this.button28_Click);
+            this.AutoSelect.Enabled = false;
+            this.AutoSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.AutoSelect.Location = new System.Drawing.Point(680, 570);
+            this.AutoSelect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.AutoSelect.Name = "AutoSelect";
+            this.AutoSelect.Size = new System.Drawing.Size(165, 34);
+            this.AutoSelect.TabIndex = 91;
+            this.AutoSelect.Text = "Auto-Select";
+            this.AutoSelect.UseVisualStyleBackColor = true;
+            this.AutoSelect.Click += new System.EventHandler(this.button28_Click);
             // 
             // SpecialAttack
             // 
@@ -4461,6 +4474,7 @@
             // 
             // ActSpecialAttack
             // 
+            this.ActSpecialAttack.Enabled = false;
             this.ActSpecialAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ActSpecialAttack.Location = new System.Drawing.Point(377, 216);
             this.ActSpecialAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -4694,6 +4708,7 @@
             // 
             // ActSuperAttack
             // 
+            this.ActSuperAttack.Enabled = false;
             this.ActSuperAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ActSuperAttack.Location = new System.Drawing.Point(377, 217);
             this.ActSuperAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -4918,6 +4933,7 @@
             // 
             // ActBasicAttack
             // 
+            this.ActBasicAttack.Enabled = false;
             this.ActBasicAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ActBasicAttack.Location = new System.Drawing.Point(377, 216);
             this.ActBasicAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -5213,6 +5229,7 @@
             // 
             // ActStandardAttack
             // 
+            this.ActStandardAttack.Enabled = false;
             this.ActStandardAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.ActStandardAttack.Location = new System.Drawing.Point(377, 216);
             this.ActStandardAttack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -6063,7 +6080,7 @@
             this.ClientSize = new System.Drawing.Size(1424, 687);
             this.Controls.Add(this.LevelUp);
             this.Controls.Add(this.Digivolve);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.HaveMeal);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TamerDigimon);
@@ -6158,7 +6175,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Digivolve;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button HaveMeal;
         private System.Windows.Forms.TabControl TamerDigimon;
         private System.Windows.Forms.TabPage TamerPowers;
         private System.Windows.Forms.TabPage DigimonMoves;
@@ -6208,7 +6225,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label CharacterLevel;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button AutoSelect;
         private System.Windows.Forms.GroupBox SpecialAttack;
         private System.Windows.Forms.GroupBox SuperAttack;
         private System.Windows.Forms.GroupBox BasicAttack;
@@ -6579,7 +6596,7 @@
         private System.Windows.Forms.RadioButton EducationMeal;
         private System.Windows.Forms.TextBox EducationDiet;
         private System.Windows.Forms.TextBox StratPoints;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button GaurdAction;
         private System.Windows.Forms.Button UpdateInventory;
         private System.Windows.Forms.Label SpecialDiceMax;
         private System.Windows.Forms.Label label122;

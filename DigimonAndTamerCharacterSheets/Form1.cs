@@ -3803,6 +3803,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+
             {
                 // Get selected Personality Crest
                 string DigimonPartner = (string)Partner.SelectedItem;
@@ -4645,6 +4646,49 @@ namespace DigimonAndTamerCharacterSheets
                     InheritableQuirkThree.Text = "____";
 
                 }
+
+               
+            }
+            if (Partner.Text == "")
+            {
+                ActBasicAttack.Enabled = false;
+                ActStandardAttack.Enabled = false;
+                ActSpecialAttack.Enabled = false;
+                ActSuperAttack.Enabled = false;
+                AutoSelect.Enabled = false;
+                AutoSelect.Enabled = false;
+                GaurdAction.Enabled = false;
+                DigimonStrengthRoll.Enabled = false;
+                DigimonAgilityRoll.Enabled = false;
+                DigimonVibesRoll.Enabled = false;
+                DigimonWitsRoll.Enabled = false;
+                DigimonEducationRoll.Enabled = false;
+                StrengthMeal.Enabled = false;
+                AgilityMeal.Enabled = false;
+                VibesMeal.Enabled = false;
+                WitsMeal.Enabled = false;
+                EducationMeal.Enabled = false;
+                HaveMeal.Enabled = false;
+            }
+            else if (Partner.Text != "")
+            {
+                ActBasicAttack.Enabled = true;
+                ActStandardAttack.Enabled = true;
+                ActSpecialAttack.Enabled = true;
+                ActSuperAttack.Enabled = true;
+                AutoSelect.Enabled = true;
+                GaurdAction.Enabled = true;
+                DigimonStrengthRoll.Enabled = true;
+                DigimonAgilityRoll.Enabled = true;
+                DigimonVibesRoll.Enabled = true;
+                DigimonWitsRoll.Enabled = true;
+                DigimonEducationRoll.Enabled = true;
+                StrengthMeal.Enabled = true;
+                AgilityMeal.Enabled = true;
+                VibesMeal.Enabled = true;
+                WitsMeal.Enabled = true;
+                EducationMeal.Enabled = true;
+                HaveMeal.Enabled = true;
             }
         }
 
