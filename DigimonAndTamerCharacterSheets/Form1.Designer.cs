@@ -35,6 +35,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.TamerDigimon = new System.Windows.Forms.TabControl();
             this.TamerAttackRoll = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.TamerAttackRollMinusTwo = new System.Windows.Forms.CheckBox();
+            this.TamerAttackRollMinusOne = new System.Windows.Forms.CheckBox();
+            this.TamerAttackRollPlusTwo = new System.Windows.Forms.CheckBox();
+            this.TamerAttackRollPlusOne = new System.Windows.Forms.CheckBox();
             this.UpdateInventory = new System.Windows.Forms.Button();
             this.label172 = new System.Windows.Forms.Label();
             this.label171 = new System.Windows.Forms.Label();
@@ -329,9 +336,17 @@
             this.DigimonField = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.DigimonMoves = new System.Windows.Forms.TabPage();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.DigiRollMinusTwo = new System.Windows.Forms.CheckBox();
+            this.DigiRollMinusOne = new System.Windows.Forms.CheckBox();
+            this.DigiRollPlusTwo = new System.Windows.Forms.CheckBox();
+            this.DigiRollPlusOne = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.DigiAttackRoll = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.StratPoints = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TargetArmour = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.SpecialAttack = new System.Windows.Forms.GroupBox();
@@ -477,21 +492,6 @@
             this.Impulse = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
             this.LevelUp = new System.Windows.Forms.Button();
-            this.label23 = new System.Windows.Forms.Label();
-            this.DigiAttackRoll = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.DigiRollMinusTwo = new System.Windows.Forms.CheckBox();
-            this.DigiRollMinusOne = new System.Windows.Forms.CheckBox();
-            this.DigiRollPlusTwo = new System.Windows.Forms.CheckBox();
-            this.DigiRollPlusOne = new System.Windows.Forms.CheckBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.TamerAttackRollMinusTwo = new System.Windows.Forms.CheckBox();
-            this.TamerAttackRollMinusOne = new System.Windows.Forms.CheckBox();
-            this.TamerAttackRollPlusTwo = new System.Windows.Forms.CheckBox();
-            this.TamerAttackRollPlusOne = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.TamerDigimon.SuspendLayout();
             this.TamerAttackRoll.SuspendLayout();
             this.groupBox19.SuspendLayout();
@@ -666,6 +666,75 @@
             this.TamerAttackRoll.TabIndex = 1;
             this.TamerAttackRoll.Text = "Tamer Stats";
             this.TamerAttackRoll.Click += new System.EventHandler(this.TamerStats_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(98, 552);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(102, 41);
+            this.button3.TabIndex = 174;
+            this.button3.Text = "Attack";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label26.Location = new System.Drawing.Point(218, 574);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(20, 25);
+            this.label26.TabIndex = 173;
+            this.label26.Text = "-";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label27.Location = new System.Drawing.Point(215, 544);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(25, 25);
+            this.label27.TabIndex = 172;
+            this.label27.Text = "+";
+            // 
+            // TamerAttackRollMinusTwo
+            // 
+            this.TamerAttackRollMinusTwo.AutoSize = true;
+            this.TamerAttackRollMinusTwo.Location = new System.Drawing.Point(270, 582);
+            this.TamerAttackRollMinusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TamerAttackRollMinusTwo.Name = "TamerAttackRollMinusTwo";
+            this.TamerAttackRollMinusTwo.Size = new System.Drawing.Size(18, 17);
+            this.TamerAttackRollMinusTwo.TabIndex = 171;
+            this.TamerAttackRollMinusTwo.UseVisualStyleBackColor = true;
+            // 
+            // TamerAttackRollMinusOne
+            // 
+            this.TamerAttackRollMinusOne.AutoSize = true;
+            this.TamerAttackRollMinusOne.Location = new System.Drawing.Point(246, 582);
+            this.TamerAttackRollMinusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TamerAttackRollMinusOne.Name = "TamerAttackRollMinusOne";
+            this.TamerAttackRollMinusOne.Size = new System.Drawing.Size(18, 17);
+            this.TamerAttackRollMinusOne.TabIndex = 170;
+            this.TamerAttackRollMinusOne.UseVisualStyleBackColor = true;
+            // 
+            // TamerAttackRollPlusTwo
+            // 
+            this.TamerAttackRollPlusTwo.AutoSize = true;
+            this.TamerAttackRollPlusTwo.Location = new System.Drawing.Point(270, 550);
+            this.TamerAttackRollPlusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TamerAttackRollPlusTwo.Name = "TamerAttackRollPlusTwo";
+            this.TamerAttackRollPlusTwo.Size = new System.Drawing.Size(18, 17);
+            this.TamerAttackRollPlusTwo.TabIndex = 169;
+            this.TamerAttackRollPlusTwo.UseVisualStyleBackColor = true;
+            // 
+            // TamerAttackRollPlusOne
+            // 
+            this.TamerAttackRollPlusOne.AutoSize = true;
+            this.TamerAttackRollPlusOne.Location = new System.Drawing.Point(246, 550);
+            this.TamerAttackRollPlusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TamerAttackRollPlusOne.Name = "TamerAttackRollPlusOne";
+            this.TamerAttackRollPlusOne.Size = new System.Drawing.Size(18, 17);
+            this.TamerAttackRollPlusOne.TabIndex = 168;
+            this.TamerAttackRollPlusOne.UseVisualStyleBackColor = true;
             // 
             // UpdateInventory
             // 
@@ -4103,7 +4172,7 @@
             this.DigimonMoves.Controls.Add(this.DigiAttackRoll);
             this.DigimonMoves.Controls.Add(this.label21);
             this.DigimonMoves.Controls.Add(this.StratPoints);
-            this.DigimonMoves.Controls.Add(this.textBox1);
+            this.DigimonMoves.Controls.Add(this.TargetArmour);
             this.DigimonMoves.Controls.Add(this.button5);
             this.DigimonMoves.Controls.Add(this.button28);
             this.DigimonMoves.Controls.Add(this.SpecialAttack);
@@ -4118,6 +4187,89 @@
             this.DigimonMoves.TabIndex = 3;
             this.DigimonMoves.Text = "Digimon Moves";
             this.DigimonMoves.Click += new System.EventHandler(this.DigimonMoves_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label24.Location = new System.Drawing.Point(165, 584);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(20, 25);
+            this.label24.TabIndex = 165;
+            this.label24.Text = "-";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label25.Location = new System.Drawing.Point(162, 554);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(25, 25);
+            this.label25.TabIndex = 164;
+            this.label25.Text = "+";
+            // 
+            // DigiRollMinusTwo
+            // 
+            this.DigiRollMinusTwo.AutoSize = true;
+            this.DigiRollMinusTwo.Location = new System.Drawing.Point(217, 592);
+            this.DigiRollMinusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DigiRollMinusTwo.Name = "DigiRollMinusTwo";
+            this.DigiRollMinusTwo.Size = new System.Drawing.Size(18, 17);
+            this.DigiRollMinusTwo.TabIndex = 163;
+            this.DigiRollMinusTwo.UseVisualStyleBackColor = true;
+            // 
+            // DigiRollMinusOne
+            // 
+            this.DigiRollMinusOne.AutoSize = true;
+            this.DigiRollMinusOne.Location = new System.Drawing.Point(193, 592);
+            this.DigiRollMinusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DigiRollMinusOne.Name = "DigiRollMinusOne";
+            this.DigiRollMinusOne.Size = new System.Drawing.Size(18, 17);
+            this.DigiRollMinusOne.TabIndex = 162;
+            this.DigiRollMinusOne.UseVisualStyleBackColor = true;
+            // 
+            // DigiRollPlusTwo
+            // 
+            this.DigiRollPlusTwo.AutoSize = true;
+            this.DigiRollPlusTwo.Location = new System.Drawing.Point(217, 560);
+            this.DigiRollPlusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DigiRollPlusTwo.Name = "DigiRollPlusTwo";
+            this.DigiRollPlusTwo.Size = new System.Drawing.Size(18, 17);
+            this.DigiRollPlusTwo.TabIndex = 161;
+            this.DigiRollPlusTwo.UseVisualStyleBackColor = true;
+            // 
+            // DigiRollPlusOne
+            // 
+            this.DigiRollPlusOne.AutoSize = true;
+            this.DigiRollPlusOne.Location = new System.Drawing.Point(193, 560);
+            this.DigiRollPlusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DigiRollPlusOne.Name = "DigiRollPlusOne";
+            this.DigiRollPlusOne.Size = new System.Drawing.Size(18, 17);
+            this.DigiRollPlusOne.TabIndex = 160;
+            this.DigiRollPlusOne.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.label23.Location = new System.Drawing.Point(22, 564);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(76, 36);
+            this.label23.TabIndex = 159;
+            this.label23.Text = "Roll:";
+            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // DigiAttackRoll
+            // 
+            this.DigiAttackRoll.Enabled = false;
+            this.DigiAttackRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.DigiAttackRoll.Location = new System.Drawing.Point(104, 564);
+            this.DigiAttackRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DigiAttackRoll.Name = "DigiAttackRoll";
+            this.DigiAttackRoll.Size = new System.Drawing.Size(52, 38);
+            this.DigiAttackRoll.TabIndex = 158;
+            this.DigiAttackRoll.Text = "0";
+            this.DigiAttackRoll.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -4142,16 +4294,16 @@
             this.StratPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.StratPoints.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
-            // textBox1
+            // TargetArmour
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.textBox1.Location = new System.Drawing.Point(1115, 570);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(78, 38);
-            this.textBox1.TabIndex = 156;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TargetArmour.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.TargetArmour.Location = new System.Drawing.Point(1115, 570);
+            this.TargetArmour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TargetArmour.Name = "TargetArmour";
+            this.TargetArmour.Size = new System.Drawing.Size(78, 38);
+            this.TargetArmour.TabIndex = 156;
+            this.TargetArmour.Text = "0";
+            this.TargetArmour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button5
             // 
@@ -5233,7 +5385,7 @@
             // pictureBox14
             // 
             this.pictureBox14.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.ErrorImage")));
-            this.pictureBox14.Image = global::DigimonAndTamerCharacterSheets.Properties.Resources.Mega;
+            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
             this.pictureBox14.Location = new System.Drawing.Point(386, 38);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(137, 124);
@@ -5244,7 +5396,7 @@
             // pictureBox13
             // 
             this.pictureBox13.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox13.ErrorImage")));
-            this.pictureBox13.Image = global::DigimonAndTamerCharacterSheets.Properties.Resources.Ultimate;
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
             this.pictureBox13.Location = new System.Drawing.Point(202, 38);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(137, 124);
@@ -5904,158 +6056,6 @@
             this.LevelUp.UseVisualStyleBackColor = true;
             this.LevelUp.Click += new System.EventHandler(this.button22_Click_4);
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label23.Location = new System.Drawing.Point(22, 564);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(76, 36);
-            this.label23.TabIndex = 159;
-            this.label23.Text = "Roll:";
-            this.label23.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // DigiAttackRoll
-            // 
-            this.DigiAttackRoll.Enabled = false;
-            this.DigiAttackRoll.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.DigiAttackRoll.Location = new System.Drawing.Point(104, 564);
-            this.DigiAttackRoll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DigiAttackRoll.Name = "DigiAttackRoll";
-            this.DigiAttackRoll.Size = new System.Drawing.Size(52, 38);
-            this.DigiAttackRoll.TabIndex = 158;
-            this.DigiAttackRoll.Text = "0";
-            this.DigiAttackRoll.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label24.Location = new System.Drawing.Point(165, 584);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(20, 25);
-            this.label24.TabIndex = 165;
-            this.label24.Text = "-";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label25.Location = new System.Drawing.Point(162, 554);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(25, 25);
-            this.label25.TabIndex = 164;
-            this.label25.Text = "+";
-            // 
-            // DigiRollMinusTwo
-            // 
-            this.DigiRollMinusTwo.AutoSize = true;
-            this.DigiRollMinusTwo.Location = new System.Drawing.Point(217, 592);
-            this.DigiRollMinusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DigiRollMinusTwo.Name = "DigiRollMinusTwo";
-            this.DigiRollMinusTwo.Size = new System.Drawing.Size(18, 17);
-            this.DigiRollMinusTwo.TabIndex = 163;
-            this.DigiRollMinusTwo.UseVisualStyleBackColor = true;
-            // 
-            // DigiRollMinusOne
-            // 
-            this.DigiRollMinusOne.AutoSize = true;
-            this.DigiRollMinusOne.Location = new System.Drawing.Point(193, 592);
-            this.DigiRollMinusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DigiRollMinusOne.Name = "DigiRollMinusOne";
-            this.DigiRollMinusOne.Size = new System.Drawing.Size(18, 17);
-            this.DigiRollMinusOne.TabIndex = 162;
-            this.DigiRollMinusOne.UseVisualStyleBackColor = true;
-            // 
-            // DigiRollPlusTwo
-            // 
-            this.DigiRollPlusTwo.AutoSize = true;
-            this.DigiRollPlusTwo.Location = new System.Drawing.Point(217, 560);
-            this.DigiRollPlusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DigiRollPlusTwo.Name = "DigiRollPlusTwo";
-            this.DigiRollPlusTwo.Size = new System.Drawing.Size(18, 17);
-            this.DigiRollPlusTwo.TabIndex = 161;
-            this.DigiRollPlusTwo.UseVisualStyleBackColor = true;
-            // 
-            // DigiRollPlusOne
-            // 
-            this.DigiRollPlusOne.AutoSize = true;
-            this.DigiRollPlusOne.Location = new System.Drawing.Point(193, 560);
-            this.DigiRollPlusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.DigiRollPlusOne.Name = "DigiRollPlusOne";
-            this.DigiRollPlusOne.Size = new System.Drawing.Size(18, 17);
-            this.DigiRollPlusOne.TabIndex = 160;
-            this.DigiRollPlusOne.UseVisualStyleBackColor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label26.Location = new System.Drawing.Point(218, 574);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(20, 25);
-            this.label26.TabIndex = 173;
-            this.label26.Text = "-";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label27.Location = new System.Drawing.Point(215, 544);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(25, 25);
-            this.label27.TabIndex = 172;
-            this.label27.Text = "+";
-            // 
-            // TamerAttackRollMinusTwo
-            // 
-            this.TamerAttackRollMinusTwo.AutoSize = true;
-            this.TamerAttackRollMinusTwo.Location = new System.Drawing.Point(270, 582);
-            this.TamerAttackRollMinusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TamerAttackRollMinusTwo.Name = "TamerAttackRollMinusTwo";
-            this.TamerAttackRollMinusTwo.Size = new System.Drawing.Size(18, 17);
-            this.TamerAttackRollMinusTwo.TabIndex = 171;
-            this.TamerAttackRollMinusTwo.UseVisualStyleBackColor = true;
-            // 
-            // TamerAttackRollMinusOne
-            // 
-            this.TamerAttackRollMinusOne.AutoSize = true;
-            this.TamerAttackRollMinusOne.Location = new System.Drawing.Point(246, 582);
-            this.TamerAttackRollMinusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TamerAttackRollMinusOne.Name = "TamerAttackRollMinusOne";
-            this.TamerAttackRollMinusOne.Size = new System.Drawing.Size(18, 17);
-            this.TamerAttackRollMinusOne.TabIndex = 170;
-            this.TamerAttackRollMinusOne.UseVisualStyleBackColor = true;
-            // 
-            // TamerAttackRollPlusTwo
-            // 
-            this.TamerAttackRollPlusTwo.AutoSize = true;
-            this.TamerAttackRollPlusTwo.Location = new System.Drawing.Point(270, 550);
-            this.TamerAttackRollPlusTwo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TamerAttackRollPlusTwo.Name = "TamerAttackRollPlusTwo";
-            this.TamerAttackRollPlusTwo.Size = new System.Drawing.Size(18, 17);
-            this.TamerAttackRollPlusTwo.TabIndex = 169;
-            this.TamerAttackRollPlusTwo.UseVisualStyleBackColor = true;
-            // 
-            // TamerAttackRollPlusOne
-            // 
-            this.TamerAttackRollPlusOne.AutoSize = true;
-            this.TamerAttackRollPlusOne.Location = new System.Drawing.Point(246, 550);
-            this.TamerAttackRollPlusOne.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TamerAttackRollPlusOne.Name = "TamerAttackRollPlusOne";
-            this.TamerAttackRollPlusOne.Size = new System.Drawing.Size(18, 17);
-            this.TamerAttackRollPlusOne.TabIndex = 168;
-            this.TamerAttackRollPlusOne.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(98, 552);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 41);
-            this.button3.TabIndex = 174;
-            this.button3.Text = "Attack";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -6596,7 +6596,7 @@
         private System.Windows.Forms.Label label107;
         private System.Windows.Forms.Label SuperElement;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TargetArmour;
         private System.Windows.Forms.Label SuperAttackPartFail;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label48;

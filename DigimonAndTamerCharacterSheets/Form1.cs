@@ -3812,6 +3812,12 @@ namespace DigimonAndTamerCharacterSheets
                 // Rookies
                 if (DigimonPartner == "Agumon")
                 {
+                    RecordRookie = "Agumon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Agumon Details
                     DigimonField.Text = "Dragon's Roar";
                     DigitalFrame.Text = "7";
@@ -3888,6 +3894,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Dracomon")
                 {
+                    RecordRookie = "Dracomon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Dracomon
                     DigimonField.Text = "Dragon's Roar";
                     DigitalFrame.Text = "7";
@@ -3987,6 +3999,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Hagurumon")
                 {
+                    RecordRookie = "Hagurumon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Hagurumon
                     DigimonField.Text = "Metal Empire";
                     DigitalFrame.Text = "7";
@@ -4015,7 +4033,13 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Terriermon")
                 {
-                    // Terriermon
+                    RecordRookie = "Terriermon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
+                    //  Terriermon
                     DigimonField.Text = "Wind Gaurdians";
                     DigitalFrame.Text = "7";
                     CoreHPNow.Text = MaxHealth.Text;
@@ -4043,6 +4067,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Hawkmon")
                 {
+                    RecordRookie = "Hawkmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Hawkmon
                     DigimonField.Text = "Wind Gaurdians";
                     DigitalFrame.Text = "7";
@@ -4071,6 +4101,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Impmon")
                 {
+                    RecordRookie = "Impmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Impmon
                     DigimonField.Text = "Nightmare Soldiers";
                     DigitalFrame.Text = "7";
@@ -4100,6 +4136,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Dracumon")
                 {
+                    RecordRookie = "Dracumon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Dracumon
                     DigimonField.Text = "Nightmare Soldiers";
                     DigitalFrame.Text = "7";
@@ -4128,6 +4170,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "DemiDevimon")
                 {
+                    RecordRookie = "DemiDevimon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // DemiDevimon
                     DigimonField.Text = "Dark Area";
                     DigitalFrame.Text = "7";
@@ -4156,6 +4204,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Soundbirdmon")
                 {
+                    RecordRookie = "Soundbirdmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Soundbirdmon
                     DigimonField.Text = "Dark Area";
                     DigitalFrame.Text = "7";
@@ -4184,6 +4238,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Gomamon")
                 {
+                    RecordRookie = "Gomamon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Gomamon
                     DigimonField.Text = "Deep Savers";
                     DigitalFrame.Text = "7";
@@ -4212,6 +4272,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Shakomon")
                 {
+                    RecordRookie = "Shakomon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Shakomon
                     DigimonField.Text = "Deep Savers";
                     DigitalFrame.Text = "7";
@@ -4240,6 +4306,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Tapirmon")
                 {
+                    RecordRookie = "Tapirmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Tapirmon
                     DigimonField.Text = "Virus Busters";
                     DigitalFrame.Text = "7";
@@ -4268,6 +4340,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Kotemon")
                 {
+                    RecordRookie = "Kotemon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Kotemon
                     DigimonField.Text = "Virus Busters";
                     DigitalFrame.Text = "7";
@@ -4296,6 +4374,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Monmon")
                 {
+                    RecordRookie = "Monmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Monmon
                     DigimonField.Text = "Nature Spirits";
                     DigitalFrame.Text = "7";
@@ -4324,6 +4408,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Liollmon")
                 {
+                    RecordRookie = "Liollmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Liollmon
                     DigimonField.Text = "Nature Spirits";
                     DigitalFrame.Text = "7";
@@ -4352,6 +4442,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Wormmon")
                 {
+                    RecordRookie = "Wormmon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Wormmon
                     DigimonField.Text = "Jungle Trooper";
                     DigitalFrame.Text = "7";
@@ -4380,6 +4476,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Floramon")
                 {
+                    RecordRookie = "Floramon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Floramon
                     DigimonField.Text = "Jungle Trooper";
                     DigitalFrame.Text = "7";
@@ -4408,6 +4510,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Keramon")
                 {
+                    RecordRookie = "Keramon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Keramon
                     DigimonField.Text = "Unknown";
                     DigitalFrame.Text = "7";
@@ -4436,6 +4544,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Bacomon")
                 {
+                    RecordRookie = "Bacomon";
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Bacomon
                     DigimonField.Text = "Unknown";
                     DigitalFrame.Text = "7";
@@ -4465,6 +4579,12 @@ namespace DigimonAndTamerCharacterSheets
                 //Champions
                 else if (DigimonPartner == "Numemon")
                 {
+                    RecordChampion = "Hawkmon";
+                    ChampionEvolution = true;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = true;
+
                     // Numemon
                     DigimonField.Text = "Dark Digivolved";
                     DigitalFrame.Text = "10";
@@ -4708,6 +4828,9 @@ namespace DigimonAndTamerCharacterSheets
         String RecordChampion = "";
         String RecordUltimate = "";
         String RecordMega = "";
+        bool ChampionEvolution = false;
+        bool UltimateEvolution = false;
+        bool MegaEvolution = false;
         bool DarkEvolution = false;
 
         private void Digivolve_Click(object sender, EventArgs e)
@@ -5407,24 +5530,357 @@ namespace DigimonAndTamerCharacterSheets
         {
             GaurdPoints--;
             StratPoints.Text = "";
+
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = 0;
+
+            // Determine The Level
+            if (MegaEvolution == true)
+            {
+                NumberOfDice = 12;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 8;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 4;
+            }
+            else
+            {
+                NumberOfDice = 2;
+            }
+
+            // Apply the modifiers
+            if (DigiRollPlusOne.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollPlusTwo.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollMinusOne.Checked == true)
+            {
+                NumberOfDice--;
+            }
+            if (DigiRollMinusTwo.Checked == true)
+            {
+                NumberOfDice--;
+            }
+
+            Random random = new Random();
+            int TotalResult = 0;
+            string IndividualRolls = "";
+            int TargetDefense = 0;
+            int.TryParse(TargetArmour.Text, out TargetDefense);
+            string StrikeInflicted = "";
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            if (TotalResult < TargetDefense - 15)
+            {
+                StrikeInflicted = "Hard Fail" + BasicAttackHardFail.Text;
+            }
+            else if (TotalResult < TargetDefense - 5)
+            {
+                StrikeInflicted = "Fail" + BasicAttackFail.Text;
+            }
+            else if (TotalResult < TargetDefense)
+            {
+                StrikeInflicted = "Part Fail" + BasicAttackPartFail.Text;
+            }
+            else if (TotalResult < TargetDefense + 5)
+            {
+                StrikeInflicted = "Part Hit" + BasicAttackPartHit.Text;
+            }
+            else if (TotalResult < TargetDefense + 15)
+            {
+                StrikeInflicted = "Hit" + BasicAttackHit.Text;
+            }
+            else
+            {
+                StrikeInflicted = "Hard Hit" + BasicAttackHardHit.Text;
+            }
+
+            // Display the result
+            MessageBox.Show($"\n{BasicAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
         }
 
-        private void StandardAttack_Click(object sender, EventArgs e)
+
+    private void StandardAttack_Click(object sender, EventArgs e)
         {
             GaurdPoints--;
             StratPoints.Text = "";
+
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = 0;
+
+            // Determine The Level
+            if (MegaEvolution == true)
+            {
+                NumberOfDice = 12;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 8;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 4;
+            }
+            else
+            {
+                NumberOfDice = 2;
+            }
+
+            // Apply the modifiers
+            if (DigiRollPlusOne.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollPlusTwo.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollMinusOne.Checked == true)
+            {
+                NumberOfDice--;
+            }
+            if (DigiRollMinusTwo.Checked == true)
+            {
+                NumberOfDice--;
+            }
+
+            Random random = new Random();
+            int TotalResult = 0;
+            string IndividualRolls = "";
+            int TargetDefense = 0;
+            int.TryParse(TargetArmour.Text, out TargetDefense);
+            string StrikeInflicted = "";
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            if (TotalResult < TargetDefense - 15)
+            {
+                StrikeInflicted = "Hard Fail" + StandardAttackHardFail.Text;
+            }
+            else if (TotalResult < TargetDefense - 5)
+            {
+                StrikeInflicted = "Fail" + StandardAttackFail.Text;
+            }
+            else if (TotalResult < TargetDefense)
+            {
+                StrikeInflicted = "Part Fail" + StandardAttackPartFail.Text;
+            }
+            else if (TotalResult < TargetDefense + 5)
+            {
+                StrikeInflicted = "Part Hit" + StandardAttackPartHit.Text;
+            }
+            else if (TotalResult < TargetDefense + 15)
+            {
+                StrikeInflicted = "Hit" + StandardAttackHit.Text;
+            }
+            else
+            {
+                StrikeInflicted = "Hard Hit" + StandardAttackHardHit.Text;
+            }
+
+            // Display the result
+            MessageBox.Show($"\n{StandardAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
         }
 
         private void SpecialAttack_Click(object sender, EventArgs e)
         {
             GaurdPoints--;
             StratPoints.Text = "";
+
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = 0;
+
+            // Determine The Level
+            if (MegaEvolution == true)
+            {
+                NumberOfDice = 12;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 8;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 4;
+            }
+            else
+            {
+                NumberOfDice = 2;
+            }
+
+            // Apply the modifiers
+            if (DigiRollPlusOne.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollPlusTwo.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollMinusOne.Checked == true)
+            {
+                NumberOfDice--;
+            }
+            if (DigiRollMinusTwo.Checked == true)
+            {
+                NumberOfDice--;
+            }
+
+            Random random = new Random();
+            int TotalResult = 0;
+            string IndividualRolls = "";
+            int TargetDefense = 0;
+            int.TryParse(TargetArmour.Text, out TargetDefense);
+            string StrikeInflicted = "";
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            if (TotalResult < TargetDefense - 15)
+            {
+                StrikeInflicted = "Hard Fail" + SpecialAttackHardFail.Text;
+            }
+            else if (TotalResult < TargetDefense - 5)
+            {
+                StrikeInflicted = "Fail" + SpecialAttackFail.Text;
+            }
+            else if (TotalResult < TargetDefense)
+            {
+                StrikeInflicted = "Part Fail" + SpecialAttackPartFail.Text;
+            }
+            else if (TotalResult < TargetDefense + 5)
+            {
+                StrikeInflicted = "Part Hit" + SpecialAttackPartHit.Text;
+            }
+            else if (TotalResult < TargetDefense + 15)
+            {
+                StrikeInflicted = "Hit" + SpecialAttackHit.Text;
+            }
+            else
+            {
+                StrikeInflicted = "Hard Hit" + SpecialAttackHardHit.Text;
+            }
+
+            // Display the result
+            MessageBox.Show($"\n{SpecialAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
         }
 
         private void SuperAttack_Click(object sender, EventArgs e)
         {
             GaurdPoints--;
             StratPoints.Text = "";
+
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = 0;
+
+            // Determine The Level
+            if (MegaEvolution == true)
+            {
+                NumberOfDice = 12;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 8;
+            }
+            else if (MegaEvolution == true)
+            {
+                NumberOfDice = 4;
+            }
+            else
+            {
+                NumberOfDice = 2;
+            }
+
+            // Apply the modifiers
+            if (DigiRollPlusOne.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollPlusTwo.Checked == true)
+            {
+                NumberOfDice++;
+            }
+            if (DigiRollMinusOne.Checked == true)
+            {
+                NumberOfDice--;
+            }
+            if (DigiRollMinusTwo.Checked == true)
+            {
+                NumberOfDice--;
+            }
+
+            Random random = new Random();
+            int TotalResult = 0;
+            string IndividualRolls = "";
+            int TargetDefense = 0;
+            int.TryParse(TargetArmour.Text, out TargetDefense);
+            string StrikeInflicted = "";
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            if (TotalResult < TargetDefense - 15)
+            {
+                StrikeInflicted = "Hard Fail" + SuperAttackHardFail.Text;
+            }
+            else if (TotalResult < TargetDefense - 5)
+            {
+                StrikeInflicted = "Fail" + SuperAttackFail.Text;
+            }
+            else if (TotalResult < TargetDefense)
+            {
+                StrikeInflicted = "Part Fail" + SuperAttackPartFail.Text;
+            }
+            else if (TotalResult < TargetDefense + 5)
+            {
+                StrikeInflicted = "Part Hit" + SuperAttackPartHit.Text;
+            }
+            else if (TotalResult < TargetDefense + 15)
+            {
+                StrikeInflicted = "Hit" + SuperAttackHit.Text;
+            }
+            else
+            {
+                StrikeInflicted = "Hard Hit" + SuperAttackHardHit.Text;
+            }
+
+            // Display the result
+            MessageBox.Show($"\n{SuperAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
         }
 
         private void label72_Click(object sender, EventArgs e)
@@ -5443,6 +5899,7 @@ namespace DigimonAndTamerCharacterSheets
             int MaxSpecial;
             int MinSuper;
             int MaxSuper;
+            int TargetAcquired;
             int.TryParse(BasicDiceMin.Text, out MinBasic);
             int.TryParse(BasicDiceMax.Text, out MaxBasic);
             int.TryParse(StandardDiceMin.Text, out MinStandard);
@@ -5452,26 +5909,42 @@ namespace DigimonAndTamerCharacterSheets
             int.TryParse(SuperDiceMin.Text, out MinSuper);
             int.TryParse(SuperDiceMax.Text, out MaxSuper);
 
-            Random random = new Random();
-            int DiceResult = random.Next(1, 11);
+            GaurdPoints++;
+            StratPoints.Text = "";
 
-            if (DiceResult >= MinBasic && DiceResult <= MaxBasic)
+            // Try to convert to an integer
+            if (!int.TryParse(TargetArmour.Text, out TargetAcquired))
             {
-                MessageBox.Show("Basic");
-            }
-            else if (DiceResult >= MinStandard && DiceResult <= MaxStandard)
-            {
-                MessageBox.Show("Standard");
-            }
-            else if (DiceResult >= MinSpecial && DiceResult <= MaxSpecial)
-            {
-                MessageBox.Show("Special");
-            }
-            else if (DiceResult >= MinSuper && DiceResult <= MaxSuper)
-            {
-                MessageBox.Show("Super");
-            }
+                // Invalid input (not an integer)
+                MessageBox.Show("Please enter a valid integer for the Target.");
 
+            }
+            else
+            {
+                Random random = new Random();
+                int DiceResult = random.Next(1, 11);
+
+                if (DiceResult >= MinBasic && DiceResult <= MaxBasic)
+                {
+                    MessageBox.Show(BasicAttack.Text);
+                    ActBasicAttack.PerformClick();
+                }
+                else if (DiceResult >= MinStandard && DiceResult <= MaxStandard)
+                {
+                    MessageBox.Show(StandardAttack.Text);
+                    ActStandardAttack.PerformClick();
+                }
+                else if (DiceResult >= MinSpecial && DiceResult <= MaxSpecial)
+                {
+                    MessageBox.Show(SpecialAttack.Text);
+                    ActSpecialAttack.PerformClick();
+                }
+                else if (DiceResult >= MinSuper && DiceResult <= MaxSuper)
+                {
+                    MessageBox.Show(SuperAttack.Text);
+                    ActSuperAttack.PerformClick();
+                }
+            }
         }
 
         private void StandardAttack_Enter(object sender, EventArgs e)
