@@ -812,10 +812,10 @@ namespace DigimonAndTamerCharacterSheets
                 CoreRoll += D20Result + " ";
 
                 // Final result
-                TotalResult += CarryTrack.Value * 2;
+                TotalResult += CarryTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nCarry Skill: {CarryTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nCarry Skill: {CarryTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -934,10 +934,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += ThrowTrack.Value * 2;
+                TotalResult += ThrowTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nThrow Skill: {ThrowTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nThrow Skill: {ThrowTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1054,10 +1054,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += HoldTrack.Value * 2;
+                TotalResult += HoldTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nHold Skill: {HoldTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nHold Skill: {HoldTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1184,10 +1184,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += BalanceTrack.Value * 2;
+                TotalResult += BalanceTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nBalance Skill: {BalanceTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nBalance Skill: {BalanceTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1308,10 +1308,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += ParkourTrack.Value * 2;
+                TotalResult += ParkourTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nParkour Skill: {ParkourTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nParkour Skill: {ParkourTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1431,10 +1431,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += ReflexTrack.Value * 2;
+                TotalResult += ReflexTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nReflex Skill: {ReflexTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nReflex Skill: {ReflexTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1562,10 +1562,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += PerformTrack.Value * 2;
+                TotalResult += PerformTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nPerform Skill: {PerformTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nPerform Skill: {PerformTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1687,10 +1687,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += IntimidateTrack.Value * 2;
+                TotalResult += IntimidateTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nIntimidate Skill: {IntimidateTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nIntimidate Skill: {IntimidateTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1811,10 +1811,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += PersuadeTrack.Value * 2;
+                TotalResult += PersuadeTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nPersuade Skill: {PersuadeTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nPersuade Skill: {PersuadeTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1943,10 +1943,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += InvestigationTrack.Value * 2;
+                TotalResult += InvestigationTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nInvestigation Skill: {InvestigationTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nInvestigation Skill: {InvestigationTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2069,10 +2069,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += EmpathyTrack.Value * 2;
+                TotalResult += EmpathyTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nEmpathy Skill: {EmpathyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nEmpathy Skill: {EmpathyTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2195,10 +2195,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += IngenuityTrack.Value * 2;
+                TotalResult += IngenuityTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nWits Skill: {IngenuityTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nWits Skill: {IngenuityTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2326,10 +2326,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += TechnologyTrack.Value * 2;
+                TotalResult += TechnologyTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nTechnology Skill: {TechnologyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nTechnology Skill: {TechnologyTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2451,10 +2451,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += OccultismTrack.Value * 2;
+                TotalResult += OccultismTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nOccultism Skill: {OccultismTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nOccultism Skill: {OccultismTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2576,10 +2576,10 @@ namespace DigimonAndTamerCharacterSheets
                 // Collect individual rolls
                 CoreRoll += D20Result + " ";
 
-                TotalResult += SocietyTrack.Value * 2;
+                TotalResult += SocietyTrack.Value * 3;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nSociety Skill: {SocietyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nSociety Skill: {SocietyTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2607,11 +2607,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Giga Search Power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Giga Search power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Giga Search Power increased!");
+                    MessageBox.Show("Giga Search power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -2656,11 +2656,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Wayback Track Power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Wayback Track power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Wayback Track Power increased!");
+                    MessageBox.Show("Wayback Track power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -3662,11 +3662,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Error Scan Power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Error Scan power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Error Scan Power increased!");
+                    MessageBox.Show("Error Scan power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -3708,11 +3708,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Info Extract Power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Info Extract power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Info Extract Power increased!");
+                    MessageBox.Show("Info Extract power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
