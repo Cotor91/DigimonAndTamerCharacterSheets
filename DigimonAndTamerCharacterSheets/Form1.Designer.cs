@@ -470,7 +470,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.ToiletThree = new System.Windows.Forms.RadioButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button29 = new System.Windows.Forms.Button();
+            this.CareMistakeButton = new System.Windows.Forms.Button();
             this.ToiletOne = new System.Windows.Forms.RadioButton();
             this.ToiletTwo = new System.Windows.Forms.RadioButton();
             this.ChampionLevel = new System.Windows.Forms.Label();
@@ -739,12 +739,12 @@
             // 
             // UpdateInventory
             // 
-            this.UpdateInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.UpdateInventory.Location = new System.Drawing.Point(555, 255);
+            this.UpdateInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateInventory.Location = new System.Drawing.Point(585, 255);
             this.UpdateInventory.Name = "UpdateInventory";
-            this.UpdateInventory.Size = new System.Drawing.Size(110, 36);
+            this.UpdateInventory.Size = new System.Drawing.Size(58, 36);
             this.UpdateInventory.TabIndex = 98;
-            this.UpdateInventory.Text = "Update";
+            this.UpdateInventory.Text = "Sort";
             this.UpdateInventory.UseVisualStyleBackColor = true;
             this.UpdateInventory.Click += new System.EventHandler(this.UpdateInventory_Click);
             // 
@@ -5296,6 +5296,7 @@
             // 
             // GainBond
             // 
+            this.GainBond.Enabled = false;
             this.GainBond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GainBond.Location = new System.Drawing.Point(480, 273);
             this.GainBond.Name = "GainBond";
@@ -5307,6 +5308,7 @@
             // 
             // LoseBond
             // 
+            this.LoseBond.Enabled = false;
             this.LoseBond.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoseBond.Location = new System.Drawing.Point(428, 273);
             this.LoseBond.Name = "LoseBond";
@@ -5318,6 +5320,7 @@
             // 
             // Value
             // 
+            this.Value.Enabled = false;
             this.Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline);
             this.Value.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Value.Location = new System.Drawing.Point(142, 136);
@@ -5619,7 +5622,7 @@
             this.groupBox13.Controls.Add(this.pictureBox4);
             this.groupBox13.Controls.Add(this.ToiletThree);
             this.groupBox13.Controls.Add(this.pictureBox3);
-            this.groupBox13.Controls.Add(this.button29);
+            this.groupBox13.Controls.Add(this.CareMistakeButton);
             this.groupBox13.Controls.Add(this.ToiletOne);
             this.groupBox13.Controls.Add(this.ToiletTwo);
             this.groupBox13.Location = new System.Drawing.Point(25, 410);
@@ -5840,17 +5843,17 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // button29
+            // CareMistakeButton
             // 
-            this.button29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button29.Location = new System.Drawing.Point(164, 109);
-            this.button29.Margin = new System.Windows.Forms.Padding(4);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(133, 28);
-            this.button29.TabIndex = 87;
-            this.button29.Text = "Whoops";
-            this.button29.UseVisualStyleBackColor = true;
-            this.button29.Click += new System.EventHandler(this.button29_Click);
+            this.CareMistakeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CareMistakeButton.Location = new System.Drawing.Point(164, 109);
+            this.CareMistakeButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CareMistakeButton.Name = "CareMistakeButton";
+            this.CareMistakeButton.Size = new System.Drawing.Size(133, 28);
+            this.CareMistakeButton.TabIndex = 87;
+            this.CareMistakeButton.Text = "Whoops";
+            this.CareMistakeButton.UseVisualStyleBackColor = true;
+            this.CareMistakeButton.Click += new System.EventHandler(this.button29_Click);
             // 
             // ToiletOne
             // 
@@ -6351,7 +6354,7 @@
         private System.Windows.Forms.Label label139;
         private System.Windows.Forms.Label label136;
         private System.Windows.Forms.Label label137;
-        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button CareMistakeButton;
         private System.Windows.Forms.TabPage TamerSkills;
         private System.Windows.Forms.Label label144;
         private System.Windows.Forms.Label label145;

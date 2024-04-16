@@ -205,7 +205,9 @@ namespace DigimonAndTamerCharacterSheets
             {
                 // Lose current form
                 Partner.SelectedIndex = -1;
+                CrestSelection.SelectedIndex = -1;
                 Partner.Enabled = true;
+                CrestSelection.Enabled = true;
                 RecordRookie = "________";
                 RecordChampion = "________";
                 RecordUltimate = "________";
@@ -227,6 +229,15 @@ namespace DigimonAndTamerCharacterSheets
                 RemainingLife.Text = MaximumLife.Text;
                 Digivolve.Enabled = false;
             }
+
+            // Calculate the total of the Strength Skills
+            int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
+
+            // Halve the totalValue and round up
+            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+
+            // Output the halvedValue to the text box
+            DigiSoulStat.Text = halvedValue.ToString();
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -666,7 +677,7 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
-        // Maximum Stats
+        // Maximum Skills
         int HighestCarry = 0;
         int HighestHold = 0;
         int HighestThrow = 0;
@@ -682,6 +693,12 @@ namespace DigimonAndTamerCharacterSheets
         int HighestTechnology = 0;
         int HighestOccultism = 0;
         int HighestSociety = 0;
+
+        // Maximum Super Skills
+        int HighestErrorScan = 0;
+        int HighestInfoExtract = 0;
+        int HighestGigaSearch = 0;
+        int HighestWaybackTrack = 0;
 
 
         // Carry Trackbar
@@ -2579,45 +2596,220 @@ namespace DigimonAndTamerCharacterSheets
 
         public void trackBar16_Scroll(object sender, EventArgs e)
         {
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
 
-            // Output the halvedValue to the text box
-            DigiSoulStat.Text = halvedValue.ToString();
+            // Compare prior maximum to current value
+            if (HighestGigaSearch < GigaSearchTrack.Value)
+            {
+                HighestGigaSearch++;
+                GigaSearchTrack.Value = HighestGigaSearch;
+
+                // Spent Skill Points
+                TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
+
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Giga Search Power?", "Power Increase", MessageBoxButtons.YesNo);
+                if (BoostCarry == DialogResult.Yes)
+                {
+                    // Perform actions if user clicked Yes (e.g., display message, update skill points)
+                    MessageBox.Show("Giga Search Power increased!");
+                    foreach (TrackBar track in tracks)
+                    {
+                        ErrorScanTrack.Value = HighestErrorScan;
+                        InfoExtractTrack.Value = HighestInfoExtract;
+                        GigaSearchTrack.Value = HighestGigaSearch;
+                        WaybackTrackTrack.Value = HighestWaybackTrack;
+                        track.Enabled = false;
+                    }
+                }
+                else
+                {
+                    GigaSearchTrack.Value--;
+                    HighestGigaSearch--;
+                }
+
+
+                // Calculate the total of the Strength Skills
+                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
+
+                // Halve the totalValue and round up
+                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+
+                // Output the halvedValue to the text box
+                DigiSoulStat.Text = halvedValue.ToString();
+
+            }
         }
 
-        private void button22_Click_1(object sender, EventArgs e)
-        {
 
-        }
+
 
         public void trackBar19_Scroll(object sender, EventArgs e)
         {
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
 
-            // Output the halvedValue to the text box
-            DigiSoulStat.Text = halvedValue.ToString();
-        }
+            // Compare prior maximum to current value
+            if (HighestWaybackTrack < WaybackTrackTrack.Value)
+            {
+                HighestWaybackTrack++;
+                WaybackTrackTrack.Value = HighestWaybackTrack;
 
-        private void GigaSearch_Click(object sender, EventArgs e)
-        {
+                // Spent Skill Points
+                TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-        }
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Wayback Track Power?", "Power Increase", MessageBoxButtons.YesNo);
+                if (BoostCarry == DialogResult.Yes)
+                {
+                    // Perform actions if user clicked Yes (e.g., display message, update skill points)
+                    MessageBox.Show("Wayback Track Power increased!");
+                    foreach (TrackBar track in tracks)
+                    {
+                        ErrorScanTrack.Value = HighestErrorScan;
+                        InfoExtractTrack.Value = HighestInfoExtract;
+                        GigaSearchTrack.Value = HighestGigaSearch;
+                        WaybackTrackTrack.Value = HighestWaybackTrack;
+                        track.Enabled = false;
+                    }
+                }
+                else
+                {
+                    WaybackTrackTrack.Value--;
+                    HighestWaybackTrack--;
+                }
 
-        private void InfoExtract_Click(object sender, EventArgs e)
-        {
 
+                // Calculate the total of the Strength Skills
+                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
+
+                // Halve the totalValue and round up
+                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+
+                // Output the halvedValue to the text box
+                DigiSoulStat.Text = halvedValue.ToString();
+
+            }
         }
 
         private void ErrorScan_Click(object sender, EventArgs e)
         {
+                // Get the number of dice from the TrackBar
+                int NumberOfDice = ErrorScanTrack.Value;
+
+
+                // Simulate rolling dice
+                Random random = new Random();
+                int TotalResult = 0;
+                int.TryParse(DigiSoulStat.Text, out int DigiSoulScore);
+                string IndividualRolls = "";
+
+
+                for  (int i = 0; i < NumberOfDice; i++)
+                {
+                    // Generates a random number between 1 and 10
+                    int DiceResult = random.Next(1, 11);
+                    TotalResult += DiceResult;
+                    // Collect individual rolls
+                    IndividualRolls += DiceResult + " ";
+                }
+
+                // Final result
+                DigiSoulScore = DigiSoulScore * 3;
+                TotalResult += DigiSoulScore;
+
+                // Display the result
+                MessageBox.Show($"Digi-Soul Bonus: {DigiSoulScore}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+      
+        }
+
+        private void InfoExtract_Click(object sender, EventArgs e)
+        {
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = InfoExtractTrack.Value;
+
+
+            // Simulate rolling dice
+            Random random = new Random();
+            int TotalResult = 0;
+            int.TryParse(DigiSoulStat.Text, out int DigiSoulScore);
+            string IndividualRolls = "";
+
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            // Final result
+            DigiSoulScore = DigiSoulScore * 3;
+            TotalResult += DigiSoulScore;
+
+            // Display the result
+            MessageBox.Show($"Digi-Soul Bonus: {DigiSoulScore}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+
+        }
+
+        private void GigaSearch_Click(object sender, EventArgs e)
+        {
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = GigaSearchTrack.Value;
+
+
+            // Simulate rolling dice
+            Random random = new Random();
+            int TotalResult = 0;
+            int.TryParse(DigiSoulStat.Text, out int DigiSoulScore);
+            string IndividualRolls = "";
+
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            // Final result
+            DigiSoulScore = DigiSoulScore * 3;
+            TotalResult += DigiSoulScore;
+
+            // Display the result
+            MessageBox.Show($"Digi-Soul Bonus: {DigiSoulScore}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+
+        }
+
+        private void button22_Click_1(object sender, EventArgs e)
+        {
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = WaybackTrackTrack.Value;
+
+
+            // Simulate rolling dice
+            Random random = new Random();
+            int TotalResult = 0;
+            int.TryParse(DigiSoulStat.Text, out int DigiSoulScore);
+            string IndividualRolls = "";
+
+
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
+
+            // Final result
+            DigiSoulScore = DigiSoulScore * 3;
+            TotalResult += DigiSoulScore;
+
+            // Display the result
+            MessageBox.Show($"Digi-Soul Bonus: {DigiSoulScore}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
 
         }
 
@@ -3459,26 +3651,94 @@ namespace DigimonAndTamerCharacterSheets
 
         public void trackBar18_Scroll(object sender, EventArgs e)
         {
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
 
-            // Output the halvedValue to the text box
-            DigiSoulStat.Text = halvedValue.ToString();
+            // Compare prior maximum to current value
+            if (HighestErrorScan < ErrorScanTrack.Value)
+            {
+                HighestErrorScan++;
+                ErrorScanTrack.Value = HighestErrorScan;
+
+                // Spent Skill Points
+                TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
+
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Error Scan Power?", "Power Increase", MessageBoxButtons.YesNo);
+                if (BoostCarry == DialogResult.Yes)
+                {
+                    // Perform actions if user clicked Yes (e.g., display message, update skill points)
+                    MessageBox.Show("Error Scan Power increased!");
+                    foreach (TrackBar track in tracks)
+                    {
+                        ErrorScanTrack.Value = HighestErrorScan;
+                        InfoExtractTrack.Value = HighestInfoExtract;
+                        GigaSearchTrack.Value = HighestGigaSearch;
+                        WaybackTrackTrack.Value = HighestWaybackTrack;
+                        track.Enabled = false;
+                    }
+                }
+                else
+                {
+                    ErrorScanTrack.Value--;
+                    HighestErrorScan--;
+                }
+
+
+                // Calculate the total of the Strength Skills
+                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
+
+                // Halve the totalValue and round up
+                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+
+                // Output the halvedValue to the text box
+                DigiSoulStat.Text = halvedValue.ToString();
+
+            }
         }
 
         public void InfoExtractTrack_Scroll(object sender, EventArgs e)
         {
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
 
-            // Output the halvedValue to the text box
-            DigiSoulStat.Text = halvedValue.ToString();
+            // Compare prior maximum to current value
+            if (HighestInfoExtract < InfoExtractTrack.Value)
+            {
+                HighestInfoExtract++;
+                InfoExtractTrack.Value = HighestInfoExtract;
+
+                // Spent Skill Points
+                TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
+
+                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Info Extract Power?", "Power Increase", MessageBoxButtons.YesNo);
+                if (BoostCarry == DialogResult.Yes)
+                {
+                    // Perform actions if user clicked Yes (e.g., display message, update skill points)
+                    MessageBox.Show("Info Extract Power increased!");
+                    foreach (TrackBar track in tracks)
+                    {
+                        ErrorScanTrack.Value = HighestErrorScan;
+                        InfoExtractTrack.Value = HighestInfoExtract;
+                        GigaSearchTrack.Value = HighestGigaSearch;
+                        WaybackTrackTrack.Value = HighestWaybackTrack;
+                        track.Enabled = false;
+                    }
+                }
+                else
+                {
+                    InfoExtractTrack.Value--;
+                    HighestInfoExtract--;
+                }
+
+
+                // Calculate the total of the Strength Skills
+                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
+
+                // Halve the totalValue and round up
+                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+
+                // Output the halvedValue to the text box
+                DigiSoulStat.Text = halvedValue.ToString();
+
+            }
         }
 
         private void ActivateHD_Click(object sender, EventArgs e)
@@ -3530,7 +3790,7 @@ namespace DigimonAndTamerCharacterSheets
 
 
             // Level Up Boon
-            TrackBar[] tracks = new TrackBar[] { CarryTrack, ThrowTrack, HoldTrack, BalanceTrack, ParkourTrack, ReflexTrack, PerformTrack, IntimidateTrack, PersuadeTrack, InvestigationTrack, EmpathyTrack, IngenuityTrack, TechnologyTrack, OccultismTrack, SocietyTrack };
+            TrackBar[] tracks = new TrackBar[] { CarryTrack, ThrowTrack, HoldTrack, BalanceTrack, ParkourTrack, ReflexTrack, PerformTrack, IntimidateTrack, PersuadeTrack, InvestigationTrack, EmpathyTrack, IngenuityTrack, TechnologyTrack, OccultismTrack, SocietyTrack, ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
             foreach (TrackBar track in tracks)
             {
@@ -3793,6 +4053,21 @@ namespace DigimonAndTamerCharacterSheets
                     pictureBox1.Image = null;
                 }
 
+            }
+
+            if (CrestSelection.Text == "")
+            {
+                LoseBond.Enabled = false;
+                GainBond.Enabled = false;
+                Value.Enabled = false;
+                CareMistakeButton.Enabled = false;
+            }
+            else if (CrestSelection.Text != "")
+            {
+                LoseBond.Enabled = true;
+                GainBond.Enabled = true;
+                Value.Enabled = true;
+                CareMistakeButton.Enabled = true;
             }
         }
 
@@ -5138,12 +5413,14 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (Partner.Text != "")
+            {
             // Increment Days
             int DayCount;
             int.TryParse(Day.Text, out DayCount);
             DayCount = DayCount + 1;
             Day.Text = DayCount.ToString();
-
+            };
         }
 
         private void groupBox16_Enter(object sender, EventArgs e)
