@@ -4927,6 +4927,436 @@ namespace DigimonAndTamerCharacterSheets
                     InheritableQuirkTwo.Text = "____";
                     InheritableQuirkThree.Text = "____";
                 }
+                else if (DigimonPartner == "Greymon")
+                {
+                    RecordRookie = "Greymon";
+                    RookieEvolution = false;
+                    ChampionEvolution = true;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
+                    // Greymon Details
+                    DigimonField.Text = "Dragon's Roar";
+                    DigitalFrame.Text = "7";
+                    CoreHPNow.Text = MaxHealth.Text;
+                    CoreHPMax.Text = MaxHealth.Text;
+                    MoveSpeed.Text = "5";
+                    Attribute.Text = "Vaccine";
+                    WeaknessElement.Text = "Ice";
+                    ResistanceElement.Text = "Filth";
+
+                    // Greymon Stats
+                    DigimonStrength.Text = "3";
+                    DigimonAgility.Text = "3";
+                    DigimonVibes.Text = "3";
+                    DigimonWits.Text = "3";
+                    DigimonEducation.Text = "3";
+
+                    // Greymon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Headbutt";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "3";
+                    BasicElement.Text = "Slamming";
+
+                    //Standard Move
+                    StandardAttack.Text = "Claw Attack";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardDiceMin.Text = "4";
+                    StandardDiceMax.Text = "6";
+                    StandardElement.Text = "Slashing";
+
+                    //Special Move
+                    SpecialAttack.Text = "Pepper Breath";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialDiceMin.Text = "7";
+                    SpecialDiceMax.Text = "9";
+                    SpecialElement.Text = "Fire";
+
+                    //Super Move
+                    SuperAttack.Text = "Spitfire Blast";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperDiceMin.Text = "10";
+                    SuperDiceMax.Text = "10";
+                    SuperElement.Text = "Fire";
+
+                    // Greymon Quirks
+                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkTwo.Text = "";
+                    InheritableQuirkOne.Text = "";
+                    InheritableQuirkTwo.Text = "";
+                    InheritableQuirkThree.Text = "";
+
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (DigimonPartner == "Tyrannomon")
+                {
+                    RecordRookie = "Tyrannomon";
+                    RookieEvolution = false;
+                    ChampionEvolution = true;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
+                    // Tyrannomon Details
+                    DigimonField.Text = "Dragon's Roar";
+                    DigitalFrame.Text = "7";
+                    CoreHPNow.Text = MaxHealth.Text;
+                    CoreHPMax.Text = MaxHealth.Text;
+                    MoveSpeed.Text = "5";
+                    Attribute.Text = "Vaccine";
+                    WeaknessElement.Text = "Ice";
+                    ResistanceElement.Text = "Filth";
+
+                    // Tyrannomon Stats
+                    DigimonStrength.Text = "2";
+                    DigimonAgility.Text = "2";
+                    DigimonVibes.Text = "2";
+                    DigimonWits.Text = "2";
+                    DigimonEducation.Text = "2";
+
+                    // Tyrannomon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Headbutt";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "3";
+                    BasicElement.Text = "Slamming";
+
+                    //Standard Move
+                    StandardAttack.Text = "Claw Attack";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardDiceMin.Text = "4";
+                    StandardDiceMax.Text = "6";
+                    StandardElement.Text = "Slashing";
+
+                    //Special Move
+                    SpecialAttack.Text = "Pepper Breath";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialDiceMin.Text = "7";
+                    SpecialDiceMax.Text = "9";
+                    SpecialElement.Text = "Fire";
+
+                    //Super Move
+                    SuperAttack.Text = "Spitfire Blast";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperDiceMin.Text = "10";
+                    SuperDiceMax.Text = "10";
+                    SuperElement.Text = "Fire";
+
+                    // Tyrannomon Quirks
+                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkTwo.Text = "";
+                    InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
+                    InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
+                    InheritableQuirkThree.Text = "Reinforcing Rage - If Tamer wounded, buff attack roll.";
+
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (DigimonPartner == "Tuskmon")
+                {
+                    RecordRookie = "Tuskmon";
+                    RookieEvolution = false;
+                    ChampionEvolution = true;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
+                    // Tuskmon Details
+                    DigimonField.Text = "Dragon's Roar";
+                    DigitalFrame.Text = "7";
+                    CoreHPNow.Text = MaxHealth.Text;
+                    CoreHPMax.Text = MaxHealth.Text;
+                    MoveSpeed.Text = "5";
+                    Attribute.Text = "Vaccine";
+                    WeaknessElement.Text = "Ice";
+                    ResistanceElement.Text = "Filth";
+
+                    // Tuskmon Stats
+                    DigimonStrength.Text = "2";
+                    DigimonAgility.Text = "2";
+                    DigimonVibes.Text = "2";
+                    DigimonWits.Text = "2";
+                    DigimonEducation.Text = "2";
+
+                    // Tuskmon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Headbutt";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "3";
+                    BasicElement.Text = "Slamming";
+
+                    //Standard Move
+                    StandardAttack.Text = "Claw Attack";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardDiceMin.Text = "4";
+                    StandardDiceMax.Text = "6";
+                    StandardElement.Text = "Slashing";
+
+                    //Special Move
+                    SpecialAttack.Text = "Pepper Breath";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialDiceMin.Text = "7";
+                    SpecialDiceMax.Text = "9";
+                    SpecialElement.Text = "Fire";
+
+                    //Super Move
+                    SuperAttack.Text = "Spitfire Blast";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperDiceMin.Text = "10";
+                    SuperDiceMax.Text = "10";
+                    SuperElement.Text = "Fire";
+
+                    // Tuskmon Quirks
+                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkTwo.Text = "";
+                    InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
+                    InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
+                    InheritableQuirkThree.Text = "Reinforcing Rage - If Tamer wounded, buff attack roll.";
+
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (DigimonPartner == "Flarizamon")
+                {
+                    RecordRookie = "Flarizamon";
+                    RookieEvolution = false;
+                    ChampionEvolution = true;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
+                    // Flarizamon Details
+                    DigimonField.Text = "Dragon's Roar";
+                    DigitalFrame.Text = "7";
+                    CoreHPNow.Text = MaxHealth.Text;
+                    CoreHPMax.Text = MaxHealth.Text;
+                    MoveSpeed.Text = "5";
+                    Attribute.Text = "Vaccine";
+                    WeaknessElement.Text = "Ice";
+                    ResistanceElement.Text = "Filth";
+
+                    // Flarizamon Stats
+                    DigimonStrength.Text = "2";
+                    DigimonAgility.Text = "2";
+                    DigimonVibes.Text = "2";
+                    DigimonWits.Text = "2";
+                    DigimonEducation.Text = "2";
+
+                    // Flarizamon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Headbutt";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "3";
+                    BasicElement.Text = "Slamming";
+
+                    //Standard Move
+                    StandardAttack.Text = "Claw Attack";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardDiceMin.Text = "4";
+                    StandardDiceMax.Text = "6";
+                    StandardElement.Text = "Slashing";
+
+                    //Special Move
+                    SpecialAttack.Text = "Pepper Breath";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialDiceMin.Text = "7";
+                    SpecialDiceMax.Text = "9";
+                    SpecialElement.Text = "Fire";
+
+                    //Super Move
+                    SuperAttack.Text = "Spitfire Blast";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperDiceMin.Text = "10";
+                    SuperDiceMax.Text = "10";
+                    SuperElement.Text = "Fire";
+
+                    // Flarizamon Quirks
+                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkTwo.Text = "";
+                    InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
+                    InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
+                    InheritableQuirkThree.Text = "Reinforcing Rage - If Tamer wounded, buff attack roll.";
+
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (DigimonPartner == "Growlmon")
+                {
+                    RecordRookie = "Growlmon";
+                    RookieEvolution = false;
+                    ChampionEvolution = true;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
+                    // Growlmon Details
+                    DigimonField.Text = "Dragon's Roar";
+                    DigitalFrame.Text = "7";
+                    CoreHPNow.Text = MaxHealth.Text;
+                    CoreHPMax.Text = MaxHealth.Text;
+                    MoveSpeed.Text = "5";
+                    Attribute.Text = "Vaccine";
+                    WeaknessElement.Text = "Ice";
+                    ResistanceElement.Text = "Filth";
+
+                    // Growlmon Stats
+                    DigimonStrength.Text = "2";
+                    DigimonAgility.Text = "2";
+                    DigimonVibes.Text = "2";
+                    DigimonWits.Text = "2";
+                    DigimonEducation.Text = "2";
+
+                    // Growlmon Moves
+                    //Basic Move
+                    BasicAttack.Text = "Headbutt";
+                    BasicAttackHardFail.Text = "";
+                    BasicAttackFail.Text = "";
+                    BasicAttackPartFail.Text = "";
+                    BasicAttackPartHit.Text = "";
+                    BasicAttackHit.Text = "";
+                    BasicAttackHardHit.Text = "";
+                    BasicDiceMin.Text = "1";
+                    BasicDiceMax.Text = "3";
+                    BasicElement.Text = "Slamming";
+
+                    //Standard Move
+                    StandardAttack.Text = "Claw Attack";
+                    StandardAttackHardFail.Text = "";
+                    StandardAttackFail.Text = "";
+                    StandardAttackPartFail.Text = "";
+                    StandardAttackPartHit.Text = "";
+                    StandardAttackHit.Text = "";
+                    StandardAttackHardHit.Text = "";
+                    StandardDiceMin.Text = "4";
+                    StandardDiceMax.Text = "6";
+                    StandardElement.Text = "Slashing";
+
+                    //Special Move
+                    SpecialAttack.Text = "Pepper Breath";
+                    SpecialAttackHardFail.Text = "";
+                    SpecialAttackFail.Text = "";
+                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackPartFail.Text = "";
+                    SpecialAttackHit.Text = "";
+                    SpecialAttackHardHit.Text = "";
+                    SpecialDiceMin.Text = "7";
+                    SpecialDiceMax.Text = "9";
+                    SpecialElement.Text = "Fire";
+
+                    //Super Move
+                    SuperAttack.Text = "Spitfire Blast";
+                    SuperAttackHardFail.Text = "";
+                    SuperAttackFail.Text = "";
+                    SuperAttackPartFail.Text = "";
+                    SuperAttackPartHit.Text = "";
+                    SuperAttackHit.Text = "";
+                    SuperAttackHardHit.Text = "";
+                    SuperDiceMin.Text = "10";
+                    SuperDiceMax.Text = "10";
+                    SuperElement.Text = "Fire";
+
+                    // Growlmon Quirks
+                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkTwo.Text = "";
+                    InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
+                    InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
+                    InheritableQuirkThree.Text = "Reinforcing Rage - If Tamer wounded, buff attack roll.";
+
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
+                }
                 else
                 {
                     RookieEvolution = false;
@@ -4966,6 +5396,7 @@ namespace DigimonAndTamerCharacterSheets
                     InheritableQuirkThree.Text = "_";
 
                 }
+            
 
                 
 
