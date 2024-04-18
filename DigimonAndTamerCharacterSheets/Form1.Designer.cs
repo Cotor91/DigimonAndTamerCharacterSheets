@@ -224,13 +224,29 @@
             this.InvestigationTrack = new System.Windows.Forms.TrackBar();
             this.TamerPowers = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
+            this.TransmissionTrackLineFour = new System.Windows.Forms.Label();
+            this.TransmissionTrackLineThree = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.TransmissionTrackLineTwo = new System.Windows.Forms.Label();
+            this.TransmissionTrackLineOne = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.GigaMapsLineFour = new System.Windows.Forms.Label();
+            this.GigaMapsLineThree = new System.Windows.Forms.Label();
+            this.GigaMapsLineTwo = new System.Windows.Forms.Label();
+            this.GigaMapsLineOne = new System.Windows.Forms.Label();
             this.button24 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.BattleScanLineFour = new System.Windows.Forms.Label();
+            this.BattleScanLineThree = new System.Windows.Forms.Label();
+            this.BattleScanLineTwo = new System.Windows.Forms.Label();
+            this.BattleScanLineOne = new System.Windows.Forms.Label();
             this.ActivateBS = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.ActivateHD = new System.Windows.Forms.Button();
+            this.HoloDisplayLineFour = new System.Windows.Forms.Label();
+            this.HoloDisplayLineThree = new System.Windows.Forms.Label();
+            this.HoloDisplayLineTwo = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.HoloDisplayLineOne = new System.Windows.Forms.Label();
             this.WaybackTrack = new System.Windows.Forms.Button();
             this.WaybackTrackTrack = new System.Windows.Forms.TrackBar();
             this.DigiSoul = new System.Windows.Forms.Label();
@@ -2842,7 +2858,11 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.button23);
+            this.groupBox6.Controls.Add(this.TransmissionTrackLineFour);
+            this.groupBox6.Controls.Add(this.TransmissionTrackLineThree);
+            this.groupBox6.Controls.Add(this.button5);
+            this.groupBox6.Controls.Add(this.TransmissionTrackLineTwo);
+            this.groupBox6.Controls.Add(this.TransmissionTrackLineOne);
             this.groupBox6.Location = new System.Drawing.Point(21, 391);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
@@ -2853,20 +2873,63 @@
             this.groupBox6.Text = "Transmission Track";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // button23
+            // TransmissionTrackLineFour
             // 
-            this.button23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button23.Location = new System.Drawing.Point(377, 164);
-            this.button23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(165, 34);
-            this.button23.TabIndex = 90;
-            this.button23.Text = "Activate";
-            this.button23.UseVisualStyleBackColor = true;
-            this.button23.Click += new System.EventHandler(this.button23_Click_1);
+            this.TransmissionTrackLineFour.AutoSize = true;
+            this.TransmissionTrackLineFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TransmissionTrackLineFour.Location = new System.Drawing.Point(8, 129);
+            this.TransmissionTrackLineFour.Name = "TransmissionTrackLineFour";
+            this.TransmissionTrackLineFour.Size = new System.Drawing.Size(454, 20);
+            this.TransmissionTrackLineFour.TabIndex = 103;
+            this.TransmissionTrackLineFour.Text = "The creator and time of creation also become known to you.";
+            // 
+            // TransmissionTrackLineThree
+            // 
+            this.TransmissionTrackLineThree.AutoSize = true;
+            this.TransmissionTrackLineThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TransmissionTrackLineThree.Location = new System.Drawing.Point(8, 99);
+            this.TransmissionTrackLineThree.Name = "TransmissionTrackLineThree";
+            this.TransmissionTrackLineThree.Size = new System.Drawing.Size(474, 20);
+            this.TransmissionTrackLineThree.TabIndex = 102;
+            this.TransmissionTrackLineThree.Text = "involved in its creation, and sense any tampering or alteration. ";
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.Location = new System.Drawing.Point(377, 164);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(165, 34);
+            this.button5.TabIndex = 99;
+            this.button5.Text = "Activate";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // TransmissionTrackLineTwo
+            // 
+            this.TransmissionTrackLineTwo.AutoSize = true;
+            this.TransmissionTrackLineTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TransmissionTrackLineTwo.Location = new System.Drawing.Point(8, 69);
+            this.TransmissionTrackLineTwo.Name = "TransmissionTrackLineTwo";
+            this.TransmissionTrackLineTwo.Size = new System.Drawing.Size(466, 20);
+            this.TransmissionTrackLineTwo.TabIndex = 101;
+            this.TransmissionTrackLineTwo.Text = "to which you\'re exposed. You can also detect any phenomena";
+            // 
+            // TransmissionTrackLineOne
+            // 
+            this.TransmissionTrackLineOne.AutoSize = true;
+            this.TransmissionTrackLineOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TransmissionTrackLineOne.Location = new System.Drawing.Point(8, 39);
+            this.TransmissionTrackLineOne.Name = "TransmissionTrackLineOne";
+            this.TransmissionTrackLineOne.Size = new System.Drawing.Size(469, 20);
+            this.TransmissionTrackLineOne.TabIndex = 100;
+            this.TransmissionTrackLineOne.Text = "Figure out the location of origin of any broadcast or recording ";
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.GigaMapsLineFour);
+            this.groupBox7.Controls.Add(this.GigaMapsLineThree);
+            this.groupBox7.Controls.Add(this.GigaMapsLineTwo);
+            this.groupBox7.Controls.Add(this.GigaMapsLineOne);
             this.groupBox7.Controls.Add(this.button24);
             this.groupBox7.Location = new System.Drawing.Point(628, 391);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
@@ -2876,6 +2939,46 @@
             this.groupBox7.TabIndex = 97;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Giga Maps";
+            // 
+            // GigaMapsLineFour
+            // 
+            this.GigaMapsLineFour.AutoSize = true;
+            this.GigaMapsLineFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GigaMapsLineFour.Location = new System.Drawing.Point(8, 129);
+            this.GigaMapsLineFour.Name = "GigaMapsLineFour";
+            this.GigaMapsLineFour.Size = new System.Drawing.Size(270, 20);
+            this.GigaMapsLineFour.TabIndex = 103;
+            this.GigaMapsLineFour.Text = "where in the environment they are. ";
+            // 
+            // GigaMapsLineThree
+            // 
+            this.GigaMapsLineThree.AutoSize = true;
+            this.GigaMapsLineThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GigaMapsLineThree.Location = new System.Drawing.Point(8, 99);
+            this.GigaMapsLineThree.Name = "GigaMapsLineThree";
+            this.GigaMapsLineThree.Size = new System.Drawing.Size(431, 20);
+            this.GigaMapsLineThree.TabIndex = 102;
+            this.GigaMapsLineThree.Text = "many humans, animals, and Digimon are around you and";
+            // 
+            // GigaMapsLineTwo
+            // 
+            this.GigaMapsLineTwo.AutoSize = true;
+            this.GigaMapsLineTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GigaMapsLineTwo.Location = new System.Drawing.Point(8, 69);
+            this.GigaMapsLineTwo.Name = "GigaMapsLineTwo";
+            this.GigaMapsLineTwo.Size = new System.Drawing.Size(479, 20);
+            this.GigaMapsLineTwo.TabIndex = 101;
+            this.GigaMapsLineTwo.Text = "access to a mini-map. Complete with limited awareness of how";
+            // 
+            // GigaMapsLineOne
+            // 
+            this.GigaMapsLineOne.AutoSize = true;
+            this.GigaMapsLineOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.GigaMapsLineOne.Location = new System.Drawing.Point(8, 39);
+            this.GigaMapsLineOne.Name = "GigaMapsLineOne";
+            this.GigaMapsLineOne.Size = new System.Drawing.Size(455, 20);
+            this.GigaMapsLineOne.TabIndex = 100;
+            this.GigaMapsLineOne.Text = "Know your way through an unfamiliar location, as if you had ";
             // 
             // button24
             // 
@@ -2891,6 +2994,10 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.BattleScanLineFour);
+            this.groupBox5.Controls.Add(this.BattleScanLineThree);
+            this.groupBox5.Controls.Add(this.BattleScanLineTwo);
+            this.groupBox5.Controls.Add(this.BattleScanLineOne);
             this.groupBox5.Controls.Add(this.ActivateBS);
             this.groupBox5.Location = new System.Drawing.Point(21, 170);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
@@ -2901,6 +3008,46 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Battle Scan";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // BattleScanLineFour
+            // 
+            this.BattleScanLineFour.AutoSize = true;
+            this.BattleScanLineFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BattleScanLineFour.Location = new System.Drawing.Point(8, 129);
+            this.BattleScanLineFour.Name = "BattleScanLineFour";
+            this.BattleScanLineFour.Size = new System.Drawing.Size(0, 20);
+            this.BattleScanLineFour.TabIndex = 99;
+            // 
+            // BattleScanLineThree
+            // 
+            this.BattleScanLineThree.AutoSize = true;
+            this.BattleScanLineThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BattleScanLineThree.Location = new System.Drawing.Point(8, 99);
+            this.BattleScanLineThree.Name = "BattleScanLineThree";
+            this.BattleScanLineThree.Size = new System.Drawing.Size(426, 20);
+            this.BattleScanLineThree.TabIndex = 93;
+            this.BattleScanLineThree.Text = "health and their elemental weaknesses and resistances.";
+            // 
+            // BattleScanLineTwo
+            // 
+            this.BattleScanLineTwo.AutoSize = true;
+            this.BattleScanLineTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BattleScanLineTwo.Location = new System.Drawing.Point(8, 69);
+            this.BattleScanLineTwo.Name = "BattleScanLineTwo";
+            this.BattleScanLineTwo.Size = new System.Drawing.Size(460, 20);
+            this.BattleScanLineTwo.TabIndex = 92;
+            this.BattleScanLineTwo.Text = "your choosing get a circumstance dice. You also get to know";
+            // 
+            // BattleScanLineOne
+            // 
+            this.BattleScanLineOne.AutoSize = true;
+            this.BattleScanLineOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.BattleScanLineOne.Location = new System.Drawing.Point(8, 39);
+            this.BattleScanLineOne.Name = "BattleScanLineOne";
+            this.BattleScanLineOne.Size = new System.Drawing.Size(446, 20);
+            this.BattleScanLineOne.TabIndex = 91;
+            this.BattleScanLineOne.Text = "For the rest of the scene, all attacks against a character of";
+            this.BattleScanLineOne.Click += new System.EventHandler(this.label31_Click_1);
             // 
             // ActivateBS
             // 
@@ -2916,7 +3063,11 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.ActivateHD);
+            this.groupBox4.Controls.Add(this.HoloDisplayLineFour);
+            this.groupBox4.Controls.Add(this.HoloDisplayLineThree);
+            this.groupBox4.Controls.Add(this.HoloDisplayLineTwo);
+            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.HoloDisplayLineOne);
             this.groupBox4.Location = new System.Drawing.Point(628, 170);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
@@ -2927,17 +3078,56 @@
             this.groupBox4.Text = "Holo-Display";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
-            // ActivateHD
+            // HoloDisplayLineFour
             // 
-            this.ActivateHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.ActivateHD.Location = new System.Drawing.Point(377, 164);
-            this.ActivateHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ActivateHD.Name = "ActivateHD";
-            this.ActivateHD.Size = new System.Drawing.Size(165, 34);
-            this.ActivateHD.TabIndex = 90;
-            this.ActivateHD.Text = "Activate";
-            this.ActivateHD.UseVisualStyleBackColor = true;
-            this.ActivateHD.Click += new System.EventHandler(this.ActivateHD_Click);
+            this.HoloDisplayLineFour.AutoSize = true;
+            this.HoloDisplayLineFour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.HoloDisplayLineFour.Location = new System.Drawing.Point(8, 129);
+            this.HoloDisplayLineFour.Name = "HoloDisplayLineFour";
+            this.HoloDisplayLineFour.Size = new System.Drawing.Size(126, 20);
+            this.HoloDisplayLineFour.TabIndex = 98;
+            this.HoloDisplayLineFour.Text = "you pass yours.";
+            // 
+            // HoloDisplayLineThree
+            // 
+            this.HoloDisplayLineThree.AutoSize = true;
+            this.HoloDisplayLineThree.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.HoloDisplayLineThree.Location = new System.Drawing.Point(8, 99);
+            this.HoloDisplayLineThree.Name = "HoloDisplayLineThree";
+            this.HoloDisplayLineThree.Size = new System.Drawing.Size(461, 20);
+            this.HoloDisplayLineThree.TabIndex = 97;
+            this.HoloDisplayLineThree.Text = "rolls or to buff allies on their Wits and Education Rolls if you ";
+            // 
+            // HoloDisplayLineTwo
+            // 
+            this.HoloDisplayLineTwo.AutoSize = true;
+            this.HoloDisplayLineTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.HoloDisplayLineTwo.Location = new System.Drawing.Point(8, 69);
+            this.HoloDisplayLineTwo.Name = "HoloDisplayLineTwo";
+            this.HoloDisplayLineTwo.Size = new System.Drawing.Size(469, 20);
+            this.HoloDisplayLineTwo.TabIndex = 96;
+            this.HoloDisplayLineTwo.Text = "information to allies. It can also be used to help with persuade";
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button4.Location = new System.Drawing.Point(377, 164);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(165, 34);
+            this.button4.TabIndex = 94;
+            this.button4.Text = "Activate";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // HoloDisplayLineOne
+            // 
+            this.HoloDisplayLineOne.AutoSize = true;
+            this.HoloDisplayLineOne.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.HoloDisplayLineOne.Location = new System.Drawing.Point(8, 39);
+            this.HoloDisplayLineOne.Name = "HoloDisplayLineOne";
+            this.HoloDisplayLineOne.Size = new System.Drawing.Size(463, 20);
+            this.HoloDisplayLineOne.TabIndex = 95;
+            this.HoloDisplayLineOne.Text = "Create a silent holographic display. This can be used to relay";
             // 
             // WaybackTrack
             // 
@@ -3748,6 +3938,7 @@
             this.groupBox17.TabIndex = 115;
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "Inheritable";
+            this.groupBox17.Enter += new System.EventHandler(this.groupBox17_Enter_1);
             // 
             // InheritableQuirkThree
             // 
@@ -4826,7 +5017,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(55, 105);
+            this.label22.Location = new System.Drawing.Point(55, 76);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(46, 20);
             this.label22.TabIndex = 165;
@@ -4912,7 +5103,7 @@
             this.BasicAttackFail.AutoSize = true;
             this.BasicAttackFail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BasicAttackFail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BasicAttackFail.Location = new System.Drawing.Point(107, 105);
+            this.BasicAttackFail.Location = new System.Drawing.Point(107, 76);
             this.BasicAttackFail.Name = "BasicAttackFail";
             this.BasicAttackFail.Size = new System.Drawing.Size(36, 20);
             this.BasicAttackFail.TabIndex = 146;
@@ -4924,7 +5115,7 @@
             this.BasicAttackPartFail.AutoSize = true;
             this.BasicAttackPartFail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BasicAttackPartFail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BasicAttackPartFail.Location = new System.Drawing.Point(107, 75);
+            this.BasicAttackPartFail.Location = new System.Drawing.Point(107, 105);
             this.BasicAttackPartFail.Name = "BasicAttackPartFail";
             this.BasicAttackPartFail.Size = new System.Drawing.Size(36, 20);
             this.BasicAttackPartFail.TabIndex = 145;
@@ -4970,7 +5161,7 @@
             this.BasicAttackPartHit.AutoSize = true;
             this.BasicAttackPartHit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BasicAttackPartHit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BasicAttackPartHit.Location = new System.Drawing.Point(107, 134);
+            this.BasicAttackPartHit.Location = new System.Drawing.Point(107, 135);
             this.BasicAttackPartHit.Name = "BasicAttackPartHit";
             this.BasicAttackPartHit.Size = new System.Drawing.Size(36, 20);
             this.BasicAttackPartHit.TabIndex = 144;
@@ -4993,7 +5184,7 @@
             // 
             this.BasicAttackPartFailText.AutoSize = true;
             this.BasicAttackPartFailText.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BasicAttackPartFailText.Location = new System.Drawing.Point(13, 75);
+            this.BasicAttackPartFailText.Location = new System.Drawing.Point(13, 105);
             this.BasicAttackPartFailText.Name = "BasicAttackPartFailText";
             this.BasicAttackPartFailText.Size = new System.Drawing.Size(87, 20);
             this.BasicAttackPartFailText.TabIndex = 138;
@@ -5003,7 +5194,7 @@
             // 
             this.label87.AutoSize = true;
             this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(19, 134);
+            this.label87.Location = new System.Drawing.Point(19, 135);
             this.label87.Name = "label87";
             this.label87.Size = new System.Drawing.Size(81, 20);
             this.label87.TabIndex = 139;
@@ -5098,7 +5289,7 @@
             // 
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(55, 74);
+            this.label48.Location = new System.Drawing.Point(55, 73);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(46, 20);
             this.label48.TabIndex = 173;
@@ -5120,7 +5311,7 @@
             this.StandardAttackFail.AutoSize = true;
             this.StandardAttackFail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StandardAttackFail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StandardAttackFail.Location = new System.Drawing.Point(107, 74);
+            this.StandardAttackFail.Location = new System.Drawing.Point(107, 73);
             this.StandardAttackFail.Name = "StandardAttackFail";
             this.StandardAttackFail.Size = new System.Drawing.Size(36, 20);
             this.StandardAttackFail.TabIndex = 120;
@@ -5165,7 +5356,7 @@
             this.StandardAttackPartHit.AutoSize = true;
             this.StandardAttackPartHit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StandardAttackPartHit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StandardAttackPartHit.Location = new System.Drawing.Point(107, 133);
+            this.StandardAttackPartHit.Location = new System.Drawing.Point(107, 132);
             this.StandardAttackPartHit.Name = "StandardAttackPartHit";
             this.StandardAttackPartHit.Size = new System.Drawing.Size(36, 20);
             this.StandardAttackPartHit.TabIndex = 118;
@@ -5199,7 +5390,7 @@
             // 
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(19, 133);
+            this.label52.Location = new System.Drawing.Point(19, 132);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(81, 20);
             this.label52.TabIndex = 111;
@@ -5625,7 +5816,7 @@
             this.groupBox13.Controls.Add(this.CareMistakeButton);
             this.groupBox13.Controls.Add(this.ToiletOne);
             this.groupBox13.Controls.Add(this.ToiletTwo);
-            this.groupBox13.Location = new System.Drawing.Point(25, 410);
+            this.groupBox13.Location = new System.Drawing.Point(67, 410);
             this.groupBox13.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Padding = new System.Windows.Forms.Padding(4);
@@ -5944,7 +6135,7 @@
             // 
             this.MaximumLife.AutoSize = true;
             this.MaximumLife.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaximumLife.Location = new System.Drawing.Point(951, 586);
+            this.MaximumLife.Location = new System.Drawing.Point(1008, 587);
             this.MaximumLife.Name = "MaximumLife";
             this.MaximumLife.Size = new System.Drawing.Size(18, 20);
             this.MaximumLife.TabIndex = 63;
@@ -5954,7 +6145,7 @@
             // 
             this.label123.AutoSize = true;
             this.label123.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label123.Location = new System.Drawing.Point(753, 587);
+            this.label123.Location = new System.Drawing.Point(810, 588);
             this.label123.Name = "label123";
             this.label123.Size = new System.Drawing.Size(172, 20);
             this.label123.TabIndex = 62;
@@ -5964,7 +6155,7 @@
             // 
             this.RemainingLife.AutoSize = true;
             this.RemainingLife.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemainingLife.Location = new System.Drawing.Point(298, 586);
+            this.RemainingLife.Location = new System.Drawing.Point(395, 587);
             this.RemainingLife.Name = "RemainingLife";
             this.RemainingLife.Size = new System.Drawing.Size(18, 20);
             this.RemainingLife.TabIndex = 61;
@@ -5975,7 +6166,7 @@
             // 
             this.label121.AutoSize = true;
             this.label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.label121.Location = new System.Drawing.Point(84, 586);
+            this.label121.Location = new System.Drawing.Point(181, 587);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(181, 20);
             this.label121.TabIndex = 60;
@@ -5985,7 +6176,7 @@
             // 
             this.label119.AutoSize = true;
             this.label119.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.label119.Location = new System.Drawing.Point(161, 378);
+            this.label119.Location = new System.Drawing.Point(203, 378);
             this.label119.Name = "label119";
             this.label119.Size = new System.Drawing.Size(201, 31);
             this.label119.TabIndex = 54;
@@ -6124,9 +6315,13 @@
             this.TamerPowers.ResumeLayout(false);
             this.TamerPowers.PerformLayout();
             this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WaybackTrackTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GigaSearchTrack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InfoExtractTrack)).EndInit();
@@ -6194,12 +6389,10 @@
         public System.Windows.Forms.TrackBar GigaSearchTrack;
         public System.Windows.Forms.TrackBar InfoExtractTrack;
         public System.Windows.Forms.TrackBar ErrorScanTrack;
-        private System.Windows.Forms.Button ActivateHD;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button ActivateBS;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button23;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button LevelUp;
@@ -6638,6 +6831,24 @@
         private System.Windows.Forms.CheckBox TamerAttackRollMinusOne;
         private System.Windows.Forms.CheckBox TamerAttackRollPlusTwo;
         private System.Windows.Forms.CheckBox TamerAttackRollPlusOne;
+        private System.Windows.Forms.Label BattleScanLineOne;
+        private System.Windows.Forms.Label BattleScanLineThree;
+        private System.Windows.Forms.Label BattleScanLineTwo;
+        private System.Windows.Forms.Label HoloDisplayLineThree;
+        private System.Windows.Forms.Label HoloDisplayLineTwo;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label HoloDisplayLineOne;
+        private System.Windows.Forms.Label HoloDisplayLineFour;
+        private System.Windows.Forms.Label BattleScanLineFour;
+        private System.Windows.Forms.Label GigaMapsLineFour;
+        private System.Windows.Forms.Label GigaMapsLineThree;
+        private System.Windows.Forms.Label GigaMapsLineTwo;
+        private System.Windows.Forms.Label GigaMapsLineOne;
+        private System.Windows.Forms.Label TransmissionTrackLineFour;
+        private System.Windows.Forms.Label TransmissionTrackLineThree;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label TransmissionTrackLineTwo;
+        private System.Windows.Forms.Label TransmissionTrackLineOne;
     }
 }
 

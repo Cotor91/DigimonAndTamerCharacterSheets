@@ -2691,33 +2691,33 @@ namespace DigimonAndTamerCharacterSheets
 
         private void ErrorScan_Click(object sender, EventArgs e)
         {
-                // Get the number of dice from the TrackBar
-                int NumberOfDice = ErrorScanTrack.Value;
+            // Get the number of dice from the TrackBar
+            int NumberOfDice = ErrorScanTrack.Value;
 
 
-                // Simulate rolling dice
-                Random random = new Random();
-                int TotalResult = 0;
-                int.TryParse(DigiSoulStat.Text, out int DigiSoulScore);
-                string IndividualRolls = "";
+            // Simulate rolling dice
+            Random random = new Random();
+            int TotalResult = 0;
+            int.TryParse(DigiSoulStat.Text, out int DigiSoulScore);
+            string IndividualRolls = "";
 
 
-                for  (int i = 0; i < NumberOfDice; i++)
-                {
-                    // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
-                    TotalResult += DiceResult;
-                    // Collect individual rolls
-                    IndividualRolls += DiceResult + " ";
-                }
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
+            }
 
-                // Final result
-                DigiSoulScore = DigiSoulScore * 3;
-                TotalResult += DigiSoulScore;
+            // Final result
+            DigiSoulScore = DigiSoulScore * 3;
+            TotalResult += DigiSoulScore;
 
-                // Display the result
-                MessageBox.Show($"Digi-Soul Bonus: {DigiSoulScore}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
-      
+            // Display the result
+            MessageBox.Show($"Digi-Soul Bonus: {DigiSoulScore}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+
         }
 
         private void InfoExtract_Click(object sender, EventArgs e)
@@ -4076,6 +4076,16 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
+        String RookieInheritOne = "";
+        String RookieInheritTwo = "";
+        String RookieInheritThree = "";
+        String ChampionInheritOne = "";
+        String ChampionInheritTwo = "";
+        String ChampionInheritThree = "";
+        String UltimateInheritOne = "";
+        String UltimateInheritTwo = "";
+        String UltimateInheritThree = "";
+
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
@@ -4089,6 +4099,7 @@ namespace DigimonAndTamerCharacterSheets
                 if (DigimonPartner == "Agumon")
                 {
                     RecordRookie = "Agumon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4114,48 +4125,48 @@ namespace DigimonAndTamerCharacterSheets
                     // Agumon Moves
                     //Basic Move
                     BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackPartHit.Text = "";
+                    BasicAttackHardFail.Text = "User can't attack next turn. (stunned)";
+                    BasicAttackFail.Text = "No effect.";
+                    BasicAttackPartFail.Text = "Mutually unable to attack next turn. (stunned)";
+                    BasicAttackPartHit.Text = "-2HP on target.";
+                    BasicAttackHit.Text = "Mutually stunned. -2HP on target.";
+                    BasicAttackHardHit.Text = "Target stunned. -5HP on target.";
                     BasicDiceMin.Text = "1";
                     BasicDiceMax.Text = "2";
                     BasicElement.Text = "Slamming";
 
                     //Standard Move
                     StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackPartHit.Text = "";
+                    StandardAttackHardFail.Text = "-3HP on user.";
+                    StandardAttackFail.Text = "No effect.";
+                    StandardAttackPartFail.Text = "Next attack on user is nerfed. (blocks)";
+                    StandardAttackPartHit.Text = "-3HP on target.";
+                    StandardAttackHit.Text = "Blocks once. -3HP on target.";
+                    StandardAttackHardHit.Text = "Blocks twice. -6HP on target.";
                     StandardDiceMin.Text = "3";
                     StandardDiceMax.Text = "5";
                     StandardElement.Text = "Slashing";
 
                     //Special Move
                     SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackHardFail.Text = "-3HP on user.";
+                    SpecialAttackFail.Text = "No effect.";
+                    SpecialAttackPartHit.Text = "-3HP on target.";
+                    SpecialAttackPartFail.Text = "3 turn recurring -1HP on target.";
+                    SpecialAttackHit.Text = "-3HP on target. 3 turn recurring -1HP.";
+                    SpecialAttackHardHit.Text = "-6HP on target. 3 turn recurring -2HP.";
                     SpecialDiceMin.Text = "6";
                     SpecialDiceMax.Text = "8";
                     SpecialElement.Text = "Fire";
 
                     //Super Move
                     SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackPartHit.Text = "";
+                    SuperAttackHardFail.Text = "2 recurring damage on user for 3 turns.";
+                    SuperAttackFail.Text = "No effect.";
+                    SuperAttackPartFail.Text = "-3HP to target and 1 user ally near them.";
+                    SuperAttackPartHit.Text = "-3HP to target.";
+                    SuperAttackHit.Text = "-3HP to target and 1 target ally near them.";
+                    SuperAttackHardHit.Text = "-6HP to target and 2 target ally near them.";
                     SuperDiceMin.Text = "9";
                     SuperDiceMax.Text = "10";
                     SuperElement.Text = "Fire";
@@ -4163,14 +4174,18 @@ namespace DigimonAndTamerCharacterSheets
                     // Agumon Quirks
                     CurrentQuirkOne.Text = "";
                     CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "Firewall Guard - Three points of damage to attackers on guard.";
-                    InheritableQuirkTwo.Text = "Empathy - They can roll for Empathy Checks.";
-                    InheritableQuirkThree.Text = "";
+                    InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
+                    InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
+                    InheritableQuirkThree.Text = "Reinforcing Rage - If Tamer wounded, buff attack roll.";
 
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
                 }
                 else if (DigimonPartner == "Dracomon")
                 {
                     RecordRookie = "Dracomon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4204,6 +4219,13 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Commandramon")
                 {
+                    RecordRookie = "Commandramon";
+                    RookieEvolution = true;
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
+
                     // Commandramon Details
                     DigimonField.Text = "Metal Empire";
                     DigitalFrame.Text = "7";
@@ -4224,58 +4246,59 @@ namespace DigimonAndTamerCharacterSheets
                     // Commandramon Moves
                     //Basic Move
                     BasicAttack.Text = "Helmet Bash";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackPartHit.Text = "";
+                    BasicAttackHardFail.Text = "User can't attack next turn. (stunned)";
+                    BasicAttackFail.Text = "No effect.";
+                    BasicAttackPartFail.Text = "Mutually unable to attack next turn. (stunned)";
+                    BasicAttackPartHit.Text = "-2HP on target.";
+                    BasicAttackHit.Text = "Mutually stunned. -2HP on target.";
+                    BasicAttackHardHit.Text = "Target stunned. -5HP on target.";
                     BasicDiceMin.Text = "1";
                     BasicDiceMax.Text = "2";
 
                     //Standard Move
                     StandardAttack.Text = "M16 Assassin";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackPartHit.Text = "";
+                    StandardAttackHardFail.Text = "User can't attack next turn. (stunned)";
+                    StandardAttackFail.Text = "No effect.";
+                    StandardAttackPartFail.Text = "Nearby enemies target user next turn. (baited)";
+                    StandardAttackPartHit.Text = "-1HP to target and 2 target allies near them.";
+                    StandardAttackHit.Text = "Nearby enemies baited. -1HP to target and 2 allies.";
+                    StandardAttackHardHit.Text = "All enemies baited. -2HP to target and all allies.";
                     StandardDiceMin.Text = "3";
                     StandardDiceMax.Text = "5";
 
                     //Special Move
                     SpecialAttack.Text = "DCD Bomb";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackPartHit.Text = "";
+                    SpecialAttackHardFail.Text = "-3HP to user and 1 user ally near them.";
+                    SpecialAttackFail.Text = "No effect.";
+                    SpecialAttackPartFail.Text = "-3HP to target and 1 user ally near them.";
+                    SpecialAttackPartHit.Text = "-3HP to target.";
+                    SpecialAttackHit.Text = "-3HP to target and 1 target ally near them.";
+                    SpecialAttackHardHit.Text = "-6HP to target and -3HP to 2 nearby allies.";
                     SpecialDiceMin.Text = "6";
                     SpecialDiceMax.Text = "8";
 
                     //Super Move
                     SuperAttack.Text = "Sniper Tag";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackPartHit.Text = "";
+                    SuperAttackHardFail.Text = "User's next attack roll is nerfed.";
+                    SuperAttackFail.Text = "No effect.";
+                    SuperAttackPartFail.Text = "Next attack on target is buffed.";
+                    SuperAttackPartHit.Text = "-3HP to target.";
+                    SuperAttackHit.Text = "-3HP to target. Next attack on target is buffed.";
+                    SuperAttackHardHit.Text = "-6HP to target. Buff attacks on target this round.";
                     SuperDiceMin.Text = "9";
                     SuperDiceMax.Text = "10";
 
                     // Commandramon Quirks
                     CurrentQuirkOne.Text = "";
                     CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "Cover-Fire Guard - Decrease all enemy attack rolls by one.";
-                    InheritableQuirkTwo.Text = "Investigation - They can roll for investigation.";
-                    InheritableQuirkThree.Text = "";
+                    InheritableQuirkOne.Text = "Cover-Fire Guard - All nearby enemy attack rolls are nerfed.";
+                    InheritableQuirkTwo.Text = "Investigation and Reflex - Roll for Investigation or Reflex Checks.";
+                    InheritableQuirkThree.Text = "Iron Spirit - Increase Digital Frame by 1, then each evolution";
                 }
                 else if (DigimonPartner == "Hagurumon")
                 {
                     RecordRookie = "Hagurumon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4310,6 +4333,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Terriermon")
                 {
                     RecordRookie = "Terriermon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4344,6 +4368,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Hawkmon")
                 {
                     RecordRookie = "Hawkmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4378,6 +4403,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Impmon")
                 {
                     RecordRookie = "Impmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4413,6 +4439,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Dracumon")
                 {
                     RecordRookie = "Dracumon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4447,6 +4474,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "DemiDevimon")
                 {
                     RecordRookie = "DemiDevimon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4481,6 +4509,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Soundbirdmon")
                 {
                     RecordRookie = "Soundbirdmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4515,6 +4544,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Gomamon")
                 {
                     RecordRookie = "Gomamon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4549,6 +4579,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Shakomon")
                 {
                     RecordRookie = "Shakomon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4583,6 +4614,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Tapirmon")
                 {
                     RecordRookie = "Tapirmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4617,6 +4649,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Kotemon")
                 {
                     RecordRookie = "Kotemon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4651,6 +4684,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Monmon")
                 {
                     RecordRookie = "Monmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4685,6 +4719,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Liollmon")
                 {
                     RecordRookie = "Liollmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4719,6 +4754,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Wormmon")
                 {
                     RecordRookie = "Wormmon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4753,6 +4789,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Floramon")
                 {
                     RecordRookie = "Floramon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4787,6 +4824,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Keramon")
                 {
                     RecordRookie = "Keramon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4821,6 +4859,7 @@ namespace DigimonAndTamerCharacterSheets
                 else if (DigimonPartner == "Bacomon")
                 {
                     RecordRookie = "Bacomon";
+                    RookieEvolution = true;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
                     MegaEvolution = false;
@@ -4855,11 +4894,12 @@ namespace DigimonAndTamerCharacterSheets
                 //Champions
                 else if (DigimonPartner == "Numemon")
                 {
-                    RecordChampion = "Hawkmon";
+                    RecordChampion = "Numemon";
+                    RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
                     MegaEvolution = false;
-                    DarkEvolution = true;
+                    DarkEvolution = false;
 
                     // Numemon
                     DigimonField.Text = "Dark Digivolved";
@@ -4889,6 +4929,11 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else
                 {
+                    RookieEvolution = false;
+                    ChampionEvolution = false;
+                    UltimateEvolution = false;
+                    MegaEvolution = false;
+                    DarkEvolution = false;
 
                     DigimonField.Text = "____";
                     DigitalFrame.Text = "____";
@@ -4914,15 +4959,49 @@ namespace DigimonAndTamerCharacterSheets
                     // ____ Moves
 
                     // ____ Quirks
-                    CurrentQuirkOne.Text = "____";
-                    CurrentQuirkTwo.Text = "____";
-                    InheritableQuirkOne.Text = "____";
-                    InheritableQuirkTwo.Text = "____";
-                    InheritableQuirkThree.Text = "____";
+                    CurrentQuirkOne.Text = "_";
+                    CurrentQuirkTwo.Text = "_";
+                    InheritableQuirkOne.Text = "_";
+                    InheritableQuirkTwo.Text = "_";
+                    InheritableQuirkThree.Text = "_";
 
                 }
 
-               
+                
+
+                if (RookieEvolution == true)
+                {
+                    RookieInheritOne = InheritableQuirkOne.Text;
+                    RookieInheritTwo = InheritableQuirkTwo.Text;
+                    RookieInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (ChampionEvolution == true)
+                {
+                    InheritedQuirkOne.Text = RookieInheritOne;
+                    InheritedQuirkTwo.Text = RookieInheritTwo;
+                    InheritedQuirkThree.Text = RookieInheritThree;
+
+                    ChampionInheritOne = InheritableQuirkOne.Text;
+                    ChampionInheritTwo = InheritableQuirkTwo.Text;
+                    ChampionInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (UltimateEvolution == true)
+                {
+                    InheritedQuirkFour.Text = ChampionInheritOne;
+                    InheritedQuirkFive.Text = ChampionInheritTwo;
+                    InheritedQuirkSix.Text = ChampionInheritThree;
+
+                    UltimateInheritOne = InheritableQuirkOne.Text;
+                    UltimateInheritTwo = InheritableQuirkTwo.Text;
+                    UltimateInheritThree = InheritableQuirkThree.Text;
+                }
+                else if (MegaEvolution == true)
+                {
+                    InheritedQuirkFour.Text = UltimateInheritOne;
+                    InheritedQuirkFive.Text = UltimateInheritTwo;
+                    InheritedQuirkSix.Text = UltimateInheritThree;
+                }
+
             }
             if (Partner.Text == "")
             {
@@ -4944,6 +5023,24 @@ namespace DigimonAndTamerCharacterSheets
                 WitsMeal.Enabled = false;
                 EducationMeal.Enabled = false;
                 HaveMeal.Enabled = false;
+                RookieInheritOne = "";
+                RookieInheritTwo = "";
+                RookieInheritThree = "";
+                ChampionInheritOne = "";
+                ChampionInheritTwo = "";
+                ChampionInheritThree = "";
+                UltimateInheritOne = "";
+                UltimateInheritTwo = "";
+                UltimateInheritThree = "";
+                InheritedQuirkOne.Text = "_";
+                InheritedQuirkTwo.Text = "_";
+                InheritedQuirkThree.Text = "_";
+                InheritedQuirkFour.Text = "_";
+                InheritedQuirkFive.Text = "_";
+                InheritedQuirkSix.Text = "_";
+                InheritedQuirkSeven.Text = "_";
+                InheritedQuirkEight.Text = "_";
+                InheritedQuirkNine.Text = "_";
             }
             else if (Partner.Text != "")
             {
@@ -4965,6 +5062,7 @@ namespace DigimonAndTamerCharacterSheets
                 EducationMeal.Enabled = true;
                 HaveMeal.Enabled = true;
             }
+
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -5147,6 +5245,7 @@ namespace DigimonAndTamerCharacterSheets
         String RecordChampion = "";
         String RecordUltimate = "";
         String RecordMega = "";
+        bool RookieEvolution = false;
         bool ChampionEvolution = false;
         bool UltimateEvolution = false;
         bool MegaEvolution = false;
@@ -5304,13 +5403,13 @@ namespace DigimonAndTamerCharacterSheets
                                     ChampionLevel.Text = "Clockmon";
                                 }
                             }
-                            else
-                            {
-                                MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
-                                Partner.Items.Add("Numemon");
-                                Partner.SelectedItem = "Numemon";
-                                DarkEvolution = true;
-                            };
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
+                            Partner.Items.Add("Numemon");
+                            Partner.SelectedItem = "Numemon";
+                            DarkEvolution = true;
                         }
                     }
                     else
@@ -5475,7 +5574,7 @@ namespace DigimonAndTamerCharacterSheets
                     }
 
                     // Display the result
-                    MessageBox.Show($"Strength Roll: {IndividualRolls}");
+                    MessageBox.Show($"Strength Roll: {IndividualRolls}\n Total Roll: {TotalResult}");
                 }
 
                 else
@@ -5533,7 +5632,7 @@ namespace DigimonAndTamerCharacterSheets
                     }
 
                     // Display the result
-                    MessageBox.Show($"Agility Roll: {IndividualRolls}");
+                    MessageBox.Show($"Agility Roll: {IndividualRolls}\n Total Roll: {TotalResult}");
                 }
 
                 else
@@ -5591,7 +5690,7 @@ namespace DigimonAndTamerCharacterSheets
                     }
 
                     // Display the result
-                    MessageBox.Show($"Vibes Roll: {IndividualRolls}");
+                    MessageBox.Show($"Vibes Roll: {IndividualRolls}\n Total Roll: {TotalResult}");
                 }
 
                 else
@@ -5649,7 +5748,7 @@ namespace DigimonAndTamerCharacterSheets
                     }
 
                     // Display the result
-                    MessageBox.Show($"Wits Roll: {IndividualRolls}");
+                    MessageBox.Show($"Wits Roll: {IndividualRolls}\n Total Roll: {TotalResult}");
                 }
 
                 else
@@ -5707,7 +5806,7 @@ namespace DigimonAndTamerCharacterSheets
                     }
 
                     // Display the result
-                    MessageBox.Show($"Education Roll: {IndividualRolls}");
+                    MessageBox.Show($"Education Roll: {IndividualRolls}\n Total Roll: {TotalResult}");
                 }
 
                 else
@@ -5909,27 +6008,27 @@ namespace DigimonAndTamerCharacterSheets
 
             if (TotalResult < TargetDefense - 15)
             {
-                StrikeInflicted = "Hard Fail" + BasicAttackHardFail.Text;
+                StrikeInflicted = "Hard Fail - " + BasicAttackHardFail.Text;
             }
             else if (TotalResult < TargetDefense - 5)
             {
-                StrikeInflicted = "Fail" + BasicAttackFail.Text;
+                StrikeInflicted = "Fail - " + BasicAttackFail.Text;
             }
             else if (TotalResult < TargetDefense)
             {
-                StrikeInflicted = "Part Fail" + BasicAttackPartFail.Text;
+                StrikeInflicted = "Part Fail - " + BasicAttackPartFail.Text;
             }
             else if (TotalResult < TargetDefense + 5)
             {
-                StrikeInflicted = "Part Hit" + BasicAttackPartHit.Text;
+                StrikeInflicted = "Part Hit - " + BasicAttackPartHit.Text;
             }
             else if (TotalResult < TargetDefense + 15)
             {
-                StrikeInflicted = "Hit" + BasicAttackHit.Text;
+                StrikeInflicted = "Hit - " + BasicAttackHit.Text;
             }
             else
             {
-                StrikeInflicted = "Hard Hit" + BasicAttackHardHit.Text;
+                StrikeInflicted = "Hard Hit - " + BasicAttackHardHit.Text;
             }
 
             // Display the result
@@ -5999,27 +6098,27 @@ namespace DigimonAndTamerCharacterSheets
 
             if (TotalResult < TargetDefense - 15)
             {
-                StrikeInflicted = "Hard Fail" + StandardAttackHardFail.Text;
+                StrikeInflicted = "Hard Fail - " + StandardAttackHardFail.Text;
             }
             else if (TotalResult < TargetDefense - 5)
             {
-                StrikeInflicted = "Fail" + StandardAttackFail.Text;
+                StrikeInflicted = "Fail - " + StandardAttackFail.Text;
             }
             else if (TotalResult < TargetDefense)
             {
-                StrikeInflicted = "Part Fail" + StandardAttackPartFail.Text;
+                StrikeInflicted = "Part Fail - " + StandardAttackPartFail.Text;
             }
             else if (TotalResult < TargetDefense + 5)
             {
-                StrikeInflicted = "Part Hit" + StandardAttackPartHit.Text;
+                StrikeInflicted = "Part Hit - " + StandardAttackPartHit.Text;
             }
             else if (TotalResult < TargetDefense + 15)
             {
-                StrikeInflicted = "Hit" + StandardAttackHit.Text;
+                StrikeInflicted = "Hit - " + StandardAttackHit.Text;
             }
             else
             {
-                StrikeInflicted = "Hard Hit" + StandardAttackHardHit.Text;
+                StrikeInflicted = "Hard Hit - " + StandardAttackHardHit.Text;
             }
 
             // Display the result
@@ -6088,27 +6187,27 @@ namespace DigimonAndTamerCharacterSheets
 
             if (TotalResult < TargetDefense - 15)
             {
-                StrikeInflicted = "Hard Fail" + SpecialAttackHardFail.Text;
+                StrikeInflicted = "Hard Fail - " + SpecialAttackHardFail.Text;
             }
             else if (TotalResult < TargetDefense - 5)
             {
-                StrikeInflicted = "Fail" + SpecialAttackFail.Text;
+                StrikeInflicted = "Fail - " + SpecialAttackFail.Text;
             }
             else if (TotalResult < TargetDefense)
             {
-                StrikeInflicted = "Part Fail" + SpecialAttackPartFail.Text;
+                StrikeInflicted = "Part Fail - " + SpecialAttackPartFail.Text;
             }
             else if (TotalResult < TargetDefense + 5)
             {
-                StrikeInflicted = "Part Hit" + SpecialAttackPartHit.Text;
+                StrikeInflicted = "Part Hit - " + SpecialAttackPartHit.Text;
             }
             else if (TotalResult < TargetDefense + 15)
             {
-                StrikeInflicted = "Hit" + SpecialAttackHit.Text;
+                StrikeInflicted = "Hit - " + SpecialAttackHit.Text;
             }
             else
             {
-                StrikeInflicted = "Hard Hit" + SpecialAttackHardHit.Text;
+                StrikeInflicted = "Hard Hit - " + SpecialAttackHardHit.Text;
             }
 
             // Display the result
@@ -6177,27 +6276,27 @@ namespace DigimonAndTamerCharacterSheets
 
             if (TotalResult < TargetDefense - 15)
             {
-                StrikeInflicted = "Hard Fail" + SuperAttackHardFail.Text;
+                StrikeInflicted = "Hard Fail - " + SuperAttackHardFail.Text;
             }
             else if (TotalResult < TargetDefense - 5)
             {
-                StrikeInflicted = "Fail" + SuperAttackFail.Text;
+                StrikeInflicted = "Fail - " + SuperAttackFail.Text;
             }
             else if (TotalResult < TargetDefense)
             {
-                StrikeInflicted = "Part Fail" + SuperAttackPartFail.Text;
+                StrikeInflicted = "Part Fail - " + SuperAttackPartFail.Text;
             }
             else if (TotalResult < TargetDefense + 5)
             {
-                StrikeInflicted = "Part Hit" + SuperAttackPartHit.Text;
+                StrikeInflicted = "Part Hit - " + SuperAttackPartHit.Text;
             }
             else if (TotalResult < TargetDefense + 15)
             {
-                StrikeInflicted = "Hit" + SuperAttackHit.Text;
+                StrikeInflicted = "Hit - " + SuperAttackHit.Text;
             }
             else
             {
-                StrikeInflicted = "Hard Hit" + SuperAttackHardHit.Text;
+                StrikeInflicted = "Hard Hit - " + SuperAttackHardHit.Text;
             }
 
             // Display the result
@@ -6329,6 +6428,16 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void label122_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label31_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox17_Enter_1(object sender, EventArgs e)
         {
 
         }
