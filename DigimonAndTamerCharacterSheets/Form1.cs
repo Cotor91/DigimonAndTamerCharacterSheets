@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using DigimonAndTamerCharacterSheets.Enums;
+using System.Text.Json;
 
 namespace DigimonAndTamerCharacterSheets
 {
@@ -61,6 +62,8 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SaveCharacterInformation()
         {
+            
+
             try
             {
                 // Create or load the XML document
@@ -4085,6 +4088,7 @@ namespace DigimonAndTamerCharacterSheets
         String UltimateInheritOne = "";
         String UltimateInheritTwo = "";
         String UltimateInheritThree = "";
+
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
