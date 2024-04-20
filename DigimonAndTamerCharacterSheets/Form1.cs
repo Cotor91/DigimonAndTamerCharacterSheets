@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using DigimonAndTamerCharacterSheets.Enums;
 using System.Text.Json;
+using DigimonAndTamerCharacterSheets.Models;
 
 namespace DigimonAndTamerCharacterSheets
 {
@@ -20,6 +21,7 @@ namespace DigimonAndTamerCharacterSheets
         public Form1()
         {
             InitializeComponent();
+            
             LoadCharacterInformation(); // Load data when the form initializes
         }
 
@@ -30,73 +32,80 @@ namespace DigimonAndTamerCharacterSheets
 
         private void LoadCharacterInformation()
         {
+            if(!File.Exists("form.json")) 
+            {
+                SaveCharacterInformation();
+                return;
+            }
+
             try
             {
-                if (System.IO.File.Exists(xmlFilePath))
+                SaveForm? loadedForm = JsonSerializer.Deserialize<SaveForm>(File.ReadAllText("form.json"));
+                if(loadedForm == null)
                 {
-                    // Load the XML document if the file exists
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.Load(xmlFilePath);
-
-                    // Read character data from XML
-                    string playerName = xmlDoc.SelectSingleNode("/CharacterInformation/PlayerName")?.InnerText;
-                    string characterName = xmlDoc.SelectSingleNode("/CharacterInformation/CharacterName")?.InnerText;
-                    string characterGender = xmlDoc.SelectSingleNode("/CharacterInformation/CharacterGender")?.InnerText;
-
-                    // Populate textboxes
-                    PlayerName.Text = playerName;
-                    CharacterName.Text = characterName;
-                    CharacterGender.Text = characterGender;
+                    MessageBox.Show("Could not load character information!");
+                    return;
                 }
-                else
-                {
-                    // Handle missing file scenario (e.g., display a message)
-                    MessageBox.Show("Character information file not found. Creating a new one.");
-                }
+                // Populate textboxes
+                PlayerName.Text = loadedForm.PlayerName;
+                CharacterName.Text = loadedForm.CharacterName;
+                CharacterGender.Text = loadedForm.CharacterGender;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error loading character information: {ex.Message}");
+                
             }
         }
 
         private void SaveCharacterInformation()
         {
-            
-
             try
             {
-                // Create or load the XML document
-                XmlDocument xmlDoc = new XmlDocument();
-                if (System.IO.File.Exists(xmlFilePath))
-                    xmlDoc.Load(xmlFilePath);
-                else
-                    xmlDoc.AppendChild(xmlDoc.CreateXmlDeclaration("1.0", "utf-8", null));
-
-                // Update character data
-                XmlElement playerNameElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/PlayerName");
-                if (playerNameElement != null)
+                File.WriteAllText("form.json", JsonSerializer.Serialize(new SaveForm
                 {
-                    playerNameElement.InnerText = PlayerName.Text;
-                }
-                XmlElement characterNameElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/CharacterName");
-                if (characterNameElement != null)
-                {
-                    characterNameElement.InnerText = CharacterName.Text;
-                }
-                XmlElement characterGenderElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/CharacterGender");
-                if (characterGenderElement != null)
-                {
-                    characterGenderElement.InnerText = CharacterGender.Text;
-                }
-
-                // Save the XML back to the file
-                xmlDoc.Save(xmlFilePath);
+                    PlayerName = PlayerName.Text,
+                    CharacterName = CharacterName.Text,
+                    CharacterGender = CharacterGender.Text
+                }));
+                MessageBox.Show("Saved");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show($"Error saving character information: {ex.Message}");
             }
+
+            // try
+            // {
+            //     // Create or load the XML document
+            //     XmlDocument xmlDoc = new XmlDocument();
+            //     if (System.IO.File.Exists(xmlFilePath))
+            //         xmlDoc.Load(xmlFilePath);
+            //     else
+            //         xmlDoc.AppendChild(xmlDoc.CreateXmlDeclaration("1.0", "utf-8", null));
+
+            //     // Update character data
+            //     XmlElement playerNameElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/PlayerName");
+            //     if (playerNameElement != null)
+            //     {
+            //         playerNameElement.InnerText = PlayerName.Text;
+            //     }
+            //     XmlElement characterNameElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/CharacterName");
+            //     if (characterNameElement != null)
+            //     {
+            //         characterNameElement.InnerText = CharacterName.Text;
+            //     }
+            //     XmlElement characterGenderElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/CharacterGender");
+            //     if (characterGenderElement != null)
+            //     {
+            //         characterGenderElement.InnerText = CharacterGender.Text;
+            //     }
+
+            //     // Save the XML back to the file
+            //     xmlDoc.Save(xmlFilePath);
+            // }
+            // catch (Exception ex)
+            // {
+            // }
         }
 
         public void trackBar1_Scroll(object sender, EventArgs e)
