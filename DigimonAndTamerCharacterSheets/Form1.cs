@@ -16,12 +16,12 @@ namespace DigimonAndTamerCharacterSheets
 {
     public partial class Form1 : Form
     {
-        private string xmlFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CharacterInformation.xml");
+        /* private string xmlFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CharacterInformation.xml"); */
 
         public Form1()
         {
             InitializeComponent();
-            
+
             LoadCharacterInformation(); // Load data when the form initializes
         }
 
@@ -32,7 +32,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void LoadCharacterInformation()
         {
-            if(!File.Exists("form.json")) 
+            if (!File.Exists("form.json"))
             {
                 SaveCharacterInformation();
                 return;
@@ -41,7 +41,7 @@ namespace DigimonAndTamerCharacterSheets
             try
             {
                 SaveForm? loadedForm = JsonSerializer.Deserialize<SaveForm>(File.ReadAllText("form.json"));
-                if(loadedForm == null)
+                if (loadedForm == null)
                 {
                     MessageBox.Show("Could not load character information!");
                     return;
@@ -50,11 +50,47 @@ namespace DigimonAndTamerCharacterSheets
                 PlayerName.Text = loadedForm.PlayerName;
                 CharacterName.Text = loadedForm.CharacterName;
                 CharacterGender.Text = loadedForm.CharacterGender;
+                ReadableInventory.Text = loadedForm.ReadableInventory;
+                Partner.Text = loadedForm.Partner;
+                CrestSelection.Text = loadedForm.CrestSelection;
+                MaxHealth.Text = loadedForm.MaxHealth;
+                CurrentHealth.Text = loadedForm.CurrentHealth;
+                CoreHPMax.Text = loadedForm.CoreHPMax;
+                CoreHPNow.Text = loadedForm.CoreHPNow;
+                MaximumLife.Text = loadedForm.MaximumLife;
+                RemainingLife.Text = loadedForm.RemainingLife;
+                Day.Text = loadedForm.Day;
+                TamersLevel.Text = loadedForm.Level;
+                CharacterLevel.Text = loadedForm.Level;
             }
             catch (Exception ex)
             {
-                
+
             }
+
+
+            if (Partner.Text != "")
+            {
+                if (!Partner.Items.Contains(Partner.Text))
+                {
+                    Partner.Items.Add(Partner.Text);
+                }
+
+                Partner.SelectedItem = Partner.Text;
+            }
+
+            if (CrestSelection.Text != "")
+            {
+                if (!CrestSelection.Items.Contains(CrestSelection.Text))
+                {
+                    CrestSelection.Items.Add(CrestSelection.Text);
+                }
+
+                CrestSelection.SelectedItem = CrestSelection.Text;
+            }
+
+            SaveCharacterInformation();
+
         }
 
         private void SaveCharacterInformation()
@@ -65,11 +101,22 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     PlayerName = PlayerName.Text,
                     CharacterName = CharacterName.Text,
-                    CharacterGender = CharacterGender.Text
+                    CharacterGender = CharacterGender.Text,
+                    ReadableInventory = ReadableInventory.Text,
+                    Partner = Partner.Text,
+                    CrestSelection = CrestSelection.Text,
+                    MaxHealth = MaxHealth.Text,
+                    CurrentHealth = CurrentHealth.Text,
+                    CoreHPMax = CoreHPMax.Text,
+                    CoreHPNow = CoreHPNow.Text,
+                    MaximumLife = MaximumLife.Text,
+                    RemainingLife = RemainingLife.Text,
+                    Level = CharacterLevel.Text,
+                    Day = Day.Text,
                 }));
                 MessageBox.Show("Saved");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Error saving character information: {ex.Message}");
             }
@@ -217,9 +264,7 @@ namespace DigimonAndTamerCharacterSheets
             {
                 // Lose current form
                 Partner.SelectedIndex = -1;
-                CrestSelection.SelectedIndex = -1;
                 Partner.Enabled = true;
-                CrestSelection.Enabled = true;
                 RecordRookie = "________";
                 RecordChampion = "________";
                 RecordUltimate = "________";
@@ -242,6 +287,22 @@ namespace DigimonAndTamerCharacterSheets
                 Digivolve.Enabled = false;
             }
 
+            if (ChampionEvolution == true || UltimateEvolution == true || MegaEvolution == true)
+            {
+                if (DarkEvolution == true)
+                {
+                    Partner.SelectedIndex = -1;
+                    Partner.Enabled = true;
+                }
+                else
+                {
+                    Partner.SelectedItem = RecordRookie;
+                }
+
+                Partner.Items.Remove(RecordChampion);
+
+            }
+
             // Calculate the total of the Strength Skills
             int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
@@ -250,6 +311,9 @@ namespace DigimonAndTamerCharacterSheets
 
             // Output the halvedValue to the text box
             DigiSoulStat.Text = halvedValue.ToString();
+
+            SaveCharacterInformation();
+        
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -508,7 +572,7 @@ namespace DigimonAndTamerCharacterSheets
                 CurrentHealth.Text = MaxHealth.Text;
             }
 
-
+            SaveCharacterInformation();
         }
 
         private void button21_Click(object sender, EventArgs e)
@@ -549,7 +613,7 @@ namespace DigimonAndTamerCharacterSheets
                 CurrentHealth.Text = "0";
             }
 
-
+            SaveCharacterInformation();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -2884,7 +2948,8 @@ namespace DigimonAndTamerCharacterSheets
             if (FoodBonding < 4)
             {
                 FoodBonding = FoodBonding + 2;
-            } else
+            }
+            else
             {
                 FoodBonding = 5;
             }
@@ -3004,6 +3069,7 @@ namespace DigimonAndTamerCharacterSheets
 
             };
 
+            SaveCharacterInformation();
 
         }
 
@@ -3104,7 +3170,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void label36_Click(object sender, EventArgs e)
         {
-
+            SaveCharacterInformation();
         }
 
         private void label30_Click(object sender, EventArgs e)
@@ -3294,7 +3360,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void label38_Click(object sender, EventArgs e)
         {
-
+            SaveCharacterInformation();
         }
 
         private void radioButton2_CheckedChanged_2(object sender, EventArgs e)
@@ -3807,7 +3873,9 @@ namespace DigimonAndTamerCharacterSheets
             foreach (TrackBar track in tracks)
             {
                 track.Enabled = true;
-            }
+            };
+
+            SaveCharacterInformation();
 
         }
 
@@ -4101,7 +4169,6 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
             {
                 // Get selected Personality Crest
                 string DigimonPartner = (string)Partner.SelectedItem;
@@ -4291,7 +4358,9 @@ namespace DigimonAndTamerCharacterSheets
                     ChampionEvolution = true;
                     UltimateEvolution = false;
                     MegaEvolution = false;
-                    DarkEvolution = false;
+                    DarkEvolution = true;
+                    CrestSelection.SelectedIndex = -1;
+                    CrestSelection.Enabled = true;
 
                     // Numemon
                     DigimonField.Text = "Dark Digivolved";
@@ -4321,7 +4390,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Greymon")
                 {
-                    RecordRookie = "Greymon";
+                    RecordChampion = "Greymon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4404,7 +4473,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Tyrannomon")
                 {
-                    RecordRookie = "Tyrannomon";
+                    RecordChampion = "Tyrannomon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4486,7 +4555,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Tuskmon")
                 {
-                    RecordRookie = "Tuskmon";
+                    RecordChampion = "Tuskmon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4568,7 +4637,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Flarizamon")
                 {
-                    RecordRookie = "Flarizamon";
+                    RecordChampion = "Flarizamon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4650,7 +4719,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Growlmon")
                 {
-                    RecordRookie = "Growlmon";
+                    RecordChampion = "Growlmon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4732,7 +4801,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Hi-Commandramon")
                 {
-                    RecordRookie = "Hi-Commandramon";
+                    RecordChampion = "Hi-Commandramon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4815,7 +4884,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Centarumon")
                 {
-                    RecordRookie = "Centarumon";
+                    RecordChampion = "Centarumon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4897,7 +4966,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Deputymon")
                 {
-                    RecordRookie = "Deputymon";
+                    RecordChampion = "Deputymon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -4979,7 +5048,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Sealsdramon")
                 {
-                    RecordRookie = "Sealsdramon";
+                    RecordChampion = "Sealsdramon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -5061,7 +5130,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (DigimonPartner == "Clockmon")
                 {
-                    RecordRookie = "Clockmon";
+                    RecordChampion = "Clockmon";
                     RookieEvolution = false;
                     ChampionEvolution = true;
                     UltimateEvolution = false;
@@ -5180,9 +5249,9 @@ namespace DigimonAndTamerCharacterSheets
                     InheritableQuirkThree.Text = "_";
 
                 }
-            
 
-                
+
+
 
                 if (RookieEvolution == true)
                 {
@@ -5278,6 +5347,7 @@ namespace DigimonAndTamerCharacterSheets
                 HaveMeal.Enabled = true;
             }
 
+            SaveCharacterInformation();
         }
 
         private void textBox10_TextChanged(object sender, EventArgs e)
@@ -5391,6 +5461,9 @@ namespace DigimonAndTamerCharacterSheets
                 // Restart Lifespan
                 RemainingLife.Text = MaximumLife.Text;
                 Digivolve.Enabled = false;
+
+
+                SaveCharacterInformation();
             }
 
         }
@@ -5651,6 +5724,8 @@ namespace DigimonAndTamerCharacterSheets
                             DarkEvolution = true;
                             RookieEvolution = false;
                             ChampionEvolution = true;
+                            CrestSelection.SelectedIndex = -1;
+                            CrestSelection.Enabled = true;
 
                         }
                     }
@@ -5662,6 +5737,9 @@ namespace DigimonAndTamerCharacterSheets
             RecordChampion = ChampionLevel.Text;
             RecordUltimate = UltimateLevel.Text;
             RecordMega = MegaLevel.Text;
+
+            SaveCharacterInformation();
+
         }
 
         private void Value_Click(object sender, EventArgs e)
@@ -5746,7 +5824,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 // Digi-Bond Replenished
                 DigiBond.Text = "5";
-                
+
                 // Strategy Points
                 StratPoints.Text = "";
             }
@@ -5756,12 +5834,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             if (Partner.Text != "")
             {
-            // Increment Days
-            int DayCount;
-            int.TryParse(Day.Text, out DayCount);
-            DayCount = DayCount + 1;
-            Day.Text = DayCount.ToString();
+                // Increment Days
+                int DayCount;
+                int.TryParse(Day.Text, out DayCount);
+                DayCount = DayCount + 1;
+                Day.Text = DayCount.ToString();
             };
+
+            SaveCharacterInformation();
+
         }
 
         private void groupBox16_Enter(object sender, EventArgs e)
@@ -6278,7 +6359,7 @@ namespace DigimonAndTamerCharacterSheets
         }
 
 
-    private void StandardAttack_Click(object sender, EventArgs e)
+        private void StandardAttack_Click(object sender, EventArgs e)
         {
             GaurdPoints--;
             StratPoints.Text = "";
@@ -6680,6 +6761,26 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void groupBox17_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CharacterName_TextChanged(object sender, EventArgs e)
+        {
+            SaveCharacterInformation();
+        }
+
+        private void MaximumLife_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TamersLevel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Day_Click(object sender, EventArgs e)
         {
 
         }
