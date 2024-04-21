@@ -16,4 +16,8 @@ internal class SaveForm
     public string RemainingLife { get; set; } = null!;
     public string Day { get; set; } = null!;
     public string Level { get; set; } = null!;
+    public string RecordsRookie { get; set; } = null!;
+    public string RecordsChampion { get; set; } = null!;
+    public string RecordsUltimate { get; set; } = null!;
+    public string RecordsMega { get; set; } = null!;
 }

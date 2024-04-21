@@ -62,6 +62,10 @@ namespace DigimonAndTamerCharacterSheets
                 Day.Text = loadedForm.Day;
                 TamersLevel.Text = loadedForm.Level;
                 CharacterLevel.Text = loadedForm.Level;
+                RecordRookie = loadedForm.RecordsRookie;
+                RecordChampion = loadedForm.RecordsChampion;
+                RecordUltimate = loadedForm.RecordsUltimate;
+                RecordMega = loadedForm.RecordsMega;
             }
             catch (Exception ex)
             {
@@ -113,6 +117,10 @@ namespace DigimonAndTamerCharacterSheets
                     RemainingLife = RemainingLife.Text,
                     Level = CharacterLevel.Text,
                     Day = Day.Text,
+                    RecordsRookie = RecordRookie,
+                    RecordsChampion = RecordChampion,
+                    RecordsUltimate = RecordUltimate,
+                    RecordsMega = RecordMega,
                 }));
                 MessageBox.Show("Saved");
             }
@@ -291,6 +299,9 @@ namespace DigimonAndTamerCharacterSheets
             {
                 if (DarkEvolution == true)
                 {
+
+                    Partner.Items.Remove("Numemon");
+
                     Partner.SelectedIndex = -1;
                     Partner.Enabled = true;
                 }
@@ -300,6 +311,8 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
                 Partner.Items.Remove(RecordChampion);
+                Partner.Items.Remove(RecordUltimate);
+                Partner.Items.Remove(RecordMega);
 
             }
 
@@ -3840,7 +3853,7 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         // Level Up System
-        int TamerLevel = 1;
+        int TamerLevel;
         // Press The Butoon
         private void button22_Click_4(object sender, EventArgs e)
         {
@@ -3854,6 +3867,7 @@ namespace DigimonAndTamerCharacterSheets
             MaximumLifespan = MaximumLifespan + 2;
             MaximumLife.Text = MaximumLifespan.ToString();
 
+            int.TryParse(TamersLevel.Text, out TamerLevel);
             TamerLevel = TamerLevel + 1;
             CharacterLevel.Text = TamerLevel.ToString();
             int IncreaseHealth;
