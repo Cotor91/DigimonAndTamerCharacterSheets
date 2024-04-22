@@ -3884,6 +3884,7 @@
             DigimonEducation.TabIndex = 243;
             DigimonEducation.Text = "0";
             DigimonEducation.TextAlign = HorizontalAlignment.Center;
+            DigimonEducation.TextChanged += DigimonEducation_TextChanged;
             // 
             // DigimonWits
             // 
@@ -3896,6 +3897,7 @@
             DigimonWits.TabIndex = 242;
             DigimonWits.Text = "0";
             DigimonWits.TextAlign = HorizontalAlignment.Center;
+            DigimonWits.TextChanged += DigimonWits_TextChanged;
             // 
             // DigimonVibes
             // 
@@ -3908,6 +3910,7 @@
             DigimonVibes.TabIndex = 241;
             DigimonVibes.Text = "0";
             DigimonVibes.TextAlign = HorizontalAlignment.Center;
+            DigimonVibes.TextChanged += DigimonVibes_TextChanged;
             // 
             // DigimonAgility
             // 
@@ -3920,6 +3923,7 @@
             DigimonAgility.TabIndex = 240;
             DigimonAgility.Text = "0";
             DigimonAgility.TextAlign = HorizontalAlignment.Center;
+            DigimonAgility.TextChanged += DigimonAgility_TextChanged;
             // 
             // DigimonStrength
             // 
@@ -3932,6 +3936,7 @@
             DigimonStrength.TabIndex = 239;
             DigimonStrength.Text = "0";
             DigimonStrength.TextAlign = HorizontalAlignment.Center;
+            DigimonStrength.TextChanged += DigimonStrength_TextChanged;
             // 
             // groupBox17
             // 

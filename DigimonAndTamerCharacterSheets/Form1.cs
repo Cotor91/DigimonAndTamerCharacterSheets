@@ -16,8 +16,6 @@ namespace DigimonAndTamerCharacterSheets
 {
     public partial class Form1 : Form
     {
-        /* private string xmlFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "CharacterInformation.xml"); */
-
         public Form1()
         {
             InitializeComponent();
@@ -66,6 +64,59 @@ namespace DigimonAndTamerCharacterSheets
                 RecordChampion = loadedForm.RecordsChampion;
                 RecordUltimate = loadedForm.RecordsUltimate;
                 RecordMega = loadedForm.RecordsMega;
+                RecordChampion = loadedForm.RecordsChampion;
+                RecordUltimate = loadedForm.RecordsUltimate;
+                RecordMega = loadedForm.RecordsMega;
+                CarryTrack.Value = loadedForm.CarryTrack;
+                ThrowTrack.Value = loadedForm.ThrowTrack;
+                HoldTrack.Value = loadedForm.HoldTrack;
+                BalanceTrack.Value = loadedForm.BalanceTrack;
+                ParkourTrack.Value = loadedForm.ParkourTrack;
+                ReflexTrack.Value = loadedForm.ReflexTrack;
+                PerformTrack.Value = loadedForm.PerformTrack;
+                PersuadeTrack.Value = loadedForm.PersuadeTrack;
+                IntimidateTrack.Value = loadedForm.IntimidateTrack;
+                InvestigationTrack.Value = loadedForm.InvestigationTrack;
+                EmpathyTrack.Value = loadedForm.EmpathyTrack;
+                IngenuityTrack.Value = loadedForm.IngenuityTrack;
+                SocietyTrack.Value = loadedForm.SocietyTrack;
+                TechnologyTrack.Value = loadedForm.TechnologyTrack;
+                OccultismTrack.Value = loadedForm.OccultismTrack;
+                HighestCarry = loadedForm.CarryTrack;
+                HighestThrow = loadedForm.ThrowTrack;
+                HighestHold = loadedForm.HoldTrack;
+                HighestBalance = loadedForm.BalanceTrack;
+                HighestParkour = loadedForm.ParkourTrack;
+                HighestReflex = loadedForm.ReflexTrack;
+                HighestPerform = loadedForm.PerformTrack;
+                HighestPersuade = loadedForm.PersuadeTrack;
+                HighestIntimidate = loadedForm.IntimidateTrack;
+                HighestInvestigation = loadedForm.InvestigationTrack;
+                HighestEmpathy = loadedForm.EmpathyTrack;
+                HighestIngenuity = loadedForm.IngenuityTrack;
+                HighestSociety = loadedForm.SocietyTrack;
+                HighestTechnology = loadedForm.TechnologyTrack;
+                HighestOccultism = loadedForm.OccultismTrack;
+                BruiseOne.Checked = loadedForm.BruiseOne;
+                BruiseTwo.Checked = loadedForm.BruiseTwo;
+                BruiseThree.Checked = loadedForm.BruiseThree;
+                BruiseFour.Checked = loadedForm.BruiseFour;
+                BruiseFive.Checked = loadedForm.BruiseFive;
+                InjuryOne.Checked = loadedForm.InjuryOne;
+                InjuryTwo.Checked = loadedForm.InjuryTwo;
+                InjuryThree.Checked = loadedForm.InjuryThree;
+                InjuryFour.Checked = loadedForm.InjuryFour;
+                InjuryFive.Checked = loadedForm.InjuryFive;
+                WoundOne.Checked = loadedForm.WoundOne;
+                WoundTwo.Checked = loadedForm.WoundTwo;
+                WoundThree.Checked = loadedForm.WoundThree;
+                WoundFour.Checked = loadedForm.WoundFour;
+                WoundFive.Checked = loadedForm.WoundFive;
+                MealStrength = loadedForm.MealStrength;
+                MealAgility = loadedForm.MealAgility;
+                MealVibes = loadedForm.MealVibes;
+                MealWits = loadedForm.MealWits;
+                MealEducation = loadedForm.MealEducation;
             }
             catch (Exception ex)
             {
@@ -92,6 +143,12 @@ namespace DigimonAndTamerCharacterSheets
 
                 CrestSelection.SelectedItem = CrestSelection.Text;
             }
+
+            StrengthStat.Text = "";
+            AgilityStat.Text = "";
+            VibesStat.Text = "";
+            WitsStat.Text = "";
+            KnowledgeStat.Text = "";
 
             SaveCharacterInformation();
 
@@ -121,7 +178,42 @@ namespace DigimonAndTamerCharacterSheets
                     RecordsChampion = RecordChampion,
                     RecordsUltimate = RecordUltimate,
                     RecordsMega = RecordMega,
-                }));
+                    CarryTrack = CarryTrack.Value,
+                    ThrowTrack = ThrowTrack.Value,
+                    HoldTrack = HoldTrack.Value,
+                    BalanceTrack = BalanceTrack.Value,
+                    ParkourTrack = ParkourTrack.Value,
+                    ReflexTrack = ReflexTrack.Value,
+                    PerformTrack = PerformTrack.Value,
+                    PersuadeTrack = PersuadeTrack.Value,
+                    IntimidateTrack = IntimidateTrack.Value,
+                    InvestigationTrack = InvestigationTrack.Value,
+                    EmpathyTrack = EmpathyTrack.Value,
+                    IngenuityTrack = IngenuityTrack.Value,
+                    SocietyTrack = SocietyTrack.Value,
+                    TechnologyTrack = TechnologyTrack.Value,
+                    OccultismTrack = OccultismTrack.Value,
+                    BruiseOne = BruiseOne.Checked,
+                    BruiseTwo = BruiseTwo.Checked,
+                    BruiseThree = BruiseThree.Checked,
+                    BruiseFour = BruiseFour.Checked,
+                    BruiseFive = BruiseFive.Checked,
+                    InjuryOne = InjuryOne.Checked,
+                    InjuryTwo = InjuryTwo.Checked,
+                    InjuryThree = InjuryThree.Checked,
+                    InjuryFour = InjuryFour.Checked,
+                    InjuryFive = InjuryFive.Checked,
+                    WoundOne = WoundOne.Checked,
+                    WoundTwo = WoundTwo.Checked,
+                    WoundThree = WoundThree.Checked,
+                    WoundFour = WoundFour.Checked,
+                    WoundFive = WoundFive.Checked,
+                    MealStrength = MealStrength,
+                    MealAgility = MealAgility,
+                    MealVibes = MealVibes,
+                    MealWits = MealWits,
+                    MealEducation = MealEducation,
+            }));
                 MessageBox.Show("Saved");
             }
             catch (Exception ex)
@@ -129,38 +221,8 @@ namespace DigimonAndTamerCharacterSheets
                 MessageBox.Show($"Error saving character information: {ex.Message}");
             }
 
-            // try
-            // {
-            //     // Create or load the XML document
-            //     XmlDocument xmlDoc = new XmlDocument();
-            //     if (System.IO.File.Exists(xmlFilePath))
-            //         xmlDoc.Load(xmlFilePath);
-            //     else
-            //         xmlDoc.AppendChild(xmlDoc.CreateXmlDeclaration("1.0", "utf-8", null));
 
-            //     // Update character data
-            //     XmlElement playerNameElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/PlayerName");
-            //     if (playerNameElement != null)
-            //     {
-            //         playerNameElement.InnerText = PlayerName.Text;
-            //     }
-            //     XmlElement characterNameElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/CharacterName");
-            //     if (characterNameElement != null)
-            //     {
-            //         characterNameElement.InnerText = CharacterName.Text;
-            //     }
-            //     XmlElement characterGenderElement = (XmlElement)xmlDoc.SelectSingleNode("/CharacterInformation/CharacterGender");
-            //     if (characterGenderElement != null)
-            //     {
-            //         characterGenderElement.InnerText = CharacterGender.Text;
-            //     }
 
-            //     // Save the XML back to the file
-            //     xmlDoc.Save(xmlFilePath);
-            // }
-            // catch (Exception ex)
-            // {
-            // }
         }
 
         public void trackBar1_Scroll(object sender, EventArgs e)
@@ -326,7 +388,7 @@ namespace DigimonAndTamerCharacterSheets
             DigiSoulStat.Text = halvedValue.ToString();
 
             SaveCharacterInformation();
-        
+
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -763,7 +825,11 @@ namespace DigimonAndTamerCharacterSheets
         // Strength Dice
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
+            int SkillStrength = CarryTrack.Value + HoldTrack.Value + ThrowTrack.Value;
+            int TotalStrength = (int)Math.Ceiling(SkillStrength / 2.0);
+            StrengthStat.Text = TotalStrength.ToString();
 
+            SaveCharacterInformation();
         }
 
         // Maximum Skills
@@ -835,16 +901,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
             }
 
-
-
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)CarryTrack.Value + (int)ThrowTrack.Value + (int)HoldTrack.Value;
-
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-            // Output the halvedValue to the text box
-            StrengthStat.Text = halvedValue.ToString();
+            // Update Stat-Boxes
+            StrengthStat.Text = "";
+            AgilityStat.Text = "";
+            VibesStat.Text = "";
+            WitsStat.Text = "";
+            KnowledgeStat.Text = "";
         }
 
         // Carry Calculations
@@ -959,16 +1021,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
             }
 
-
-
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)CarryTrack.Value + (int)ThrowTrack.Value + (int)HoldTrack.Value;
-
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-            // Output the halvedValue to the text box
-            StrengthStat.Text = halvedValue.ToString();
+            // Update Stat-Boxes
+            StrengthStat.Text = "";
+            AgilityStat.Text = "";
+            VibesStat.Text = "";
+            WitsStat.Text = "";
+            KnowledgeStat.Text = "";
         }
 
         // Throw Calculations
@@ -1080,16 +1138,12 @@ namespace DigimonAndTamerCharacterSheets
                 }
             }
 
-
-
-            // Calculate the total of the Strength Skills
-            int totalValue = (int)CarryTrack.Value + (int)ThrowTrack.Value + (int)HoldTrack.Value;
-
-            // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-            // Output the halvedValue to the text box
-            StrengthStat.Text = halvedValue.ToString();
+            // Update Stat-Boxes
+            StrengthStat.Text = "";
+            AgilityStat.Text = "";
+            VibesStat.Text = "";
+            WitsStat.Text = "";
+            KnowledgeStat.Text = "";
         }
 
         // Hold Calculations
@@ -1159,7 +1213,11 @@ namespace DigimonAndTamerCharacterSheets
         // Agility Dice
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
+            int SkillAgility = BalanceTrack.Value + ParkourTrack.Value + ReflexTrack.Value;
+            int TotalAgility = (int)Math.Ceiling(SkillAgility / 2.0);
+            AgilityStat.Text = TotalAgility.ToString();
 
+            SaveCharacterInformation();
         }
 
         // Balance Trackbar
@@ -1208,16 +1266,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Agility Skills
-                int totalValue = (int)BalanceTrack.Value + (int)ParkourTrack.Value + (int)ReflexTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                AgilityStat.Text = halvedValue.ToString();
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -1332,16 +1386,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Agility Skills
-                int totalValue = (int)BalanceTrack.Value + (int)ParkourTrack.Value + (int)ReflexTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                AgilityStat.Text = halvedValue.ToString();
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -1455,16 +1505,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Agility Skills
-                int totalValue = (int)BalanceTrack.Value + (int)ParkourTrack.Value + (int)ReflexTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                AgilityStat.Text = halvedValue.ToString();
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -1536,7 +1582,11 @@ namespace DigimonAndTamerCharacterSheets
         // Vibes Dice
         private void VibesStat_TextChanged(object sender, EventArgs e)
         {
+            int SkillVibes = PerformTrack.Value + PersuadeTrack.Value + IntimidateTrack.Value;
+            int TotalVibes = (int)Math.Ceiling(SkillVibes / 2.0);
+            VibesStat.Text = TotalVibes.ToString();
 
+            SaveCharacterInformation();
         }
 
         // Perform Trackbar
@@ -1585,17 +1635,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Vibes Skills
-                int totalValue = (int)PerformTrack.Value + (int)IntimidateTrack.Value + (int)PersuadeTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                VibesStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -1711,16 +1756,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Vibes Skills
-                int totalValue = (int)PerformTrack.Value + (int)IntimidateTrack.Value + (int)PersuadeTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                VibesStat.Text = halvedValue.ToString();
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -1835,16 +1876,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Vibes Skills
-                int totalValue = (int)PerformTrack.Value + (int)IntimidateTrack.Value + (int)PersuadeTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                VibesStat.Text = halvedValue.ToString();
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -1916,7 +1953,11 @@ namespace DigimonAndTamerCharacterSheets
         // Wits Dice
         private void WitsStat_TextChanged(object sender, EventArgs e)
         {
+            int SkillWits = InvestigationTrack.Value + EmpathyTrack.Value + IngenuityTrack.Value;
+            int TotalWits = (int)Math.Ceiling(SkillWits / 2.0);
+            WitsStat.Text = TotalWits.ToString();
 
+            SaveCharacterInformation();
         }
 
         // Investigation Tracker
@@ -1965,17 +2006,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Wits Skills
-                int totalValue = (int)InvestigationTrack.Value + (int)EmpathyTrack.Value + (int)IngenuityTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                WitsStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
 
         }
@@ -2091,17 +2127,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Wits Skills
-                int totalValue = (int)InvestigationTrack.Value + (int)EmpathyTrack.Value + (int)IngenuityTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                WitsStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
 
         }
@@ -2217,17 +2248,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Wits Skills
-                int totalValue = (int)InvestigationTrack.Value + (int)EmpathyTrack.Value + (int)IngenuityTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                WitsStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
 
         }
@@ -2300,7 +2326,11 @@ namespace DigimonAndTamerCharacterSheets
         // Knowledge Dice
         private void textBox5_TextChanged_1(object sender, EventArgs e)
         {
+            int SkillEducation = SocietyTrack.Value + TechnologyTrack.Value + OccultismTrack.Value;
+            int TotalEducation = (int)Math.Ceiling(SkillEducation / 2.0);
+            KnowledgeStat.Text = TotalEducation.ToString();
 
+            SaveCharacterInformation();
         }
 
         // Technology Tracker
@@ -2349,17 +2379,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)TechnologyTrack.Value + (int)OccultismTrack.Value + (int)SocietyTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                KnowledgeStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -2474,17 +2499,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)TechnologyTrack.Value + (int)OccultismTrack.Value + (int)SocietyTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                KnowledgeStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -2599,17 +2619,12 @@ namespace DigimonAndTamerCharacterSheets
                     }
                 }
 
-
-
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)TechnologyTrack.Value + (int)OccultismTrack.Value + (int)SocietyTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                KnowledgeStat.Text = halvedValue.ToString();
-
+                // Update Stat-Boxes
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
             }
         }
 
@@ -2952,135 +2967,125 @@ namespace DigimonAndTamerCharacterSheets
             }
         }
 
-        String LastMeal = "";
+        bool MealStrength = false;
+        bool MealAgility = false;
+        bool MealVibes = false;
+        bool MealWits = false;
+        bool MealEducation = false;
 
         private void button4_Click(object sender, EventArgs e)
         {
-            int FoodBonding;
-            int.TryParse(DigiBond.Text, out FoodBonding);
-            if (FoodBonding < 4)
-            {
-                FoodBonding = FoodBonding + 2;
-            }
-            else
-            {
-                FoodBonding = 5;
-            }
-            DigiBond.Text = FoodBonding.ToString();
-            StratPoints.Text = "";
-
-            // Undo last boost
-            if (LastMeal == "Strength")
-            {
-                int DigimonFeed;
-                int.TryParse(DigimonStrength.Text, out DigimonFeed);
-                DigimonFeed--;
-                DigimonStrength.Text = DigimonFeed.ToString();
-            }
-            else if (LastMeal == "Agility")
-            {
-                int DigimonFeed;
-                int.TryParse(DigimonAgility.Text, out DigimonFeed);
-                DigimonFeed--;
-                DigimonAgility.Text = DigimonFeed.ToString();
-            }
-            else if (LastMeal == "Vibes")
-            {
-                int DigimonFeed;
-                int.TryParse(DigimonVibes.Text, out DigimonFeed);
-                DigimonFeed--;
-                DigimonVibes.Text = DigimonFeed.ToString();
-            }
-            else if (LastMeal == "Wits")
-            {
-                int DigimonFeed;
-                int.TryParse(DigimonWits.Text, out DigimonFeed);
-                DigimonFeed--;
-                DigimonWits.Text = DigimonFeed.ToString();
-            }
-            else if (LastMeal == "Education")
-            {
-                int DigimonFeed;
-                int.TryParse(DigimonEducation.Text, out DigimonFeed);
-                DigimonFeed--;
-                DigimonEducation.Text = DigimonFeed.ToString();
-            }
-            else
-            {
-
-            };
-
-
             // Count
             if (StrengthMeal.Checked == true)
             {
-                int DigimonFed;
-                int.TryParse(DigimonStrength.Text, out DigimonFed);
-                DigimonFed++;
-                DigimonStrength.Text = DigimonFed.ToString();
+                MealStrength = true;
+                MealAgility = false;
+                MealVibes = false;
+                MealWits = false;
+                MealEducation = false;
 
-                LastMeal = "Strength";
-                int DigimonAbsorbed;
-                int.TryParse(StrengthDiet.Text, out DigimonAbsorbed);
-                DigimonAbsorbed++;
-                StrengthDiet.Text = DigimonAbsorbed.ToString();
+                int.TryParse(StrengthDiet.Text, out int DietBoost);
+                DietBoost = DietBoost + 1;
+                StrengthDiet.Text = DietBoost.ToString();
             }
             else if (AgilityMeal.Checked == true)
             {
-                int DigimonFed;
-                int.TryParse(DigimonAgility.Text, out DigimonFed);
-                DigimonFed++;
-                DigimonAgility.Text = DigimonFed.ToString();
+                MealStrength = false;
+                MealAgility = true;
+                MealVibes = false;
+                MealWits = false;
+                MealEducation = false;
 
-                LastMeal = "Agility";
-                int DigimonAbsorbed;
-                int.TryParse(AgilityDiet.Text, out DigimonAbsorbed);
-                DigimonAbsorbed++;
-                AgilityDiet.Text = DigimonAbsorbed.ToString();
+                int.TryParse(AgilityDiet.Text, out int DietBoost);
+                DietBoost = DietBoost + 1;
+                AgilityDiet.Text = DietBoost.ToString();
             }
             else if (VibesMeal.Checked == true)
             {
-                int DigimonFed;
-                int.TryParse(DigimonVibes.Text, out DigimonFed);
-                DigimonFed++;
-                DigimonVibes.Text = DigimonFed.ToString();
+                MealStrength = false;
+                MealAgility = false;
+                MealVibes = true;
+                MealWits = false;
+                MealEducation = false;
 
-                LastMeal = "Vibes";
-                int DigimonAbsorbed;
-                int.TryParse(VibesDiet.Text, out DigimonAbsorbed);
-                DigimonAbsorbed++;
-                VibesDiet.Text = DigimonAbsorbed.ToString();
+                int.TryParse(VibesDiet.Text, out int DietBoost);
+                DietBoost = DietBoost + 1;
+                VibesDiet.Text = DietBoost.ToString();
             }
             else if (WitsMeal.Checked == true)
             {
-                int DigimonFed;
-                int.TryParse(DigimonWits.Text, out DigimonFed);
-                DigimonFed++;
-                DigimonWits.Text = DigimonFed.ToString();
+                MealStrength = false;
+                MealAgility = false;
+                MealVibes = false;
+                MealWits = true;
+                MealEducation = false;
 
-                LastMeal = "Wits";
-                int DigimonAbsorbed;
-                int.TryParse(WitsDiet.Text, out DigimonAbsorbed);
-                DigimonAbsorbed++;
-                WitsDiet.Text = DigimonAbsorbed.ToString();
+                int.TryParse(WitsDiet.Text, out int DietBoost);
+                DietBoost = DietBoost + 1;
+                WitsDiet.Text = DietBoost.ToString();
             }
             else if (EducationMeal.Checked == true)
             {
-                int DigimonFed;
-                int.TryParse(DigimonEducation.Text, out DigimonFed);
-                DigimonFed++;
-                DigimonEducation.Text = DigimonFed.ToString();
+                MealStrength = false;
+                MealAgility = false;
+                MealVibes = false;
+                MealWits = false;
+                MealEducation = true;
 
-                LastMeal = "Education";
-                int DigimonAbsorbed;
-                int.TryParse(EducationDiet.Text, out DigimonAbsorbed);
-                DigimonAbsorbed++;
-                EducationDiet.Text = DigimonAbsorbed.ToString();
+                int.TryParse(EducationDiet.Text, out int DietBoost);
+                DietBoost = DietBoost + 1;
+                EducationDiet.Text = DietBoost.ToString();
             }
             else
             {
-
+                MealStrength = false;
+                MealAgility = false;
+                MealVibes = false;
+                MealWits = false;
+                MealEducation = false;
             };
+
+            if (BruiseFive.Checked == true)
+            {
+                if (InjuryFive.Checked != true)
+                {
+                    BruiseFive.Checked = false;
+                }
+            }
+            else if (BruiseFour.Checked == true)
+            {
+                if (InjuryFour.Checked != true)
+                {
+                    BruiseFour.Checked = false;
+                }
+            }
+            else if (BruiseThree.Checked == true)
+            {
+                if (InjuryThree.Checked != true)
+                {
+                    BruiseThree.Checked = false;
+                }
+            }
+            else if (BruiseTwo.Checked == true)
+            {
+                if (InjuryTwo.Checked != true)
+                {
+                    BruiseTwo.Checked = false;
+                }
+            }
+            else if (BruiseOne.Checked == true)
+            {
+                if (InjuryOne.Checked != true)
+                {
+                    BruiseOne.Checked = false;
+                }
+            }
+
+            DigimonStrength.Text = "";
+            DigimonAgility.Text = "";
+            DigimonVibes.Text = "";
+            DigimonWits.Text = "";
+            DigimonEducation.Text = "";
 
             SaveCharacterInformation();
 
@@ -3088,7 +3093,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void textBox6_TextChanged_1(object sender, EventArgs e)
         {
-            PlayerName.AccessibleDefaultActionDescription = PlayerName.Text;
+            SaveCharacterInformation();
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -3649,62 +3654,94 @@ namespace DigimonAndTamerCharacterSheets
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         {
 
+            SaveCharacterInformation();
+
         }
 
         private void BruiseTwo_CheckedChanged(object sender, EventArgs e)
         {
             BruiseOne.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void BruiseThree_CheckedChanged(object sender, EventArgs e)
         {
             BruiseTwo.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void BruiseFour_CheckedChanged(object sender, EventArgs e)
         {
             BruiseThree.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void BruiseFive_CheckedChanged_1(object sender, EventArgs e)
         {
             BruiseFour.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
 
         private void InjuryOne_CheckedChanged_1(object sender, EventArgs e)
         {
-            BruiseOne.Checked = true;
+            InjuryOne.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void InjuryTwo_CheckedChanged_1(object sender, EventArgs e)
         {
             BruiseTwo.Checked = true;
             InjuryOne.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void InjuryThree_CheckedChanged_1(object sender, EventArgs e)
         {
             BruiseThree.Checked = true;
             InjuryTwo.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void InjuryFour_CheckedChanged_1(object sender, EventArgs e)
         {
             BruiseFour.Checked = true;
             InjuryThree.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void InjuryFive_CheckedChanged_1(object sender, EventArgs e)
         {
             BruiseFive.Checked = true;
             InjuryFour.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void WoundOne_CheckedChanged_1(object sender, EventArgs e)
         {
             BruiseOne.Checked = true;
             InjuryOne.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void WoundTwo_CheckedChanged_2(object sender, EventArgs e)
@@ -3712,6 +3749,9 @@ namespace DigimonAndTamerCharacterSheets
             BruiseTwo.Checked = true;
             InjuryTwo.Checked = true;
             WoundOne.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void WoundThree_CheckedChanged_1(object sender, EventArgs e)
@@ -3719,6 +3759,9 @@ namespace DigimonAndTamerCharacterSheets
             BruiseThree.Checked = true;
             InjuryThree.Checked = true;
             WoundTwo.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void checkBox1_CheckedChanged_2(object sender, EventArgs e)
@@ -3726,6 +3769,9 @@ namespace DigimonAndTamerCharacterSheets
             BruiseFour.Checked = true;
             InjuryFour.Checked = true;
             WoundThree.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void WoundFive_CheckedChanged_1(object sender, EventArgs e)
@@ -3733,6 +3779,9 @@ namespace DigimonAndTamerCharacterSheets
             BruiseFive.Checked = true;
             InjuryFive.Checked = true;
             WoundFour.Checked = true;
+
+            SaveCharacterInformation();
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -5621,11 +5670,13 @@ namespace DigimonAndTamerCharacterSheets
                     RemainingLifespan = RemainingLifespan - 1;
                     RemainingLife.Text = RemainingLifespan.ToString();
 
-                    if (ChampionLevel.Text == "________")
+
+                    if (DigivolutionRoll > DarkCheck)
                     {
 
-                        if (DigivolutionRoll > DarkCheck)
+                        if (ChampionLevel.Text == "________")
                         {
+
                             // Agumon Evolution Systems
                             if (Partner.Text == "Agumon")
                             {
@@ -5732,20 +5783,28 @@ namespace DigimonAndTamerCharacterSheets
                         }
                         else
                         {
-                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
-                            Partner.Items.Add("Numemon");
-                            Partner.SelectedItem = "Numemon";
-                            DarkEvolution = true;
+                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {ChampionLevel.Text}");
+                            Partner.Items.Add(ChampionLevel.Text);
+                            Partner.SelectedItem = ChampionLevel.Text;
+                            ChampionLevel.Text = ChampionLevel.Text;
                             RookieEvolution = false;
                             ChampionEvolution = true;
-                            CrestSelection.SelectedIndex = -1;
-                            CrestSelection.Enabled = true;
-
                         }
+
                     }
                     else
-                    { }
+                    {
+                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
+                        Partner.Items.Add("Numemon");
+                        Partner.SelectedItem = "Numemon";
+                        DarkEvolution = true;
+                        RookieEvolution = false;
+                        ChampionEvolution = true;
+                        CrestSelection.SelectedIndex = -1;
+                        CrestSelection.Enabled = true;
+                    }
                 }
+                
 
             }
             RecordChampion = ChampionLevel.Text;
@@ -5854,6 +5913,43 @@ namespace DigimonAndTamerCharacterSheets
                 DayCount = DayCount + 1;
                 Day.Text = DayCount.ToString();
             };
+
+
+            if (InjuryFive.Checked == true)
+            {
+                if (WoundFive.Checked != true)
+                {
+                    InjuryFive.Checked = false;
+                }
+            }
+            else if (InjuryFour.Checked == true)
+            {
+                if (WoundFour.Checked != true)
+                {
+                    InjuryFour.Checked = false;
+                }
+            }
+            else if (InjuryThree.Checked == true)
+            {
+                if (WoundThree.Checked != true)
+                {
+                    InjuryThree.Checked = false;
+                }
+            }
+            else if (InjuryTwo.Checked == true)
+            {
+                if (WoundTwo.Checked != true)
+                {
+                    InjuryTwo.Checked = false;
+                }
+            }
+            else if (InjuryOne.Checked == true)
+            {
+                if (WoundOne.Checked != true)
+                {
+                    InjuryOne.Checked = false;
+                }
+            }
 
             SaveCharacterInformation();
 
@@ -6796,6 +6892,156 @@ namespace DigimonAndTamerCharacterSheets
 
         private void Day_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void DigimonStrength_TextChanged(object sender, EventArgs e)
+        {
+            int DigitalStrength;
+
+            if (RookieEvolution == true)
+            {
+                DigitalStrength = 2;
+            }
+            else if (ChampionEvolution == true)
+            {
+                DigitalStrength = 4;
+            }
+            else if (UltimateEvolution == true)
+            {
+                DigitalStrength = 7;
+            }
+            else
+            {
+                DigitalStrength = 10;
+            }
+
+            if (MealStrength == true)
+            {
+                DigitalStrength++;
+            }
+
+            DigimonStrength.Text = DigitalStrength.ToString();
+
+        }
+
+        private void DigimonAgility_TextChanged(object sender, EventArgs e)
+        {
+            int DigitalAgility;
+
+            if (RookieEvolution == true)
+            {
+                DigitalAgility = 2;
+            }
+            else if (ChampionEvolution == true)
+            {
+                DigitalAgility = 4;
+            }
+            else if (UltimateEvolution == true)
+            {
+                DigitalAgility = 7;
+            }
+            else
+            {
+                DigitalAgility = 10;
+            }
+
+            if (MealAgility == true)
+            {
+                DigitalAgility++;
+            }
+
+            DigimonAgility.Text = DigitalAgility.ToString();
+
+        }
+
+        private void DigimonVibes_TextChanged(object sender, EventArgs e)
+        {
+            int DigitalVibes;
+
+            if (RookieEvolution == true)
+            {
+                DigitalVibes = 2;
+            }
+            else if (ChampionEvolution == true)
+            {
+                DigitalVibes = 4;
+            }
+            else if (UltimateEvolution == true)
+            {
+                DigitalVibes = 7;
+            }
+            else
+            {
+                DigitalVibes = 10;
+            }
+
+            if (MealVibes == true)
+            {
+                DigitalVibes++;
+            }
+
+            DigimonVibes.Text = DigitalVibes.ToString();
+
+        }
+
+        private void DigimonWits_TextChanged(object sender, EventArgs e)
+        {
+            int DigitalWits;
+
+            if (RookieEvolution == true)
+            {
+                DigitalWits = 2;
+            }
+            else if (ChampionEvolution == true)
+            {
+                DigitalWits = 4;
+            }
+            else if (UltimateEvolution == true)
+            {
+                DigitalWits = 7;
+            }
+            else
+            {
+                DigitalWits = 10;
+            }
+
+            if (MealWits == true)
+            {
+                DigitalWits++;
+            }
+
+            DigimonWits.Text = DigitalWits.ToString();
+
+        }
+
+        private void DigimonEducation_TextChanged(object sender, EventArgs e)
+        {
+            int DigitalEducation;
+
+            if (RookieEvolution == true)
+            {
+                DigitalEducation = 2;
+            }
+            else if (ChampionEvolution == true)
+            {
+                DigitalEducation = 4;
+            }
+            else if (UltimateEvolution == true)
+            {
+                DigitalEducation = 7;
+            }
+            else
+            {
+                DigitalEducation = 10;
+            }
+
+            if (MealEducation == true)
+            {
+                DigitalEducation++;
+            }
+
+            DigimonEducation.Text = DigitalEducation.ToString();
 
         }
     }
