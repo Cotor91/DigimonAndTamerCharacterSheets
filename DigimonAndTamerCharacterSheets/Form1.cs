@@ -4402,7 +4402,7 @@ namespace DigimonAndTamerCharacterSheets
                     SuperDiceMax.Text = "10";
 
                     // Commandramon Quirks
-                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkOne.Text = "Bomber Buddy - Spend a point of Bond to borrow a DCD Bomb.";
                     CurrentQuirkTwo.Text = "";
                     InheritableQuirkOne.Text = "Cover-Fire Guard - All nearby enemy attack rolls are nerfed.";
                     InheritableQuirkTwo.Text = "Investigation and Reflex - Roll for Investigation or Reflex Checks.";
