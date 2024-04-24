@@ -213,7 +213,7 @@ namespace DigimonAndTamerCharacterSheets
                     MealVibes = MealVibes,
                     MealWits = MealWits,
                     MealEducation = MealEducation,
-            }));
+                }));
                 MessageBox.Show("Saved");
             }
             catch (Exception ex)
@@ -827,6 +827,7 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillStrength = CarryTrack.Value + HoldTrack.Value + ThrowTrack.Value;
             int TotalStrength = (int)Math.Ceiling(SkillStrength / 2.0);
+            TotalStrength = TotalStrength + StrengthIncrease;
             StrengthStat.Text = TotalStrength.ToString();
 
             SaveCharacterInformation();
@@ -1215,6 +1216,7 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillAgility = BalanceTrack.Value + ParkourTrack.Value + ReflexTrack.Value;
             int TotalAgility = (int)Math.Ceiling(SkillAgility / 2.0);
+            TotalAgility = TotalAgility + AgilityIncrease;
             AgilityStat.Text = TotalAgility.ToString();
 
             SaveCharacterInformation();
@@ -1585,7 +1587,7 @@ namespace DigimonAndTamerCharacterSheets
             int SkillVibes = PerformTrack.Value + PersuadeTrack.Value + IntimidateTrack.Value;
             int TotalVibes = (int)Math.Ceiling(SkillVibes / 2.0);
             VibesStat.Text = TotalVibes.ToString();
-
+            TotalVibes = TotalVibes + VibesIncrease;
             SaveCharacterInformation();
         }
 
@@ -1955,6 +1957,7 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillWits = InvestigationTrack.Value + EmpathyTrack.Value + IngenuityTrack.Value;
             int TotalWits = (int)Math.Ceiling(SkillWits / 2.0);
+            TotalWits = TotalWits + WitsIncrease;
             WitsStat.Text = TotalWits.ToString();
 
             SaveCharacterInformation();
@@ -2328,6 +2331,7 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillEducation = SocietyTrack.Value + TechnologyTrack.Value + OccultismTrack.Value;
             int TotalEducation = (int)Math.Ceiling(SkillEducation / 2.0);
+            TotalEducation = TotalEducation + EducationIncrease;
             KnowledgeStat.Text = TotalEducation.ToString();
 
             SaveCharacterInformation();
@@ -2972,10 +2976,14 @@ namespace DigimonAndTamerCharacterSheets
         bool MealVibes = false;
         bool MealWits = false;
         bool MealEducation = false;
+        bool AutoMeal = false;
 
         private void button4_Click(object sender, EventArgs e)
         {
-            // Count
+            int ReduceMax = 0;
+            int HighestQuantity = -1;
+
+            // Feed the meal type
             if (StrengthMeal.Checked == true)
             {
                 MealStrength = true;
@@ -2987,6 +2995,75 @@ namespace DigimonAndTamerCharacterSheets
                 int.TryParse(StrengthDiet.Text, out int DietBoost);
                 DietBoost = DietBoost + 1;
                 StrengthDiet.Text = DietBoost.ToString();
+
+
+                // Check if automated reduction
+                DialogResult ConsumeFood = MessageBox.Show("Do you want to automatically feed your partner the Meat Meal you have the most instances of?", "Tasty Food!", MessageBoxButtons.YesNo);
+
+                if (ConsumeFood == DialogResult.Yes)
+                {
+                    AutoMeal = true;
+                    foreach (string item in MeatQuantity)
+                    {
+                        // Trim the front to remove "*" and everything before it
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                        // Trim the back to remove ")" and everything after it
+                        int BracketPlace = ExistHolster.IndexOf(')');
+                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+
+                        // Get the Quantity
+                        int.TryParse(ExistHolster, out int TheQuantity);
+
+                        // Record the item with the largest quantity
+                        if (TheQuantity > ReduceMax)
+                        {
+                            ReduceMax = TheQuantity;
+                            HighestQuantity = Array.IndexOf(MeatQuantity, item);
+                        }
+
+                    }
+
+                    String RewriteValue = MeatQuantity[HighestQuantity];
+
+
+                    // Extract the number
+                    // Trim the front to remove "*" and everything before it
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    // Trim the back to remove ")" and everything after it
+                    int ClosingBracket = RewriteValue.IndexOf(')');
+                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    // Convert to numeric value and reduce
+                    int.TryParse(RewriteValue, out int Reduction);
+
+                    if (Reduction > 0)
+                    {
+                        Reduction = Reduction - 1;
+                        RewriteValue = Reduction.ToString();
+
+                        // Extract everything before the number
+                        int indexOfClosingBracket = MeatQuantity[HighestQuantity].IndexOf('*') + 2;
+                        String StartValue = MeatQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
+
+                        // Extract everything after the number
+                        String EndValue = MeatQuantity[HighestQuantity].Substring(MeatQuantity[HighestQuantity].IndexOf(')'));
+
+                        // Build the string anew
+                        StringBuilder NewValue = new StringBuilder();
+
+                        NewValue.Append(StartValue);
+                        NewValue.Append(RewriteValue);
+                        NewValue.Append(EndValue);
+
+                        MeatQuantity[HighestQuantity] = "";
+                        MeatQuantity[HighestQuantity] = NewValue.ToString();
+                    }
+                    else
+                    {
+                        MeatQuantity[HighestQuantity] = "";
+                    }
+                }
+
             }
             else if (AgilityMeal.Checked == true)
             {
@@ -2999,6 +3076,75 @@ namespace DigimonAndTamerCharacterSheets
                 int.TryParse(AgilityDiet.Text, out int DietBoost);
                 DietBoost = DietBoost + 1;
                 AgilityDiet.Text = DietBoost.ToString();
+
+
+                // Check if automated reduction
+                DialogResult ConsumeFood = MessageBox.Show("Do you want to automatically feed your partner the Veggies Meal you have the most instances of?", "Tasty Food!", MessageBoxButtons.YesNo);
+
+                if (ConsumeFood == DialogResult.Yes)
+                {
+                    AutoMeal = true;
+                    foreach (string item in VeggiesQuantity)
+                    {
+                        // Trim the front to remove "*" and everything before it
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                        // Trim the back to remove ")" and everything after it
+                        int BracketPlace = ExistHolster.IndexOf(')');
+                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+
+                        // Get the Quantity
+                        int.TryParse(ExistHolster, out int TheQuantity);
+
+                        // Record the item with the largest quantity
+                        if (TheQuantity > ReduceMax)
+                        {
+                            ReduceMax = TheQuantity;
+                            HighestQuantity = Array.IndexOf(VeggiesQuantity, item);
+                        }
+
+                    }
+
+                    String RewriteValue = VeggiesQuantity[HighestQuantity];
+
+
+                    // Extract the number
+                    // Trim the front to remove "*" and everything before it
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    // Trim the back to remove ")" and everything after it
+                    int ClosingBracket = RewriteValue.IndexOf(')');
+                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    // Convert to numeric value and reduce
+                    int.TryParse(RewriteValue, out int Reduction);
+
+                    if (Reduction > 0)
+                    {
+                        Reduction = Reduction - 1;
+                        RewriteValue = Reduction.ToString();
+
+                        // Extract everything before the number
+                        int indexOfClosingBracket = VeggiesQuantity[HighestQuantity].IndexOf('*') + 2;
+                        String StartValue = VeggiesQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
+
+                        // Extract everything after the number
+                        String EndValue = VeggiesQuantity[HighestQuantity].Substring(VeggiesQuantity[HighestQuantity].IndexOf(')'));
+
+                        // Build the string anew
+                        StringBuilder NewValue = new StringBuilder();
+
+                        NewValue.Append(StartValue);
+                        NewValue.Append(RewriteValue);
+                        NewValue.Append(EndValue);
+
+                        VeggiesQuantity[HighestQuantity] = "";
+                        VeggiesQuantity[HighestQuantity] = NewValue.ToString();
+                    }
+                    else
+                    {
+                        VeggiesQuantity[HighestQuantity] = "";
+                    }
+                }
+
             }
             else if (VibesMeal.Checked == true)
             {
@@ -3011,6 +3157,74 @@ namespace DigimonAndTamerCharacterSheets
                 int.TryParse(VibesDiet.Text, out int DietBoost);
                 DietBoost = DietBoost + 1;
                 VibesDiet.Text = DietBoost.ToString();
+
+                // Check if automated reduction
+                DialogResult ConsumeFood = MessageBox.Show("Do you want to automatically feed your partner the Bread Meal you have the most instances of?", "Tasty Food!", MessageBoxButtons.YesNo);
+
+                if (ConsumeFood == DialogResult.Yes)
+                {
+                    AutoMeal = true;
+                    foreach (string item in BreadQuantity)
+                    {
+                        // Trim the front to remove "*" and everything before it
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                        // Trim the back to remove ")" and everything after it
+                        int BracketPlace = ExistHolster.IndexOf(')');
+                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+
+                        // Get the Quantity
+                        int.TryParse(ExistHolster, out int TheQuantity);
+
+                        // Record the item with the largest quantity
+                        if (TheQuantity > ReduceMax)
+                        {
+                            ReduceMax = TheQuantity;
+                            HighestQuantity = Array.IndexOf(BreadQuantity, item);
+                        }
+
+                    }
+
+                    String RewriteValue = BreadQuantity[HighestQuantity];
+
+
+                    // Extract the number
+                    // Trim the front to remove "*" and everything before it
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    // Trim the back to remove ")" and everything after it
+                    int ClosingBracket = RewriteValue.IndexOf(')');
+                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    // Convert to numeric value and reduce
+                    int.TryParse(RewriteValue, out int Reduction);
+
+                    if (Reduction > 0)
+                    {
+                        Reduction = Reduction - 1;
+                        RewriteValue = Reduction.ToString();
+
+                        // Extract everything before the number
+                        int indexOfClosingBracket = BreadQuantity[HighestQuantity].IndexOf('*') + 2;
+                        String StartValue = BreadQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
+
+                        // Extract everything after the number
+                        String EndValue = BreadQuantity[HighestQuantity].Substring(BreadQuantity[HighestQuantity].IndexOf(')'));
+
+                        // Build the string anew
+                        StringBuilder NewValue = new StringBuilder();
+
+                        NewValue.Append(StartValue);
+                        NewValue.Append(RewriteValue);
+                        NewValue.Append(EndValue);
+
+                        BreadQuantity[HighestQuantity] = "";
+                        BreadQuantity[HighestQuantity] = NewValue.ToString();
+                    }
+                    else
+                    {
+                        BreadQuantity[HighestQuantity] = "";
+                    }
+                }
+
             }
             else if (WitsMeal.Checked == true)
             {
@@ -3023,6 +3237,74 @@ namespace DigimonAndTamerCharacterSheets
                 int.TryParse(WitsDiet.Text, out int DietBoost);
                 DietBoost = DietBoost + 1;
                 WitsDiet.Text = DietBoost.ToString();
+
+                // Check if automated reduction
+                DialogResult ConsumeFood = MessageBox.Show("Do you want to automatically feed your partner the Fruit Meal you have the most instances of?", "Tasty Food!", MessageBoxButtons.YesNo);
+
+                if (ConsumeFood == DialogResult.Yes)
+                {
+                    AutoMeal = true;
+                    foreach (string item in FruitQuantity)
+                    {
+                        // Trim the front to remove "*" and everything before it
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                        // Trim the back to remove ")" and everything after it
+                        int BracketPlace = ExistHolster.IndexOf(')');
+                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+
+                        // Get the Quantity
+                        int.TryParse(ExistHolster, out int TheQuantity);
+
+                        // Record the item with the largest quantity
+                        if (TheQuantity > ReduceMax)
+                        {
+                            ReduceMax = TheQuantity;
+                            HighestQuantity = Array.IndexOf(FruitQuantity, item);
+                        }
+
+                    }
+
+                    String RewriteValue = FruitQuantity[HighestQuantity];
+
+
+                    // Extract the number
+                    // Trim the front to remove "*" and everything before it
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    // Trim the back to remove ")" and everything after it
+                    int ClosingBracket = RewriteValue.IndexOf(')');
+                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    // Convert to numeric value and reduce
+                    int.TryParse(RewriteValue, out int Reduction);
+
+                    if (Reduction > 0)
+                    {
+                        Reduction = Reduction - 1;
+                        RewriteValue = Reduction.ToString();
+
+                        // Extract everything before the number
+                        int indexOfClosingBracket = FruitQuantity[HighestQuantity].IndexOf('*') + 2;
+                        String StartValue = FruitQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
+
+                        // Extract everything after the number
+                        String EndValue = FruitQuantity[HighestQuantity].Substring(FruitQuantity[HighestQuantity].IndexOf(')'));
+
+                        // Build the string anew
+                        StringBuilder NewValue = new StringBuilder();
+
+                        NewValue.Append(StartValue);
+                        NewValue.Append(RewriteValue);
+                        NewValue.Append(EndValue);
+
+                        FruitQuantity[HighestQuantity] = "";
+                        FruitQuantity[HighestQuantity] = NewValue.ToString();
+                    }
+                    else
+                    {
+                        FruitQuantity[HighestQuantity] = "";
+                    }
+                }
+
             }
             else if (EducationMeal.Checked == true)
             {
@@ -3035,6 +3317,76 @@ namespace DigimonAndTamerCharacterSheets
                 int.TryParse(EducationDiet.Text, out int DietBoost);
                 DietBoost = DietBoost + 1;
                 EducationDiet.Text = DietBoost.ToString();
+
+                // Check if automated reduction
+                DialogResult ConsumeFood = MessageBox.Show("Do you want to automatically feed your partner the Fish Meal you have the most instances of?", "Tasty Food!", MessageBoxButtons.YesNo);
+
+                if (ConsumeFood == DialogResult.Yes)
+                {
+                    AutoMeal = true;
+                    foreach (string item in FishQuantity)
+                    {
+                        // Trim the front to remove "*" and everything before it
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                        // Trim the back to remove ")" and everything after it
+                        int BracketPlace = ExistHolster.IndexOf(')');
+                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+
+                        // Get the Quantity
+                        int.TryParse(ExistHolster, out int TheQuantity);
+
+                        // Record the item with the largest quantity
+                        if (TheQuantity > ReduceMax)
+                        {
+                            ReduceMax = TheQuantity;
+                            HighestQuantity = Array.IndexOf(FishQuantity, item);
+                        }
+
+                    }
+
+                    String RewriteValue = FishQuantity[HighestQuantity];
+
+
+                    // Extract the number
+                    // Trim the front to remove "*" and everything before it
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    // Trim the back to remove ")" and everything after it
+                    int ClosingBracket = RewriteValue.IndexOf(')');
+                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    // Convert to numeric value and reduce
+                    int.TryParse(RewriteValue, out int Reduction);
+
+                    if (Reduction > 0)
+                    {
+                        Reduction = Reduction - 1;
+                        RewriteValue = Reduction.ToString();
+
+                        // Extract everything before the number
+                        int indexOfClosingBracket = FishQuantity[HighestQuantity].IndexOf('*') + 2;
+                        String StartValue = FishQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
+
+                        // Extract everything after the number
+                        String EndValue = FishQuantity[HighestQuantity].Substring(FishQuantity[HighestQuantity].IndexOf(')'));
+
+                        // Build the string anew
+                        StringBuilder NewValue = new StringBuilder();
+
+                        NewValue.Append(StartValue);
+                        NewValue.Append(RewriteValue);
+                        NewValue.Append(EndValue);
+
+                        FishQuantity[HighestQuantity] = "";
+                        FishQuantity[HighestQuantity] = NewValue.ToString();
+
+
+                    }
+                    else
+                    {
+                        FishQuantity[HighestQuantity] = "";
+                    }
+                }
+
             }
             else
             {
@@ -3043,52 +3395,147 @@ namespace DigimonAndTamerCharacterSheets
                 MealVibes = false;
                 MealWits = false;
                 MealEducation = false;
+                CareMistakeButton.PerformClick();
             };
 
-            if (BruiseFive.Checked == true)
+            if (AutoMeal == true)
             {
-                if (InjuryFive.Checked != true)
-                {
-                    BruiseFive.Checked = false;
-                }
-            }
-            else if (BruiseFour.Checked == true)
-            {
-                if (InjuryFour.Checked != true)
-                {
-                    BruiseFour.Checked = false;
-                }
-            }
-            else if (BruiseThree.Checked == true)
-            {
-                if (InjuryThree.Checked != true)
-                {
-                    BruiseThree.Checked = false;
-                }
-            }
-            else if (BruiseTwo.Checked == true)
-            {
-                if (InjuryTwo.Checked != true)
-                {
-                    BruiseTwo.Checked = false;
-                }
-            }
-            else if (BruiseOne.Checked == true)
-            {
-                if (InjuryOne.Checked != true)
-                {
-                    BruiseOne.Checked = false;
-                }
-            }
+                AutoMeal = false;
 
-            DigimonStrength.Text = "";
-            DigimonAgility.Text = "";
-            DigimonVibes.Text = "";
-            DigimonWits.Text = "";
-            DigimonEducation.Text = "";
+                // Constructing a String from the arrays
+                StringBuilder inventoryText = new StringBuilder();
 
-            SaveCharacterInformation();
+                // Append formatted content for quality items
+                if (StrengthQuality.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", StrengthQuality.Where(StrengthItem => !string.IsNullOrEmpty(StrengthItem))));
+                    inventoryText.Append(",");
+                }
+                if (AgilityQuality.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", AgilityQuality.Where(AgilityItem => !string.IsNullOrEmpty(AgilityItem))));
+                    inventoryText.Append(",");
+                }
+                if (VibesQuality.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", VibesQuality.Where(VibesItem => !string.IsNullOrEmpty(VibesItem))));
+                    inventoryText.Append(",");
+                }
+                if (WitsQuality.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", WitsQuality.Where(WitsItem => !string.IsNullOrEmpty(WitsItem))));
+                    inventoryText.Append(",");
+                }
+                if (EducationQuality.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", EducationQuality.Where(EducationItem => !string.IsNullOrEmpty(EducationItem))));
+                    inventoryText.Append(",");
+                }
+                if (AlternativeQuality.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", AlternativeQuality.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
+                    inventoryText.Append(",");
+                }
 
+                // Append formatted content for quality items
+                if (MeatQuantity.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", MeatQuantity.Where(MeatItem => !string.IsNullOrEmpty(MeatItem))));
+                    inventoryText.Append(",");
+                }
+                if (VeggiesQuantity.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", VeggiesQuantity.Where(VeggiesItem => !string.IsNullOrEmpty(VeggiesItem))));
+                    inventoryText.Append(",");
+                }
+                if (BreadQuantity.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", BreadQuantity.Where(BreadItem => !string.IsNullOrEmpty(BreadItem))));
+                    inventoryText.Append(",");
+                }
+                if (FruitQuantity.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", FruitQuantity.Where(FruitItem => !string.IsNullOrEmpty(FruitItem))));
+                    inventoryText.Append(",");
+                }
+                if (FishQuantity.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", FishQuantity.Where(FishItem => !string.IsNullOrEmpty(FishItem))));
+                    inventoryText.Append(",");
+                }
+                if (AlternativeQuantity.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", AlternativeQuantity.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
+                    inventoryText.Append(",");
+                }
+
+                // Append non-useful items
+                if (AlternativeItems.Length > 0)
+                {
+                    inventoryText.Append(string.Join(",", AlternativeItems.Where(itemPart => !string.IsNullOrEmpty(itemPart))));
+                    inventoryText.Append(",");
+                }
+
+                ReadableInventory.Text = inventoryText.ToString();
+                UpdateInventory.PerformClick();
+
+                // Unselect the meals
+                StrengthMeal.Checked = false;
+                AgilityMeal.Checked = false;
+                VibesMeal.Checked = false;
+                WitsMeal.Checked = false;
+                EducationMeal.Checked = false;
+
+
+                // Heal during meal-time
+                if (BruiseFive.Checked == true)
+                {
+                    if (InjuryFive.Checked != true)
+                    {
+                        BruiseFive.Checked = false;
+                    }
+                }
+                else if (BruiseFour.Checked == true)
+                {
+                    if (InjuryFour.Checked != true)
+                    {
+                        BruiseFour.Checked = false;
+                    }
+                }
+                else if (BruiseThree.Checked == true)
+                {
+                    if (InjuryThree.Checked != true)
+                    {
+                        BruiseThree.Checked = false;
+                    }
+                }
+                else if (BruiseTwo.Checked == true)
+                {
+                    if (InjuryTwo.Checked != true)
+                    {
+                        BruiseTwo.Checked = false;
+                    }
+                }
+                else if (BruiseOne.Checked == true)
+                {
+                    if (InjuryOne.Checked != true)
+                    {
+                        BruiseOne.Checked = false;
+                    }
+                }
+
+
+
+                // Update stat block
+                DigimonStrength.Text = "";
+                DigimonAgility.Text = "";
+                DigimonVibes.Text = "";
+                DigimonWits.Text = "";
+                DigimonEducation.Text = "";
+
+                SaveCharacterInformation();
+
+            }
         }
 
         private void textBox6_TextChanged_1(object sender, EventArgs e)
@@ -3693,7 +4140,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void InjuryOne_CheckedChanged_1(object sender, EventArgs e)
         {
-            InjuryOne.Checked = true;
+            BruiseOne.Checked = true;
 
             SaveCharacterInformation();
 
@@ -5804,7 +6251,7 @@ namespace DigimonAndTamerCharacterSheets
                         CrestSelection.Enabled = true;
                     }
                 }
-                
+
 
             }
             RecordChampion = ChampionLevel.Text;
@@ -6265,6 +6712,40 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
+
+
+        // Get stat increases
+        int StrengthIncrease;
+        int AgilityIncrease;
+        int VibesIncrease;
+        int WitsIncrease;
+        int EducationIncrease;
+
+        int MeatSupply;
+        int VeggiesSupply;
+        int BreadSupply;
+        int FruitSupply;
+        int FishSupply;
+
+        // Split QualityItems into the stat groups
+        string[] StrengthQuality;
+        string[] AgilityQuality;
+        string[] WitsQuality;
+        string[] VibesQuality;
+        string[] EducationQuality;
+        string[] AlternativeQuality;
+
+        // Split QuantityItems into the stat groups
+        string[] MeatQuantity;
+        string[] VeggiesQuantity;
+        string[] FruitQuantity;
+        string[] BreadQuantity;
+        string[] FishQuantity;
+        string[] AlternativeQuantity;
+
+        // Retain AlternativeItems for the inventory
+        string[] AlternativeItems;
+
         private void UpdateInventory_Click(object sender, EventArgs e)
         {
             // Read in text, splitting it at ",", and put them into an array
@@ -6274,9 +6755,11 @@ namespace DigimonAndTamerCharacterSheets
             // Split into two arrays, QualityItems and Quantity Items, based on whether they contain + or *
             string[] QualityItems = new string[Items.Length];
             string[] QuantityItems = new string[Items.Length];
+            AlternativeItems = new string[Items.Length];
 
             int QualityIndex = 0;
             int QuantityIndex = 0;
+            int AlternativeIndex = 0;
 
             // Loop through each inventory item
             foreach (string item in Items)
@@ -6289,65 +6772,427 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     QuantityItems[QuantityIndex++] = item;
                 }
+                else
+                {
+                    AlternativeItems[AlternativeIndex++] = item;
+                }
             }
 
             // Shorten arrays if necessary (optional)
             QualityItems = QualityItems.Take(QualityIndex).ToArray();
             QuantityItems = QuantityItems.Take(QuantityIndex).ToArray();
+            AlternativeItems = AlternativeItems.Take(QuantityIndex).ToArray();
 
-            int totalStrengthIncrease = 0;
-            int totalAgilityIncrease = 0;
+            // Split QualityItems into the stat groups
+            StrengthQuality = new string[QualityItems.Length];
+            AgilityQuality = new string[QualityItems.Length];
+            WitsQuality = new string[QualityItems.Length];
+            VibesQuality = new string[QualityItems.Length];
+            EducationQuality = new string[QualityItems.Length];
+            AlternativeQuality = new string[QualityItems.Length];
 
-            // Assuming UpdateInventory_Click has already been called and categorized the items
+
+            // Getting array lengths
+            int StrengthQualityIndex = 0;
+            int AgilityQualityIndex = 0;
+            int WitsQualityIndex = 0;
+            int VibesQualityIndex = 0;
+            int EducationQualityIndex = 0;
+            int AlternativeQualityIndex = 0;
+
+            // Loop through each inventory item
             foreach (string item in QualityItems)
             {
-                // Extract numerical value after "+" symbol
-                string[] itemParts = item.Split(new[] { @"\s*+\s*" }, 2, StringSplitOptions.RemoveEmptyEntries);
-
-                // Ensure there are at least two parts (name and value)
-                if (itemParts.Length > 1)
+                if (item.Contains("Strength"))
                 {
-                    // Exclude last character
-                    string valueString = itemParts[1].Substring(0, itemParts[1].Length - 1);
-                    // Attempt to parse the value
-                    int value = int.Parse(valueString);
-
-                    if (itemParts[0].Contains("Strength"))
-                    {
-                        totalStrengthIncrease = totalStrengthIncrease + value;
-                    }
-                    else if (itemParts[0].Contains("Agility"))
-                    {
-                        totalAgilityIncrease = totalAgilityIncrease + value;
-                    }
+                    StrengthQuality[StrengthQualityIndex++] = item;
+                }
+                else if (item.Contains("Agility"))
+                {
+                    AgilityQuality[AgilityQualityIndex++] = item;
+                }
+                else if (item.Contains("Wits"))
+                {
+                    WitsQuality[WitsQualityIndex++] = item;
+                }
+                else if (item.Contains("Vibes"))
+                {
+                    VibesQuality[VibesQualityIndex++] = item;
+                }
+                else if (item.Contains("Education"))
+                {
+                    EducationQuality[EducationQualityIndex++] = item;
                 }
                 else
                 {
-                    // Handle cases where the item doesn't contain "+" or has an unexpected format
-                    // (log an error, ignore the item, etc.)
+                    AlternativeQuality[AlternativeQualityIndex++] = item;
                 }
-
-                // Constructing a String from the arrays
-                StringBuilder inventoryText = new StringBuilder();
-
-                // Append formatted content for quality items
-                inventoryText.AppendLine("Total Strength Increase: " + totalStrengthIncrease);
-                inventoryText.AppendLine("Total Agility Increase: " + totalAgilityIncrease);
-                inventoryText.Append("");
-                inventoryText.Append(string.Join(",", QualityItems.Where(itemPart => !string.IsNullOrEmpty(item))));
-                inventoryText.Append(",");
-
-                // Append formatted content for quantity items
-                inventoryText.Append("");
-                inventoryText.Append(string.Join(",", QuantityItems.Where(itemPart => !string.IsNullOrEmpty(item))));
-                inventoryText.Append("");
-
-                // Assign the final string to ReadableInventory.Text
-                ReadableInventory.Text = "";
-                ReadableInventory.Text = inventoryText.ToString();
-
             }
+
+            // Shorten arrays if necessary (optional)
+            StrengthQuality = StrengthQuality.Take(StrengthQualityIndex).ToArray();
+            AgilityQuality = AgilityQuality.Take(AgilityQualityIndex).ToArray();
+            WitsQuality = WitsQuality.Take(WitsQualityIndex).ToArray();
+            VibesQuality = VibesQuality.Take(VibesQualityIndex).ToArray();
+            EducationQuality = EducationQuality.Take(EducationQualityIndex).ToArray();
+            AlternativeQuality = AlternativeQuality.Take(AlternativeQualityIndex).ToArray();
+
+            int StrengthBoost = 0;
+            int AgilityBoost = 0;
+            int WitsBoost = 0;
+            int VibesBoost = 0;
+            int EducationBoost = 0;
+
+            // using the smaller arrays
+            foreach (string item in StrengthQuality)
+            {
+                // Trim the front to remove "+" and everything before it
+                string BoostHolster = item.Substring(item.IndexOf("+") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = BoostHolster.IndexOf(')');
+                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat boost
+                int.TryParse(BoostHolster, out int StatBoost);
+                StrengthBoost = StrengthBoost + StatBoost;
+            }
+            foreach (string item in AgilityQuality)
+            {
+                // Trim the front to remove "+" and everything before it
+                string BoostHolster = item.Substring(item.IndexOf("+") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = BoostHolster.IndexOf(')');
+                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat boost
+                int.TryParse(BoostHolster, out int StatBoost);
+                AgilityBoost = AgilityBoost + StatBoost;
+            }
+            foreach (string item in VibesQuality)
+            {
+                // Trim the front to remove "+" and everything before it
+                string BoostHolster = item.Substring(item.IndexOf("+") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = BoostHolster.IndexOf(')');
+                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat boost
+                int.TryParse(BoostHolster, out int StatBoost);
+                VibesBoost = VibesBoost + StatBoost;
+            }
+            foreach (string item in WitsQuality)
+            {
+                // Trim the front to remove "+" and everything before it
+                string BoostHolster = item.Substring(item.IndexOf("+") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = BoostHolster.IndexOf(')');
+                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat boost
+                int.TryParse(BoostHolster, out int StatBoost);
+                WitsBoost = WitsBoost + StatBoost;
+            }
+            foreach (string item in EducationQuality)
+            {
+                // Trim the front to remove "+" and everything before it
+                string BoostHolster = item.Substring(item.IndexOf("+") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = BoostHolster.IndexOf(')');
+                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat boost
+                int.TryParse(BoostHolster, out int StatBoost);
+                EducationBoost = EducationBoost + StatBoost;
+            }
+
+            StrengthIncrease = StrengthBoost;
+            AgilityIncrease = AgilityBoost;
+            VibesIncrease = VibesBoost;
+            WitsIncrease = WitsBoost;
+            EducationIncrease = EducationBoost;
+
+
+            // Constructing a String from the arrays
+            StringBuilder inventoryText = new StringBuilder();
+
+            // Append formatted content for quality items
+            if (StrengthQuality.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", StrengthQuality.Where(StrengthItem => !string.IsNullOrEmpty(StrengthItem))));
+                inventoryText.Append(",");
+            }
+            if (AgilityQuality.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", AgilityQuality.Where(AgilityItem => !string.IsNullOrEmpty(AgilityItem))));
+                inventoryText.Append(",");
+            }
+            if (VibesQuality.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", VibesQuality.Where(VibesItem => !string.IsNullOrEmpty(VibesItem))));
+                inventoryText.Append(",");
+            }
+            if (WitsQuality.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", WitsQuality.Where(WitsItem => !string.IsNullOrEmpty(WitsItem))));
+                inventoryText.Append(",");
+            }
+            if (EducationQuality.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", EducationQuality.Where(EducationItem => !string.IsNullOrEmpty(EducationItem))));
+                inventoryText.Append(",");
+            }
+            if (AlternativeQuality.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", AlternativeQuality.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
+                inventoryText.Append(",");
+            }
+
+
+
+            // Split QuantityItems into the stat groups
+            MeatQuantity = new string[QuantityItems.Length];
+            VeggiesQuantity = new string[QuantityItems.Length];
+            FruitQuantity = new string[QuantityItems.Length];
+            BreadQuantity = new string[QuantityItems.Length];
+            FishQuantity = new string[QuantityItems.Length];
+            AlternativeQuantity = new string[QuantityItems.Length];
+
+
+            // Getting array lengths
+            int MeatQuantityIndex = 0;
+            int VeggiesQuantityIndex = 0;
+            int FruitQuantityIndex = 0;
+            int BreadQuantityIndex = 0;
+            int FishQuantityIndex = 0;
+            int AlternativeQuantityIndex = 0;
+
+
+            // Loop through each inventory item
+            foreach (string item in QuantityItems)
+            {
+                if (item.Contains("Meat"))
+                {
+                    MeatQuantity[MeatQuantityIndex++] = item;
+                }
+                else if (item.Contains("Veggies"))
+                {
+                    VeggiesQuantity[VeggiesQuantityIndex++] = item;
+                }
+                else if (item.Contains("Fruit"))
+                {
+                    FruitQuantity[FruitQuantityIndex++] = item;
+                }
+                else if (item.Contains("Bread"))
+                {
+                    BreadQuantity[BreadQuantityIndex++] = item;
+                }
+                else if (item.Contains("Fish"))
+                {
+                    FishQuantity[FishQuantityIndex++] = item;
+                }
+                else
+                {
+                    AlternativeQuantity[AlternativeQuantityIndex++] = item;
+                }
+            }
+
+
+
+            // Shorten arrays if necessary (optional)
+            MeatQuantity = MeatQuantity.Take(MeatQuantityIndex).ToArray();
+            VeggiesQuantity = VeggiesQuantity.Take(VeggiesQuantityIndex).ToArray();
+            FruitQuantity = FruitQuantity.Take(FruitQuantityIndex).ToArray();
+            BreadQuantity = BreadQuantity.Take(BreadQuantityIndex).ToArray();
+            FishQuantity = FishQuantity.Take(FishQuantityIndex).ToArray();
+            AlternativeQuantity = AlternativeQuantity.Take(AlternativeQuantityIndex).ToArray();
+
+
+            int MeatExist = 0;
+            int VeggiesExist = 0;
+            int FruitExist = 0;
+            int BreadExist = 0;
+            int FishExist = 0;
+
+            // using the smaller arrays
+            foreach (string item in MeatQuantity)
+            {
+                // Trim the front to remove "*" and everything before it
+                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = ExistHolster.IndexOf(')');
+                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat Exist
+                int.TryParse(ExistHolster, out int StatExist);
+                MeatExist = MeatExist + StatExist;
+            }
+            foreach (string item in VeggiesQuantity)
+            {
+                // Trim the front to remove "*" and everything before it
+                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = ExistHolster.IndexOf(')');
+                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat Exist
+                int.TryParse(ExistHolster, out int StatExist);
+                VeggiesExist = VeggiesExist + StatExist;
+            }
+            foreach (string item in BreadQuantity)
+            {
+                // Trim the front to remove "*" and everything before it
+                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = ExistHolster.IndexOf(')');
+                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat Exist
+                int.TryParse(ExistHolster, out int StatExist);
+                BreadExist = BreadExist + StatExist;
+            }
+            foreach (string item in FruitQuantity)
+            {
+                // Trim the front to remove "*" and everything before it
+                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = ExistHolster.IndexOf(')');
+                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat Exist
+                int.TryParse(ExistHolster, out int StatExist);
+                FruitExist = FruitExist + StatExist;
+            }
+            foreach (string item in FishQuantity)
+            {
+                // Trim the front to remove "*" and everything before it
+                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+
+                // Trim the back to remove ")" and everything after it
+                int indexOfClosingBracket = ExistHolster.IndexOf(')');
+                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+
+                // Get the stat Exist
+                int.TryParse(ExistHolster, out int StatExist);
+                FishExist = FishExist + StatExist;
+            }
+
+            MeatSupply = MeatExist;
+            VeggiesSupply = VeggiesExist;
+            BreadSupply = BreadExist;
+            FruitSupply = FruitExist;
+            FishSupply = FishExist;
+
+
+            // Append formatted content for Quantity items
+            if (MeatQuantity.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", MeatQuantity.Where(MeatItem => !string.IsNullOrEmpty(MeatItem))));
+                inventoryText.Append(",");
+            }
+            if (VeggiesQuantity.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", VeggiesQuantity.Where(VeggiesItem => !string.IsNullOrEmpty(VeggiesItem))));
+                inventoryText.Append(",");
+            }
+            if (BreadQuantity.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", BreadQuantity.Where(BreadItem => !string.IsNullOrEmpty(BreadItem))));
+                inventoryText.Append(",");
+            }
+            if (FruitQuantity.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", FruitQuantity.Where(FruitItem => !string.IsNullOrEmpty(FruitItem))));
+                inventoryText.Append(",");
+            }
+            if (FishQuantity.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", FishQuantity.Where(FishItem => !string.IsNullOrEmpty(FishItem))));
+                inventoryText.Append(",");
+            }
+            if (AlternativeQuantity.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", AlternativeQuantity.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
+                inventoryText.Append(",");
+            }
+
+
+
+
+            // Append non-useful items
+            inventoryText.Append(string.Join(",", AlternativeItems.Where(itemPart => !string.IsNullOrEmpty(itemPart))));
+            inventoryText.Append(",");
+
+
+            // Assign the final string to ReadableInventory.Text
+            ReadableInventory.Text = "";
+            ReadableInventory.Text = inventoryText.ToString();
+
+
+            // Update stats from this
+            StrengthStat.Text = "";
+            AgilityStat.Text = "";
+            VibesStat.Text = "";
+            WitsStat.Text = "";
+            KnowledgeStat.Text = "";
+
+            if (MeatSupply > 0)
+            {
+                StrengthMeal.Enabled = true;
+            }
+            else
+            {
+                StrengthMeal.Enabled = false;
+            }
+
+            if (VeggiesSupply > 0)
+            {
+                AgilityMeal.Enabled = true;
+            }
+            else
+            {
+                AgilityMeal.Enabled = false;
+            }
+
+            if (BreadSupply > 0)
+            {
+                VibesMeal.Enabled = true;
+            }
+            else
+            {
+                VibesMeal.Enabled = false;
+            }
+
+            if (FruitSupply > 0)
+            {
+                WitsMeal.Enabled = true;
+            }
+            else
+            {
+                WitsMeal.Enabled = false;
+            }
+
+            if (FishSupply > 0)
+            {
+                EducationMeal.Enabled = true;
+            }
+            else
+            {
+                EducationMeal.Enabled = false;
+            }
+
+
+            SaveCharacterInformation();
         }
+
 
         private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
@@ -7043,6 +7888,10 @@ namespace DigimonAndTamerCharacterSheets
 
             DigimonEducation.Text = DigitalEducation.ToString();
 
+        }
+
+        private void EducationMeal_CheckedChanged(object sender, EventArgs e)
+        {
         }
     }
 }
