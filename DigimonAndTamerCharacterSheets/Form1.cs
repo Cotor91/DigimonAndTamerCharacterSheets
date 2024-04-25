@@ -11,6 +11,7 @@ using System.Xml;
 using DigimonAndTamerCharacterSheets.Enums;
 using System.Text.Json;
 using DigimonAndTamerCharacterSheets.Models;
+using System.Text.RegularExpressions;
 
 namespace DigimonAndTamerCharacterSheets
 {
@@ -21,6 +22,7 @@ namespace DigimonAndTamerCharacterSheets
             InitializeComponent();
 
             LoadCharacterInformation(); // Load data when the form initializes
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -214,7 +216,7 @@ namespace DigimonAndTamerCharacterSheets
                     MealWits = MealWits,
                     MealEducation = MealEducation,
                 }));
-                MessageBox.Show("Saved");
+
             }
             catch (Exception ex)
             {
@@ -329,32 +331,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             GaurdPoints = 0;
             StratPoints.Text = "";
-            int lifespanOver;
-            if (int.TryParse(RemainingLife.Text, out lifespanOver) && lifespanOver < 1)
+
+            int.TryParse(RemainingLife.Text, out int LifeOver);
+            if (LifeOver < 1)
             {
-                // Lose current form
-                Partner.SelectedIndex = -1;
-                Partner.Enabled = true;
-                RecordRookie = "________";
-                RecordChampion = "________";
-                RecordUltimate = "________";
-                RecordMega = "________";
-                Day.Text = "0";
-
-                // Remove Evolution Options
-                ChampionSelect.Enabled = false;
-                ChampionSelect.Checked = false;
-                ChampionLevel.Text = "________";
-                UltimateSelect.Enabled = false;
-                UltimateSelect.Checked = false;
-                UltimateLevel.Text = "________";
-                MegaSelect.Enabled = false;
-                MegaSelect.Checked = false;
-                MegaLevel.Text = "________";
-
-                // Restart Lifespan
-                RemainingLife.Text = MaximumLife.Text;
-                Digivolve.Enabled = false;
+                TamerDigimon.SelectedIndex = 3;
+                CoreHPNow.Text = "0";
+                ModifyCoreHP.Text = "1";
+                MinusDigicoreHP.PerformClick();
+                ModifyCoreHP.Text = "";
             }
 
             if (ChampionEvolution == true || UltimateEvolution == true || MegaEvolution == true)
@@ -2983,6 +2968,8 @@ namespace DigimonAndTamerCharacterSheets
             int ReduceMax = 0;
             int HighestQuantity = -1;
 
+
+
             // Feed the meal type
             if (StrengthMeal.Checked == true)
             {
@@ -3395,6 +3382,7 @@ namespace DigimonAndTamerCharacterSheets
                 MealVibes = false;
                 MealWits = false;
                 MealEducation = false;
+                TamerDigimon.SelectedIndex = 5;
                 CareMistakeButton.PerformClick();
             };
 
@@ -3409,74 +3397,88 @@ namespace DigimonAndTamerCharacterSheets
                 if (StrengthQuality.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", StrengthQuality.Where(StrengthItem => !string.IsNullOrEmpty(StrengthItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (AgilityQuality.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", AgilityQuality.Where(AgilityItem => !string.IsNullOrEmpty(AgilityItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (VibesQuality.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", VibesQuality.Where(VibesItem => !string.IsNullOrEmpty(VibesItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (WitsQuality.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", WitsQuality.Where(WitsItem => !string.IsNullOrEmpty(WitsItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (EducationQuality.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", EducationQuality.Where(EducationItem => !string.IsNullOrEmpty(EducationItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (AlternativeQuality.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", AlternativeQuality.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
 
                 // Append formatted content for quality items
                 if (MeatQuantity.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", MeatQuantity.Where(MeatItem => !string.IsNullOrEmpty(MeatItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (VeggiesQuantity.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", VeggiesQuantity.Where(VeggiesItem => !string.IsNullOrEmpty(VeggiesItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (BreadQuantity.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", BreadQuantity.Where(BreadItem => !string.IsNullOrEmpty(BreadItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (FruitQuantity.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", FruitQuantity.Where(FruitItem => !string.IsNullOrEmpty(FruitItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (FishQuantity.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", FishQuantity.Where(FishItem => !string.IsNullOrEmpty(FishItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
                 if (AlternativeQuantity.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", AlternativeQuantity.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
 
                 // Append non-useful items
                 if (AlternativeItems.Length > 0)
                 {
                     inventoryText.Append(string.Join(",", AlternativeItems.Where(itemPart => !string.IsNullOrEmpty(itemPart))));
-                    inventoryText.Append(",");
+                    inventoryText.Append(", ");
                 }
 
-                ReadableInventory.Text = inventoryText.ToString();
+                // Condense to String
+                String FinalisedInventory = inventoryText.ToString();
+
+                // Remove leading/trailing spaces
+                FinalisedInventory = FinalisedInventory.Trim();
+
+                // Replace multiple spaces with single space
+                FinalisedInventory = Regex.Replace(FinalisedInventory, @"\s+", " ");
+
+
+                // Assign the final string to ReadableInventory.Text
+                ReadableInventory.Text = "";
+                ReadableInventory.Text = FinalisedInventory;
+
+                // Update The Inventory
                 UpdateInventory.PerformClick();
 
                 // Unselect the meals
@@ -3533,6 +3535,7 @@ namespace DigimonAndTamerCharacterSheets
                 DigimonWits.Text = "";
                 DigimonEducation.Text = "";
 
+                DigiAttackRoll.Text = "";
                 SaveCharacterInformation();
 
             }
@@ -3540,6 +3543,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void textBox6_TextChanged_1(object sender, EventArgs e)
         {
+
             SaveCharacterInformation();
         }
 
@@ -4694,6 +4698,7 @@ namespace DigimonAndTamerCharacterSheets
                     UltimateEvolution = false;
                     MegaEvolution = false;
                     DarkEvolution = false;
+                    HaveMeal.Enabled = true;
 
                     // Agumon Details
                     DigimonField.Text = "Dragon's Roar";
@@ -4762,7 +4767,7 @@ namespace DigimonAndTamerCharacterSheets
                     SuperElement.Text = "Fire";
 
                     // Agumon Quirks
-                    CurrentQuirkOne.Text = "";
+                    CurrentQuirkOne.Text = "Light In Darkness - Spend a point of Bond to illuminate the scene";
                     CurrentQuirkTwo.Text = "";
                     InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
                     InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
@@ -4785,10 +4790,11 @@ namespace DigimonAndTamerCharacterSheets
                     UltimateEvolution = false;
                     MegaEvolution = false;
                     DarkEvolution = false;
+                    HaveMeal.Enabled = true;
 
                     // Commandramon Details
                     DigimonField.Text = "Metal Empire";
-                    DigitalFrame.Text = "7";
+                    DigitalFrame.Text = "8";
                     CoreHPNow.Text = MaxHealth.Text;
                     CoreHPMax.Text = MaxHealth.Text;
                     MoveSpeed.Text = "5";
@@ -5750,6 +5756,54 @@ namespace DigimonAndTamerCharacterSheets
                     EducationDiet.Text = "0";
 
                     // ____ Moves
+                    //Basic Move
+                    BasicAttack.Text = "____";
+                    BasicAttackHardFail.Text = "____";
+                    BasicAttackFail.Text = "____";
+                    BasicAttackPartFail.Text = "____";
+                    BasicAttackPartHit.Text = "____";
+                    BasicAttackHit.Text = "____";
+                    BasicAttackHardHit.Text = "____";
+                    BasicDiceMin.Text = "_";
+                    BasicDiceMax.Text = "_";
+                    BasicElement.Text = "____";
+
+                    //Standard Move
+                    StandardAttack.Text = "____";
+                    StandardAttackHardFail.Text = "____";
+                    StandardAttackFail.Text = "____";
+                    StandardAttackPartFail.Text = "____";
+                    StandardAttackPartHit.Text = "____";
+                    StandardAttackHit.Text = "____";
+                    StandardAttackHardHit.Text = "____";
+                    StandardDiceMin.Text = "_";
+                    StandardDiceMax.Text = "_";
+                    StandardElement.Text = "____";
+
+                    //Special Move
+                    SpecialAttack.Text = "____";
+                    SpecialAttackHardFail.Text = "____";
+                    SpecialAttackFail.Text = "____";
+                    SpecialAttackPartFail.Text = "____";
+                    SpecialAttackPartHit.Text = "____";
+                    SpecialAttackHit.Text = "____";
+                    SpecialAttackHardHit.Text = "____";
+                    SpecialDiceMin.Text = "_";
+                    SpecialDiceMax.Text = "_";
+                    SpecialElement.Text = "____";
+
+                    //Super Move
+                    SuperAttack.Text = "____";
+                    SuperAttackHardFail.Text = "____";
+                    SuperAttackFail.Text = "____";
+                    SuperAttackPartFail.Text = "____";
+                    SuperAttackPartHit.Text = "____";
+                    SuperAttackHit.Text = "____";
+                    SuperAttackHardHit.Text = "____";
+                    SuperDiceMin.Text = "_";
+                    SuperDiceMax.Text = "_";
+                    SuperElement.Text = "____";
+
 
                     // ____ Quirks
                     CurrentQuirkOne.Text = "_";
@@ -5849,14 +5903,15 @@ namespace DigimonAndTamerCharacterSheets
                 DigimonVibesRoll.Enabled = true;
                 DigimonWitsRoll.Enabled = true;
                 DigimonEducationRoll.Enabled = true;
-                StrengthMeal.Enabled = true;
-                AgilityMeal.Enabled = true;
-                VibesMeal.Enabled = true;
-                WitsMeal.Enabled = true;
-                EducationMeal.Enabled = true;
-                HaveMeal.Enabled = true;
+
+                int NextPage = TamerDigimon.SelectedIndex;
+                TamerDigimon.SelectedIndex = 0;
+                UpdateInventory.PerformClick();
+                TamerDigimon.SelectedIndex = NextPage;
             }
 
+
+            DigiAttackRoll.Text = "";
             SaveCharacterInformation();
         }
 
@@ -5955,6 +6010,9 @@ namespace DigimonAndTamerCharacterSheets
                     CrestSelection.SelectedIndex = -1;
                     CrestSelection.Enabled = true;
                     DarkEvolution = false;
+                    Partner.Items.Remove("Numemon");
+                    Partner.SelectedIndex = -1;
+                    Partner.Enabled = true;
                 }
 
                 // Remove Evolution Options
@@ -6924,32 +6982,32 @@ namespace DigimonAndTamerCharacterSheets
             if (StrengthQuality.Length > 0)
             {
                 inventoryText.Append(string.Join(",", StrengthQuality.Where(StrengthItem => !string.IsNullOrEmpty(StrengthItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (AgilityQuality.Length > 0)
             {
                 inventoryText.Append(string.Join(",", AgilityQuality.Where(AgilityItem => !string.IsNullOrEmpty(AgilityItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (VibesQuality.Length > 0)
             {
                 inventoryText.Append(string.Join(",", VibesQuality.Where(VibesItem => !string.IsNullOrEmpty(VibesItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (WitsQuality.Length > 0)
             {
                 inventoryText.Append(string.Join(",", WitsQuality.Where(WitsItem => !string.IsNullOrEmpty(WitsItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (EducationQuality.Length > 0)
             {
                 inventoryText.Append(string.Join(",", EducationQuality.Where(EducationItem => !string.IsNullOrEmpty(EducationItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (AlternativeQuality.Length > 0)
             {
                 inventoryText.Append(string.Join(",", AlternativeQuality.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
 
 
@@ -7096,45 +7154,54 @@ namespace DigimonAndTamerCharacterSheets
             if (MeatQuantity.Length > 0)
             {
                 inventoryText.Append(string.Join(",", MeatQuantity.Where(MeatItem => !string.IsNullOrEmpty(MeatItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (VeggiesQuantity.Length > 0)
             {
                 inventoryText.Append(string.Join(",", VeggiesQuantity.Where(VeggiesItem => !string.IsNullOrEmpty(VeggiesItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (BreadQuantity.Length > 0)
             {
                 inventoryText.Append(string.Join(",", BreadQuantity.Where(BreadItem => !string.IsNullOrEmpty(BreadItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (FruitQuantity.Length > 0)
             {
                 inventoryText.Append(string.Join(",", FruitQuantity.Where(FruitItem => !string.IsNullOrEmpty(FruitItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (FishQuantity.Length > 0)
             {
                 inventoryText.Append(string.Join(",", FishQuantity.Where(FishItem => !string.IsNullOrEmpty(FishItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
             if (AlternativeQuantity.Length > 0)
             {
                 inventoryText.Append(string.Join(",", AlternativeQuantity.Where(AlternativeItem => !string.IsNullOrEmpty(AlternativeItem))));
-                inventoryText.Append(",");
+                inventoryText.Append(", ");
             }
 
-
-
-
             // Append non-useful items
-            inventoryText.Append(string.Join(",", AlternativeItems.Where(itemPart => !string.IsNullOrEmpty(itemPart))));
-            inventoryText.Append(",");
+            if (AlternativeItems.Length > 0)
+            {
+                inventoryText.Append(string.Join(",", AlternativeItems.Where(itemPart => !string.IsNullOrEmpty(itemPart))));
+                inventoryText.Append(", ");
+            }
+
+            // Condense to String
+            String FinalisedInventory = inventoryText.ToString();
+
+            // Remove leading/trailing spaces
+            FinalisedInventory = FinalisedInventory.Trim();
+
+            // Replace multiple spaces with single space
+            FinalisedInventory = Regex.Replace(FinalisedInventory, @"\s+", " ");
 
 
             // Assign the final string to ReadableInventory.Text
             ReadableInventory.Text = "";
-            ReadableInventory.Text = inventoryText.ToString();
+            ReadableInventory.Text = FinalisedInventory;
 
 
             // Update stats from this
@@ -7892,6 +7959,95 @@ namespace DigimonAndTamerCharacterSheets
 
         private void EducationMeal_CheckedChanged(object sender, EventArgs e)
         {
+        }
+
+        bool FirstTime = true;
+
+        private void TamerDigimon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (FirstTime == true)
+            {
+                int NextPage = TamerDigimon.SelectedIndex;
+
+                // Update The Inventory
+                TamerDigimon.SelectedIndex = 0;
+                UpdateInventory.PerformClick();
+
+                TamerDigimon.SelectedIndex = NextPage;
+                FirstTime = false;
+            }
+
+            UpdateInventory.PerformClick();
+
+        }
+
+        private void DigiAttackRoll_TextChanged(object sender, EventArgs e)
+        {
+            int DigitalStrike;
+
+            if (RookieEvolution == true)
+            {
+                DigitalStrike = 2;
+            }
+            else if (ChampionEvolution == true)
+            {
+                DigitalStrike = 4;
+            }
+            else if (UltimateEvolution == true)
+            {
+                DigitalStrike = 7;
+            }
+            else
+            {
+                DigitalStrike = 10;
+            }
+
+            if (DigiRollPlusOne.Checked == true)
+            {
+                DigitalStrike++;
+            }
+
+            if (DigiRollPlusTwo.Checked == true)
+            {
+                DigitalStrike++;
+            }
+
+            if (DigiRollMinusOne.Checked == true)
+            {
+                DigitalStrike--;
+            }
+
+            if (DigiRollMinusTwo.Checked == true)
+            {
+                DigitalStrike--;
+            }
+
+            if (MealStrength == true)
+            {
+                DigitalStrike++;
+            }
+
+            DigiAttackRoll.Text = DigitalStrike.ToString();
+        }
+
+        private void DigiRollPlusOne_CheckedChanged(object sender, EventArgs e)
+        {
+            DigiAttackRoll.Text = "";
+        }
+
+        private void DigiRollPlusTwo_CheckedChanged(object sender, EventArgs e)
+        {
+            DigiAttackRoll.Text = "";
+        }
+
+        private void DigiRollMinusOne_CheckedChanged(object sender, EventArgs e)
+        {
+            DigiAttackRoll.Text = "";
+        }
+
+        private void DigiRollMinusTwo_CheckedChanged(object sender, EventArgs e)
+        {
+            DigiAttackRoll.Text = "";
         }
     }
 }

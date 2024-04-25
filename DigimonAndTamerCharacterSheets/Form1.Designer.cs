@@ -630,6 +630,7 @@
             TamerDigimon.SelectedIndex = 0;
             TamerDigimon.Size = new Size(1221, 842);
             TamerDigimon.TabIndex = 25;
+            TamerDigimon.SelectedIndexChanged += TamerDigimon_SelectedIndexChanged;
             // 
             // TamerAttackRoll
             // 
@@ -4036,7 +4037,7 @@
             // 
             // ModifyCoreHP
             // 
-            ModifyCoreHP.Location = new Point(175, 402);
+            ModifyCoreHP.Location = new Point(175, 407);
             ModifyCoreHP.Margin = new Padding(3, 2, 3, 2);
             ModifyCoreHP.Name = "ModifyCoreHP";
             ModifyCoreHP.Size = new Size(151, 26);
@@ -4431,6 +4432,7 @@
             DigiRollMinusTwo.Size = new Size(18, 17);
             DigiRollMinusTwo.TabIndex = 163;
             DigiRollMinusTwo.UseVisualStyleBackColor = true;
+            DigiRollMinusTwo.CheckedChanged += DigiRollMinusTwo_CheckedChanged;
             // 
             // DigiRollMinusOne
             // 
@@ -4441,6 +4443,7 @@
             DigiRollMinusOne.Size = new Size(18, 17);
             DigiRollMinusOne.TabIndex = 162;
             DigiRollMinusOne.UseVisualStyleBackColor = true;
+            DigiRollMinusOne.CheckedChanged += DigiRollMinusOne_CheckedChanged;
             // 
             // DigiRollPlusTwo
             // 
@@ -4451,6 +4454,7 @@
             DigiRollPlusTwo.Size = new Size(18, 17);
             DigiRollPlusTwo.TabIndex = 161;
             DigiRollPlusTwo.UseVisualStyleBackColor = true;
+            DigiRollPlusTwo.CheckedChanged += DigiRollPlusTwo_CheckedChanged;
             // 
             // DigiRollPlusOne
             // 
@@ -4461,6 +4465,7 @@
             DigiRollPlusOne.Size = new Size(18, 17);
             DigiRollPlusOne.TabIndex = 160;
             DigiRollPlusOne.UseVisualStyleBackColor = true;
+            DigiRollPlusOne.CheckedChanged += DigiRollPlusOne_CheckedChanged;
             // 
             // label23
             // 
@@ -4484,6 +4489,7 @@
             DigiAttackRoll.TabIndex = 158;
             DigiAttackRoll.Text = "0";
             DigiAttackRoll.TextAlign = HorizontalAlignment.Center;
+            DigiAttackRoll.TextChanged += DigiAttackRoll_TextChanged;
             // 
             // label21
             // 
