@@ -119,6 +119,12 @@ namespace DigimonAndTamerCharacterSheets
                 MealVibes = loadedForm.MealVibes;
                 MealWits = loadedForm.MealWits;
                 MealEducation = loadedForm.MealEducation;
+                ChampionLevel.Text = loadedForm.ChampionLevel;
+                UltimateLevel.Text = loadedForm.UltimateLevel;
+                MegaLevel.Text = loadedForm.MegaLevel;
+                ChampionSelect.Enabled = loadedForm.ChampionSelect;
+                UltimateSelect.Enabled = loadedForm.UltimateSelect;
+                MegaSelect.Enabled = loadedForm.MegaSelect;
             }
             catch (Exception ex)
             {
@@ -215,6 +221,9 @@ namespace DigimonAndTamerCharacterSheets
                     MealVibes = MealVibes,
                     MealWits = MealWits,
                     MealEducation = MealEducation,
+                    ChampionSelect = ChampionSelect.Enabled,
+                    UltimateSelect = UltimateSelect.Enabled,
+                    MegaSelect = MegaSelect.Enabled,
                 }));
 
             }
@@ -347,10 +356,11 @@ namespace DigimonAndTamerCharacterSheets
                 if (DarkEvolution == true)
                 {
 
-                    Partner.Items.Remove("Numemon");
-
-                    Partner.SelectedIndex = -1;
-                    Partner.Enabled = true;
+                    TamerDigimon.SelectedIndex = 3;
+                    CoreHPNow.Text = "0";
+                    ModifyCoreHP.Text = "1";
+                    MinusDigicoreHP.PerformClick();
+                    ModifyCoreHP.Text = "";
                 }
                 else
                 {
@@ -3378,10 +3388,15 @@ namespace DigimonAndTamerCharacterSheets
             else
             {
                 MealStrength = false;
+                DigimonStrength.Text = "";
                 MealAgility = false;
+                DigimonAgility.Text = "";
                 MealVibes = false;
+                DigimonVibes.Text = "";
                 MealWits = false;
+                DigimonWits.Text = "";
                 MealEducation = false;
+                DigimonEducation.Text = "";
                 TamerDigimon.SelectedIndex = 5;
                 CareMistakeButton.PerformClick();
             };
@@ -5998,6 +6013,9 @@ namespace DigimonAndTamerCharacterSheets
                 // Lose current form
                 Partner.SelectedIndex = -1;
                 Partner.Enabled = true;
+                Partner.Items.Remove(RecordChampion);
+                Partner.Items.Remove(RecordUltimate);
+                Partner.Items.Remove(RecordMega);
                 RecordRookie = "________";
                 RecordChampion = "________";
                 RecordUltimate = "________";
@@ -6109,215 +6127,229 @@ namespace DigimonAndTamerCharacterSheets
 
         private void Digivolve_Click(object sender, EventArgs e)
         {
-            int DarkCheck = 0;
-
-            // Dice Simulation
-            Random random = new Random();
-            int DigivolutionRoll = random.Next(1, 21);
-
-            // Check Dark Digivolution Odds
+            if (Digivolve.Text == "De-Digivolve") 
             {
-                // If CrapSeven is checked
-                if (CrapSeven.Checked)
-                {
-                    DarkCheck = 20;
-                }
-                // If CrapSix is checked
-                else if (CrapSix.Checked)
-                {
-                    DarkCheck = 18;
-                }
-                // If CrapFive is checked
-                else if (CrapFive.Checked)
-                {
-                    DarkCheck = 16;
-                }
-                // If CrapFour is checked
-                else if (CrapFour.Checked)
-                {
-                    DarkCheck = 14;
-                }
-                // If CrapThree is checked
-                else if (CrapThree.Checked)
-                {
-                    DarkCheck = 12;
-                }
-                // If CrapTwo is checked
-                else if (CrapTwo.Checked)
-                {
-                    DarkCheck = 10;
-                }
-                // If CrapOne is checked
-                else if (CrapOne.Checked)
-                {
-                    DarkCheck = 8;
-                }
-                // If no crap
-                else
-                {
-                    DarkCheck = 0;
-                }
+                Digivolve.Text = "Digivolve";
 
-                // Diet Check
-                if (
-                    !int.TryParse(StrengthDiet.Text, out int DietStrength) ||
-                    !int.TryParse(AgilityDiet.Text, out int DietAgility) ||
-                    !int.TryParse(VibesDiet.Text, out int DietVibes) ||
-                    !int.TryParse(WitsDiet.Text, out int DietWits) ||
-                    !int.TryParse(EducationDiet.Text, out int DietEducation)
-                ) { return; }
-                Diet maxDiet = (Diet)new int[] { DietStrength, DietAgility, DietVibes, DietWits, DietEducation }.Select((x, idx) => (x, idx)).Max().idx;
+                Partner.SelectedItem = RecordRookie;
+                Partner.Items.Remove(RecordChampion);
+                Partner.Items.Remove(RecordUltimate);
+                Partner.Items.Remove(RecordMega);
+            } 
+            else 
+            {
 
-                if (ChampionSelect.Checked == true)
+                Digivolve.Text = "De-Digivolve";
+                int DarkCheck = 0;
+
+                // Dice Simulation
+                Random random = new Random();
+                int DigivolutionRoll = random.Next(1, 21);
+
+                // Check Dark Digivolution Odds
                 {
-                    int RemainingLifespan;
-                    int.TryParse(RemainingLife.Text, out RemainingLifespan);
-                    RemainingLifespan = RemainingLifespan - 1;
-                    RemainingLife.Text = RemainingLifespan.ToString();
-
-
-                    if (DigivolutionRoll > DarkCheck)
+                    // If CrapSeven is checked
+                    if (CrapSeven.Checked)
                     {
+                        DarkCheck = 20;
+                    }
+                    // If CrapSix is checked
+                    else if (CrapSix.Checked)
+                    {
+                        DarkCheck = 18;
+                    }
+                    // If CrapFive is checked
+                    else if (CrapFive.Checked)
+                    {
+                        DarkCheck = 16;
+                    }
+                    // If CrapFour is checked
+                    else if (CrapFour.Checked)
+                    {
+                        DarkCheck = 14;
+                    }
+                    // If CrapThree is checked
+                    else if (CrapThree.Checked)
+                    {
+                        DarkCheck = 12;
+                    }
+                    // If CrapTwo is checked
+                    else if (CrapTwo.Checked)
+                    {
+                        DarkCheck = 10;
+                    }
+                    // If CrapOne is checked
+                    else if (CrapOne.Checked)
+                    {
+                        DarkCheck = 8;
+                    }
+                    // If no crap
+                    else
+                    {
+                        DarkCheck = 0;
+                    }
 
-                        if (ChampionLevel.Text == "________")
+                    // Diet Check
+                    if (
+                        !int.TryParse(StrengthDiet.Text, out int DietStrength) ||
+                        !int.TryParse(AgilityDiet.Text, out int DietAgility) ||
+                        !int.TryParse(VibesDiet.Text, out int DietVibes) ||
+                        !int.TryParse(WitsDiet.Text, out int DietWits) ||
+                        !int.TryParse(EducationDiet.Text, out int DietEducation)
+                    ) { return; }
+                    Diet maxDiet = (Diet)new int[] { DietStrength, DietAgility, DietVibes, DietWits, DietEducation }.Select((x, idx) => (x, idx)).Max().idx;
+
+                    if (ChampionSelect.Checked == true)
+                    {
+                        int RemainingLifespan;
+                        int.TryParse(RemainingLife.Text, out RemainingLifespan);
+                        RemainingLifespan = RemainingLifespan - 1;
+                        RemainingLife.Text = RemainingLifespan.ToString();
+
+
+                        if (DigivolutionRoll > DarkCheck)
                         {
 
-                            // Agumon Evolution Systems
-                            if (Partner.Text == "Agumon")
+                            if (ChampionLevel.Text == "________")
                             {
-                                RecordRookie = "Agumon";
 
-                                if (maxDiet == Diet.Strength)
+                                // Agumon Evolution Systems
+                                if (Partner.Text == "Agumon")
                                 {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
-                                    Partner.Items.Add("Greymon");
-                                    Partner.SelectedItem = "Greymon";
-                                    ChampionLevel.Text = "Greymon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
+                                    RecordRookie = "Agumon";
+
+                                    if (maxDiet == Diet.Strength)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
+                                        Partner.Items.Add("Greymon");
+                                        Partner.SelectedItem = "Greymon";
+                                        ChampionLevel.Text = "Greymon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Agility)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
+                                        Partner.Items.Add("Tuskmon");
+                                        Partner.SelectedItem = "Tuskmon";
+                                        ChampionLevel.Text = "Tuskmon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Vibes)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
+                                        Partner.Items.Add("Growlmon");
+                                        Partner.SelectedItem = "Growlmon";
+                                        ChampionLevel.Text = "Growlmon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Wits)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
+                                        Partner.Items.Add("Flarizamon");
+                                        Partner.SelectedItem = "Flarizamon";
+                                        ChampionLevel.Text = "Flarizamon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Education)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
+                                        Partner.Items.Add("Tyrannomon");
+                                        Partner.SelectedItem = "Tyrannomon";
+                                        ChampionLevel.Text = "Tyrannomon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
                                 }
-                                else if (maxDiet == Diet.Agility)
+
+                                // Commandramon Evolution Systems
+                                else if (Partner.Text == "Commandramon")
                                 {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
-                                    Partner.Items.Add("Tuskmon");
-                                    Partner.SelectedItem = "Tuskmon";
-                                    ChampionLevel.Text = "Tuskmon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-                                }
-                                else if (maxDiet == Diet.Vibes)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
-                                    Partner.Items.Add("Growlmon");
-                                    Partner.SelectedItem = "Growlmon";
-                                    ChampionLevel.Text = "Growlmon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-                                }
-                                else if (maxDiet == Diet.Wits)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
-                                    Partner.Items.Add("Flarizamon");
-                                    Partner.SelectedItem = "Flarizamon";
-                                    ChampionLevel.Text = "Flarizamon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-                                }
-                                else if (maxDiet == Diet.Education)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
-                                    Partner.Items.Add("Tyrannomon");
-                                    Partner.SelectedItem = "Tyrannomon";
-                                    ChampionLevel.Text = "Tyrannomon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
+                                    RecordRookie = "Commandramon";
+
+                                    if (maxDiet == Diet.Strength)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Hi-Commandramon");
+                                        Partner.Items.Add("Hi-Commandramon");
+                                        Partner.SelectedItem = "Hi-Commandramon";
+                                        ChampionLevel.Text = "Hi-Commandramon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+
+                                    }
+                                    else if (maxDiet == Diet.Agility)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Centarumon");
+                                        Partner.Items.Add("Centarumon");
+                                        Partner.SelectedItem = "Centarumon";
+                                        ChampionLevel.Text = "Centarumon";
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Vibes)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Deputymon");
+                                        Partner.Items.Add("Deputymon");
+                                        Partner.SelectedItem = "Deputymon";
+                                        ChampionLevel.Text = "Deputymon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Wits)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Sealsdramon");
+                                        Partner.Items.Add("Sealsdramon");
+                                        Partner.SelectedItem = "Sealsdramon";
+                                        ChampionLevel.Text = "Sealsdramon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
+                                    else if (maxDiet == Diet.Education)
+                                    {
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Clockmon");
+                                        Partner.Items.Add("Clockmon");
+                                        Partner.SelectedItem = "Clockmon";
+                                        ChampionLevel.Text = "Clockmon";
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                    }
                                 }
                             }
-
-                            // Commandramon Evolution Systems
-                            else if (Partner.Text == "Commandramon")
+                            else
                             {
-                                RecordRookie = "Commandramon";
-
-                                if (maxDiet == Diet.Strength)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Hi-Commandramon");
-                                    Partner.Items.Add("Hi-Commandramon");
-                                    Partner.SelectedItem = "Hi-Commandramon";
-                                    ChampionLevel.Text = "Hi-Commandramon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-
-                                }
-                                else if (maxDiet == Diet.Agility)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Centarumon");
-                                    Partner.Items.Add("Centarumon");
-                                    Partner.SelectedItem = "Centarumon";
-                                    ChampionLevel.Text = "Centarumon";
-                                    ChampionEvolution = true;
-                                }
-                                else if (maxDiet == Diet.Vibes)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Deputymon");
-                                    Partner.Items.Add("Deputymon");
-                                    Partner.SelectedItem = "Deputymon";
-                                    ChampionLevel.Text = "Deputymon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-                                }
-                                else if (maxDiet == Diet.Wits)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Sealsdramon");
-                                    Partner.Items.Add("Sealsdramon");
-                                    Partner.SelectedItem = "Sealsdramon";
-                                    ChampionLevel.Text = "Sealsdramon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-                                }
-                                else if (maxDiet == Diet.Education)
-                                {
-                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Clockmon");
-                                    Partner.Items.Add("Clockmon");
-                                    Partner.SelectedItem = "Clockmon";
-                                    ChampionLevel.Text = "Clockmon";
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
-                                }
+                                MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {ChampionLevel.Text}");
+                                Partner.Items.Add(ChampionLevel.Text);
+                                Partner.SelectedItem = ChampionLevel.Text;
+                                ChampionLevel.Text = ChampionLevel.Text;
+                                RookieEvolution = false;
+                                ChampionEvolution = true;
                             }
+
                         }
                         else
                         {
-                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {ChampionLevel.Text}");
-                            Partner.Items.Add(ChampionLevel.Text);
-                            Partner.SelectedItem = ChampionLevel.Text;
-                            ChampionLevel.Text = ChampionLevel.Text;
+                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
+                            Partner.Items.Add("Numemon");
+                            Partner.SelectedItem = "Numemon";
+                            DarkEvolution = true;
                             RookieEvolution = false;
                             ChampionEvolution = true;
+                            CrestSelection.SelectedIndex = -1;
+                            CrestSelection.Enabled = true;
                         }
+                    }
 
-                    }
-                    else
-                    {
-                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
-                        Partner.Items.Add("Numemon");
-                        Partner.SelectedItem = "Numemon";
-                        DarkEvolution = true;
-                        RookieEvolution = false;
-                        ChampionEvolution = true;
-                        CrestSelection.SelectedIndex = -1;
-                        CrestSelection.Enabled = true;
-                    }
+
                 }
+                RecordChampion = ChampionLevel.Text;
+                RecordUltimate = UltimateLevel.Text;
+                RecordMega = MegaLevel.Text;
 
+                SaveCharacterInformation();
 
-            }
-            RecordChampion = ChampionLevel.Text;
-            RecordUltimate = UltimateLevel.Text;
-            RecordMega = MegaLevel.Text;
-
-            SaveCharacterInformation();
-
+            } 
         }
 
         private void Value_Click(object sender, EventArgs e)
@@ -6336,7 +6368,7 @@ namespace DigimonAndTamerCharacterSheets
                 ChampionSelect.Enabled = true;
             }
 
-            // Unlock Ultmate Evolutions
+            // Unlock Ultimate Evolutions
             if (DayCount > 6 && LevelCount > 7)
             {
                 UltimateSelect.Enabled = true;
@@ -6406,6 +6438,8 @@ namespace DigimonAndTamerCharacterSheets
                 // Strategy Points
                 StratPoints.Text = "";
             }
+
+            SaveCharacterInformation();
         }
 
         private void button2_Click(object sender, EventArgs e)

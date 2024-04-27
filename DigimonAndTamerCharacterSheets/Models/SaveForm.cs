@@ -55,4 +55,10 @@ internal class SaveForm
     public bool MealVibes { get; set; } = false!;
     public bool MealWits { get; set; } = false!;
     public bool MealEducation { get; set; } = false!;
+    public string ChampionLevel { get; set; } = "________";
+    public string UltimateLevel { get; set; } = "________";
+    public string MegaLevel { get; set; } = "________";
+    public bool ChampionSelect { get; set; } = false!;
+    public bool UltimateSelect { get; set; } = false!;
+    public bool MegaSelect { get; set; } = false!;
 }
