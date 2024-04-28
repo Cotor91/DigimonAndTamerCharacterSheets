@@ -23,6 +23,18 @@ namespace DigimonAndTamerCharacterSheets
 
             LoadCharacterInformation(); // Load data when the form initializes
 
+
+            StrengthStat.Text = "";
+            DigimonStrength.Text = "";
+            AgilityStat.Text = "";
+            DigimonAgility.Text = "";
+            VibesStat.Text = "";
+            DigimonVibes.Text = "";
+            WitsStat.Text = "";
+            DigimonWits.Text = "";
+            KnowledgeStat.Text = "";
+            DigimonEducation.Text = "";
+
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -4000,16 +4012,44 @@ namespace DigimonAndTamerCharacterSheets
         private void radioButton14_CheckedChanged_3(object sender, EventArgs e)
         {
             Digivolve.Enabled = true;
+
+            if (ChampionEvolution == true && ChampionSelect.Checked == true)
+            {
+                Digivolve.Text = "De-Digivolve";
+            }
+            else
+            {
+                Digivolve.Text = "Digivolve";
+            }
+
         }
 
         private void radioButton12_CheckedChanged_2(object sender, EventArgs e)
         {
+            Digivolve.Enabled = true;
 
+            if (UltimateEvolution == true && UltimateSelect.Checked == true)
+            {
+                Digivolve.Text = "De-Digivolve";
+            }
+            else
+            {
+                Digivolve.Text = "Digivolve";
+            }
         }
 
         private void radioButton21_CheckedChanged(object sender, EventArgs e)
         {
+            Digivolve.Enabled = true;
 
+            if (MegaEvolution == true && MegaSelect.Checked == true)
+            {
+                Digivolve.Text = "De-Digivolve";
+            }
+            else
+            {
+                Digivolve.Text = "Digivolve";
+            }
         }
 
         private void label134_Click(object sender, EventArgs e)
@@ -6127,7 +6167,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void Digivolve_Click(object sender, EventArgs e)
         {
-            if (Digivolve.Text == "De-Digivolve") 
+            if (Digivolve.Text == "De-Digivolve")
             {
                 Digivolve.Text = "Digivolve";
 
@@ -6135,8 +6175,8 @@ namespace DigimonAndTamerCharacterSheets
                 Partner.Items.Remove(RecordChampion);
                 Partner.Items.Remove(RecordUltimate);
                 Partner.Items.Remove(RecordMega);
-            } 
-            else 
+            }
+            else
             {
 
                 Digivolve.Text = "De-Digivolve";
@@ -6349,7 +6389,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 SaveCharacterInformation();
 
-            } 
+            }
         }
 
         private void Value_Click(object sender, EventArgs e)
@@ -8083,5 +8123,69 @@ namespace DigimonAndTamerCharacterSheets
         {
             DigiAttackRoll.Text = "";
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            int NumberOfDice = 0;
+
+            DialogResult InitiativeCheck = MessageBox.Show("Is this an Initiative Roll?", "Initiative", MessageBoxButtons.YesNo);
+            if (InitiativeCheck == DialogResult.Yes)
+            {
+                if (MealAgility == true)
+                {
+                    NumberOfDice++;
+                }
+            }
+            else
+            {
+                // Apply the modifiers
+                if (TamerRollPlusOne.Checked)
+                {
+                    NumberOfDice++;
+                }
+                if (TamerRollPlusTwo.Checked)
+                {
+                    NumberOfDice++;
+                }
+                if (TamerRollMinusOne.Checked)
+                {
+                    NumberOfDice--;
+                }
+                if (TamerRollMinusTwo.Checked)
+                {
+                    NumberOfDice--;
+                }
+            }
+
+
+                    // Simulate rolling dice
+                    Random random = new Random();
+                    int TotalResult = 0;
+                    string IndividualRolls = "";
+                    string CoreRoll = "";
+
+
+                    for (int i = 0; i < NumberOfDice; i++)
+                    {
+                        // Generates a random number between 1 and 10
+                        int DiceResult = random.Next(1, 11);
+                        TotalResult += DiceResult;
+                        // Collect individual rolls
+                        IndividualRolls += DiceResult + " ";
+                    }
+
+                    // Generates a random number between 1 and 20
+                    int D20Result = random.Next(1, 21);
+                    TotalResult += D20Result;
+                    // Collect individual rolls
+                    CoreRoll += D20Result + " ";
+
+                    // Final result
+                    TotalResult += CarryTrack.Value * 3;
+
+                    // Display the result
+                    MessageBox.Show($"Character Roll: {CoreRoll}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+               
+            }
     }
 }

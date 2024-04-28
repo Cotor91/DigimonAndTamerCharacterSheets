@@ -38,10 +38,10 @@
             button3 = new Button();
             label26 = new Label();
             label27 = new Label();
-            TamerAttackRollMinusTwo = new CheckBox();
-            TamerAttackRollMinusOne = new CheckBox();
-            TamerAttackRollPlusTwo = new CheckBox();
-            TamerAttackRollPlusOne = new CheckBox();
+            TamerRollMinusTwo = new CheckBox();
+            TamerRollMinusOne = new CheckBox();
+            TamerRollPlusTwo = new CheckBox();
+            TamerRollPlusOne = new CheckBox();
             UpdateInventory = new Button();
             label172 = new Label();
             label171 = new Label();
@@ -638,10 +638,10 @@
             TamerAttackRoll.Controls.Add(button3);
             TamerAttackRoll.Controls.Add(label26);
             TamerAttackRoll.Controls.Add(label27);
-            TamerAttackRoll.Controls.Add(TamerAttackRollMinusTwo);
-            TamerAttackRoll.Controls.Add(TamerAttackRollMinusOne);
-            TamerAttackRoll.Controls.Add(TamerAttackRollPlusTwo);
-            TamerAttackRoll.Controls.Add(TamerAttackRollPlusOne);
+            TamerAttackRoll.Controls.Add(TamerRollMinusTwo);
+            TamerAttackRoll.Controls.Add(TamerRollMinusOne);
+            TamerAttackRoll.Controls.Add(TamerRollPlusTwo);
+            TamerAttackRoll.Controls.Add(TamerRollPlusOne);
             TamerAttackRoll.Controls.Add(UpdateInventory);
             TamerAttackRoll.Controls.Add(label172);
             TamerAttackRoll.Controls.Add(label171);
@@ -692,8 +692,9 @@
             button3.Name = "button3";
             button3.Size = new Size(118, 51);
             button3.TabIndex = 174;
-            button3.Text = "Attack";
+            button3.Text = "Roll";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click_1;
             // 
             // label26
             // 
@@ -715,45 +716,45 @@
             label27.TabIndex = 172;
             label27.Text = "+";
             // 
-            // TamerAttackRollMinusTwo
+            // TamerRollMinusTwo
             // 
-            TamerAttackRollMinusTwo.AutoSize = true;
-            TamerAttackRollMinusTwo.Location = new Point(270, 728);
-            TamerAttackRollMinusTwo.Margin = new Padding(3, 2, 3, 2);
-            TamerAttackRollMinusTwo.Name = "TamerAttackRollMinusTwo";
-            TamerAttackRollMinusTwo.Size = new Size(18, 17);
-            TamerAttackRollMinusTwo.TabIndex = 171;
-            TamerAttackRollMinusTwo.UseVisualStyleBackColor = true;
+            TamerRollMinusTwo.AutoSize = true;
+            TamerRollMinusTwo.Location = new Point(270, 728);
+            TamerRollMinusTwo.Margin = new Padding(3, 2, 3, 2);
+            TamerRollMinusTwo.Name = "TamerRollMinusTwo";
+            TamerRollMinusTwo.Size = new Size(18, 17);
+            TamerRollMinusTwo.TabIndex = 171;
+            TamerRollMinusTwo.UseVisualStyleBackColor = true;
             // 
-            // TamerAttackRollMinusOne
+            // TamerRollMinusOne
             // 
-            TamerAttackRollMinusOne.AutoSize = true;
-            TamerAttackRollMinusOne.Location = new Point(246, 728);
-            TamerAttackRollMinusOne.Margin = new Padding(3, 2, 3, 2);
-            TamerAttackRollMinusOne.Name = "TamerAttackRollMinusOne";
-            TamerAttackRollMinusOne.Size = new Size(18, 17);
-            TamerAttackRollMinusOne.TabIndex = 170;
-            TamerAttackRollMinusOne.UseVisualStyleBackColor = true;
+            TamerRollMinusOne.AutoSize = true;
+            TamerRollMinusOne.Location = new Point(246, 728);
+            TamerRollMinusOne.Margin = new Padding(3, 2, 3, 2);
+            TamerRollMinusOne.Name = "TamerRollMinusOne";
+            TamerRollMinusOne.Size = new Size(18, 17);
+            TamerRollMinusOne.TabIndex = 170;
+            TamerRollMinusOne.UseVisualStyleBackColor = true;
             // 
-            // TamerAttackRollPlusTwo
+            // TamerRollPlusTwo
             // 
-            TamerAttackRollPlusTwo.AutoSize = true;
-            TamerAttackRollPlusTwo.Location = new Point(270, 688);
-            TamerAttackRollPlusTwo.Margin = new Padding(3, 2, 3, 2);
-            TamerAttackRollPlusTwo.Name = "TamerAttackRollPlusTwo";
-            TamerAttackRollPlusTwo.Size = new Size(18, 17);
-            TamerAttackRollPlusTwo.TabIndex = 169;
-            TamerAttackRollPlusTwo.UseVisualStyleBackColor = true;
+            TamerRollPlusTwo.AutoSize = true;
+            TamerRollPlusTwo.Location = new Point(270, 688);
+            TamerRollPlusTwo.Margin = new Padding(3, 2, 3, 2);
+            TamerRollPlusTwo.Name = "TamerRollPlusTwo";
+            TamerRollPlusTwo.Size = new Size(18, 17);
+            TamerRollPlusTwo.TabIndex = 169;
+            TamerRollPlusTwo.UseVisualStyleBackColor = true;
             // 
-            // TamerAttackRollPlusOne
+            // TamerRollPlusOne
             // 
-            TamerAttackRollPlusOne.AutoSize = true;
-            TamerAttackRollPlusOne.Location = new Point(246, 688);
-            TamerAttackRollPlusOne.Margin = new Padding(3, 2, 3, 2);
-            TamerAttackRollPlusOne.Name = "TamerAttackRollPlusOne";
-            TamerAttackRollPlusOne.Size = new Size(18, 17);
-            TamerAttackRollPlusOne.TabIndex = 168;
-            TamerAttackRollPlusOne.UseVisualStyleBackColor = true;
+            TamerRollPlusOne.AutoSize = true;
+            TamerRollPlusOne.Location = new Point(246, 688);
+            TamerRollPlusOne.Margin = new Padding(3, 2, 3, 2);
+            TamerRollPlusOne.Name = "TamerRollPlusOne";
+            TamerRollPlusOne.Size = new Size(18, 17);
+            TamerRollPlusOne.TabIndex = 168;
+            TamerRollPlusOne.UseVisualStyleBackColor = true;
             // 
             // UpdateInventory
             // 
@@ -6849,10 +6850,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.CheckBox TamerAttackRollMinusTwo;
-        private System.Windows.Forms.CheckBox TamerAttackRollMinusOne;
-        private System.Windows.Forms.CheckBox TamerAttackRollPlusTwo;
-        private System.Windows.Forms.CheckBox TamerAttackRollPlusOne;
+        private System.Windows.Forms.CheckBox TamerRollMinusTwo;
+        private System.Windows.Forms.CheckBox TamerRollMinusOne;
+        private System.Windows.Forms.CheckBox TamerRollPlusTwo;
+        private System.Windows.Forms.CheckBox TamerRollPlusOne;
         private System.Windows.Forms.Label BattleScanLineOne;
         private System.Windows.Forms.Label BattleScanLineThree;
         private System.Windows.Forms.Label BattleScanLineTwo;
