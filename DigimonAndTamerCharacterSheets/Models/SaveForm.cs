@@ -61,4 +61,10 @@ internal class SaveForm
     public bool ChampionSelect { get; set; } = false!;
     public bool UltimateSelect { get; set; } = false!;
     public bool MegaSelect { get; set; } = false!;
+    public string StrengthDiet { get; set; } = "0";
+    public string AgilityDiet { get; set; } = "0";
+    public string VibesDiet { get; set; } = "0";
+    public string WitsDiet { get; set; } = "0";
+    public string EducationDiet { get; set; } = "0";
+
 }
