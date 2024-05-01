@@ -3214,6 +3214,7 @@
             DigiSoulStat.TabIndex = 79;
             DigiSoulStat.Text = "0";
             DigiSoulStat.TextAlign = HorizontalAlignment.Center;
+            DigiSoulStat.TextChanged += DigiSoulStat_TextChanged;
             // 
             // GigaSearchTrack
             // 
@@ -4653,7 +4654,7 @@
             // 
             SpecialElement.AutoSize = true;
             SpecialElement.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SpecialElement.Location = new Point(418, 26);
+            SpecialElement.Location = new Point(353, 26);
             SpecialElement.Name = "SpecialElement";
             SpecialElement.Size = new Size(70, 20);
             SpecialElement.TabIndex = 92;
@@ -4878,7 +4879,7 @@
             // 
             SuperElement.AutoSize = true;
             SuperElement.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SuperElement.Location = new Point(418, 26);
+            SuperElement.Location = new Point(353, 26);
             SuperElement.Name = "SuperElement";
             SuperElement.Size = new Size(70, 20);
             SuperElement.TabIndex = 94;
@@ -5111,7 +5112,7 @@
             // 
             BasicElement.AutoSize = true;
             BasicElement.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BasicElement.Location = new Point(418, 26);
+            BasicElement.Location = new Point(353, 26);
             BasicElement.Name = "BasicElement";
             BasicElement.Size = new Size(70, 20);
             BasicElement.TabIndex = 91;
@@ -5387,7 +5388,7 @@
             // 
             StandardElement.AutoSize = true;
             StandardElement.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            StandardElement.Location = new Point(418, 26);
+            StandardElement.Location = new Point(353, 26);
             StandardElement.Name = "StandardElement";
             StandardElement.Size = new Size(70, 20);
             StandardElement.TabIndex = 96;
@@ -5935,6 +5936,7 @@
             CrapFour.Size = new Size(17, 16);
             CrapFour.TabIndex = 101;
             CrapFour.UseVisualStyleBackColor = true;
+            CrapFour.CheckedChanged += CrapFour_CheckedChanged;
             // 
             // pictureBox7
             // 
@@ -5958,6 +5960,7 @@
             CrapThree.Size = new Size(17, 16);
             CrapThree.TabIndex = 99;
             CrapThree.UseVisualStyleBackColor = true;
+            CrapThree.CheckedChanged += CrapThree_CheckedChanged;
             // 
             // pictureBox8
             // 
@@ -5981,6 +5984,7 @@
             CrapTwo.Size = new Size(17, 16);
             CrapTwo.TabIndex = 97;
             CrapTwo.UseVisualStyleBackColor = true;
+            CrapTwo.CheckedChanged += CrapTwo_CheckedChanged;
             // 
             // pictureBox5
             // 
@@ -6079,6 +6083,7 @@
             ToiletOne.Size = new Size(17, 16);
             ToiletOne.TabIndex = 74;
             ToiletOne.UseVisualStyleBackColor = true;
+            ToiletOne.CheckedChanged += ToiletOne_CheckedChanged;
             // 
             // ToiletTwo
             // 
@@ -6090,6 +6095,7 @@
             ToiletTwo.Size = new Size(17, 16);
             ToiletTwo.TabIndex = 73;
             ToiletTwo.UseVisualStyleBackColor = true;
+            ToiletTwo.CheckedChanged += ToiletTwo_CheckedChanged;
             // 
             // ChampionLevel
             // 

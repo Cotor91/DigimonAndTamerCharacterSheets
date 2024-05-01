@@ -1,4 +1,6 @@
-﻿namespace DigimonAndTamerCharacterSheets.Models;
+﻿using System.Security.Cryptography.Pkcs;
+
+namespace DigimonAndTamerCharacterSheets.Models;
 
 internal class SaveForm
 {
@@ -66,5 +68,20 @@ internal class SaveForm
     public string VibesDiet { get; set; } = "0";
     public string WitsDiet { get; set; } = "0";
     public string EducationDiet { get; set; } = "0";
-
+    public int ErrorScanTrack { get; set; } = 0!;
+    public int InfoExtractTrack { get; set; } = 0!;
+    public int GigaSearchTrack { get; set; } = 0!;
+    public int WaybackTrackTrack { get; set; } = 0!;
+    public bool ToiletOne { get; set; } = false!;
+    public bool ToiletTwo { get; set; } = false!;
+    public bool ToiletThree { get; set; } = false!;
+    public bool CrapOne { get; set; } = false!;
+    public bool CrapTwo { get; set; } = false!;
+    public bool CrapThree { get; set; } = false!;
+    public bool CrapFour { get; set; } = false!;
+    public bool CrapFive { get; set; } = false!;
+    public bool CrapSix { get; set; } = false!;
+    public bool CrapSeven { get; set; } = false!;
+    public string DigiBond { get; set; } = null!;
+    public int GaurdPoints { get; set; } = 0!;
 }

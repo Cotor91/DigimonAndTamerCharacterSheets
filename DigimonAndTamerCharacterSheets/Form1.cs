@@ -143,6 +143,26 @@ namespace DigimonAndTamerCharacterSheets
                 VibesDiet.Text = loadedForm.VibesDiet;
                 WitsDiet.Text = loadedForm.WitsDiet;
                 EducationDiet.Text = loadedForm.EducationDiet;
+                ErrorScanTrack.Value = loadedForm.ErrorScanTrack;
+                InfoExtractTrack.Value = loadedForm.InfoExtractTrack;
+                GigaSearchTrack.Value = loadedForm.GigaSearchTrack;
+                WaybackTrackTrack.Value = loadedForm.WaybackTrackTrack;
+                HighestErrorScan = loadedForm.ErrorScanTrack;
+                HighestInfoExtract = loadedForm.InfoExtractTrack;
+                HighestGigaSearch = loadedForm.GigaSearchTrack;
+                HighestWaybackTrack = loadedForm.WaybackTrackTrack;
+                ToiletOne.Checked = loadedForm.ToiletOne;
+                ToiletTwo.Checked = loadedForm.ToiletTwo;
+                ToiletThree.Checked = loadedForm.ToiletThree;
+                CrapOne.Checked = loadedForm.CrapOne;
+                CrapTwo.Checked = loadedForm.CrapTwo;
+                CrapThree.Checked = loadedForm.CrapThree;
+                CrapFour.Checked = loadedForm.CrapFour;
+                CrapFive.Checked = loadedForm.CrapFive;
+                CrapSix.Checked = loadedForm.CrapSix;
+                CrapSeven.Checked = loadedForm.CrapSeven;
+                DigiBond.Text = loadedForm.DigiBond;
+                GaurdPoints = loadedForm.GaurdPoints;
             }
             catch (Exception ex)
             {
@@ -175,6 +195,8 @@ namespace DigimonAndTamerCharacterSheets
             VibesStat.Text = "";
             WitsStat.Text = "";
             KnowledgeStat.Text = "";
+            DigiSoulStat.Text = "";
+            StratPoints.Text = "";
 
             SaveCharacterInformation();
 
@@ -250,7 +272,23 @@ namespace DigimonAndTamerCharacterSheets
                     VibesDiet = VibesDiet.Text,
                     WitsDiet = WitsDiet.Text,
                     EducationDiet = EducationDiet.Text,
-            }));
+                    ErrorScanTrack = ErrorScanTrack.Value,
+                    InfoExtractTrack = InfoExtractTrack.Value,
+                    GigaSearchTrack = GigaSearchTrack.Value,
+                    WaybackTrackTrack = WaybackTrackTrack.Value,
+                    ToiletOne = ToiletOne.Checked,
+                    ToiletTwo = ToiletTwo.Checked,
+                    ToiletThree = ToiletThree.Checked,
+                    CrapOne = CrapOne.Checked,
+                    CrapTwo = CrapTwo.Checked,
+                    CrapThree = CrapThree.Checked,
+                    CrapFour = CrapFour.Checked,
+                    CrapFive = CrapFive.Checked,
+                    CrapSix = CrapSix.Checked,
+                    CrapSeven = CrapSeven.Checked,
+                    DigiBond = DigiBond.Text,
+                    GaurdPoints = GaurdPoints,
+                }));
 
             }
             catch (Exception ex)
@@ -968,6 +1006,16 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }    
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
 
                 for (int i = 0; i < NumberOfDice; i++)
                 {
@@ -977,12 +1025,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 // Final result
                 TotalResult += CarryTrack.Value * 3;
@@ -1088,6 +1130,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1096,12 +1149,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += ThrowTrack.Value * 3;
 
@@ -1204,6 +1251,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1212,12 +1270,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += HoldTrack.Value * 3;
 
@@ -1335,6 +1387,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1343,12 +1406,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += BalanceTrack.Value * 3;
 
@@ -1455,6 +1512,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1463,12 +1531,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += ParkourTrack.Value * 3;
 
@@ -1574,6 +1636,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1582,12 +1655,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += ReflexTrack.Value * 3;
 
@@ -1607,8 +1674,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillVibes = PerformTrack.Value + PersuadeTrack.Value + IntimidateTrack.Value;
             int TotalVibes = (int)Math.Ceiling(SkillVibes / 2.0);
-            VibesStat.Text = TotalVibes.ToString();
             TotalVibes = TotalVibes + VibesIncrease;
+
+            if (MealVibes == true)
+            {
+                TotalVibes++;
+            }
+
+            VibesStat.Text = TotalVibes.ToString();
+
             SaveCharacterInformation();
         }
 
@@ -1704,6 +1778,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1712,12 +1797,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += PerformTrack.Value * 3;
 
@@ -1825,6 +1904,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1833,12 +1923,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += IntimidateTrack.Value * 3;
 
@@ -1945,6 +2029,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1953,12 +2048,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += PersuadeTrack.Value * 3;
 
@@ -2077,6 +2166,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2085,12 +2185,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += InvestigationTrack.Value * 3;
 
@@ -2198,6 +2292,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2206,12 +2311,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += EmpathyTrack.Value * 3;
 
@@ -2319,6 +2418,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2327,12 +2437,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += IngenuityTrack.Value * 3;
 
@@ -2353,6 +2457,13 @@ namespace DigimonAndTamerCharacterSheets
             int SkillEducation = SocietyTrack.Value + TechnologyTrack.Value + OccultismTrack.Value;
             int TotalEducation = (int)Math.Ceiling(SkillEducation / 2.0);
             TotalEducation = TotalEducation + EducationIncrease;
+
+            if (MealEducation == true)
+            {
+                TotalEducation++;
+            }
+
+
             KnowledgeStat.Text = TotalEducation.ToString();
 
             SaveCharacterInformation();
@@ -2450,6 +2561,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2458,12 +2580,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += TechnologyTrack.Value * 3;
 
@@ -2570,6 +2686,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2578,12 +2705,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += OccultismTrack.Value * 3;
 
@@ -2690,6 +2811,17 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
+                // Generates a random number between 1 and 20
+                int D20Result = random.Next(1, 21);
+                TotalResult += D20Result;
+                // Nat 20 reward
+                if (D20Result == 20)
+                {
+                    NumberOfDice++;
+                }
+                // Collect individual rolls
+                CoreRoll += D20Result + " ";
+
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2698,12 +2830,6 @@ namespace DigimonAndTamerCharacterSheets
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
-
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 TotalResult += SocietyTrack.Value * 3;
 
@@ -2725,8 +2851,6 @@ namespace DigimonAndTamerCharacterSheets
 
         public void trackBar16_Scroll(object sender, EventArgs e)
         {
-
-
             // Compare prior maximum to current value
             if (HighestGigaSearch < GigaSearchTrack.Value)
             {
@@ -2757,14 +2881,8 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
 
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                DigiSoulStat.Text = halvedValue.ToString();
+                // Update Stat-Box
+                DigiSoulStat.Text = "";
 
             }
         }
@@ -2806,14 +2924,8 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
 
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                DigiSoulStat.Text = halvedValue.ToString();
+                // Update Stat-Box
+                DigiSoulStat.Text = "";
 
             }
         }
@@ -3520,7 +3632,7 @@ namespace DigimonAndTamerCharacterSheets
                 ReadableInventory.Text = FinalisedInventory;
 
                 // Update The Inventory
-                UpdateInventory.PerformClick();
+                InventoryUpdate();
 
                 // Unselect the meals
                 StrengthMeal.Checked = false;
@@ -3578,13 +3690,9 @@ namespace DigimonAndTamerCharacterSheets
 
                 DigiAttackRoll.Text = "";
 
-                if (TamerDigimon.SelectedIndex != 5)
-                {
-                    TamerDigimon.SelectedIndex = 0;
-                }
-                
-                    
-                    SaveCharacterInformation();
+
+
+                SaveCharacterInformation();
 
             }
         }
@@ -4140,6 +4248,100 @@ namespace DigimonAndTamerCharacterSheets
             {
                 // Click Wound
                 MessageBox.Show($"You thought you were hot...\nGuess what? You're not!\nYou are dead...\ndead... dead...");
+
+
+                DialogResult ReadyToDie = MessageBox.Show("Are you ready to accept your death?", "New Character", MessageBoxButtons.YesNo);
+
+                if (ReadyToDie == DialogResult.Yes)
+                {
+                    File.WriteAllText("form.json", JsonSerializer.Serialize(new SaveForm
+                    {
+                        PlayerName = "Player Name",
+                        CharacterName = "Character Name",
+                        CharacterGender = "Character Gender",
+                        ReadableInventory = null!,
+                        Partner = null!,
+                        CrestSelection = null!,
+                        MaxHealth = "25",
+                        CurrentHealth = "25",
+                        CoreHPMax = "25",
+                        CoreHPNow = "25",
+                        MaximumLife = "1",
+                        RemainingLife = "1",
+                        Level = "1",
+                        Day = "0",
+                        RecordsRookie = null!,
+                        RecordsChampion = null!,
+                        RecordsUltimate = null!,
+                        RecordsMega = null!,
+                        CarryTrack = 0!,
+                        ThrowTrack = 0!,
+                        HoldTrack = 0!,
+                        BalanceTrack = 0!,
+                        ParkourTrack = 0!,
+                        ReflexTrack = 0!,
+                        PerformTrack = 0!,
+                        PersuadeTrack = 0!,
+                        IntimidateTrack = 0!,
+                        InvestigationTrack = 0!,
+                        EmpathyTrack = 0!,
+                        IngenuityTrack = 0!,
+                        SocietyTrack = 0!,
+                        TechnologyTrack = 0!,
+                        OccultismTrack = 0!,
+                        BruiseOne = false!,
+                        BruiseTwo = false!,
+                        BruiseThree = false!,
+                        BruiseFour = false!,
+                        BruiseFive = false!,
+                        InjuryOne = false!,
+                        InjuryTwo = false!,
+                        InjuryThree = false!,
+                        InjuryFour = false!,
+                        InjuryFive = false!,
+                        WoundOne = false!,
+                        WoundTwo = false!,
+                        WoundThree = false!,
+                        WoundFour = false!,
+                        WoundFive = false!,
+                        MealStrength = false!,
+                        MealAgility = false!,
+                        MealVibes = false!,
+                        MealWits = false!,
+                        MealEducation = false!,
+                        ChampionLevel = "________",
+                        UltimateLevel = "________",
+                        MegaLevel = "________",
+                        ChampionSelect = false!,
+                        UltimateSelect = false!,
+                        MegaSelect = false!,
+                        StrengthDiet = "0",
+                        AgilityDiet = "0",
+                        VibesDiet = "0",
+                        WitsDiet = "0",
+                        EducationDiet = "0",
+                        ErrorScanTrack = 0!,
+                        InfoExtractTrack = 0!,
+                        GigaSearchTrack = 0!,
+                        WaybackTrackTrack = 0!,
+                        ToiletOne = false!,
+                        ToiletTwo = false!,
+                        ToiletThree = false!,
+                        CrapOne = false!,
+                        CrapTwo = false!,
+                        CrapThree = false!,
+                        CrapFour = false!,
+                        CrapFive = false!,
+                        CrapSix = false!,
+                        CrapSeven = false!,
+                        DigiBond = "3",
+                        GaurdPoints = 0,
+                    }));
+
+
+                    this.Close();
+                }
+
             }
             // If WoundFour is checked
             else if (WoundFour.Checked)
@@ -4318,8 +4520,6 @@ namespace DigimonAndTamerCharacterSheets
 
         public void trackBar18_Scroll(object sender, EventArgs e)
         {
-
-
             // Compare prior maximum to current value
             if (HighestErrorScan < ErrorScanTrack.Value)
             {
@@ -4350,22 +4550,15 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
 
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                DigiSoulStat.Text = halvedValue.ToString();
+                // Update Stat-Box
+                DigiSoulStat.Text = "";
 
             }
         }
 
         public void InfoExtractTrack_Scroll(object sender, EventArgs e)
+
         {
-
-
             // Compare prior maximum to current value
             if (HighestInfoExtract < InfoExtractTrack.Value)
             {
@@ -4396,14 +4589,8 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
 
-                // Calculate the total of the Strength Skills
-                int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
-
-                // Halve the totalValue and round up
-                int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
-
-                // Output the halvedValue to the text box
-                DigiSoulStat.Text = halvedValue.ToString();
+                // Update Stat-Box
+                DigiSoulStat.Text = "";
 
             }
         }
@@ -4430,43 +4617,58 @@ namespace DigimonAndTamerCharacterSheets
 
         // Level Up System
         int TamerLevel;
-        // Press The Butoon
+        // Press The Button
         private void button22_Click_4(object sender, EventArgs e)
         {
-            // Get the Lifespan
-            int RemainingLifespan;
-            int.TryParse(RemainingLife.Text, out RemainingLifespan);
-            RemainingLifespan = RemainingLifespan + 2;
-            RemainingLife.Text = RemainingLifespan.ToString();
-            int MaximumLifespan;
-            int.TryParse(MaximumLife.Text, out MaximumLifespan);
-            MaximumLifespan = MaximumLifespan + 2;
-            MaximumLife.Text = MaximumLifespan.ToString();
 
             int.TryParse(TamersLevel.Text, out TamerLevel);
-            TamerLevel = TamerLevel + 1;
-            CharacterLevel.Text = TamerLevel.ToString();
-            int IncreaseHealth;
-            int.TryParse(MaxHealth.Text, out IncreaseHealth);
-            IncreaseHealth = 25 + ((TamerLevel - 1) * 5);
-            MaxHealth.Text = IncreaseHealth.ToString();
-            CurrentHealth.Text = MaxHealth.Text;
-            CoreHPMax.Text = MaxHealth.Text;
-            CoreHPNow.Text = MaxHealth.Text;
-            TamersLevel.Text = CharacterLevel.Text;
-
-
-
-            // Level Up Boon
-            TrackBar[] tracks = new TrackBar[] { CarryTrack, ThrowTrack, HoldTrack, BalanceTrack, ParkourTrack, ReflexTrack, PerformTrack, IntimidateTrack, PersuadeTrack, InvestigationTrack, EmpathyTrack, IngenuityTrack, TechnologyTrack, OccultismTrack, SocietyTrack, ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
-
-            foreach (TrackBar track in tracks)
+            if (TamerLevel < 20)
             {
-                track.Enabled = true;
-            };
+                // Get the Lifespan
+                int RemainingLifespan;
+                int.TryParse(RemainingLife.Text, out RemainingLifespan);
+                RemainingLifespan = RemainingLifespan + 2;
+                RemainingLife.Text = RemainingLifespan.ToString();
+                int MaximumLifespan;
+                int.TryParse(MaximumLife.Text, out MaximumLifespan);
+                MaximumLifespan = MaximumLifespan + 2;
+                MaximumLife.Text = MaximumLifespan.ToString();
+                TamerLevel = TamerLevel + 1;
+                CharacterLevel.Text = TamerLevel.ToString();
+                int IncreaseTamerHealth;
+                int IncreaseDigimonHealth;
+                int.TryParse(MaxHealth.Text, out IncreaseTamerHealth);
+                int.TryParse(CoreHPMax.Text, out IncreaseDigimonHealth);
 
-            SaveCharacterInformation();
+                if (TamerLevel < 11)
+                {
+                    IncreaseTamerHealth = 25 + ((TamerLevel - 1) * 2);
+                }
+                else if (TamerLevel < 19)
+                {
+                    IncreaseTamerHealth = 43 + ((TamerLevel - 10));
+                }
 
+                MaxHealth.Text = IncreaseTamerHealth.ToString();
+                CurrentHealth.Text = MaxHealth.Text;
+                int.TryParse(CoreHPMax.Text, out IncreaseDigimonHealth);
+                IncreaseDigimonHealth = 25 + ((TamerLevel - 1) * 6);
+                CoreHPMax.Text = IncreaseDigimonHealth.ToString();
+                CoreHPNow.Text = CoreHPMax.Text;
+                TamersLevel.Text = CharacterLevel.Text;
+
+
+
+                // Level Up Boon
+                TrackBar[] tracks = new TrackBar[] { CarryTrack, ThrowTrack, HoldTrack, BalanceTrack, ParkourTrack, ReflexTrack, PerformTrack, IntimidateTrack, PersuadeTrack, InvestigationTrack, EmpathyTrack, IngenuityTrack, TechnologyTrack, OccultismTrack, SocietyTrack, ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
+
+                foreach (TrackBar track in tracks)
+                {
+                    track.Enabled = true;
+                };
+
+                    SaveCharacterInformation();
+}
         }
 
         private void CharacterLevel_Click(object sender, EventArgs e)
@@ -4491,12 +4693,12 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton4_CheckedChanged_2(object sender, EventArgs e)
         {
-
+            SaveCharacterInformation();
         }
 
         private void radioButton13_CheckedChanged_3(object sender, EventArgs e)
         {
-
+            SaveCharacterInformation();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -4536,7 +4738,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
-
+            SaveCharacterInformation();
         }
 
         private void pictureBox12_Click(object sender, EventArgs e)
@@ -4546,7 +4748,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton10_CheckedChanged_2(object sender, EventArgs e)
         {
-
+            SaveCharacterInformation();
         }
 
         int GaurdPoints;
@@ -4779,8 +4981,10 @@ namespace DigimonAndTamerCharacterSheets
                     // Agumon Details
                     DigimonField.Text = "Dragon's Roar";
                     DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
+                    int.TryParse(CharacterLevel.Text, out int Level);
+                    int CalculatedHealth = 25 + (Level * 3);
+                    CoreHPMax.Text = CalculatedHealth.ToString();
+                    CoreHPNow.Text = CoreHPMax.Text;
                     MoveSpeed.Text = "5";
                     Attribute.Text = "Vaccine";
                     WeaknessElement.Text = "Ice";
@@ -4804,7 +5008,7 @@ namespace DigimonAndTamerCharacterSheets
                     BasicAttackHardHit.Text = "Target stunned. -5HP on target.";
                     BasicDiceMin.Text = "1";
                     BasicDiceMax.Text = "2";
-                    BasicElement.Text = "Slamming";
+                    BasicElement.Text = "Slamming - Contact";
 
                     //Standard Move
                     StandardAttack.Text = "Claw Attack";
@@ -4816,7 +5020,7 @@ namespace DigimonAndTamerCharacterSheets
                     StandardAttackHardHit.Text = "Blocks twice. -6HP on target.";
                     StandardDiceMin.Text = "3";
                     StandardDiceMax.Text = "5";
-                    StandardElement.Text = "Slashing";
+                    StandardElement.Text = "Slashing - Contact";
 
                     //Special Move
                     SpecialAttack.Text = "Pepper Breath";
@@ -4828,7 +5032,7 @@ namespace DigimonAndTamerCharacterSheets
                     SpecialAttackHardHit.Text = "-6HP on target. 3 turn recurring -2HP.";
                     SpecialDiceMin.Text = "6";
                     SpecialDiceMax.Text = "8";
-                    SpecialElement.Text = "Fire";
+                    SpecialElement.Text = "Fire - Ranged";
 
                     //Super Move
                     SuperAttack.Text = "Spitfire Blast";
@@ -4840,11 +5044,11 @@ namespace DigimonAndTamerCharacterSheets
                     SuperAttackHardHit.Text = "-6HP to target and 2 target ally near them.";
                     SuperDiceMin.Text = "9";
                     SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
+                    SuperElement.Text = "Fire - Ranged";
 
                     // Agumon Quirks
-                    CurrentQuirkOne.Text = "Light In Darkness - Spend a point of Bond to illuminate the scene";
-                    CurrentQuirkTwo.Text = "";
+                    CurrentQuirkOne.Text = "Light In Darkness - Spend 1 Bond to illuminate the scene.";
+                    CurrentQuirkTwo.Text = "Encouraging Aura - Spend 1 Bond to empower the Tamer's next skill roll.";
                     InheritableQuirkOne.Text = "Firewall Guard - 1 damage to failed attackers on guard.";
                     InheritableQuirkTwo.Text = "Empathy and Carry - Roll for Empathy or Carry Checks.";
                     InheritableQuirkThree.Text = "Reinforcing Rage - If Tamer wounded, buff attack roll.";
@@ -4871,8 +5075,10 @@ namespace DigimonAndTamerCharacterSheets
                     // Commandramon Details
                     DigimonField.Text = "Metal Empire";
                     DigitalFrame.Text = "8";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
+                    int.TryParse(CharacterLevel.Text, out int Level);
+                    int CalculatedHealth = 25 + (Level * 3);
+                    CoreHPMax.Text = CalculatedHealth.ToString();
+                    CoreHPNow.Text = CoreHPMax.Text;
                     MoveSpeed.Text = "5";
                     Attribute.Text = "Virus";
                     WeaknessElement.Text = "Nature";
@@ -4896,6 +5102,7 @@ namespace DigimonAndTamerCharacterSheets
                     BasicAttackHardHit.Text = "Target stunned. -5HP on target.";
                     BasicDiceMin.Text = "1";
                     BasicDiceMax.Text = "2";
+                    BasicElement.Text = "Slamming - Contact";
 
                     //Standard Move
                     StandardAttack.Text = "M16 Assassin";
@@ -4907,6 +5114,7 @@ namespace DigimonAndTamerCharacterSheets
                     StandardAttackHardHit.Text = "All enemies baited. -2HP to target and all allies.";
                     StandardDiceMin.Text = "3";
                     StandardDiceMax.Text = "5";
+                    StandardElement.Text = "Piercing - Range";
 
                     //Special Move
                     SpecialAttack.Text = "DCD Bomb";
@@ -4918,6 +5126,7 @@ namespace DigimonAndTamerCharacterSheets
                     SpecialAttackHardHit.Text = "-6HP to target and -3HP to 2 nearby allies.";
                     SpecialDiceMin.Text = "6";
                     SpecialDiceMax.Text = "8";
+                    SpecialElement.Text = "Metal - Range";
 
                     //Super Move
                     SuperAttack.Text = "Sniper Tag";
@@ -4929,10 +5138,11 @@ namespace DigimonAndTamerCharacterSheets
                     SuperAttackHardHit.Text = "-6HP to target. Buff attacks on target this round.";
                     SuperDiceMin.Text = "9";
                     SuperDiceMax.Text = "10";
+                    SpecialElement.Text = "Piercing - Range";
 
                     // Commandramon Quirks
-                    CurrentQuirkOne.Text = "Bomber Buddy - Spend a point of Bond to borrow a DCD Bomb.";
-                    CurrentQuirkTwo.Text = "";
+                    CurrentQuirkOne.Text = "Bomber Buddy - Spend 1 Bond to borrow a DCD Bomb.";
+                    CurrentQuirkTwo.Text = "Radio Operator - Spend 1 Bond to send a 5 word message to a Digimon.";
                     InheritableQuirkOne.Text = "Cover-Fire Guard - All nearby enemy attack rolls are nerfed.";
                     InheritableQuirkTwo.Text = "Investigation and Reflex - Roll for Investigation or Reflex Checks.";
                     InheritableQuirkThree.Text = "Iron Spirit - Increase Digital Frame by 1, then each evolution";
@@ -5059,7 +5269,7 @@ namespace DigimonAndTamerCharacterSheets
                     CurrentQuirkOne.Text = "";
                     CurrentQuirkTwo.Text = "";
                     InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
+                    InheritableQuirkTwo.Text = "Strength Champion - Boosted Strength and Attack";
                     InheritableQuirkThree.Text = "";
 
                 }
@@ -5982,7 +6192,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 int NextPage = TamerDigimon.SelectedIndex;
                 TamerDigimon.SelectedIndex = 0;
-                UpdateInventory.PerformClick();
+                InventoryUpdate();
                 TamerDigimon.SelectedIndex = NextPage;
             }
 
@@ -6418,7 +6628,7 @@ namespace DigimonAndTamerCharacterSheets
                     SaveCharacterInformation();
 
                 }
-            } 
+            }
         }
 
         private void Value_Click(object sender, EventArgs e)
@@ -6870,7 +7080,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void ReadableInventory_TextChanged(object sender, EventArgs e)
         {
-
+            FirstTime = true;
         }
 
 
@@ -6908,6 +7118,11 @@ namespace DigimonAndTamerCharacterSheets
         string[] AlternativeItems;
 
         private void UpdateInventory_Click(object sender, EventArgs e)
+        {
+            InventoryUpdate();
+        }
+
+        public void InventoryUpdate()
         {
             // Read in text, splitting it at ",", and put them into an array
             string InventoryItems = ReadableInventory.Text;
@@ -6964,23 +7179,23 @@ namespace DigimonAndTamerCharacterSheets
             // Loop through each inventory item
             foreach (string item in QualityItems)
             {
-                if (item.Contains("Strength"))
+                if (item.ToLower().Contains("strength"))
                 {
                     StrengthQuality[StrengthQualityIndex++] = item;
                 }
-                else if (item.Contains("Agility"))
+                else if (item.ToLower().Contains("agility"))
                 {
                     AgilityQuality[AgilityQualityIndex++] = item;
                 }
-                else if (item.Contains("Wits"))
+                else if (item.ToLower().Contains("wits"))
                 {
                     WitsQuality[WitsQualityIndex++] = item;
                 }
-                else if (item.Contains("Vibes"))
+                else if (item.ToLower().Contains("vibes"))
                 {
                     VibesQuality[VibesQualityIndex++] = item;
                 }
-                else if (item.Contains("Education"))
+                else if (item.ToLower().Contains("education"))
                 {
                     EducationQuality[EducationQualityIndex++] = item;
                 }
@@ -7136,23 +7351,23 @@ namespace DigimonAndTamerCharacterSheets
             // Loop through each inventory item
             foreach (string item in QuantityItems)
             {
-                if (item.Contains("Meat"))
+                if (item.ToLower().Contains("meat"))
                 {
                     MeatQuantity[MeatQuantityIndex++] = item;
                 }
-                else if (item.Contains("Veggies"))
+                else if (item.ToLower().Contains("veggies") || item.ToLower().Contains("vegetables"))
                 {
                     VeggiesQuantity[VeggiesQuantityIndex++] = item;
                 }
-                else if (item.Contains("Fruit"))
+                else if (item.ToLower().Contains("fruit"))
                 {
                     FruitQuantity[FruitQuantityIndex++] = item;
                 }
-                else if (item.Contains("Bread"))
+                else if (item.ToLower().Contains("bread"))
                 {
                     BreadQuantity[BreadQuantityIndex++] = item;
                 }
-                else if (item.Contains("Fish"))
+                else if (item.ToLower().Contains("fish"))
                 {
                     FishQuantity[FishQuantityIndex++] = item;
                 }
@@ -7361,15 +7576,14 @@ namespace DigimonAndTamerCharacterSheets
 
 
             string CommaControl = ReadableInventory.Text;
-            string CommaControl = ReadableInventory.Text;
 
             CommaControl = CommaControl.Replace(" ,", "");
 
             ReadableInventory.Text = CommaControl;
 
             SaveCharacterInformation();
-        }
 
+        }
 
         private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
@@ -7403,47 +7617,30 @@ namespace DigimonAndTamerCharacterSheets
 
         private void BasicAttack_Click(object sender, EventArgs e)
         {
-            GaurdPoints--;
-            StratPoints.Text = "";
-
-            // Get the number of dice from the TrackBar
-            int NumberOfDice = 0;
-
-            // Determine The Level
-            if (MegaEvolution == true)
+            if (BasicAttackNow == true)
             {
-                NumberOfDice = 12;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 8;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 4;
+                BasicAttackNow = false;
+                ActBasicAttack.Text = "Activate";
             }
             else
             {
-                NumberOfDice = 2;
+                GaurdPoints--;
+                StratPoints.Text = "";
+                BasicAttackNow = false;
+                ActBasicAttack.Text = "Activate";
+                StandardAttackNow = false;
+                ActStandardAttack.Text = "Activate";
+                SpecialAttackNow = false;
+                ActSpecialAttack.Text = "Activate";
+                SuperAttackNow = false;
+                ActSuperAttack.Text = "Activate";
             }
 
-            // Apply the modifiers
-            if (DigiRollPlusOne.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollPlusTwo.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollMinusOne.Checked == true)
-            {
-                NumberOfDice--;
-            }
-            if (DigiRollMinusTwo.Checked == true)
-            {
-                NumberOfDice--;
-            }
+
+
+
+            // Get the number of dice from the Attack Box
+            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
 
             Random random = new Random();
             int TotalResult = 0;
@@ -7493,47 +7690,27 @@ namespace DigimonAndTamerCharacterSheets
 
         private void StandardAttack_Click(object sender, EventArgs e)
         {
-            GaurdPoints--;
-            StratPoints.Text = "";
-
-            // Get the number of dice from the TrackBar
-            int NumberOfDice = 0;
-
-            // Determine The Level
-            if (MegaEvolution == true)
+            if (StandardAttackNow == true)
             {
-                NumberOfDice = 12;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 8;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 4;
+                StandardAttackNow = false;
+                ActStandardAttack.Text = "Activate";
             }
             else
             {
-                NumberOfDice = 2;
+                GaurdPoints--;
+                StratPoints.Text = "";
+                BasicAttackNow = false;
+                ActBasicAttack.Text = "Activate";
+                StandardAttackNow = false;
+                ActStandardAttack.Text = "Activate";
+                SpecialAttackNow = false;
+                ActSpecialAttack.Text = "Activate";
+                SuperAttackNow = false;
+                ActSuperAttack.Text = "Activate";
             }
 
-            // Apply the modifiers
-            if (DigiRollPlusOne.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollPlusTwo.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollMinusOne.Checked == true)
-            {
-                NumberOfDice--;
-            }
-            if (DigiRollMinusTwo.Checked == true)
-            {
-                NumberOfDice--;
-            }
+            // Get the number of dice from the Attack Box
+            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
 
             Random random = new Random();
             int TotalResult = 0;
@@ -7582,47 +7759,27 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SpecialAttack_Click(object sender, EventArgs e)
         {
-            GaurdPoints--;
-            StratPoints.Text = "";
-
-            // Get the number of dice from the TrackBar
-            int NumberOfDice = 0;
-
-            // Determine The Level
-            if (MegaEvolution == true)
+            if (SpecialAttackNow == true)
             {
-                NumberOfDice = 12;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 8;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 4;
+                SpecialAttackNow = false;
+                ActSpecialAttack.Text = "Activate";
             }
             else
             {
-                NumberOfDice = 2;
+                GaurdPoints--;
+                StratPoints.Text = "";
+                BasicAttackNow = false;
+                ActBasicAttack.Text = "Activate";
+                StandardAttackNow = false;
+                ActStandardAttack.Text = "Activate";
+                SpecialAttackNow = false;
+                ActSpecialAttack.Text = "Activate";
+                SuperAttackNow = false;
+                ActSuperAttack.Text = "Activate";
             }
 
-            // Apply the modifiers
-            if (DigiRollPlusOne.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollPlusTwo.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollMinusOne.Checked == true)
-            {
-                NumberOfDice--;
-            }
-            if (DigiRollMinusTwo.Checked == true)
-            {
-                NumberOfDice--;
-            }
+            // Get the number of dice from the Attack Box
+            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
 
             Random random = new Random();
             int TotalResult = 0;
@@ -7671,47 +7828,28 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SuperAttack_Click(object sender, EventArgs e)
         {
-            GaurdPoints--;
-            StratPoints.Text = "";
-
-            // Get the number of dice from the TrackBar
-            int NumberOfDice = 0;
-
-            // Determine The Level
-            if (MegaEvolution == true)
+            if (SuperAttackNow == true)
             {
-                NumberOfDice = 12;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 8;
-            }
-            else if (MegaEvolution == true)
-            {
-                NumberOfDice = 4;
+                SuperAttackNow = false;
+                ActSuperAttack.Text = "Activate";
             }
             else
             {
-                NumberOfDice = 2;
+                GaurdPoints--;
+                StratPoints.Text = "";
+                BasicAttackNow = false;
+                ActBasicAttack.Text = "Activate";
+                StandardAttackNow = false;
+                ActStandardAttack.Text = "Activate";
+                SpecialAttackNow = false;
+                ActSpecialAttack.Text = "Activate";
+                SuperAttackNow = false;
+                ActSuperAttack.Text = "Activate";
             }
 
-            // Apply the modifiers
-            if (DigiRollPlusOne.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollPlusTwo.Checked == true)
-            {
-                NumberOfDice++;
-            }
-            if (DigiRollMinusOne.Checked == true)
-            {
-                NumberOfDice--;
-            }
-            if (DigiRollMinusTwo.Checked == true)
-            {
-                NumberOfDice--;
-            }
+            // Get the number of dice from the Attack Box
+            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
+
 
             Random random = new Random();
             int TotalResult = 0;
@@ -7763,6 +7901,10 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
+        bool BasicAttackNow = false;
+        bool StandardAttackNow = false;
+        bool SpecialAttackNow = false;
+        bool SuperAttackNow = false;
         private void button28_Click(object sender, EventArgs e)
         {
             // Read in the dice ranges for the moves
@@ -7784,9 +7926,6 @@ namespace DigimonAndTamerCharacterSheets
             int.TryParse(SuperDiceMin.Text, out MinSuper);
             int.TryParse(SuperDiceMax.Text, out MaxSuper);
 
-            GaurdPoints++;
-            StratPoints.Text = "";
-
             // Try to convert to an integer
             if (!int.TryParse(TargetArmour.Text, out TargetAcquired))
             {
@@ -7802,22 +7941,26 @@ namespace DigimonAndTamerCharacterSheets
                 if (DiceResult >= MinBasic && DiceResult <= MaxBasic)
                 {
                     MessageBox.Show(BasicAttack.Text);
-                    ActBasicAttack.PerformClick();
+                    ActBasicAttack.Text = "ACTIVATE";
+                    BasicAttackNow = true;
                 }
                 else if (DiceResult >= MinStandard && DiceResult <= MaxStandard)
                 {
                     MessageBox.Show(StandardAttack.Text);
-                    ActStandardAttack.PerformClick();
+                    ActStandardAttack.Text = "ACTIVATE";
+                    StandardAttackNow = true;
                 }
                 else if (DiceResult >= MinSpecial && DiceResult <= MaxSpecial)
                 {
                     MessageBox.Show(SpecialAttack.Text);
-                    ActSpecialAttack.PerformClick();
+                    ActSpecialAttack.Text = "ACTIVATE";
+                    SpecialAttackNow = true;
                 }
                 else if (DiceResult >= MinSuper && DiceResult <= MaxSuper)
                 {
                     MessageBox.Show(SuperAttack.Text);
-                    ActSuperAttack.PerformClick();
+                    ActSuperAttack.Text = "ACTIVATE";
+                    SuperAttackNow = true;
                 }
             }
         }
@@ -7858,6 +8001,9 @@ namespace DigimonAndTamerCharacterSheets
             }
             DigiBond.Text = BondScore.ToString();
             StratPoints.Text = "";
+
+            SaveCharacterInformation();
+
         }
 
         private void GainBond_Click(object sender, EventArgs e)
@@ -7870,6 +8016,9 @@ namespace DigimonAndTamerCharacterSheets
             }
             DigiBond.Text = BondScore.ToString();
             StratPoints.Text = "";
+
+            SaveCharacterInformation();
+ 
         }
 
         private void SpecialDiceMax_Click(object sender, EventArgs e)
@@ -7943,6 +8092,12 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalStrength++;
             }
 
+            if (InheritableQuirkTwo.Text.Contains("Strength Champion") || InheritableQuirkOne.Text.Contains("Strength Champion"))
+            {
+                DigitalStrength++;
+            }
+
+
             DigimonStrength.Text = DigitalStrength.ToString();
 
         }
@@ -7999,6 +8154,11 @@ namespace DigimonAndTamerCharacterSheets
             }
 
             if (MealVibes == true)
+            {
+                DigitalVibes++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Vibes Champion") || InheritableQuirkOne.Text.Contains("Vibes Champion"))
             {
                 DigitalVibes++;
             }
@@ -8077,17 +8237,9 @@ namespace DigimonAndTamerCharacterSheets
         {
             if (FirstTime == true)
             {
-                int NextPage = TamerDigimon.SelectedIndex;
-
-                // Update The Inventory
-                TamerDigimon.SelectedIndex = 0;
-                UpdateInventory.PerformClick();
-
-                TamerDigimon.SelectedIndex = NextPage;
-                FirstTime = false;
+                InventoryUpdate();
             }
 
-            UpdateInventory.PerformClick();
 
         }
 
@@ -8137,6 +8289,11 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalStrike++;
             }
 
+            if (InheritableQuirkTwo.Text.Contains("Strength Champion") || InheritableQuirkOne.Text.Contains("Strength Champion"))
+            {
+                DigitalStrike++;
+            }
+
             DigiAttackRoll.Text = DigitalStrike.ToString();
         }
 
@@ -8171,6 +8328,12 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     NumberOfDice++;
                 }
+
+                if (InheritableQuirkTwo.Text.Contains("Agility Champion") || InheritableQuirkOne.Text.Contains("Agility Champion"))
+                {
+                    NumberOfDice++;
+                }
+
             }
             else
             {
@@ -8194,34 +8357,74 @@ namespace DigimonAndTamerCharacterSheets
             }
 
 
-                    // Simulate rolling dice
-                    Random random = new Random();
-                    int TotalResult = 0;
-                    string IndividualRolls = "";
-                    string CoreRoll = "";
+            // Simulate rolling dice
+            Random random = new Random();
+            int TotalResult = 0;
+            string IndividualRolls = "";
+            string CoreRoll = "";
 
 
-                    for (int i = 0; i < NumberOfDice; i++)
-                    {
-                        // Generates a random number between 1 and 10
-                        int DiceResult = random.Next(1, 11);
-                        TotalResult += DiceResult;
-                        // Collect individual rolls
-                        IndividualRolls += DiceResult + " ";
-                    }
-
-                    // Generates a random number between 1 and 20
-                    int D20Result = random.Next(1, 21);
-                    TotalResult += D20Result;
-                    // Collect individual rolls
-                    CoreRoll += D20Result + " ";
-
-                    // Final result
-                    TotalResult += CarryTrack.Value * 3;
-
-                    // Display the result
-                    MessageBox.Show($"Character Roll: {CoreRoll}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
-               
+            for (int i = 0; i < NumberOfDice; i++)
+            {
+                // Generates a random number between 1 and 10
+                int DiceResult = random.Next(1, 11);
+                TotalResult += DiceResult;
+                // Collect individual rolls
+                IndividualRolls += DiceResult + " ";
             }
+
+            // Generates a random number between 1 and 20
+            int D20Result = random.Next(1, 21);
+            TotalResult += D20Result;
+            // Collect individual rolls
+            CoreRoll += D20Result + " ";
+
+            // Final result
+            TotalResult += CarryTrack.Value * 3;
+
+            // Display the result
+            MessageBox.Show($"Character Roll: {CoreRoll}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+
+        }
+
+        private void DigiSoulStat_TextChanged(object sender, EventArgs e)
+        {
+            // Calculate the total of the Strength Skills
+            int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
+
+            // Halve the totalValue and round up
+            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+
+            // Output the halvedValue to the text box
+            DigiSoulStat.Text = halvedValue.ToString();
+
+
+            SaveCharacterInformation();
+        }
+
+        private void ToiletOne_CheckedChanged(object sender, EventArgs e)
+        {
+            SaveCharacterInformation();
+        }
+
+        private void ToiletTwo_CheckedChanged(object sender, EventArgs e)
+        {
+            SaveCharacterInformation();
+        }
+
+        private void CrapTwo_CheckedChanged(object sender, EventArgs e)
+        {
+            SaveCharacterInformation();
+        }
+
+        private void CrapThree_CheckedChanged(object sender, EventArgs e)
+        {
+            SaveCharacterInformation();
+        }
+
+        private void CrapFour_CheckedChanged(object sender, EventArgs e)
+        {
+            SaveCharacterInformation();
+        }
     }
 }
