@@ -258,6 +258,16 @@
             InfoExtractTrack = new TrackBar();
             ErrorScanTrack = new TrackBar();
             DigimonStats = new TabPage();
+            DigiStrengthSave = new Label();
+            DigiAgilitySave = new Label();
+            DigiVibesSave = new Label();
+            DigiEducationSave = new Label();
+            DigiWitsSave = new Label();
+            label33 = new Label();
+            label51 = new Label();
+            label44 = new Label();
+            label31 = new Label();
+            label32 = new Label();
             EducationMeal = new RadioButton();
             EducationDiet = new TextBox();
             WitsMeal = new RadioButton();
@@ -508,6 +518,16 @@
             Impulse = new Label();
             label114 = new Label();
             LevelUp = new Button();
+            TamerStrengthSave = new Label();
+            TamerAgilitySave = new Label();
+            TamerVibesSave = new Label();
+            TamerEducationSave = new Label();
+            TamerWitsSave = new Label();
+            label64 = new Label();
+            label65 = new Label();
+            label67 = new Label();
+            label68 = new Label();
+            label69 = new Label();
             TamerDigimon.SuspendLayout();
             TamerAttackRoll.SuspendLayout();
             groupBox19.SuspendLayout();
@@ -1308,6 +1328,16 @@
             // TamerSkills
             // 
             TamerSkills.BackColor = SystemColors.ButtonFace;
+            TamerSkills.Controls.Add(TamerStrengthSave);
+            TamerSkills.Controls.Add(TamerAgilitySave);
+            TamerSkills.Controls.Add(TamerVibesSave);
+            TamerSkills.Controls.Add(TamerEducationSave);
+            TamerSkills.Controls.Add(TamerWitsSave);
+            TamerSkills.Controls.Add(label64);
+            TamerSkills.Controls.Add(label65);
+            TamerSkills.Controls.Add(label67);
+            TamerSkills.Controls.Add(label68);
+            TamerSkills.Controls.Add(label69);
             TamerSkills.Controls.Add(label4);
             TamerSkills.Controls.Add(label158);
             TamerSkills.Controls.Add(label159);
@@ -1451,7 +1481,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 12F);
-            label4.Location = new Point(52, 740);
+            label4.Location = new Point(52, 734);
             label4.Name = "label4";
             label4.Size = new Size(99, 25);
             label4.TabIndex = 238;
@@ -2367,7 +2397,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Microsoft Sans Serif", 12F);
-            label7.Location = new Point(71, 581);
+            label7.Location = new Point(71, 574);
             label7.Name = "label7";
             label7.Size = new Size(51, 25);
             label7.TabIndex = 78;
@@ -2379,7 +2409,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Microsoft Sans Serif", 12F);
-            label8.Location = new Point(71, 428);
+            label8.Location = new Point(71, 416);
             label8.Name = "label8";
             label8.Size = new Size(62, 25);
             label8.TabIndex = 77;
@@ -2391,7 +2421,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 12F);
-            label6.Location = new Point(71, 268);
+            label6.Location = new Point(71, 257);
             label6.Name = "label6";
             label6.Size = new Size(64, 25);
             label6.TabIndex = 76;
@@ -2402,7 +2432,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 12F);
-            label5.Location = new Point(57, 112);
+            label5.Location = new Point(57, 100);
             label5.Name = "label5";
             label5.Size = new Size(86, 25);
             label5.TabIndex = 75;
@@ -2594,7 +2624,7 @@
             // 
             KnowledgeStat.Enabled = false;
             KnowledgeStat.Font = new Font("Microsoft Sans Serif", 25F);
-            KnowledgeStat.Location = new Point(51, 659);
+            KnowledgeStat.Location = new Point(51, 671);
             KnowledgeStat.Margin = new Padding(3, 2, 3, 2);
             KnowledgeStat.Name = "KnowledgeStat";
             KnowledgeStat.Size = new Size(100, 55);
@@ -2607,7 +2637,7 @@
             // 
             WitsStat.Enabled = false;
             WitsStat.Font = new Font("Microsoft Sans Serif", 25F);
-            WitsStat.Location = new Point(51, 499);
+            WitsStat.Location = new Point(51, 511);
             WitsStat.Margin = new Padding(3, 2, 3, 2);
             WitsStat.Name = "WitsStat";
             WitsStat.Size = new Size(100, 55);
@@ -2620,7 +2650,7 @@
             // 
             VibesStat.Enabled = false;
             VibesStat.Font = new Font("Microsoft Sans Serif", 25F);
-            VibesStat.Location = new Point(51, 341);
+            VibesStat.Location = new Point(51, 353);
             VibesStat.Margin = new Padding(3, 2, 3, 2);
             VibesStat.Name = "VibesStat";
             VibesStat.Size = new Size(100, 55);
@@ -2633,7 +2663,7 @@
             // 
             AgilityStat.Enabled = false;
             AgilityStat.Font = new Font("Microsoft Sans Serif", 25F);
-            AgilityStat.Location = new Point(51, 182);
+            AgilityStat.Location = new Point(51, 194);
             AgilityStat.Margin = new Padding(3, 2, 3, 2);
             AgilityStat.Name = "AgilityStat";
             AgilityStat.Size = new Size(100, 55);
@@ -2646,7 +2676,7 @@
             // 
             StrengthStat.Enabled = false;
             StrengthStat.Font = new Font("Microsoft Sans Serif", 25F);
-            StrengthStat.Location = new Point(51, 25);
+            StrengthStat.Location = new Point(51, 37);
             StrengthStat.Margin = new Padding(3, 2, 3, 2);
             StrengthStat.Name = "StrengthStat";
             StrengthStat.Size = new Size(100, 55);
@@ -3252,6 +3282,16 @@
             // DigimonStats
             // 
             DigimonStats.BackColor = SystemColors.ButtonFace;
+            DigimonStats.Controls.Add(DigiStrengthSave);
+            DigimonStats.Controls.Add(DigiAgilitySave);
+            DigimonStats.Controls.Add(DigiVibesSave);
+            DigimonStats.Controls.Add(DigiEducationSave);
+            DigimonStats.Controls.Add(DigiWitsSave);
+            DigimonStats.Controls.Add(label33);
+            DigimonStats.Controls.Add(label51);
+            DigimonStats.Controls.Add(label44);
+            DigimonStats.Controls.Add(label31);
+            DigimonStats.Controls.Add(label32);
             DigimonStats.Controls.Add(EducationMeal);
             DigimonStats.Controls.Add(EducationDiet);
             DigimonStats.Controls.Add(WitsMeal);
@@ -3340,6 +3380,117 @@
             DigimonStats.TabIndex = 4;
             DigimonStats.Text = "Digimon Stats";
             DigimonStats.Click += DigimonStats_Click;
+            // 
+            // DigiStrengthSave
+            // 
+            DigiStrengthSave.AutoSize = true;
+            DigiStrengthSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DigiStrengthSave.Location = new Point(509, 126);
+            DigiStrengthSave.Name = "DigiStrengthSave";
+            DigiStrengthSave.Size = new Size(29, 20);
+            DigiStrengthSave.TabIndex = 317;
+            DigiStrengthSave.Text = "00";
+            DigiStrengthSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // DigiAgilitySave
+            // 
+            DigiAgilitySave.AutoSize = true;
+            DigiAgilitySave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DigiAgilitySave.Location = new Point(509, 283);
+            DigiAgilitySave.Name = "DigiAgilitySave";
+            DigiAgilitySave.Size = new Size(29, 20);
+            DigiAgilitySave.TabIndex = 316;
+            DigiAgilitySave.Text = "00";
+            DigiAgilitySave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // DigiVibesSave
+            // 
+            DigiVibesSave.AutoSize = true;
+            DigiVibesSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DigiVibesSave.Location = new Point(508, 442);
+            DigiVibesSave.Name = "DigiVibesSave";
+            DigiVibesSave.Size = new Size(29, 20);
+            DigiVibesSave.TabIndex = 315;
+            DigiVibesSave.Text = "00";
+            DigiVibesSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // DigiEducationSave
+            // 
+            DigiEducationSave.AutoSize = true;
+            DigiEducationSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DigiEducationSave.Location = new Point(508, 759);
+            DigiEducationSave.Name = "DigiEducationSave";
+            DigiEducationSave.Size = new Size(29, 20);
+            DigiEducationSave.TabIndex = 314;
+            DigiEducationSave.Text = "00";
+            DigiEducationSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // DigiWitsSave
+            // 
+            DigiWitsSave.AutoSize = true;
+            DigiWitsSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DigiWitsSave.Location = new Point(508, 599);
+            DigiWitsSave.Name = "DigiWitsSave";
+            DigiWitsSave.Size = new Size(29, 20);
+            DigiWitsSave.TabIndex = 313;
+            DigiWitsSave.Text = "00";
+            DigiWitsSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label33.Location = new Point(445, 126);
+            label33.Name = "label33";
+            label33.Size = new Size(56, 20);
+            label33.TabIndex = 312;
+            label33.Text = "Save:";
+            label33.TextAlign = ContentAlignment.TopCenter;
+            label33.Click += label33_Click_1;
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label51.Location = new Point(445, 283);
+            label51.Name = "label51";
+            label51.Size = new Size(56, 20);
+            label51.TabIndex = 310;
+            label51.Text = "Save:";
+            label51.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label44.Location = new Point(444, 442);
+            label44.Name = "label44";
+            label44.Size = new Size(56, 20);
+            label44.TabIndex = 309;
+            label44.Text = "Save:";
+            label44.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label31.Location = new Point(444, 759);
+            label31.Name = "label31";
+            label31.Size = new Size(56, 20);
+            label31.TabIndex = 308;
+            label31.Text = "Save:";
+            label31.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label32.Location = new Point(444, 599);
+            label32.Name = "label32";
+            label32.Size = new Size(56, 20);
+            label32.TabIndex = 306;
+            label32.Text = "Save:";
+            label32.TextAlign = ContentAlignment.TopCenter;
             // 
             // EducationMeal
             // 
@@ -3825,7 +3976,7 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Microsoft Sans Serif", 12F);
-            label20.Location = new Point(445, 736);
+            label20.Location = new Point(445, 724);
             label20.Name = "label20";
             label20.Size = new Size(99, 25);
             label20.TabIndex = 248;
@@ -3836,7 +3987,7 @@
             // 
             label28.AutoSize = true;
             label28.Font = new Font("Microsoft Sans Serif", 12F);
-            label28.Location = new Point(464, 578);
+            label28.Location = new Point(464, 564);
             label28.Name = "label28";
             label28.Size = new Size(51, 25);
             label28.TabIndex = 247;
@@ -3847,7 +3998,7 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Microsoft Sans Serif", 12F);
-            label30.Location = new Point(464, 424);
+            label30.Location = new Point(464, 408);
             label30.Name = "label30";
             label30.Size = new Size(62, 25);
             label30.TabIndex = 246;
@@ -3858,7 +4009,7 @@
             // 
             label34.AutoSize = true;
             label34.Font = new Font("Microsoft Sans Serif", 12F);
-            label34.Location = new Point(464, 264);
+            label34.Location = new Point(464, 250);
             label34.Name = "label34";
             label34.Size = new Size(64, 25);
             label34.TabIndex = 245;
@@ -3869,7 +4020,7 @@
             // 
             label36.AutoSize = true;
             label36.Font = new Font("Microsoft Sans Serif", 12F);
-            label36.Location = new Point(450, 109);
+            label36.Location = new Point(450, 92);
             label36.Name = "label36";
             label36.Size = new Size(86, 25);
             label36.TabIndex = 244;
@@ -3880,7 +4031,7 @@
             // 
             DigimonEducation.Enabled = false;
             DigimonEducation.Font = new Font("Microsoft Sans Serif", 25F);
-            DigimonEducation.Location = new Point(444, 655);
+            DigimonEducation.Location = new Point(444, 659);
             DigimonEducation.Margin = new Padding(3, 2, 3, 2);
             DigimonEducation.Name = "DigimonEducation";
             DigimonEducation.Size = new Size(53, 55);
@@ -3893,7 +4044,7 @@
             // 
             DigimonWits.Enabled = false;
             DigimonWits.Font = new Font("Microsoft Sans Serif", 25F);
-            DigimonWits.Location = new Point(444, 495);
+            DigimonWits.Location = new Point(444, 499);
             DigimonWits.Margin = new Padding(3, 2, 3, 2);
             DigimonWits.Name = "DigimonWits";
             DigimonWits.Size = new Size(53, 55);
@@ -3906,7 +4057,7 @@
             // 
             DigimonVibes.Enabled = false;
             DigimonVibes.Font = new Font("Microsoft Sans Serif", 25F);
-            DigimonVibes.Location = new Point(444, 338);
+            DigimonVibes.Location = new Point(444, 342);
             DigimonVibes.Margin = new Padding(3, 2, 3, 2);
             DigimonVibes.Name = "DigimonVibes";
             DigimonVibes.Size = new Size(53, 55);
@@ -3919,7 +4070,7 @@
             // 
             DigimonAgility.Enabled = false;
             DigimonAgility.Font = new Font("Microsoft Sans Serif", 25F);
-            DigimonAgility.Location = new Point(444, 179);
+            DigimonAgility.Location = new Point(444, 183);
             DigimonAgility.Margin = new Padding(3, 2, 3, 2);
             DigimonAgility.Name = "DigimonAgility";
             DigimonAgility.Size = new Size(53, 55);
@@ -3932,7 +4083,7 @@
             // 
             DigimonStrength.Enabled = false;
             DigimonStrength.Font = new Font("Microsoft Sans Serif", 25F);
-            DigimonStrength.Location = new Point(444, 21);
+            DigimonStrength.Location = new Point(444, 25);
             DigimonStrength.Margin = new Padding(3, 2, 3, 2);
             DigimonStrength.Name = "DigimonStrength";
             DigimonStrength.Size = new Size(53, 55);
@@ -6297,6 +6448,116 @@
             LevelUp.UseVisualStyleBackColor = true;
             LevelUp.Click += button22_Click_4;
             // 
+            // TamerStrengthSave
+            // 
+            TamerStrengthSave.AutoSize = true;
+            TamerStrengthSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerStrengthSave.Location = new Point(117, 10);
+            TamerStrengthSave.Name = "TamerStrengthSave";
+            TamerStrengthSave.Size = new Size(29, 20);
+            TamerStrengthSave.TabIndex = 327;
+            TamerStrengthSave.Text = "00";
+            TamerStrengthSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerAgilitySave
+            // 
+            TamerAgilitySave.AutoSize = true;
+            TamerAgilitySave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerAgilitySave.Location = new Point(117, 167);
+            TamerAgilitySave.Name = "TamerAgilitySave";
+            TamerAgilitySave.Size = new Size(29, 20);
+            TamerAgilitySave.TabIndex = 326;
+            TamerAgilitySave.Text = "00";
+            TamerAgilitySave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerVibesSave
+            // 
+            TamerVibesSave.AutoSize = true;
+            TamerVibesSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerVibesSave.Location = new Point(116, 326);
+            TamerVibesSave.Name = "TamerVibesSave";
+            TamerVibesSave.Size = new Size(29, 20);
+            TamerVibesSave.TabIndex = 325;
+            TamerVibesSave.Text = "00";
+            TamerVibesSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerEducationSave
+            // 
+            TamerEducationSave.AutoSize = true;
+            TamerEducationSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerEducationSave.Location = new Point(116, 643);
+            TamerEducationSave.Name = "TamerEducationSave";
+            TamerEducationSave.Size = new Size(29, 20);
+            TamerEducationSave.TabIndex = 324;
+            TamerEducationSave.Text = "00";
+            TamerEducationSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerWitsSave
+            // 
+            TamerWitsSave.AutoSize = true;
+            TamerWitsSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerWitsSave.Location = new Point(116, 483);
+            TamerWitsSave.Name = "TamerWitsSave";
+            TamerWitsSave.Size = new Size(29, 20);
+            TamerWitsSave.TabIndex = 323;
+            TamerWitsSave.Text = "00";
+            TamerWitsSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label64.Location = new Point(56, 10);
+            label64.Name = "label64";
+            label64.Size = new Size(56, 20);
+            label64.TabIndex = 322;
+            label64.Text = "Save:";
+            label64.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label65.Location = new Point(56, 167);
+            label65.Name = "label65";
+            label65.Size = new Size(56, 20);
+            label65.TabIndex = 321;
+            label65.Text = "Save:";
+            label65.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label67.Location = new Point(55, 326);
+            label67.Name = "label67";
+            label67.Size = new Size(56, 20);
+            label67.TabIndex = 320;
+            label67.Text = "Save:";
+            label67.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label68.Location = new Point(55, 643);
+            label68.Name = "label68";
+            label68.Size = new Size(56, 20);
+            label68.TabIndex = 319;
+            label68.Text = "Save:";
+            label68.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label69.Location = new Point(55, 483);
+            label69.Name = "label69";
+            label69.Size = new Size(56, 20);
+            label69.TabIndex = 318;
+            label69.Text = "Save:";
+            label69.TextAlign = ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -6878,6 +7139,26 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label TransmissionTrackLineTwo;
         private System.Windows.Forms.Label TransmissionTrackLineOne;
+        private Label label32;
+        private Label DigiStrengthSave;
+        private Label DigiAgilitySave;
+        private Label DigiVibesSave;
+        private Label DigiEducationSave;
+        private Label DigiWitsSave;
+        private Label label33;
+        private Label label51;
+        private Label label44;
+        private Label label31;
+        private Label TamerStrengthSave;
+        private Label TamerAgilitySave;
+        private Label TamerVibesSave;
+        private Label TamerEducationSave;
+        private Label TamerWitsSave;
+        private Label label64;
+        private Label label65;
+        private Label label67;
+        private Label label68;
+        private Label label69;
     }
 }
 
