@@ -13,6 +13,8 @@ internal class DigimonInfo
     public string Attribute { get; set; } = null!;
     public string WeaknessElement { get; set; } = null!;
     public string ResistanceElement { get; set; } = null!;
+    public bool FreshEvolution { get; set; } = false!;
+    public bool TrainingEvolution { get; set; } = false!;
     public bool RookieEvolution { get; set; } = false!;
     public bool ChampionEvolution { get; set; } = false!;
     public bool UltimateEvolution { get; set; } = false!;

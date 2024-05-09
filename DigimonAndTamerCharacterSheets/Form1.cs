@@ -163,6 +163,24 @@ namespace DigimonAndTamerCharacterSheets
                 CrapSeven.Checked = loadedForm.CrapSeven;
                 DigiBond.Text = loadedForm.DigiBond;
                 GaurdPoints = loadedForm.GaurdPoints;
+                EvolutionFilePath = loadedForm.EvolutionFilePath;
+                RookieInheritOne = loadedForm.RookieInheritOne;
+                RookieInheritTwo = loadedForm.RookieInheritTwo;
+                RookieInheritThree = loadedForm.RookieInheritThree;
+                ChampionInheritOne = loadedForm.ChampionInheritOne;
+                ChampionInheritTwo = loadedForm.ChampionInheritTwo;
+                ChampionInheritThree = loadedForm.ChampionInheritThree;
+                UltimateInheritOne = loadedForm.UltimateInheritOne;
+                UltimateInheritTwo = loadedForm.UltimateInheritTwo;
+                UltimateInheritThree = loadedForm.UltimateInheritThree;
+
+
+        EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath)); ;
+                Partner.Items.Add(EvolutionAddress.DigimonName);
+                Partner.SelectedItem = EvolutionAddress.DigimonName;
+                ChampionLevel.Text = EvolutionAddress.DigimonName;
+                DigivolutionDetails();
+
             }
             catch (Exception ex)
             {
@@ -288,6 +306,22 @@ namespace DigimonAndTamerCharacterSheets
                     CrapSeven = CrapSeven.Checked,
                     DigiBond = DigiBond.Text,
                     GaurdPoints = GaurdPoints,
+                    EvolutionFilePath = EvolutionFilePath,
+                    RookieInheritOne = RookieInheritOne,
+                    RookieInheritTwo = RookieInheritTwo,
+                    RookieInheritThree = RookieInheritThree,
+                    ChampionInheritOne = ChampionInheritOne,
+                    ChampionInheritTwo = ChampionInheritTwo,
+                    ChampionInheritThree = ChampionInheritThree,
+                    UltimateInheritOne = UltimateInheritOne,
+                    UltimateInheritTwo = UltimateInheritTwo,
+                    UltimateInheritThree = UltimateInheritThree,
+                    FreshEvolution = FreshEvolution,
+                    TrainingEvolution = TrainingEvolution,
+                    RookieEvolution = TrainingEvolution,
+                    ChampionEvolution = ChampionEvolution,
+                    UltimateEvolution = UltimateEvolution,
+                    MegaEvolution = MegaEvolution,
                 }));
 
             }
@@ -3132,7 +3166,15 @@ namespace DigimonAndTamerCharacterSheets
             int ReduceMax = 0;
             int HighestQuantity = -1;
 
+            if (FreshEvolution == true)
+            {
+                EvolutionFilePath = EvolutionFilePath.Replace("/Fresh/","/In-Training/");
+                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                Partner.Items.Add(EvolutionAddress.DigimonName);
+                Partner.SelectedItem = EvolutionAddress.DigimonName;
+                DigivolutionDetails();
 
+            }
 
             // Feed the meal type
             if (StrengthMeal.Checked == true)
@@ -4352,6 +4394,13 @@ namespace DigimonAndTamerCharacterSheets
                         CrapSeven = false!,
                         DigiBond = "3",
                         GaurdPoints = 0,
+                        FreshEvolution = false,
+                        TrainingEvolution = false,
+                        RookieEvolution = false,
+                        ChampionEvolution = false,
+                        UltimateEvolution = false,
+                        MegaEvolution = false,
+
                     }));
 
 
@@ -4978,6 +5027,8 @@ namespace DigimonAndTamerCharacterSheets
         public void DigivolutionDetails()
         {
             // Form Booleans
+            FreshEvolution = EvolutionAddress.FreshEvolution;
+            TrainingEvolution = EvolutionAddress.TrainingEvolution;
             RookieEvolution = EvolutionAddress.RookieEvolution;
             ChampionEvolution = EvolutionAddress.ChampionEvolution;
             UltimateEvolution = EvolutionAddress.UltimateEvolution;
@@ -5037,12 +5088,6 @@ namespace DigimonAndTamerCharacterSheets
             WeaknessElement.Text = EvolutionAddress.WeaknessElement;
             ResistanceElement.Text = EvolutionAddress.ResistanceElement;
 
-            // Digimon Stats
-            DigimonStrength.Text = "";
-            DigimonAgility.Text = "";
-            DigimonVibes.Text = "";
-            DigimonWits.Text = "";
-            DigimonEducation.Text = "";
 
             // Basic Move
             BasicAttack.Text = EvolutionAddress.BasicAttack;
@@ -5119,6 +5164,19 @@ namespace DigimonAndTamerCharacterSheets
                 UltimateInheritThree = InheritableQuirkThree.Text;
             }
 
+            // Digimon Stats
+            DigimonStrength.Text = "";
+            DigimonAgility.Text = "";
+            DigimonVibes.Text = "";
+            DigimonWits.Text = "";
+            DigimonEducation.Text = "";
+
+            // Darkest Consequences
+            if (DarkEvolution == true)
+            {
+                CrestSelection.SelectedIndex = -1;
+                CrestSelection.Enabled = true;
+            }
         }
 
         DigimonInfo EvolutionAddress;
@@ -5131,689 +5189,55 @@ namespace DigimonAndTamerCharacterSheets
                 // Disable selecting
                 Partner.Enabled = false;
 
+                if (DigimonPartner == "")
+                {
+                    Partner.Enabled = true;
+                    Partner.Items.Remove("");
+                }
+
                 // Rookies
                 if (DigimonPartner == "Agumon")
                 {
+                    RecordRookie = "Agumon";
+                    EvolutionFilePath = "Agumon/Agumon.json";
+                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                    DigivolutionDetails();
 
-                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText("Agumon/Agumon.json"));
+                }
+                else if (DigimonPartner == "Agumon ")
+                {
+                    RecordRookie = "Agumon";
+                    EvolutionFilePath = "Pre-Evolution/Fresh/Dragon's Roar.json";
+                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                    Partner.SelectedItem = EvolutionAddress.DigimonName;
                     DigivolutionDetails();
 
                 }
                 else if (DigimonPartner == "Commandramon")
                 {
-
-                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText("Commandramon/Commandramon.json"));
+                    RecordRookie = "Commandramon";
+                    EvolutionFilePath = "Commandramon/Commandramon.json";
+                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                    Partner.SelectedItem = EvolutionAddress.DigimonName;
                     DigivolutionDetails();
                 }
-                else if (DigimonPartner == "Greymon")
+                else if (DigimonPartner == "Commandramon ")
                 {
-                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText("Agumon/Champion/Strength.json"));
+                    RecordRookie = "Commandramon";
+                    EvolutionFilePath = "Pre-Evolution/Fresh/Metal Empire.json";
+                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                    Partner.SelectedItem = EvolutionAddress.DigimonName;
                     DigivolutionDetails();
-                }
-                else if (DigimonPartner == "Tyrannomon")
-                {
-                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText("Agumon/Champion/Education.json"));
-                    DigivolutionDetails();
-                }
-                else if (DigimonPartner == "Tuskmon")
-                {
-                    RecordChampion = "Tuskmon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Tuskmon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Tuskmon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Tuskmon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Tuskmon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-                }
-                else if (DigimonPartner == "Flarizamon")
-                {
-                    RecordChampion = "Flarizamon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Flarizamon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Flarizamon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Flarizamon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Flarizamon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-                }
-                else if (DigimonPartner == "Growlmon")
-                {
-                    RecordChampion = "Growlmon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Growlmon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Growlmon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Growlmon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Growlmon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-                }
-                else if (DigimonPartner == "Hi-Commandramon")
-                {
-                    RecordChampion = "Hi-Commandramon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Hi-Commandramon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Hi-Commandramon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Hi-Commandramon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Hi-Commandramon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-
-                }
-                else if (DigimonPartner == "Centarumon")
-                {
-                    RecordChampion = "Centarumon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Centarumon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Centarumon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Centarumon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Centarumon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-                }
-                else if (DigimonPartner == "Deputymon")
-                {
-                    RecordChampion = "Deputymon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Deputymon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Deputymon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Deputymon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Deputymon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-                }
-                else if (DigimonPartner == "Sealsdramon")
-                {
-                    RecordChampion = "Sealsdramon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Sealsdramon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Sealsdramon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Sealsdramon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Sealsdramon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
-                }
-                else if (DigimonPartner == "Clockmon")
-                {
-                    RecordChampion = "Clockmon";
-                    RookieEvolution = false;
-                    ChampionEvolution = true;
-                    UltimateEvolution = false;
-                    MegaEvolution = false;
-                    DarkEvolution = false;
-
-                    // Clockmon Details
-                    DigimonField.Text = "Dragon's Roar";
-                    DigitalFrame.Text = "7";
-                    CoreHPNow.Text = MaxHealth.Text;
-                    CoreHPMax.Text = MaxHealth.Text;
-                    MoveSpeed.Text = "5";
-                    Attribute.Text = "Vaccine";
-                    WeaknessElement.Text = "Ice";
-                    ResistanceElement.Text = "Filth";
-
-                    // Clockmon Stats
-                    DigimonStrength.Text = "4";
-                    DigimonAgility.Text = "4";
-                    DigimonVibes.Text = "4";
-                    DigimonWits.Text = "4";
-                    DigimonEducation.Text = "4";
-
-                    // Clockmon Moves
-                    //Basic Move
-                    BasicAttack.Text = "Headbutt";
-                    BasicAttackHardFail.Text = "";
-                    BasicAttackFail.Text = "";
-                    BasicAttackPartFail.Text = "";
-                    BasicAttackPartHit.Text = "";
-                    BasicAttackHit.Text = "";
-                    BasicAttackHardHit.Text = "";
-                    BasicDiceMin.Text = "1";
-                    BasicDiceMax.Text = "3";
-                    BasicElement.Text = "Slamming";
-
-                    //Standard Move
-                    StandardAttack.Text = "Claw Attack";
-                    StandardAttackHardFail.Text = "";
-                    StandardAttackFail.Text = "";
-                    StandardAttackPartFail.Text = "";
-                    StandardAttackPartHit.Text = "";
-                    StandardAttackHit.Text = "";
-                    StandardAttackHardHit.Text = "";
-                    StandardDiceMin.Text = "4";
-                    StandardDiceMax.Text = "6";
-                    StandardElement.Text = "Slashing";
-
-                    //Special Move
-                    SpecialAttack.Text = "Pepper Breath";
-                    SpecialAttackHardFail.Text = "";
-                    SpecialAttackFail.Text = "";
-                    SpecialAttackPartHit.Text = "";
-                    SpecialAttackPartFail.Text = "";
-                    SpecialAttackHit.Text = "";
-                    SpecialAttackHardHit.Text = "";
-                    SpecialDiceMin.Text = "7";
-                    SpecialDiceMax.Text = "9";
-                    SpecialElement.Text = "Fire";
-
-                    //Super Move
-                    SuperAttack.Text = "Spitfire Blast";
-                    SuperAttackHardFail.Text = "";
-                    SuperAttackFail.Text = "";
-                    SuperAttackPartFail.Text = "";
-                    SuperAttackPartHit.Text = "";
-                    SuperAttackHit.Text = "";
-                    SuperAttackHardHit.Text = "";
-                    SuperDiceMin.Text = "10";
-                    SuperDiceMax.Text = "10";
-                    SuperElement.Text = "Fire";
-
-                    // Clockmon Quirks
-                    CurrentQuirkOne.Text = "";
-                    CurrentQuirkTwo.Text = "";
-                    InheritableQuirkOne.Text = "";
-                    InheritableQuirkTwo.Text = "";
-                    InheritableQuirkThree.Text = "";
                 }
                 else
                 {
+                    FreshEvolution = false;
+                    TrainingEvolution = false;
                     RookieEvolution = false;
                     ChampionEvolution = false;
                     UltimateEvolution = false;
@@ -5901,36 +5325,63 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
 
-
-
                 if (RookieEvolution == true)
                 {
                     RookieInheritOne = InheritableQuirkOne.Text;
                     RookieInheritTwo = InheritableQuirkTwo.Text;
                     RookieInheritThree = InheritableQuirkThree.Text;
+
+                    InheritedQuirkOne.Text = "_";
+                    InheritedQuirkTwo.Text = "_";
+                    InheritedQuirkThree.Text = "_";
+                    InheritedQuirkFour.Text = "_";
+                    InheritedQuirkFive.Text = "_";
+                    InheritedQuirkSix.Text = "_";
+                    InheritedQuirkSeven.Text = "_";
+                    InheritedQuirkEight.Text = "_";
+                    InheritedQuirkNine.Text = "_";
                 }
                 else if (ChampionEvolution == true)
                 {
-                    InheritedQuirkOne.Text = RookieInheritOne;
-                    InheritedQuirkTwo.Text = RookieInheritTwo;
-                    InheritedQuirkThree.Text = RookieInheritThree;
-
                     ChampionInheritOne = InheritableQuirkOne.Text;
                     ChampionInheritTwo = InheritableQuirkTwo.Text;
                     ChampionInheritThree = InheritableQuirkThree.Text;
+
+                    InheritedQuirkOne.Text = RookieInheritOne;
+                    InheritedQuirkTwo.Text = RookieInheritTwo;
+                    InheritedQuirkThree.Text = RookieInheritThree;
+                    InheritedQuirkFour.Text = "_";
+                    InheritedQuirkFive.Text = "_";
+                    InheritedQuirkSix.Text = "_";
+                    InheritedQuirkSeven.Text = "_";
+                    InheritedQuirkEight.Text = "_";
+                    InheritedQuirkNine.Text = "_";
                 }
                 else if (UltimateEvolution == true)
                 {
-                    InheritedQuirkFour.Text = ChampionInheritOne;
-                    InheritedQuirkFive.Text = ChampionInheritTwo;
-                    InheritedQuirkSix.Text = ChampionInheritThree;
 
                     UltimateInheritOne = InheritableQuirkOne.Text;
                     UltimateInheritTwo = InheritableQuirkTwo.Text;
                     UltimateInheritThree = InheritableQuirkThree.Text;
+
+                    InheritedQuirkOne.Text = RookieInheritOne;
+                    InheritedQuirkTwo.Text = RookieInheritTwo;
+                    InheritedQuirkThree.Text = RookieInheritThree;
+                    InheritedQuirkFour.Text = ChampionInheritOne;
+                    InheritedQuirkFive.Text = ChampionInheritTwo;
+                    InheritedQuirkSix.Text = ChampionInheritThree;
+                    InheritedQuirkSeven.Text = "_";
+                    InheritedQuirkEight.Text = "_";
+                    InheritedQuirkNine.Text = "_";
                 }
                 else if (MegaEvolution == true)
                 {
+                    InheritedQuirkOne.Text = RookieInheritOne;
+                    InheritedQuirkTwo.Text = RookieInheritTwo;
+                    InheritedQuirkThree.Text = RookieInheritThree;
+                    InheritedQuirkFour.Text = ChampionInheritOne;
+                    InheritedQuirkFive.Text = ChampionInheritTwo;
+                    InheritedQuirkSix.Text = ChampionInheritThree;
                     InheritedQuirkFour.Text = UltimateInheritOne;
                     InheritedQuirkFive.Text = UltimateInheritTwo;
                     InheritedQuirkSix.Text = UltimateInheritThree;
@@ -5996,7 +5447,12 @@ namespace DigimonAndTamerCharacterSheets
                 TamerDigimon.SelectedIndex = NextPage;
             }
 
-
+            StrengthStat.Text = "";
+            AgilityStat.Text = "";
+            VibesStat.Text = "";
+            WitsStat.Text = "";
+            KnowledgeStat.Text = "";
+            DigiSoulStat.Text = "";
             DigiAttackRoll.Text = "";
             SaveCharacterInformation();
         }
@@ -6087,11 +5543,27 @@ namespace DigimonAndTamerCharacterSheets
                 Partner.Items.Remove(RecordChampion);
                 Partner.Items.Remove(RecordUltimate);
                 Partner.Items.Remove(RecordMega);
+
+
+                FreshEvolution = true;
+                TrainingEvolution = false;
                 RecordRookie = "________";
+                RookieEvolution = false;
                 RecordChampion = "________";
+                ChampionEvolution = false;
                 RecordUltimate = "________";
+                UltimateEvolution = false;
                 RecordMega = "________";
+                MegaEvolution = false;
                 Day.Text = "0";
+
+                // End Meal
+                MealStrength = false;
+                MealAgility = false;
+                MealVibes = false;
+                MealWits = false;
+                MealEducation = false;
+                AutoMeal = false;
 
                 // Check if Dark-Digivolved, and if so do the same for personality
                 if (DarkEvolution == true)
@@ -6099,9 +5571,9 @@ namespace DigimonAndTamerCharacterSheets
                     CrestSelection.SelectedIndex = -1;
                     CrestSelection.Enabled = true;
                     DarkEvolution = false;
-                    Partner.Items.Remove("Numemon");
                     Partner.SelectedIndex = -1;
                     Partner.Enabled = true;
+                    DarkEvolution = false;
                 }
 
                 // Remove Evolution Options
@@ -6119,10 +5591,25 @@ namespace DigimonAndTamerCharacterSheets
                 RemainingLife.Text = MaximumLife.Text;
                 Digivolve.Enabled = false;
 
+                // Refresh stats
+                DigimonStrength.Text = "";
+                DigimonAgility.Text = "";
+                DigimonVibes.Text = "";
+                DigimonWits.Text = "";
+                DigimonEducation.Text = "";
+
+                //Reset the options to default
+                Partner.Items.Clear();
+                Partner.Items.AddRange(new object[] { "Agumon ", "Commandramon " });
+                /* Partner.Items.AddRange(new object[] { "Agumon ", "Commandramon ", "DemiDevimon ", "Floramon ", "Impmon ", "Keramon ", "Monmon ", "Shakomon ", "Tapirmon ", "Terriermon " });*/
+
+
+                EvolutionFilePath = "null.json";
 
                 SaveCharacterInformation();
             }
 
+            SaveCharacterInformation();
         }
 
         private void button29_Click(object sender, EventArgs e)
@@ -6131,7 +5618,14 @@ namespace DigimonAndTamerCharacterSheets
                 // If CrapSeven is checked
                 if (CrapSeven.Checked)
                 {
-                    MessageBox.Show("Inflict Dark Digivolution NOW.");
+                    MessageBox.Show($"Massive Care Failure. Failure Evolution Initiated...\n\nError... Error... \n\nError Overload! \n\n{Partner.Text} Fail Digivolve To Numemon.");
+                    EvolutionFilePath = "Failed/Numemon.json";
+                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                    ChampionLevel.Text = EvolutionAddress.DigimonName;
+                    DigivolutionDetails();
+
                 }
                 // If CrapSix is checked
                 else if (CrapSix.Checked)
@@ -6190,11 +5684,15 @@ namespace DigimonAndTamerCharacterSheets
         string RecordChampion = "";
         string RecordUltimate = "";
         string RecordMega = "";
+        bool FreshEvolution = false;
+        bool TrainingEvolution = false;
         bool RookieEvolution = false;
         bool ChampionEvolution = false;
         bool UltimateEvolution = false;
         bool MegaEvolution = false;
         bool DarkEvolution = false;
+
+        string EvolutionFilePath;
 
         private void Digivolve_Click(object sender, EventArgs e)
         {
@@ -6285,6 +5783,8 @@ namespace DigimonAndTamerCharacterSheets
                             RemainingLife.Text = RemainingLifespan.ToString();
 
 
+                            StringBuilder EvolutionPath = new StringBuilder();
+
                             if (DigivolutionRoll > DarkCheck)
                             {
 
@@ -6292,130 +5792,210 @@ namespace DigimonAndTamerCharacterSheets
                                 {
 
                                     // Agumon Evolution Systems
-                                    if (Partner.Text == "Agumon")
+                                    if (RecordRookie == "Agumon")
                                     {
-                                        RecordRookie = "Agumon";
+                                        EvolutionPath.Append(RecordRookie);
+                                        EvolutionPath.Append("/");
+                                        EvolutionPath.Append("Champion/");
 
                                         if (maxDiet == Diet.Strength)
                                         {
+                                            /*
                                             MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
                                             Partner.Items.Add("Greymon");
                                             Partner.SelectedItem = "Greymon";
                                             ChampionLevel.Text = "Greymon";
+                                            */
+                                            FreshEvolution = false;
+                                            TrainingEvolution = false;
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            UltimateEvolution = false;
+                                            MegaEvolution = false;
+                                            EvolutionPath.Append("Strength");
+
                                         }
                                         else if (maxDiet == Diet.Agility)
                                         {
+                                            /*
                                             MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
                                             Partner.Items.Add("Tuskmon");
                                             Partner.SelectedItem = "Tuskmon";
                                             ChampionLevel.Text = "Tuskmon";
+                                            */
+                                            FreshEvolution = false;
+                                            TrainingEvolution = false;
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            UltimateEvolution = false;
+                                            MegaEvolution = false;
+                                            EvolutionPath.Append("Agility");
                                         }
                                         else if (maxDiet == Diet.Vibes)
                                         {
+                                            /*
                                             MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
                                             Partner.Items.Add("Growlmon");
-                                            Partner.SelectedItem = "Growlmon";
+                                            Partner.SelectedItem = ";
                                             ChampionLevel.Text = "Growlmon";
+                                            */
+                                            FreshEvolution = false;
+                                            TrainingEvolution = false;
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            UltimateEvolution = false;
+                                            MegaEvolution = false;
+                                            EvolutionPath.Append("Vibes");
                                         }
                                         else if (maxDiet == Diet.Wits)
                                         {
+                                            /*
                                             MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
                                             Partner.Items.Add("Flarizamon");
                                             Partner.SelectedItem = "Flarizamon";
                                             ChampionLevel.Text = "Flarizamon";
+                                            */
+                                            FreshEvolution = false;
+                                            TrainingEvolution = false;
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            UltimateEvolution = false;
+                                            MegaEvolution = false;
+                                            EvolutionPath.Append("Wits");
                                         }
                                         else if (maxDiet == Diet.Education)
                                         {
+                                            /*
                                             MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
                                             Partner.Items.Add("Tyrannomon");
                                             Partner.SelectedItem = "Tyrannomon";
-                                            ChampionLevel.Text = "Tyrannomon";
+                                            ChampionLevel.Text = "Tyrannomon"; 
+                                            */
+                                            FreshEvolution = false;
+                                            TrainingEvolution = false;
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            UltimateEvolution = false;
+                                            MegaEvolution = false;
+                                            EvolutionPath.Append("Education");
                                         }
+
+
+                                        EvolutionPath.Append(".json");
+                                        EvolutionFilePath = EvolutionPath.ToString();
+                                        EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                        Partner.Items.Add(EvolutionAddress.DigimonName);
+                                        Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                        ChampionLevel.Text = EvolutionAddress.DigimonName;
+                                        DigivolutionDetails();
+
                                     }
 
                                     // Commandramon Evolution Systems
                                     else if (Partner.Text == "Commandramon")
                                     {
                                         RecordRookie = "Commandramon";
+                                        EvolutionPath.Append(RecordRookie);
+                                        EvolutionPath.Append("/");
+                                        EvolutionPath.Append("Champion/");
+
 
                                         if (maxDiet == Diet.Strength)
                                         {
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Hi-Commandramon");
-                                            Partner.Items.Add("Hi-Commandramon");
-                                            Partner.SelectedItem = "Hi-Commandramon";
-                                            ChampionLevel.Text = "Hi-Commandramon";
+                                            /*
+                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
+                                            Partner.Items.Add("Greymon");
+                                            Partner.SelectedItem = "Greymon";
+                                            ChampionLevel.Text = "Greymon";
+                                            */
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            EvolutionPath.Append("Strength");
 
                                         }
                                         else if (maxDiet == Diet.Agility)
                                         {
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Centarumon");
-                                            Partner.Items.Add("Centarumon");
-                                            Partner.SelectedItem = "Centarumon";
-                                            ChampionLevel.Text = "Centarumon";
+                                            /*
+                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
+                                            Partner.Items.Add("Tuskmon");
+                                            Partner.SelectedItem = "Tuskmon";
+                                            ChampionLevel.Text = "Tuskmon";
+                                            */
+                                            RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            EvolutionPath.Append("Agility");
                                         }
                                         else if (maxDiet == Diet.Vibes)
                                         {
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Deputymon");
-                                            Partner.Items.Add("Deputymon");
-                                            Partner.SelectedItem = "Deputymon";
-                                            ChampionLevel.Text = "Deputymon";
+                                            /*
+                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
+                                            Partner.Items.Add("Growlmon");
+                                            Partner.SelectedItem = ";
+                                            ChampionLevel.Text = "Growlmon";
+                                            */
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            EvolutionPath.Append("Vibes");
                                         }
                                         else if (maxDiet == Diet.Wits)
                                         {
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Sealsdramon");
-                                            Partner.Items.Add("Sealsdramon");
-                                            Partner.SelectedItem = "Sealsdramon";
-                                            ChampionLevel.Text = "Sealsdramon";
+                                            /*
+                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
+                                            Partner.Items.Add("Flarizamon");
+                                            Partner.SelectedItem = "Flarizamon";
+                                            ChampionLevel.Text = "Flarizamon";
+                                            */
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            EvolutionPath.Append("Wits");
                                         }
                                         else if (maxDiet == Diet.Education)
                                         {
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Clockmon");
-                                            Partner.Items.Add("Clockmon");
-                                            Partner.SelectedItem = "Clockmon";
-                                            ChampionLevel.Text = "Clockmon";
+                                            /*
+                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
+                                            Partner.Items.Add("Tyrannomon");
+                                            Partner.SelectedItem = "Tyrannomon";
+                                            ChampionLevel.Text = "Tyrannomon"; 
+                                            */
                                             RookieEvolution = false;
                                             ChampionEvolution = true;
+                                            EvolutionPath.Append("Education");
                                         }
+
+
+                                        EvolutionPath.Append(".json");
+                                        EvolutionFilePath = EvolutionPath.ToString();
+                                        EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                        Partner.Items.Add(EvolutionAddress.DigimonName);
+                                        Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                        ChampionLevel.Text = EvolutionAddress.DigimonName;
+                                        DigivolutionDetails();
+
                                     }
                                 }
                                 else
                                 {
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {ChampionLevel.Text}");
-                                    Partner.Items.Add(ChampionLevel.Text);
-                                    Partner.SelectedItem = ChampionLevel.Text;
-                                    ChampionLevel.Text = ChampionLevel.Text;
-                                    RookieEvolution = false;
-                                    ChampionEvolution = true;
+                                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                    ChampionLevel.Text = EvolutionAddress.DigimonName;
+                                    DigivolutionDetails();
+
                                 }
 
                             }
                             else
                             {
                                 MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
-                                Partner.Items.Add("Numemon");
-                                Partner.SelectedItem = "Numemon";
-                                DarkEvolution = true;
-                                RookieEvolution = false;
-                                ChampionEvolution = true;
-                                CrestSelection.SelectedIndex = -1;
-                                CrestSelection.Enabled = true;
+
+                                EvolutionFilePath = $"Failed/Champion/{DigimonField.Text}.json";
+                                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                Partner.Items.Add(EvolutionAddress.DigimonName);
+                                Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                ChampionLevel.Text = "________";
+                                DigivolutionDetails();
+
                             }
                         }
 
@@ -6600,6 +6180,17 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            if (TrainingEvolution == true)
+            {
+                EvolutionFilePath = RecordRookie + "/" + RecordRookie + ".json";
+                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                Partner.Items.Add(EvolutionAddress.DigimonName);
+                Partner.SelectedItem = EvolutionAddress.DigimonName;
+                DigivolutionDetails();
+
+            }
+
             if (Partner.Text != "")
             {
                 // Increment Days
@@ -6957,7 +6548,52 @@ namespace DigimonAndTamerCharacterSheets
 
         private void ReadableInventory_TextChanged(object sender, EventArgs e)
         {
-            FirstTime = true;
+
+
+
+            FirstTime = true; 
+            ReadableInventory.Text.ToLower().Replace("strength", "(Strength");
+
+            /*
+        public void RewordInventory()
+        {
+            // Read in text, splitting it at ",", and put them into an array
+            string InventoryItems = ReadableInventory.Text;
+            InventoryItems = InventoryItems.Replace("Strength", "(Strength");
+            InventoryItems = InventoryItems.Replace("Agility", "(Agility");
+            InventoryItems = InventoryItems.Replace("Vibes", "(Vibes");
+            InventoryItems = InventoryItems.Replace("Wits", "(Wits");
+            InventoryItems = InventoryItems.Replace("Education", "(Education");
+            InventoryItems = InventoryItems.Replace("Meat", "(Meat");
+            InventoryItems = InventoryItems.Replace("Veg", "(Veg");
+            InventoryItems = InventoryItems.Replace("Bread", "(Bread");
+            InventoryItems = InventoryItems.Replace("Fruit", "(Fruit");
+            InventoryItems = InventoryItems.Replace("Fish", "(Fish");
+            InventoryItems = InventoryItems.Replace("((", "(");
+            InventoryItems = InventoryItems.Replace("0 ", "0), ");
+            InventoryItems = InventoryItems.Replace("0,", "0),");
+            InventoryItems = InventoryItems.Replace("1 ", "1), ");
+            InventoryItems = InventoryItems.Replace("1,", "1),");
+            InventoryItems = InventoryItems.Replace("2 ", "2), ");
+            InventoryItems = InventoryItems.Replace("2,", "2),");
+            InventoryItems = InventoryItems.Replace("3 ", "3), ");
+            InventoryItems = InventoryItems.Replace("3,", "3),");
+            InventoryItems = InventoryItems.Replace("4 ", "4), ");
+            InventoryItems = InventoryItems.Replace("4,", "4),");
+            InventoryItems = InventoryItems.Replace("5 ", "5), ");
+            InventoryItems = InventoryItems.Replace("5,", "5),");
+            InventoryItems = InventoryItems.Replace("6 ", "6), ");
+            InventoryItems = InventoryItems.Replace("6,", "6),");
+            InventoryItems = InventoryItems.Replace("7 ", "7), ");
+            InventoryItems = InventoryItems.Replace("7,", "7),");
+            InventoryItems = InventoryItems.Replace("8 ", "8), ");
+            InventoryItems = InventoryItems.Replace("8,", "8),");
+            InventoryItems = InventoryItems.Replace("9 ", "9), ");
+            InventoryItems = InventoryItems.Replace("9,", "9),");
+            InventoryItems = InventoryItems.Replace("))", ")");
+            ReadableInventory.Text = InventoryItems;
+        }
+        */
         }
 
 
@@ -6999,10 +6635,106 @@ namespace DigimonAndTamerCharacterSheets
             InventoryUpdate();
         }
 
+
+        /*
+        public void RewordInventory()
+        {
+            // Read in text, splitting it at ",", and put them into an array
+            string InventoryItems = ReadableInventory.Text;
+            InventoryItems = InventoryItems.Replace("Strength", "(Strength");
+            InventoryItems = InventoryItems.Replace("Agility", "(Agility");
+            InventoryItems = InventoryItems.Replace("Vibes", "(Vibes");
+            InventoryItems = InventoryItems.Replace("Wits", "(Wits");
+            InventoryItems = InventoryItems.Replace("Education", "(Education");
+            InventoryItems = InventoryItems.Replace("Meat", "(Meat");
+            InventoryItems = InventoryItems.Replace("Veg", "(Veg");
+            InventoryItems = InventoryItems.Replace("Bread", "(Bread");
+            InventoryItems = InventoryItems.Replace("Fruit", "(Fruit");
+            InventoryItems = InventoryItems.Replace("Fish", "(Fish");
+            InventoryItems = InventoryItems.Replace("((", "(");
+            InventoryItems = InventoryItems.Replace("0 ", "0), ");
+            InventoryItems = InventoryItems.Replace("0,", "0),");
+            InventoryItems = InventoryItems.Replace("1 ", "1), ");
+            InventoryItems = InventoryItems.Replace("1,", "1),");
+            InventoryItems = InventoryItems.Replace("2 ", "2), ");
+            InventoryItems = InventoryItems.Replace("2,", "2),");
+            InventoryItems = InventoryItems.Replace("3 ", "3), ");
+            InventoryItems = InventoryItems.Replace("3,", "3),");
+            InventoryItems = InventoryItems.Replace("4 ", "4), ");
+            InventoryItems = InventoryItems.Replace("4,", "4),");
+            InventoryItems = InventoryItems.Replace("5 ", "5), ");
+            InventoryItems = InventoryItems.Replace("5,", "5),");
+            InventoryItems = InventoryItems.Replace("6 ", "6), ");
+            InventoryItems = InventoryItems.Replace("6,", "6),");
+            InventoryItems = InventoryItems.Replace("7 ", "7), ");
+            InventoryItems = InventoryItems.Replace("7,", "7),");
+            InventoryItems = InventoryItems.Replace("8 ", "8), ");
+            InventoryItems = InventoryItems.Replace("8,", "8),");
+            InventoryItems = InventoryItems.Replace("9 ", "9), ");
+            InventoryItems = InventoryItems.Replace("9,", "9),");
+            InventoryItems = InventoryItems.Replace("))", ")");
+            ReadableInventory.Text = InventoryItems;
+        }
+        */
+
+
         public void InventoryUpdate()
         {
             // Read in text, splitting it at ",", and put them into an array
             string InventoryItems = ReadableInventory.Text;
+            InventoryItems = InventoryItems.Replace(" Strength", " (Strength", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Agility".ToLower(), " (Agility", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Vibes".ToLower(), " (Vibes", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Wits".ToLower(), " (Wits", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Education".ToLower(), " (Education", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Meat".ToLower(), " (Meat", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Veg".ToLower(), " (Veg", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Bread".ToLower(), " (Bread", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Fruit".ToLower(), " (Fruit", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace(" Fish".ToLower(), " (Fish", StringComparison.OrdinalIgnoreCase);
+            InventoryItems = InventoryItems.Replace("0 ", "0), ");
+            InventoryItems = InventoryItems.Replace("0,", "0),");
+            InventoryItems = InventoryItems.Replace("*0", "* 0");
+            InventoryItems = InventoryItems.Replace("+0", "+ 0");
+            InventoryItems = InventoryItems.Replace("1 ", "1), ");
+            InventoryItems = InventoryItems.Replace("1,", "1),");
+            InventoryItems = InventoryItems.Replace("*1", "* 1");
+            InventoryItems = InventoryItems.Replace("+1", "+ 1");
+            InventoryItems = InventoryItems.Replace("2 ", "2), ");
+            InventoryItems = InventoryItems.Replace("2,", "2),");
+            InventoryItems = InventoryItems.Replace("*2", "* 2");
+            InventoryItems = InventoryItems.Replace("+2", "+ 2");
+            InventoryItems = InventoryItems.Replace("3 ", "3), ");
+            InventoryItems = InventoryItems.Replace("3,", "3),");
+            InventoryItems = InventoryItems.Replace("*3", "* 3");
+            InventoryItems = InventoryItems.Replace("+3", "+ 3");
+            InventoryItems = InventoryItems.Replace("4 ", "4), ");
+            InventoryItems = InventoryItems.Replace("4,", "4),");
+            InventoryItems = InventoryItems.Replace("*4", "* 4");
+            InventoryItems = InventoryItems.Replace("+4", "+ 4");
+            InventoryItems = InventoryItems.Replace("5 ", "5), ");
+            InventoryItems = InventoryItems.Replace("5,", "5),");
+            InventoryItems = InventoryItems.Replace("*5", "* 5");
+            InventoryItems = InventoryItems.Replace("+5", "+ 5");
+            InventoryItems = InventoryItems.Replace("6 ", "6), ");
+            InventoryItems = InventoryItems.Replace("6,", "6),");
+            InventoryItems = InventoryItems.Replace("*6", "* 6");
+            InventoryItems = InventoryItems.Replace("+6", "+ 6");
+            InventoryItems = InventoryItems.Replace("7 ", "7), ");
+            InventoryItems = InventoryItems.Replace("7,", "7),");
+            InventoryItems = InventoryItems.Replace("*7", "* 7");
+            InventoryItems = InventoryItems.Replace("+7", "+ 7");
+            InventoryItems = InventoryItems.Replace("8 ", "8), ");
+            InventoryItems = InventoryItems.Replace("8,", "8),");
+            InventoryItems = InventoryItems.Replace("*8", "* 8");
+            InventoryItems = InventoryItems.Replace("+8", "+ 8");
+            InventoryItems = InventoryItems.Replace("9 ", "9), ");
+            InventoryItems = InventoryItems.Replace("9,", "9),");
+            InventoryItems = InventoryItems.Replace("*9", "* 9");
+            InventoryItems = InventoryItems.Replace("+9", "+ 9");
+            ReadableInventory.Text = InventoryItems;
+
+
             string[] Items = InventoryItems.Split(',');
 
             // Split into two arrays, QualityItems and Quantity Items, based on whether they contain + or *
@@ -7058,22 +6790,32 @@ namespace DigimonAndTamerCharacterSheets
             {
                 if (item.ToLower().Contains("strength"))
                 {
+                    item.ToLower().Replace("strength", "(Strength");
+                    item.ToLower().Replace("((", "(");
                     StrengthQuality[StrengthQualityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("agility"))
                 {
+                    item.ToLower().Replace("agility", "(Agility");
+                    item.ToLower().Replace("((", "(");
                     AgilityQuality[AgilityQualityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("wits"))
                 {
+                    item.ToLower().Replace("wits", "(Wits");
+                    item.ToLower().Replace("((", "(");
                     WitsQuality[WitsQualityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("vibes"))
                 {
+                    item.ToLower().Replace("vibes", "(Vibes");
+                    item.ToLower().Replace("((", "(");
                     VibesQuality[VibesQualityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("education"))
                 {
+                    item.ToLower().Replace("education", "(Education");
+                    item.ToLower().Replace("((", "(");
                     EducationQuality[EducationQualityIndex++] = item;
                 }
                 else
@@ -7095,6 +6837,7 @@ namespace DigimonAndTamerCharacterSheets
             int WitsBoost = 0;
             int VibesBoost = 0;
             int EducationBoost = 0;
+            int indexOfClosingBracket = 0;
 
             // using the smaller arrays
             foreach (string item in StrengthQuality)
@@ -7103,8 +6846,16 @@ namespace DigimonAndTamerCharacterSheets
                 string BoostHolster = item.Substring(item.IndexOf("+") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = BoostHolster.IndexOf(')');
-                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                if (item.Contains(")"))
+                    {
+                        indexOfClosingBracket = BoostHolster.IndexOf(')');
+                        BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                    }
+                else if(item.Contains(","))
+                    {
+                        indexOfClosingBracket = BoostHolster.IndexOf(',');
+                        BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                    }
 
                 // Get the stat boost
                 int.TryParse(BoostHolster, out int StatBoost);
@@ -7116,8 +6867,16 @@ namespace DigimonAndTamerCharacterSheets
                 string BoostHolster = item.Substring(item.IndexOf("+") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = BoostHolster.IndexOf(')');
-                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(')');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(',');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
 
                 // Get the stat boost
                 int.TryParse(BoostHolster, out int StatBoost);
@@ -7129,8 +6888,16 @@ namespace DigimonAndTamerCharacterSheets
                 string BoostHolster = item.Substring(item.IndexOf("+") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = BoostHolster.IndexOf(')');
-                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(')');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(',');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
 
                 // Get the stat boost
                 int.TryParse(BoostHolster, out int StatBoost);
@@ -7142,8 +6909,16 @@ namespace DigimonAndTamerCharacterSheets
                 string BoostHolster = item.Substring(item.IndexOf("+") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = BoostHolster.IndexOf(')');
-                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(')');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(',');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
 
                 // Get the stat boost
                 int.TryParse(BoostHolster, out int StatBoost);
@@ -7155,8 +6930,16 @@ namespace DigimonAndTamerCharacterSheets
                 string BoostHolster = item.Substring(item.IndexOf("+") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = BoostHolster.IndexOf(')');
-                BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(')');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = BoostHolster.IndexOf(',');
+                    BoostHolster = BoostHolster.Substring(0, indexOfClosingBracket);
+                }
 
                 // Get the stat boost
                 int.TryParse(BoostHolster, out int StatBoost);
@@ -7230,22 +7013,32 @@ namespace DigimonAndTamerCharacterSheets
             {
                 if (item.ToLower().Contains("meat"))
                 {
+                    item.ToLower().Replace("meat", "(Meat");
+                    item.ToLower().Replace("((", "(");
                     MeatQuantity[MeatQuantityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("veggies") || item.ToLower().Contains("vegetables"))
                 {
+                    item.ToLower().Replace("veg", "(Veg");
+                    item.ToLower().Replace("((", "(");
                     VeggiesQuantity[VeggiesQuantityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("fruit"))
                 {
+                    item.ToLower().Replace("fruit", "(Fruit");
+                    item.ToLower().Replace("((", "(");
                     FruitQuantity[FruitQuantityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("bread"))
                 {
+                    item.ToLower().Replace("bread", "(Bread");
+                    item.ToLower().Replace("((", "(");
                     BreadQuantity[BreadQuantityIndex++] = item;
                 }
                 else if (item.ToLower().Contains("fish"))
                 {
+                    item.ToLower().Replace("fish", "(Fish");
+                    item.ToLower().Replace("((", "(");
                     FishQuantity[FishQuantityIndex++] = item;
                 }
                 else
@@ -7278,9 +7071,16 @@ namespace DigimonAndTamerCharacterSheets
                 string ExistHolster = item.Substring(item.IndexOf("*") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = ExistHolster.IndexOf(')');
-                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
-
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(')');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(',');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
                 // Get the stat Exist
                 int.TryParse(ExistHolster, out int StatExist);
                 MeatExist = MeatExist + StatExist;
@@ -7291,9 +7091,16 @@ namespace DigimonAndTamerCharacterSheets
                 string ExistHolster = item.Substring(item.IndexOf("*") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = ExistHolster.IndexOf(')');
-                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
-
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(')');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(',');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
                 // Get the stat Exist
                 int.TryParse(ExistHolster, out int StatExist);
                 VeggiesExist = VeggiesExist + StatExist;
@@ -7304,9 +7111,16 @@ namespace DigimonAndTamerCharacterSheets
                 string ExistHolster = item.Substring(item.IndexOf("*") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = ExistHolster.IndexOf(')');
-                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
-
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(')');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(',');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
                 // Get the stat Exist
                 int.TryParse(ExistHolster, out int StatExist);
                 BreadExist = BreadExist + StatExist;
@@ -7317,9 +7131,16 @@ namespace DigimonAndTamerCharacterSheets
                 string ExistHolster = item.Substring(item.IndexOf("*") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = ExistHolster.IndexOf(')');
-                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
-
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(')');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(',');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
                 // Get the stat Exist
                 int.TryParse(ExistHolster, out int StatExist);
                 FruitExist = FruitExist + StatExist;
@@ -7330,9 +7151,16 @@ namespace DigimonAndTamerCharacterSheets
                 string ExistHolster = item.Substring(item.IndexOf("*") + 2);
 
                 // Trim the back to remove ")" and everything after it
-                int indexOfClosingBracket = ExistHolster.IndexOf(')');
-                ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
-
+                if (item.Contains(")"))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(')');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
+                else if (item.Contains(","))
+                {
+                    indexOfClosingBracket = ExistHolster.IndexOf(',');
+                    ExistHolster = ExistHolster.Substring(0, indexOfClosingBracket);
+                }
                 // Get the stat Exist
                 int.TryParse(ExistHolster, out int StatExist);
                 FishExist = FishExist + StatExist;
@@ -7343,6 +7171,7 @@ namespace DigimonAndTamerCharacterSheets
             BreadSupply = BreadExist;
             FruitSupply = FruitExist;
             FishSupply = FishExist;
+
 
 
             // Append formatted content for Quantity items
@@ -7947,7 +7776,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             int DigitalStrength;
 
-            if (RookieEvolution == true)
+            if (FreshEvolution == true)
+            {
+                DigitalStrength = 0;
+            }
+            else if(TrainingEvolution == true)
+            {
+                DigitalStrength = 1;
+            }
+            else if(RookieEvolution == true)
             {
                 DigitalStrength = 2;
             }
@@ -7969,11 +7806,16 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalStrength++;
             }
 
-            if (InheritableQuirkTwo.Text.Contains("Strength") || InheritedQuirkFive.Text.Contains("Strength"))
+            if (InheritableQuirkTwo.Text.Contains("Strength Champion") || InheritedQuirkFive.Text.Contains("Strength"))
             {
                 DigitalStrength++;
             }
 
+            if (InheritableQuirkTwo.Text.Contains("Strength Ultimate") || InheritedQuirkSeven.Text.Contains("Strength"))
+            {
+                DigitalStrength++;
+                DigitalStrength++;
+            }
 
             DigimonStrength.Text = DigitalStrength.ToString();
 
@@ -7990,7 +7832,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             int DigitalAgility;
 
-            if (RookieEvolution == true)
+            if (FreshEvolution == true)
+            {
+                DigitalAgility = 0;
+            }
+            else if (TrainingEvolution == true)
+            {
+                DigitalAgility = 1;
+            }
+            else if (RookieEvolution == true)
             {
                 DigitalAgility = 2;
             }
@@ -8012,19 +7862,25 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalAgility++;
             }
 
+            if (InheritableQuirkTwo.Text.Contains("Agility Champion") || InheritedQuirkFive.Text.Contains("Agility"))
+            {
+                DigitalAgility++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Agility Ultimate") || InheritedQuirkSeven.Text.Contains("Agility"))
+            {
+                DigitalAgility++;
+                DigitalAgility++;
+            }
+
             DigimonAgility.Text = DigitalAgility.ToString();
+
+
 
             if (MealWits == true)
             {
                 DigitalAgility++;
             }
-
-
-            if (InheritableQuirkTwo.Text.Contains("Agility") || InheritedQuirkFive.Text.Contains("Agility"))
-            {
-                DigitalAgility++;
-            }
-
 
             DigiAgilitySave.Text = ((int)Math.Floor(DigitalAgility * 3.5)).ToString();
 
@@ -8034,7 +7890,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             int DigitalVibes;
 
-            if (RookieEvolution == true)
+            if (FreshEvolution == true)
+            {
+                DigitalVibes = 0;
+            }
+            else if (TrainingEvolution == true)
+            {
+                DigitalVibes = 1;
+            }
+            else if (RookieEvolution == true)
             {
                 DigitalVibes = 2;
             }
@@ -8056,8 +7920,14 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalVibes++;
             }
 
-            if (InheritableQuirkTwo.Text.Contains("Vibes") || InheritedQuirkFive.Text.Contains("Vibes"))
+            if (InheritableQuirkTwo.Text.Contains("Vibes Champion") || InheritedQuirkFive.Text.Contains("Vibes"))
             {
+                DigitalVibes++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Vibes Ultimate") || InheritedQuirkSeven.Text.Contains("Vibes"))
+            {
+                DigitalVibes++;
                 DigitalVibes++;
             }
 
@@ -8076,7 +7946,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             int DigitalWits;
 
-            if (RookieEvolution == true)
+            if (FreshEvolution == true)
+            {
+                DigitalWits = 0;
+            }
+            else if (TrainingEvolution == true)
+            {
+                DigitalWits = 1;
+            }
+            else if (RookieEvolution == true)
             {
                 DigitalWits = 2;
             }
@@ -8098,8 +7976,14 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalWits++;
             }
 
-            if (InheritableQuirkTwo.Text.Contains("Wits") || InheritedQuirkFive.Text.Contains("Wits"))
+            if (InheritableQuirkTwo.Text.Contains("Wits Champion") || InheritedQuirkFive.Text.Contains("Wits"))
             {
+                DigitalWits++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Wits Ultimate") || InheritedQuirkSeven.Text.Contains("Wits"))
+            {
+                DigitalWits++;
                 DigitalWits++;
             }
 
@@ -8113,7 +7997,15 @@ namespace DigimonAndTamerCharacterSheets
         {
             int DigitalEducation;
 
-            if (RookieEvolution == true)
+            if (FreshEvolution == true)
+            {
+                DigitalEducation = 0;
+            }
+            else if (TrainingEvolution == true)
+            {
+                DigitalEducation = 1;
+            }
+            else if (RookieEvolution == true)
             {
                 DigitalEducation = 2;
             }
@@ -8135,14 +8027,21 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalEducation++;
             }
 
-            DigimonEducation.Text = DigitalEducation.ToString();
-
-            if (MealWits == true)
+            if (InheritableQuirkTwo.Text.Contains("Education Champion") || InheritedQuirkFive.Text.Contains("Education"))
             {
                 DigitalEducation++;
             }
 
-            if (InheritableQuirkTwo.Text.Contains("Education") || InheritedQuirkFive.Text.Contains("Education"))
+            if (InheritableQuirkTwo.Text.Contains("Education Ultimate") || InheritedQuirkSeven.Text.Contains("Education"))
+            {
+                DigitalEducation++;
+                DigitalEducation++;
+            }
+
+            DigimonEducation.Text = DigitalEducation.ToString();
+
+
+            if (MealWits == true)
             {
                 DigitalEducation++;
             }
@@ -8163,8 +8062,6 @@ namespace DigimonAndTamerCharacterSheets
             {
                 InventoryUpdate();
             }
-
-
         }
 
         private void DigiAttackRoll_TextChanged(object sender, EventArgs e)

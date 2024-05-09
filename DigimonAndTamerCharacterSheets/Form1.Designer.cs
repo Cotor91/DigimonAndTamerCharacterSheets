@@ -92,6 +92,16 @@
             label2 = new Label();
             label1 = new Label();
             TamerSkills = new TabPage();
+            TamerStrengthSave = new Label();
+            TamerAgilitySave = new Label();
+            TamerVibesSave = new Label();
+            TamerEducationSave = new Label();
+            TamerWitsSave = new Label();
+            label64 = new Label();
+            label65 = new Label();
+            label67 = new Label();
+            label68 = new Label();
+            label69 = new Label();
             label4 = new Label();
             label158 = new Label();
             label159 = new Label();
@@ -518,16 +528,6 @@
             Impulse = new Label();
             label114 = new Label();
             LevelUp = new Button();
-            TamerStrengthSave = new Label();
-            TamerAgilitySave = new Label();
-            TamerVibesSave = new Label();
-            TamerEducationSave = new Label();
-            TamerWitsSave = new Label();
-            label64 = new Label();
-            label65 = new Label();
-            label67 = new Label();
-            label68 = new Label();
-            label69 = new Label();
             TamerDigimon.SuspendLayout();
             TamerAttackRoll.SuspendLayout();
             groupBox19.SuspendLayout();
@@ -1476,6 +1476,116 @@
             TamerSkills.TabIndex = 0;
             TamerSkills.Text = "Tamer Skills";
             TamerSkills.Click += TamerSkills_Click;
+            // 
+            // TamerStrengthSave
+            // 
+            TamerStrengthSave.AutoSize = true;
+            TamerStrengthSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerStrengthSave.Location = new Point(117, 10);
+            TamerStrengthSave.Name = "TamerStrengthSave";
+            TamerStrengthSave.Size = new Size(29, 20);
+            TamerStrengthSave.TabIndex = 327;
+            TamerStrengthSave.Text = "00";
+            TamerStrengthSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerAgilitySave
+            // 
+            TamerAgilitySave.AutoSize = true;
+            TamerAgilitySave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerAgilitySave.Location = new Point(117, 167);
+            TamerAgilitySave.Name = "TamerAgilitySave";
+            TamerAgilitySave.Size = new Size(29, 20);
+            TamerAgilitySave.TabIndex = 326;
+            TamerAgilitySave.Text = "00";
+            TamerAgilitySave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerVibesSave
+            // 
+            TamerVibesSave.AutoSize = true;
+            TamerVibesSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerVibesSave.Location = new Point(116, 326);
+            TamerVibesSave.Name = "TamerVibesSave";
+            TamerVibesSave.Size = new Size(29, 20);
+            TamerVibesSave.TabIndex = 325;
+            TamerVibesSave.Text = "00";
+            TamerVibesSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerEducationSave
+            // 
+            TamerEducationSave.AutoSize = true;
+            TamerEducationSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerEducationSave.Location = new Point(116, 643);
+            TamerEducationSave.Name = "TamerEducationSave";
+            TamerEducationSave.Size = new Size(29, 20);
+            TamerEducationSave.TabIndex = 324;
+            TamerEducationSave.Text = "00";
+            TamerEducationSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // TamerWitsSave
+            // 
+            TamerWitsSave.AutoSize = true;
+            TamerWitsSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TamerWitsSave.Location = new Point(116, 483);
+            TamerWitsSave.Name = "TamerWitsSave";
+            TamerWitsSave.Size = new Size(29, 20);
+            TamerWitsSave.TabIndex = 323;
+            TamerWitsSave.Text = "00";
+            TamerWitsSave.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label64.Location = new Point(56, 10);
+            label64.Name = "label64";
+            label64.Size = new Size(56, 20);
+            label64.TabIndex = 322;
+            label64.Text = "Save:";
+            label64.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label65.Location = new Point(56, 167);
+            label65.Name = "label65";
+            label65.Size = new Size(56, 20);
+            label65.TabIndex = 321;
+            label65.Text = "Save:";
+            label65.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label67.Location = new Point(55, 326);
+            label67.Name = "label67";
+            label67.Size = new Size(56, 20);
+            label67.TabIndex = 320;
+            label67.Text = "Save:";
+            label67.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label68.Location = new Point(55, 643);
+            label68.Name = "label68";
+            label68.Size = new Size(56, 20);
+            label68.TabIndex = 319;
+            label68.Text = "Save:";
+            label68.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label69.Location = new Point(55, 483);
+            label69.Name = "label69";
+            label69.Size = new Size(56, 20);
+            label69.TabIndex = 318;
+            label69.Text = "Save:";
+            label69.TextAlign = ContentAlignment.TopCenter;
             // 
             // label4
             // 
@@ -4444,7 +4554,7 @@
             // 
             label39.AutoSize = true;
             label39.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label39.Location = new Point(240, 325);
+            label39.Location = new Point(229, 325);
             label39.Name = "label39";
             label39.Size = new Size(15, 20);
             label39.TabIndex = 8;
@@ -4456,7 +4566,7 @@
             CoreHPMax.AutoSize = true;
             CoreHPMax.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
             CoreHPMax.ImageAlign = ContentAlignment.MiddleLeft;
-            CoreHPMax.Location = new Point(263, 325);
+            CoreHPMax.Location = new Point(249, 325);
             CoreHPMax.Name = "CoreHPMax";
             CoreHPMax.Size = new Size(54, 20);
             CoreHPMax.TabIndex = 7;
@@ -4468,11 +4578,12 @@
             CoreHPNow.AutoSize = true;
             CoreHPNow.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
             CoreHPNow.ImageAlign = ContentAlignment.MiddleRight;
-            CoreHPNow.Location = new Point(176, 325);
+            CoreHPNow.Location = new Point(195, 325);
             CoreHPNow.Name = "CoreHPNow";
             CoreHPNow.Size = new Size(54, 20);
             CoreHPNow.TabIndex = 6;
             CoreHPNow.Text = "_____";
+            CoreHPNow.TextAlign = ContentAlignment.TopRight;
             CoreHPNow.Click += label36_Click;
             // 
             // label37
@@ -6447,116 +6558,6 @@
             LevelUp.Text = "Level Up";
             LevelUp.UseVisualStyleBackColor = true;
             LevelUp.Click += button22_Click_4;
-            // 
-            // TamerStrengthSave
-            // 
-            TamerStrengthSave.AutoSize = true;
-            TamerStrengthSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TamerStrengthSave.Location = new Point(117, 10);
-            TamerStrengthSave.Name = "TamerStrengthSave";
-            TamerStrengthSave.Size = new Size(29, 20);
-            TamerStrengthSave.TabIndex = 327;
-            TamerStrengthSave.Text = "00";
-            TamerStrengthSave.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // TamerAgilitySave
-            // 
-            TamerAgilitySave.AutoSize = true;
-            TamerAgilitySave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TamerAgilitySave.Location = new Point(117, 167);
-            TamerAgilitySave.Name = "TamerAgilitySave";
-            TamerAgilitySave.Size = new Size(29, 20);
-            TamerAgilitySave.TabIndex = 326;
-            TamerAgilitySave.Text = "00";
-            TamerAgilitySave.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // TamerVibesSave
-            // 
-            TamerVibesSave.AutoSize = true;
-            TamerVibesSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TamerVibesSave.Location = new Point(116, 326);
-            TamerVibesSave.Name = "TamerVibesSave";
-            TamerVibesSave.Size = new Size(29, 20);
-            TamerVibesSave.TabIndex = 325;
-            TamerVibesSave.Text = "00";
-            TamerVibesSave.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // TamerEducationSave
-            // 
-            TamerEducationSave.AutoSize = true;
-            TamerEducationSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TamerEducationSave.Location = new Point(116, 643);
-            TamerEducationSave.Name = "TamerEducationSave";
-            TamerEducationSave.Size = new Size(29, 20);
-            TamerEducationSave.TabIndex = 324;
-            TamerEducationSave.Text = "00";
-            TamerEducationSave.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // TamerWitsSave
-            // 
-            TamerWitsSave.AutoSize = true;
-            TamerWitsSave.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TamerWitsSave.Location = new Point(116, 483);
-            TamerWitsSave.Name = "TamerWitsSave";
-            TamerWitsSave.Size = new Size(29, 20);
-            TamerWitsSave.TabIndex = 323;
-            TamerWitsSave.Text = "00";
-            TamerWitsSave.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label64
-            // 
-            label64.AutoSize = true;
-            label64.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label64.Location = new Point(56, 10);
-            label64.Name = "label64";
-            label64.Size = new Size(56, 20);
-            label64.TabIndex = 322;
-            label64.Text = "Save:";
-            label64.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label65
-            // 
-            label65.AutoSize = true;
-            label65.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label65.Location = new Point(56, 167);
-            label65.Name = "label65";
-            label65.Size = new Size(56, 20);
-            label65.TabIndex = 321;
-            label65.Text = "Save:";
-            label65.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label67
-            // 
-            label67.AutoSize = true;
-            label67.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label67.Location = new Point(55, 326);
-            label67.Name = "label67";
-            label67.Size = new Size(56, 20);
-            label67.TabIndex = 320;
-            label67.Text = "Save:";
-            label67.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label68
-            // 
-            label68.AutoSize = true;
-            label68.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label68.Location = new Point(55, 643);
-            label68.Name = "label68";
-            label68.Size = new Size(56, 20);
-            label68.TabIndex = 319;
-            label68.Text = "Save:";
-            label68.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // label69
-            // 
-            label69.AutoSize = true;
-            label69.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label69.Location = new Point(55, 483);
-            label69.Name = "label69";
-            label69.Size = new Size(56, 20);
-            label69.TabIndex = 318;
-            label69.Text = "Save:";
-            label69.TextAlign = ContentAlignment.TopCenter;
             // 
             // Form1
             // 
