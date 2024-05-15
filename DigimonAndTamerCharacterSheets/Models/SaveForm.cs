@@ -84,7 +84,8 @@ internal class SaveForm
     public bool CrapSeven { get; set; } = false!;
     public string DigiBond { get; set; } = null!;
     public int GaurdPoints { get; set; } = 0!;
-    public string EvolutionFilePath { get; set; } = null!;
+    public string EvolutionFilePath { get; set; } = null;
+    public string ChampionPath { get; set; } = null!;
     public string RookieInheritOne { get; set; } = null!;
     public string RookieInheritTwo { get; set; } = null!;
     public string RookieInheritThree { get; set; } = null!;

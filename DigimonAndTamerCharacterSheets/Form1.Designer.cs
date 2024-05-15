@@ -372,6 +372,12 @@
             DigimonField = new Label();
             label29 = new Label();
             DigimonMoves = new TabPage();
+            DigiRollPlusFour = new CheckBox();
+            DigiRollMinusFive = new CheckBox();
+            DigiRollPlusFive = new CheckBox();
+            DigiRollMinusFour = new CheckBox();
+            DigiRollMinusThree = new CheckBox();
+            DigiRollPlusThree = new CheckBox();
             label24 = new Label();
             label25 = new Label();
             DigiRollMinusTwo = new CheckBox();
@@ -4641,6 +4647,12 @@
             // DigimonMoves
             // 
             DigimonMoves.BackColor = SystemColors.ButtonFace;
+            DigimonMoves.Controls.Add(DigiRollPlusFour);
+            DigimonMoves.Controls.Add(DigiRollMinusFive);
+            DigimonMoves.Controls.Add(DigiRollPlusFive);
+            DigimonMoves.Controls.Add(DigiRollMinusFour);
+            DigimonMoves.Controls.Add(DigiRollMinusThree);
+            DigimonMoves.Controls.Add(DigiRollPlusThree);
             DigimonMoves.Controls.Add(label24);
             DigimonMoves.Controls.Add(label25);
             DigimonMoves.Controls.Add(DigiRollMinusTwo);
@@ -4666,6 +4678,72 @@
             DigimonMoves.TabIndex = 3;
             DigimonMoves.Text = "Digimon Moves";
             DigimonMoves.Click += DigimonMoves_Click;
+            // 
+            // DigiRollPlusFour
+            // 
+            DigiRollPlusFour.AutoSize = true;
+            DigiRollPlusFour.Location = new Point(265, 700);
+            DigiRollPlusFour.Margin = new Padding(3, 2, 3, 2);
+            DigiRollPlusFour.Name = "DigiRollPlusFour";
+            DigiRollPlusFour.Size = new Size(18, 17);
+            DigiRollPlusFour.TabIndex = 173;
+            DigiRollPlusFour.UseVisualStyleBackColor = true;
+            DigiRollPlusFour.CheckedChanged += fs_CheckedChanged_1;
+            // 
+            // DigiRollMinusFive
+            // 
+            DigiRollMinusFive.AutoSize = true;
+            DigiRollMinusFive.Location = new Point(289, 740);
+            DigiRollMinusFive.Margin = new Padding(3, 2, 3, 2);
+            DigiRollMinusFive.Name = "DigiRollMinusFive";
+            DigiRollMinusFive.Size = new Size(18, 17);
+            DigiRollMinusFive.TabIndex = 171;
+            DigiRollMinusFive.UseVisualStyleBackColor = true;
+            DigiRollMinusFive.CheckedChanged += checkBox6_CheckedChanged_1;
+            // 
+            // DigiRollPlusFive
+            // 
+            DigiRollPlusFive.AutoSize = true;
+            DigiRollPlusFive.Location = new Point(289, 700);
+            DigiRollPlusFive.Margin = new Padding(3, 2, 3, 2);
+            DigiRollPlusFive.Name = "DigiRollPlusFive";
+            DigiRollPlusFive.Size = new Size(18, 17);
+            DigiRollPlusFive.TabIndex = 170;
+            DigiRollPlusFive.UseVisualStyleBackColor = true;
+            DigiRollPlusFive.CheckedChanged += DigiRollPlusFive_CheckedChanged;
+            // 
+            // DigiRollMinusFour
+            // 
+            DigiRollMinusFour.AutoSize = true;
+            DigiRollMinusFour.Location = new Point(265, 740);
+            DigiRollMinusFour.Margin = new Padding(3, 2, 3, 2);
+            DigiRollMinusFour.Name = "DigiRollMinusFour";
+            DigiRollMinusFour.Size = new Size(18, 17);
+            DigiRollMinusFour.TabIndex = 169;
+            DigiRollMinusFour.UseVisualStyleBackColor = true;
+            DigiRollMinusFour.CheckedChanged += checkBox2_CheckedChanged_2;
+            // 
+            // DigiRollMinusThree
+            // 
+            DigiRollMinusThree.AutoSize = true;
+            DigiRollMinusThree.Location = new Point(241, 740);
+            DigiRollMinusThree.Margin = new Padding(3, 2, 3, 2);
+            DigiRollMinusThree.Name = "DigiRollMinusThree";
+            DigiRollMinusThree.Size = new Size(18, 17);
+            DigiRollMinusThree.TabIndex = 168;
+            DigiRollMinusThree.UseVisualStyleBackColor = true;
+            DigiRollMinusThree.CheckedChanged += DigiRollMinusThree_CheckedChanged;
+            // 
+            // DigiRollPlusThree
+            // 
+            DigiRollPlusThree.AutoSize = true;
+            DigiRollPlusThree.Location = new Point(241, 700);
+            DigiRollPlusThree.Margin = new Padding(3, 2, 3, 2);
+            DigiRollPlusThree.Name = "DigiRollPlusThree";
+            DigiRollPlusThree.Size = new Size(18, 17);
+            DigiRollPlusThree.TabIndex = 166;
+            DigiRollPlusThree.UseVisualStyleBackColor = true;
+            DigiRollPlusThree.CheckedChanged += DigiRollPlusThree_CheckedChanged;
             // 
             // label24
             // 
@@ -7160,6 +7238,12 @@
         private Label label67;
         private Label label68;
         private Label label69;
+        private CheckBox DigiRollMinusFour;
+        private CheckBox DigiRollMinusThree;
+        private CheckBox DigiRollPlusThree;
+        private CheckBox DigiRollMinusFive;
+        private CheckBox DigiRollPlusFive;
+        private CheckBox DigiRollPlusFour;
     }
 }
 
