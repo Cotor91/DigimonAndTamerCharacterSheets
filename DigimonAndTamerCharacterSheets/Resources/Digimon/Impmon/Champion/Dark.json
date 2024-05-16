@@ -1,0 +1,70 @@
+{
+  "DigimonName": "",
+  "DigimonField": "Nightmare Soldiers",
+  "DigitalFrame": "",
+  "CoreHPMax": "",
+  "HPLevelMod": 0,
+
+  "Attribute": "",
+  "WeaknessElement": "",
+  "ResistanceElement": "",
+
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": true,
+
+  "CurrentQuirkOne": "",
+  "CurrentQuirkTwo": "",
+  "InheritableQuirkOne": "",
+  "InheritableQuirkTwo": "",
+  "InheritableQuirkThree": "",
+
+  "BasicAttack": "",
+  "StandardAttack": "",
+  "SpecialAttack": "",
+  "SuperAttack": "",
+
+  "BasicDiceMin": "",
+  "BasicDiceMax": "",
+  "StandardDiceMin": "",
+  "StandardDiceMax": "",
+  "SpecialDiceMin": "",
+  "SpecialDiceMax": "",
+  "SuperDiceMin": "",
+  "SuperDiceMax": "",
+
+  "BasicElement": "",
+  "StandardElement": "",
+  "SpecialElement": "",
+  "SuperElement": "",
+
+  "BasicHardFail": "",
+  "BasicFail": "",
+  "BasicPartFail": "",
+  "BasicPartHit": "",
+  "BasicHit": "",
+  "BasicHardHit": "",
+
+  "StandardHardFail": "",
+  "StandardFail": "",
+  "StandardPartFail": "",
+  "StandardPartHit": "",
+  "StandardHit": "",
+  "StandardHardHit": "",
+
+  "SpecialHardFail": "",
+  "SpecialFail": "",
+  "SpecialPartFail": "",
+  "SpecialPartHit": "",
+  "SpecialHit": "",
+  "SpecialHardHit": "",
+
+  "SuperHardFail": "",
+  "SuperFail": "",
+  "SuperPartFail": "",
+  "SuperPartHit": "",
+  "SuperHit": "",
+  "SuperHardHit": ""
+}

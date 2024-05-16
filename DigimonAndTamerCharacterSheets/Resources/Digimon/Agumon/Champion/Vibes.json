@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Growlmon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "13",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Virus",
+  "WeaknessElement": "Holy",
+  "ResistanceElement": "Error",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "",
+  "CurrentQuirkTwo": "",
+  "InheritableQuirkOne": "",
+  "InheritableQuirkTwo": "Vibes Champion: Same perks as a Vibes Meal.",
+  "InheritableQuirkThree": "",
+
+  "BasicAttack": "Dragon Spine",
+  "StandardAttack": "Pyro Blaster",
+  "SpecialAttack": "Dragon Slash",
+  "SuperAttack": "Exhaust Flame",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slamming - Contact",
+  "StandardElement": "Slashing - Contact",
+  "SpecialElement": "Fire - Range",
+  "SuperElement": "Fire - Range",
+
+  "BasicHardFail": "",
+  "BasicFail": "",
+  "BasicPartFail": "",
+  "BasicPartHit": "",
+  "BasicHit": "",
+  "BasicHardHit": "",
+
+  "StandardHardFail": "",
+  "StandardFail": "",
+  "StandardPartFail": "",
+  "StandardPartHit": "",
+  "StandardHit": "",
+  "StandardHardHit": "",
+
+  "SpecialHardFail": "",
+  "SpecialFail": "",
+  "SpecialPartFail": "",
+  "SpecialPartHit": "",
+  "SpecialHit": "",
+  "SpecialHardHit": "",
+
+  "SuperHardFail": "",
+  "SuperFail": "",
+  "SuperPartFail": "",
+  "SuperPartHit": "",
+  "SuperHit": "",
+  "SuperHardHit": ""
+}

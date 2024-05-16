@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Agumon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "7",
+  "CoreHPMax": "25",
+  "HPLevelMod": 5,
+  "MoveSpeed": "3",
+
+  "Attribute": "Vaccine",
+  "WeaknessElement": "Cold",
+  "ResistanceElement": "Filth",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": true,
+  "ChampionEvolution": false,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Light In Darkness: Spend 1 Bond to illuminate the scene.",
+  "CurrentQuirkTwo": "Encouraging Aura: Spend 1 Bond to empower the Tamer's next skill roll.",
+  "InheritableQuirkOne": "Firewall Guard: -1HP to failed attackers on guard, then again each evolution.",
+  "InheritableQuirkTwo": "Empathy and Carry: Roll for Empathy or Carry Checks.",
+  "InheritableQuirkThree": "Reinforcing Rage: If Tamer wounded, buff attack roll.",
+
+  "BasicAttack": "Headbutt",
+  "StandardAttack": "Claw Attack",
+  "SpecialAttack": "Pepper Breath",
+  "SuperAttack": "Spitfire Blast",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slamming - Contact",
+  "StandardElement": "Slashing - Contact",
+  "SpecialElement": "Fire - Ranged",
+  "SuperElement": "Fire - Ranged",
+
+  "BasicHardFail": "User can't attack next turn. (stunned)",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "Mutually unable to attack next turn. (stunned)",
+  "BasicPartHit": "-2HP on target.",
+  "BasicHit": "Mutually stunned. -2HP on target.",
+  "BasicHardHit": "Target stunned. -5HP on target.",
+
+  "StandardHardFail": "-3HP on user.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "Next attack on user is nerfed. (blocks)",
+  "StandardPartHit": "-3HP on target.",
+  "StandardHit": "Blocks once. -3HP on target.",
+  "StandardHardHit": "Blocks twice. -6HP on target.",
+
+  "SpecialHardFail": "-3HP on user.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "-3HP on target.",
+  "SpecialPartHit": "3 turn recurring -1HP on target.",
+  "SpecialHit": "-3HP on target. 3 turn recurring -1HP.",
+  "SpecialHardHit": "-6HP on target. 3 turn recurring -2HP.",
+
+  "SuperHardFail": "2 recurring damage on user for 3 turns.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-3HP to target and 1 user ally near them.",
+  "SuperPartHit": "-3HP to target.",
+  "SuperHit": "-3HP to target and 1 target ally near them.",
+  "SuperHardHit": "-6HP to target and 2 target ally near them."
+}

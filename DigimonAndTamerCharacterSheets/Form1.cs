@@ -13,7 +13,6 @@ using System.Text.Json;
 using DigimonAndTamerCharacterSheets.Models;
 using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-
 namespace DigimonAndTamerCharacterSheets
 {
     public partial class Form1 : Form
@@ -26,11 +25,13 @@ namespace DigimonAndTamerCharacterSheets
 
             LoadCharacterInformation(); // Load data when the form initializes
 
+            //Reset the options to default
+            Partner.Items.Clear();
 
             try
             {
                 // Get all directories containing "mon" in their name
-                var DigimonFolders = Directory.EnumerateDirectories(Path.GetDirectoryName(Application.ExecutablePath), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+                var DigimonFolders = Directory.EnumerateDirectories(Directory.GetCurrentDirectory(), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
                 // Add options to Partner Selection options
                 Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -5275,7 +5276,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            var DigimonFolders = Directory.EnumerateDirectories(Path.GetDirectoryName(Application.ExecutablePath), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+            var DigimonFolders = Directory.EnumerateDirectories(Directory.GetCurrentDirectory(), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
             // Add options to Partner Selection options
             Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -5616,7 +5617,7 @@ namespace DigimonAndTamerCharacterSheets
                 try
                 {
                     // Get all directories containing "mon" in their name
-                    var DigimonFolders = Directory.EnumerateDirectories(Path.GetDirectoryName(Application.ExecutablePath), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+                    var DigimonFolders = Directory.EnumerateDirectories(Directory.GetCurrentDirectory(), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
                     // Add options to Partner Selection options
                     Partner.Items.AddRange(DigimonFolders.ToArray());

@@ -34,5 +34,6 @@
     <None Include="Resources\Courage.png" />
     <None Include="Resources\Compromise.png" />
     <None Include="Resources\Clarity.png" />
+    <None Include="Resources\Digimon/**/*.*" />
   </ItemGroup>
 </Project>

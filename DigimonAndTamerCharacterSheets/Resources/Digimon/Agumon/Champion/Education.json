@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Tyrannomon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "13",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Cold",
+  "ResistanceElement": "Filth",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "",
+  "CurrentQuirkTwo": "",
+  "InheritableQuirkOne": "",
+  "InheritableQuirkTwo": "Education Champion: Same perks as a Education Meal.",
+  "InheritableQuirkThree": "",
+
+  "BasicAttack": "Slash Claw",
+  "StandardAttack": "Wild Buster",
+  "SpecialAttack": "Blaze Blast",
+  "SuperAttack": "Buster Dive",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slashing - Contact",
+  "StandardElement": "Slamming - Contact",
+  "SpecialElement": "Fire - Range",
+  "SuperElement": "Fire - Contact",
+
+  "BasicHardFail": "",
+  "BasicFail": "",
+  "BasicPartFail": "",
+  "BasicPartHit": "",
+  "BasicHit": "",
+  "BasicHardHit": "",
+
+  "StandardHardFail": "",
+  "StandardFail": "",
+  "StandardPartFail": "",
+  "StandardPartHit": "",
+  "StandardHit": "",
+  "StandardHardHit": "",
+
+  "SpecialHardFail": "",
+  "SpecialFail": "",
+  "SpecialPartFail": "",
+  "SpecialPartHit": "",
+  "SpecialHit": "",
+  "SpecialHardHit": "",
+
+  "SuperHardFail": "",
+  "SuperFail": "",
+  "SuperPartFail": "",
+  "SuperPartHit": "",
+  "SuperHit": "",
+  "SuperHardHit": ""
+}

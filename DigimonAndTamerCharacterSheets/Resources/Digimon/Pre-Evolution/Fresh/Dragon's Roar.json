@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Botamon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "1",
+  "CoreHPMax": "5",
+  "HPLevelMod": 0,
+  "MoveSpeed": "0",
+
+  "Attribute": "Free",
+  "WeaknessElement": "Free",
+  "ResistanceElement": "Free",
+
+  "FreshEvolution": true,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": false,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "_",
+  "CurrentQuirkTwo": "_",
+  "InheritableQuirkOne": "_",
+  "InheritableQuirkTwo": "Dark Champion: Rampages blindly, no longer allied to Tamer.",
+  "InheritableQuirkThree": "_",
+
+  "BasicAttack": "Prime Headbutt",
+  "StandardAttack": "Skull Fang",
+  "SpecialAttack": "Serpent Bite",
+  "SuperAttack": "Triple Force",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slamming - Contact",
+  "StandardElement": "Piercing - Contact",
+  "SpecialElement": "Piercing - Contact",
+  "SuperElement": "Error - Range",
+
+  "BasicHardFail": "___",
+  "BasicFail": "___",
+  "BasicPartFail": "___",
+  "BasicPartHit": "___",
+  "BasicHit": "___",
+  "BasicHardHit": "___",
+
+  "StandardHardFail": "___",
+  "StandardFail": "___",
+  "StandardPartFail": "___",
+  "StandardPartHit": "___",
+  "StandardHit": "___",
+  "StandardHardHit": "___",
+
+  "SpecialHardFail": "___",
+  "SpecialFail": "___",
+  "SpecialPartFail": "___",
+  "SpecialPartHit": "___",
+  "SpecialHit": "___",
+  "SpecialHardHit": "___",
+
+  "SuperHardFail": "___",
+  "SuperFail": "___",
+  "SuperPartFail": "___",
+  "SuperPartHit": "___",
+  "SuperHit": "___",
+  "SuperHardHit": "___"
+}
