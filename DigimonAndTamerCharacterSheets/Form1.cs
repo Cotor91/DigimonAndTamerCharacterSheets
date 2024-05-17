@@ -13,6 +13,7 @@ using System.Text.Json;
 using DigimonAndTamerCharacterSheets.Models;
 using System.Text.RegularExpressions;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using DigimonAndTamerCharacterSheets.Properties;
 namespace DigimonAndTamerCharacterSheets
 {
     public partial class Form1 : Form
@@ -31,7 +32,7 @@ namespace DigimonAndTamerCharacterSheets
             try
             {
                 // Get all directories containing "mon" in their name
-                var DigimonFolders = Directory.EnumerateDirectories(Directory.GetCurrentDirectory(), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+                var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digimon"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
                 // Add options to Partner Selection options
                 Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -3187,7 +3188,7 @@ namespace DigimonAndTamerCharacterSheets
 
             if (FreshEvolution == true)
             {
-                EvolutionFilePath = EvolutionFilePath.Replace("/Fresh/", "/In-Training/");
+                EvolutionFilePath = EvolutionFilePath.Replace("/Fresh/", "/Training/");
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5064,7 +5065,7 @@ namespace DigimonAndTamerCharacterSheets
             // Reincarnation Required
             if (ReincarnationTime == true)
             {
-                EvolutionFilePath = $"Pre-Evolution/Fresh/{DigimonField.Text}.json";
+                EvolutionFilePath = $"Resources/Digimon/Pre-Evolution/Fresh/{DigimonField.Text}.json";
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5276,7 +5277,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            var DigimonFolders = Directory.EnumerateDirectories(Directory.GetCurrentDirectory(), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+            var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digimon"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
             // Add options to Partner Selection options
             Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -5298,7 +5299,7 @@ namespace DigimonAndTamerCharacterSheets
                 if (DigimonFolders.Contains(DigimonPartner))
                 {
                     RecordRookie = Partner.Text;
-                    EvolutionFilePath = $"{Partner.Text}/{Partner.Text}.json";
+                    EvolutionFilePath = $"Resources/Digimon/{Partner.Text}/{Partner.Text}.json";
                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                     Partner.Items.Add(EvolutionAddress.DigimonName);
                     Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5617,7 +5618,7 @@ namespace DigimonAndTamerCharacterSheets
                 try
                 {
                     // Get all directories containing "mon" in their name
-                    var DigimonFolders = Directory.EnumerateDirectories(Directory.GetCurrentDirectory(), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+                    var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digimon"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
                     // Add options to Partner Selection options
                     Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -5645,7 +5646,7 @@ namespace DigimonAndTamerCharacterSheets
                 if (CrapSeven.Checked)
                 {
                     MessageBox.Show($"Massive Care Failure. Failure Evolution Initiated...\n\nError... Error... \n\nError Overload! \n\n{Partner.Text} Fail Digivolve To Numemon.");
-                    EvolutionFilePath = "Failed/Numemon.json";
+                    EvolutionFilePath = "Resource/Digimon/Failed/Numemon.json";
                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                     Partner.Items.Add(EvolutionAddress.DigimonName);
                     Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5734,7 +5735,7 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     Digivolve.Text = "Digivolve";
 
-                    EvolutionFilePath = $"{RecordRookie}/{RecordRookie}.json";
+                    EvolutionFilePath = $"Resources/Digimon/{RecordRookie}/{RecordRookie}.json";
                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                     Partner.Items.Add(EvolutionAddress.DigimonName);
                     Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5815,12 +5816,15 @@ namespace DigimonAndTamerCharacterSheets
 
 
                             StringBuilder EvolutionPath = new StringBuilder();
+                            EvolutionPath.Append("Resources/Digimon");
 
                             if (DigivolutionRoll > DarkCheck)
                             {
 
                                 if (ChampionLevel.Text == "________")
                                 {
+                                    
+                                        EvolutionPath.Append("/");
                                         EvolutionPath.Append(Partner.Text);
                                         EvolutionPath.Append("/");
                                         EvolutionPath.Append("Champion/");
@@ -5936,7 +5940,7 @@ namespace DigimonAndTamerCharacterSheets
                             {
                                 MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
 
-                                EvolutionFilePath = $"Failed/Champion/{EvolutionAddress.DigimonField}.json";
+                                EvolutionFilePath = $"Resources/Digimon/Failed/Champion/{EvolutionAddress.DigimonField}.json";
                                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                                 Partner.Items.Add(EvolutionAddress.DigimonName);
                                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -6130,7 +6134,7 @@ namespace DigimonAndTamerCharacterSheets
 
             if (TrainingEvolution == true)
             {
-                EvolutionFilePath = $"{RecordRookie}/{RecordRookie}.json";
+                EvolutionFilePath = $"Resources/Digimon/{RecordRookie}/{RecordRookie}.json";
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
