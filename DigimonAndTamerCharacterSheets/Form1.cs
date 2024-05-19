@@ -32,7 +32,7 @@ namespace DigimonAndTamerCharacterSheets
             try
             {
                 // Get all directories containing "mon" in their name
-                var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digimon"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+                var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digi"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
                 // Add options to Partner Selection options
                 Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -193,7 +193,25 @@ namespace DigimonAndTamerCharacterSheets
                 UltimateInheritOne = loadedForm.UltimateInheritOne;
                 UltimateInheritTwo = loadedForm.UltimateInheritTwo;
                 UltimateInheritThree = loadedForm.UltimateInheritThree;
-
+                CarryTrack.Enabled = loadedForm.UpgradeSkills;
+                ThrowTrack.Enabled = loadedForm.UpgradeSkills;
+                HoldTrack.Enabled = loadedForm.UpgradeSkills;
+                BalanceTrack.Enabled = loadedForm.UpgradeSkills;
+                ParkourTrack.Enabled = loadedForm.UpgradeSkills;
+                ReflexTrack.Enabled = loadedForm.UpgradeSkills;
+                PerformTrack.Enabled = loadedForm.UpgradeSkills;
+                IntimidateTrack.Enabled = loadedForm.UpgradeSkills;
+                PersuadeTrack.Enabled = loadedForm.UpgradeSkills;
+                InvestigationTrack.Enabled = loadedForm.UpgradeSkills;
+                EmpathyTrack.Enabled = loadedForm.UpgradeSkills;
+                IngenuityTrack.Enabled = loadedForm.UpgradeSkills;
+                TechnologyTrack.Enabled = loadedForm.UpgradeSkills;
+                OccultismTrack.Enabled = loadedForm.UpgradeSkills;
+                SocietyTrack.Enabled = loadedForm.UpgradeSkills;
+                ErrorScanTrack.Enabled = loadedForm.UpgradePowers;
+                InfoExtractTrack.Enabled = loadedForm.UpgradePowers;
+                GigaSearchTrack.Enabled = loadedForm.UpgradePowers;
+                WaybackTrackTrack.Enabled = loadedForm.UpgradePowers;
 
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath)); ;
                 Partner.Items.Add(EvolutionAddress.DigimonName);
@@ -342,6 +360,8 @@ namespace DigimonAndTamerCharacterSheets
                     ChampionEvolution = ChampionEvolution,
                     UltimateEvolution = UltimateEvolution,
                     MegaEvolution = MegaEvolution,
+                    UpgradeSkills = CarryTrack.Enabled,
+                    UpgradePowers = InfoExtractTrack.Enabled,
                 }));
 
             }
@@ -939,7 +959,7 @@ namespace DigimonAndTamerCharacterSheets
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             int SkillStrength = CarryTrack.Value + HoldTrack.Value + ThrowTrack.Value;
-            int TotalStrength = (int)Math.Ceiling(SkillStrength / 2.0);
+            int TotalStrength = (int)Math.Ceiling(SkillStrength / 3.0);
             TotalStrength = TotalStrength + StrengthIncrease;
             StrengthStat.Text = TotalStrength.ToString();
             TamerStrengthSave.Text = (((int)Math.Floor(TotalStrength * 3.5)) + 5).ToString();
@@ -969,7 +989,6 @@ namespace DigimonAndTamerCharacterSheets
         int HighestInfoExtract = 0;
         int HighestGigaSearch = 0;
         int HighestWaybackTrack = 0;
-
 
         // Carry Trackbar
         public void trackBar12_Scroll_1(object sender, EventArgs e)
@@ -1075,17 +1094,17 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
                 // Final result
-                TotalResult += CarryTrack.Value * 3;
+                TotalResult += CarryTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nCarry Skill: {CarryTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nCarry Skill: {CarryTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1199,16 +1218,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += ThrowTrack.Value * 3;
+                TotalResult += ThrowTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nThrow Skill: {ThrowTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nThrow Skill: {ThrowTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1320,16 +1339,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += HoldTrack.Value * 3;
+                TotalResult += HoldTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nHold Skill: {HoldTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nHold Skill: {HoldTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1343,7 +1362,7 @@ namespace DigimonAndTamerCharacterSheets
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
             int SkillAgility = BalanceTrack.Value + ParkourTrack.Value + ReflexTrack.Value;
-            int TotalAgility = (int)Math.Ceiling(SkillAgility / 2.0);
+            int TotalAgility = (int)Math.Ceiling(SkillAgility / 3.0);
             TotalAgility = TotalAgility + AgilityIncrease;
             AgilityStat.Text = TotalAgility.ToString();
             TamerAgilitySave.Text = (((int)Math.Floor(TotalAgility * 3.5)) + 5).ToString();
@@ -1457,16 +1476,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += BalanceTrack.Value * 3;
+                TotalResult += BalanceTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nBalance Skill: {BalanceTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nBalance Skill: {BalanceTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1582,16 +1601,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += ParkourTrack.Value * 3;
+                TotalResult += ParkourTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nParkour Skill: {ParkourTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nParkour Skill: {ParkourTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1706,16 +1725,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += ReflexTrack.Value * 3;
+                TotalResult += ReflexTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nReflex Skill: {ReflexTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nReflex Skill: {ReflexTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1729,7 +1748,7 @@ namespace DigimonAndTamerCharacterSheets
         private void VibesStat_TextChanged(object sender, EventArgs e)
         {
             int SkillVibes = PerformTrack.Value + PersuadeTrack.Value + IntimidateTrack.Value;
-            int TotalVibes = (int)Math.Ceiling(SkillVibes / 2.0);
+            int TotalVibes = (int)Math.Ceiling(SkillVibes / 3.0);
             TotalVibes = TotalVibes + VibesIncrease;
 
 
@@ -1855,16 +1874,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += PerformTrack.Value * 3;
+                TotalResult += PerformTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nPerform Skill: {PerformTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nPerform Skill: {PerformTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1981,16 +2000,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += IntimidateTrack.Value * 3;
+                TotalResult += IntimidateTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nIntimidate Skill: {IntimidateTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nIntimidate Skill: {IntimidateTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2106,16 +2125,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += PersuadeTrack.Value * 3;
+                TotalResult += PersuadeTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nPersuade Skill: {PersuadeTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nPersuade Skill: {PersuadeTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2129,7 +2148,7 @@ namespace DigimonAndTamerCharacterSheets
         private void WitsStat_TextChanged(object sender, EventArgs e)
         {
             int SkillWits = InvestigationTrack.Value + EmpathyTrack.Value + IngenuityTrack.Value;
-            int TotalWits = (int)Math.Ceiling(SkillWits / 2.0);
+            int TotalWits = (int)Math.Ceiling(SkillWits / 3.0);
             TotalWits = TotalWits + WitsIncrease;
             WitsStat.Text = TotalWits.ToString();
             TamerWitsSave.Text = (((int)Math.Floor(TotalWits * 3.5)) + 5).ToString();
@@ -2244,16 +2263,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += InvestigationTrack.Value * 3;
+                TotalResult += InvestigationTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nInvestigation Skill: {InvestigationTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nInvestigation Skill: {InvestigationTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2370,16 +2389,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += EmpathyTrack.Value * 3;
+                TotalResult += EmpathyTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nEmpathy Skill: {EmpathyTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nEmpathy Skill: {EmpathyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2502,10 +2521,10 @@ namespace DigimonAndTamerCharacterSheets
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += IngenuityTrack.Value * 3;
+                TotalResult += IngenuityTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nWits Skill: {IngenuityTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nWits Skill: {IngenuityTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2519,7 +2538,7 @@ namespace DigimonAndTamerCharacterSheets
         private void textBox5_TextChanged_1(object sender, EventArgs e)
         {
             int SkillEducation = SocietyTrack.Value + TechnologyTrack.Value + OccultismTrack.Value;
-            int TotalEducation = (int)Math.Ceiling(SkillEducation / 2.0);
+            int TotalEducation = (int)Math.Ceiling(SkillEducation / 3.0);
             TotalEducation = TotalEducation + EducationIncrease;
 
             if (MealEducation == true)
@@ -2645,16 +2664,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += TechnologyTrack.Value * 3;
+                TotalResult += TechnologyTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nTechnology Skill: {TechnologyTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nTechnology Skill: {TechnologyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2770,16 +2789,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += OccultismTrack.Value * 3;
+                TotalResult += OccultismTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nOccultism Skill: {OccultismTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nOccultism Skill: {OccultismTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2895,16 +2914,16 @@ namespace DigimonAndTamerCharacterSheets
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
                 }
 
-                TotalResult += SocietyTrack.Value * 3;
+                TotalResult += SocietyTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nSociety Skill: {SocietyTrack.Value * 3}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Character Roll: {CoreRoll}\nSociety Skill: {SocietyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -3188,7 +3207,7 @@ namespace DigimonAndTamerCharacterSheets
 
             if (FreshEvolution == true)
             {
-                EvolutionFilePath = EvolutionFilePath.Replace("/Fresh/", "/Training/");
+                EvolutionFilePath = EvolutionFilePath.Replace("/Fresh/", "/Train/");
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -4421,7 +4440,9 @@ namespace DigimonAndTamerCharacterSheets
                         UltimateEvolution = false,
                         MegaEvolution = false,
                         ChampionPath = null!,
-                        EvolutionFilePath = null!
+                        EvolutionFilePath = null!,
+                        UpgradeSkills = true,
+                        UpgradePowers = true,
 
                     }));
 
@@ -5065,7 +5086,7 @@ namespace DigimonAndTamerCharacterSheets
             // Reincarnation Required
             if (ReincarnationTime == true)
             {
-                EvolutionFilePath = $"Resources/Digimon/Pre-Evolution/Fresh/{DigimonField.Text}.json";
+                EvolutionFilePath = $"Resources/Digi/Pre/Fresh/{DigimonField.Text.Substring(0, DigimonField.Text.IndexOf(" "))}.json";
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5277,7 +5298,7 @@ namespace DigimonAndTamerCharacterSheets
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digimon"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+            var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digi"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
             // Add options to Partner Selection options
             Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -5299,7 +5320,7 @@ namespace DigimonAndTamerCharacterSheets
                 if (DigimonFolders.Contains(DigimonPartner))
                 {
                     RecordRookie = Partner.Text;
-                    EvolutionFilePath = $"Resources/Digimon/{Partner.Text}/{Partner.Text}.json";
+                    EvolutionFilePath = $"Resources/Digi/{Partner.Text}/{Partner.Text}.json";
                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                     Partner.Items.Add(EvolutionAddress.DigimonName);
                     Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5618,7 +5639,7 @@ namespace DigimonAndTamerCharacterSheets
                 try
                 {
                     // Get all directories containing "mon" in their name
-                    var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digimon"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+                    var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digi"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
                     // Add options to Partner Selection options
                     Partner.Items.AddRange(DigimonFolders.ToArray());
@@ -5646,7 +5667,7 @@ namespace DigimonAndTamerCharacterSheets
                 if (CrapSeven.Checked)
                 {
                     MessageBox.Show($"Massive Care Failure. Failure Evolution Initiated...\n\nError... Error... \n\nError Overload! \n\n{Partner.Text} Fail Digivolve To Numemon.");
-                    EvolutionFilePath = "Resource/Digimon/Failed/Numemon.json";
+                    EvolutionFilePath = "Resources/Digi/Fail/Numemon.json";
                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                     Partner.Items.Add(EvolutionAddress.DigimonName);
                     Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5735,7 +5756,7 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     Digivolve.Text = "Digivolve";
 
-                    EvolutionFilePath = $"Resources/Digimon/{RecordRookie}/{RecordRookie}.json";
+                    EvolutionFilePath = $"Resources/Digi/{RecordRookie}/{RecordRookie}.json";
                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                     Partner.Items.Add(EvolutionAddress.DigimonName);
                     Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -5816,7 +5837,7 @@ namespace DigimonAndTamerCharacterSheets
 
 
                             StringBuilder EvolutionPath = new StringBuilder();
-                            EvolutionPath.Append("Resources/Digimon");
+                            EvolutionPath.Append("Resources/Digi");
 
                             if (DigivolutionRoll > DarkCheck)
                             {
@@ -5940,7 +5961,7 @@ namespace DigimonAndTamerCharacterSheets
                             {
                                 MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
 
-                                EvolutionFilePath = $"Resources/Digimon/Failed/Champion/{EvolutionAddress.DigimonField}.json";
+                                EvolutionFilePath = $"Resources/Digi/Fail/Champion/{EvolutionAddress.DigimonField.Substring(0, DigimonField.Text.IndexOf(" "))}.json";
                                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                                 Partner.Items.Add(EvolutionAddress.DigimonName);
                                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -6134,7 +6155,7 @@ namespace DigimonAndTamerCharacterSheets
 
             if (TrainingEvolution == true)
             {
-                EvolutionFilePath = $"Resources/Digimon/{RecordRookie}/{RecordRookie}.json";
+                EvolutionFilePath = $"Resources/Digi/{RecordRookie}/{RecordRookie}.json";
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
@@ -8022,6 +8043,8 @@ namespace DigimonAndTamerCharacterSheets
             {
                 HaveMeal.Enabled = false;
             }
+
+            SaveCharacterInformation();
         }
 
         private void DigiAttackRoll_TextChanged(object sender, EventArgs e)

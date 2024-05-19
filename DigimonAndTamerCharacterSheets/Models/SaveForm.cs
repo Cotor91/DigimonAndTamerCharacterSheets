@@ -101,4 +101,6 @@ internal class SaveForm
     public bool ChampionEvolution { get; set; } = false!;
     public bool UltimateEvolution { get; set; } = false!;
     public bool MegaEvolution { get; set; } = false!;
+    public bool UpgradeSkills { get; set; } = false!;
+    public bool UpgradePowers { get; set; } = false!;
 }

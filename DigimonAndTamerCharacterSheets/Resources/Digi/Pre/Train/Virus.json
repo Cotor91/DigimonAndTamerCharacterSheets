@@ -11,7 +11,7 @@
   "ResistanceElement": "________",
 
   "FreshEvolution": false,
-  "TrainingEvolution": false,
+  "TrainingEvolution": true,
   "RookieEvolution": false,
   "ChampionEvolution": false,
   "UltimateEvolution": false,

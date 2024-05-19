@@ -34,7 +34,7 @@
     <None Include="Resources\Courage.png" />
     <None Include="Resources\Compromise.png" />
     <None Include="Resources\Clarity.png" />
-    <Content Include="Resources\Digimon\**\*.*" > 
+    <Content Include="Resources\Digi\**\*.*" > 
   <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 </Content>
   </ItemGroup>

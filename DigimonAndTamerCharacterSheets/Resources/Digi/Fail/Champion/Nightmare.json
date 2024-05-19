@@ -1,5 +1,5 @@
 {
-  "DigimonName": "",
+  "DigimonName": "Burpmon",
   "DigimonField": "________",
   "DigitalFrame": "________",
   "CoreHPMax": "_____",
@@ -10,11 +10,13 @@
   "WeaknessElement": "________",
   "ResistanceElement": "________",
 
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
   "RookieEvolution": false,
-  "ChampionEvolution": false,
+  "ChampionEvolution": true,
   "UltimateEvolution": false,
   "MegaEvolution": false,
-  "DarkEvolution": false,
+  "DarkEvolution": true,
 
   "CurrentQuirkOne": "_",
   "CurrentQuirkTwo": "_",

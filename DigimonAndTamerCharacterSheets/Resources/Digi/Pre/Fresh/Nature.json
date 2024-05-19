@@ -10,7 +10,7 @@
   "WeaknessElement": "________",
   "ResistanceElement": "________",
 
-  "FreshEvolution": false,
+  "FreshEvolution": true,
   "TrainingEvolution": false,
   "RookieEvolution": false,
   "ChampionEvolution": false,
