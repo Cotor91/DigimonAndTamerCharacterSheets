@@ -1544,10 +1544,11 @@
             label64.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label64.Location = new Point(56, 10);
             label64.Name = "label64";
-            label64.Size = new Size(56, 20);
+            label64.Size = new Size(53, 20);
             label64.TabIndex = 322;
-            label64.Text = "Save:";
+            label64.Text = "Safe:";
             label64.TextAlign = ContentAlignment.TopCenter;
+            label64.Click += label64_Click;
             // 
             // label65
             // 
@@ -1555,9 +1556,9 @@
             label65.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label65.Location = new Point(56, 167);
             label65.Name = "label65";
-            label65.Size = new Size(56, 20);
+            label65.Size = new Size(53, 20);
             label65.TabIndex = 321;
-            label65.Text = "Save:";
+            label65.Text = "Safe:";
             label65.TextAlign = ContentAlignment.TopCenter;
             // 
             // label67
@@ -1566,10 +1567,11 @@
             label67.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label67.Location = new Point(55, 326);
             label67.Name = "label67";
-            label67.Size = new Size(56, 20);
+            label67.Size = new Size(53, 20);
             label67.TabIndex = 320;
-            label67.Text = "Save:";
+            label67.Text = "Safe:";
             label67.TextAlign = ContentAlignment.TopCenter;
+            label67.Click += label67_Click_1;
             // 
             // label68
             // 
@@ -1577,9 +1579,9 @@
             label68.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label68.Location = new Point(55, 643);
             label68.Name = "label68";
-            label68.Size = new Size(56, 20);
+            label68.Size = new Size(53, 20);
             label68.TabIndex = 319;
-            label68.Text = "Save:";
+            label68.Text = "Safe:";
             label68.TextAlign = ContentAlignment.TopCenter;
             // 
             // label69
@@ -1588,9 +1590,9 @@
             label69.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label69.Location = new Point(55, 483);
             label69.Name = "label69";
-            label69.Size = new Size(56, 20);
+            label69.Size = new Size(53, 20);
             label69.TabIndex = 318;
-            label69.Text = "Save:";
+            label69.Text = "Safe:";
             label69.TextAlign = ContentAlignment.TopCenter;
             // 
             // label4
@@ -3558,9 +3560,9 @@
             label33.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label33.Location = new Point(445, 126);
             label33.Name = "label33";
-            label33.Size = new Size(56, 20);
+            label33.Size = new Size(53, 20);
             label33.TabIndex = 312;
-            label33.Text = "Save:";
+            label33.Text = "Safe:";
             label33.TextAlign = ContentAlignment.TopCenter;
             label33.Click += label33_Click_1;
             // 
@@ -3570,10 +3572,11 @@
             label51.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label51.Location = new Point(445, 283);
             label51.Name = "label51";
-            label51.Size = new Size(56, 20);
+            label51.Size = new Size(53, 20);
             label51.TabIndex = 310;
-            label51.Text = "Save:";
+            label51.Text = "Safe:";
             label51.TextAlign = ContentAlignment.TopCenter;
+            label51.Click += label51_Click;
             // 
             // label44
             // 
@@ -3581,10 +3584,11 @@
             label44.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label44.Location = new Point(444, 442);
             label44.Name = "label44";
-            label44.Size = new Size(56, 20);
+            label44.Size = new Size(53, 20);
             label44.TabIndex = 309;
-            label44.Text = "Save:";
+            label44.Text = "Safe:";
             label44.TextAlign = ContentAlignment.TopCenter;
+            label44.Click += label44_Click;
             // 
             // label31
             // 
@@ -3592,10 +3596,11 @@
             label31.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label31.Location = new Point(444, 759);
             label31.Name = "label31";
-            label31.Size = new Size(56, 20);
+            label31.Size = new Size(53, 20);
             label31.TabIndex = 308;
-            label31.Text = "Save:";
+            label31.Text = "Safe:";
             label31.TextAlign = ContentAlignment.TopCenter;
+            label31.Click += label31_Click_2;
             // 
             // label32
             // 
@@ -3603,10 +3608,11 @@
             label32.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label32.Location = new Point(444, 599);
             label32.Name = "label32";
-            label32.Size = new Size(56, 20);
+            label32.Size = new Size(53, 20);
             label32.TabIndex = 306;
-            label32.Text = "Save:";
+            label32.Text = "Safe:";
             label32.TextAlign = ContentAlignment.TopCenter;
+            label32.Click += label32_Click_1;
             // 
             // EducationMeal
             // 

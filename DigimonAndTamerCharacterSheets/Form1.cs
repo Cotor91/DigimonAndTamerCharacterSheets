@@ -509,6 +509,9 @@ namespace DigimonAndTamerCharacterSheets
                 Partner.Items.Remove(RecordUltimate);
                 Partner.Items.Remove(RecordMega);
 
+
+                MessageBox.Show($"New scene, a short time later!");
+
             }
 
             // Calculate the total of the Strength Skills
@@ -3213,6 +3216,7 @@ namespace DigimonAndTamerCharacterSheets
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
                 DigivolutionDetails();
 
+                MessageBox.Show($"Your partner has reached In-Training level successfully and become {Partner.Text}.");
             }
 
             // Feed the meal type
@@ -3238,11 +3242,19 @@ namespace DigimonAndTamerCharacterSheets
                     foreach (string item in MeatQuantity)
                     {
                         // Trim the front to remove "*" and everything before it
-                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                         // Trim the back to remove ")" and everything after it
-                        int BracketPlace = ExistHolster.IndexOf(')');
-                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        if (ExistHolster.Contains(')'))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(')');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
+                        else if (ExistHolster.Contains(','))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(',');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
 
                         // Get the Quantity
                         int.TryParse(ExistHolster, out int TheQuantity);
@@ -3263,8 +3275,16 @@ namespace DigimonAndTamerCharacterSheets
                     // Trim the front to remove "*" and everything before it
                     RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
                     // Trim the back to remove ")" and everything after it
-                    int ClosingBracket = RewriteValue.IndexOf(')');
-                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    if (RewriteValue.Contains(')'))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(')');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
+                    else if (RewriteValue.Contains(','))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(',');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
                     // Convert to numeric value and reduce
                     int.TryParse(RewriteValue, out int Reduction);
 
@@ -3278,7 +3298,7 @@ namespace DigimonAndTamerCharacterSheets
                         string StartValue = MeatQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
 
                         // Extract everything after the number
-                        string EndValue = MeatQuantity[HighestQuantity].Substring(MeatQuantity[HighestQuantity].IndexOf(')'));
+                        string EndValue = "),";
 
                         // Build the string anew
                         StringBuilder NewValue = new StringBuilder();
@@ -3319,11 +3339,19 @@ namespace DigimonAndTamerCharacterSheets
                     foreach (string item in VeggiesQuantity)
                     {
                         // Trim the front to remove "*" and everything before it
-                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                         // Trim the back to remove ")" and everything after it
-                        int BracketPlace = ExistHolster.IndexOf(')');
-                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        if (ExistHolster.Contains(')'))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(')');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
+                        else if (ExistHolster.Contains(','))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(',');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
 
                         // Get the Quantity
                         int.TryParse(ExistHolster, out int TheQuantity);
@@ -3342,10 +3370,18 @@ namespace DigimonAndTamerCharacterSheets
 
                     // Extract the number
                     // Trim the front to remove "*" and everything before it
-                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 1);
                     // Trim the back to remove ")" and everything after it
-                    int ClosingBracket = RewriteValue.IndexOf(')');
-                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    if (RewriteValue.Contains(')'))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(')');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
+                    else if (RewriteValue.Contains(','))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(',');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
                     // Convert to numeric value and reduce
                     int.TryParse(RewriteValue, out int Reduction);
 
@@ -3359,7 +3395,7 @@ namespace DigimonAndTamerCharacterSheets
                         string StartValue = VeggiesQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
 
                         // Extract everything after the number
-                        string EndValue = VeggiesQuantity[HighestQuantity].Substring(VeggiesQuantity[HighestQuantity].IndexOf(')'));
+                        string EndValue = "),";
 
                         // Build the string anew
                         StringBuilder NewValue = new StringBuilder();
@@ -3399,11 +3435,19 @@ namespace DigimonAndTamerCharacterSheets
                     foreach (string item in BreadQuantity)
                     {
                         // Trim the front to remove "*" and everything before it
-                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                         // Trim the back to remove ")" and everything after it
-                        int BracketPlace = ExistHolster.IndexOf(')');
-                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        if (ExistHolster.Contains(')'))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(')');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
+                        else if (ExistHolster.Contains(','))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(',');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
 
                         // Get the Quantity
                         int.TryParse(ExistHolster, out int TheQuantity);
@@ -3422,10 +3466,18 @@ namespace DigimonAndTamerCharacterSheets
 
                     // Extract the number
                     // Trim the front to remove "*" and everything before it
-                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
+                    RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 1);
                     // Trim the back to remove ")" and everything after it
-                    int ClosingBracket = RewriteValue.IndexOf(')');
-                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    if (RewriteValue.Contains(')'))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(')');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
+                    else if (RewriteValue.Contains(','))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(',');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
                     // Convert to numeric value and reduce
                     int.TryParse(RewriteValue, out int Reduction);
 
@@ -3439,7 +3491,7 @@ namespace DigimonAndTamerCharacterSheets
                         string StartValue = BreadQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
 
                         // Extract everything after the number
-                        string EndValue = BreadQuantity[HighestQuantity].Substring(BreadQuantity[HighestQuantity].IndexOf(')'));
+                        string EndValue = "),";
 
                         // Build the string anew
                         StringBuilder NewValue = new StringBuilder();
@@ -3479,11 +3531,19 @@ namespace DigimonAndTamerCharacterSheets
                     foreach (string item in FruitQuantity)
                     {
                         // Trim the front to remove "*" and everything before it
-                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                         // Trim the back to remove ")" and everything after it
-                        int BracketPlace = ExistHolster.IndexOf(')');
-                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        if (ExistHolster.Contains(')'))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(')');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
+                        else if (ExistHolster.Contains(','))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(',');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
 
                         // Get the Quantity
                         int.TryParse(ExistHolster, out int TheQuantity);
@@ -3504,8 +3564,16 @@ namespace DigimonAndTamerCharacterSheets
                     // Trim the front to remove "*" and everything before it
                     RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
                     // Trim the back to remove ")" and everything after it
-                    int ClosingBracket = RewriteValue.IndexOf(')');
-                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    if (RewriteValue.Contains(')'))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(')');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
+                    else if (RewriteValue.Contains(','))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(',');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
                     // Convert to numeric value and reduce
                     int.TryParse(RewriteValue, out int Reduction);
 
@@ -3519,7 +3587,7 @@ namespace DigimonAndTamerCharacterSheets
                         string StartValue = FruitQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
 
                         // Extract everything after the number
-                        string EndValue = FruitQuantity[HighestQuantity].Substring(FruitQuantity[HighestQuantity].IndexOf(')'));
+                        string EndValue = "),";
 
                         // Build the string anew
                         StringBuilder NewValue = new StringBuilder();
@@ -3559,11 +3627,19 @@ namespace DigimonAndTamerCharacterSheets
                     foreach (string item in FishQuantity)
                     {
                         // Trim the front to remove "*" and everything before it
-                        string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                        string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                         // Trim the back to remove ")" and everything after it
-                        int BracketPlace = ExistHolster.IndexOf(')');
-                        ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        if (ExistHolster.Contains(')'))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(')');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
+                        else if (ExistHolster.Contains(','))
+                        {
+                            int BracketPlace = ExistHolster.IndexOf(',');
+                            ExistHolster = ExistHolster.Substring(0, BracketPlace);
+                        }
 
                         // Get the Quantity
                         int.TryParse(ExistHolster, out int TheQuantity);
@@ -3584,8 +3660,16 @@ namespace DigimonAndTamerCharacterSheets
                     // Trim the front to remove "*" and everything before it
                     RewriteValue = RewriteValue.Substring(RewriteValue.IndexOf("*") + 2);
                     // Trim the back to remove ")" and everything after it
-                    int ClosingBracket = RewriteValue.IndexOf(')');
-                    RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    if (RewriteValue.Contains(')'))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(')');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
+                    else if (RewriteValue.Contains(','))
+                    {
+                        int ClosingBracket = RewriteValue.IndexOf(',');
+                        RewriteValue = RewriteValue.Substring(0, ClosingBracket);
+                    }
                     // Convert to numeric value and reduce
                     int.TryParse(RewriteValue, out int Reduction);
 
@@ -3599,7 +3683,7 @@ namespace DigimonAndTamerCharacterSheets
                         string StartValue = FishQuantity[HighestQuantity].Substring(0, indexOfClosingBracket);
 
                         // Extract everything after the number
-                        string EndValue = FishQuantity[HighestQuantity].Substring(FishQuantity[HighestQuantity].IndexOf(')'));
+                        string EndValue = "),";
 
                         // Build the string anew
                         StringBuilder NewValue = new StringBuilder();
@@ -3634,6 +3718,8 @@ namespace DigimonAndTamerCharacterSheets
                 DigimonEducation.Text = "";
                 TamerDigimon.SelectedIndex = 5;
                 CareMistakeButton.PerformClick();
+
+                MessageBox.Show($"Please stop let your partner starve, that was a big care-mistake.");
             };
 
             if (AutoMeal == true)
@@ -4237,7 +4323,14 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton14_CheckedChanged_3(object sender, EventArgs e)
         {
-            Digivolve.Enabled = true;
+            if (DarkEvolution == true)
+            {
+                Digivolve.Enabled = false;
+            }
+            else
+            {
+                Digivolve.Enabled = true; 
+            }
 
             if (ChampionEvolution == true && ChampionSelect.Checked == true)
             {
@@ -4252,7 +4345,14 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton12_CheckedChanged_2(object sender, EventArgs e)
         {
-            Digivolve.Enabled = true;
+            if (DarkEvolution == true)
+            {
+                Digivolve.Enabled = false;
+            }
+            else
+            {
+                Digivolve.Enabled = true;
+            }
 
             if (UltimateEvolution == true && UltimateSelect.Checked == true)
             {
@@ -4266,7 +4366,14 @@ namespace DigimonAndTamerCharacterSheets
 
         private void radioButton21_CheckedChanged(object sender, EventArgs e)
         {
-            Digivolve.Enabled = true;
+            if (DarkEvolution == true)
+            {
+                Digivolve.Enabled = false;
+            }
+            else
+            {
+                Digivolve.Enabled = true;
+            }
 
             if (MegaEvolution == true && MegaSelect.Checked == true)
             {
@@ -5285,12 +5392,14 @@ namespace DigimonAndTamerCharacterSheets
             DigimonVibes.Text = "";
             DigimonWits.Text = "";
             DigimonEducation.Text = "";
+            DigiAttackRoll.Text = "";
 
             // Darkest Consequences
             if (DarkEvolution == true)
             {
                 CrestSelection.SelectedIndex = -1;
                 CrestSelection.Enabled = true;
+                Digivolve.Enabled = false;
             }
         }
 
@@ -5417,7 +5526,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
 
 
-                
+
 
             }
             if (Partner.Text == "")
@@ -5530,7 +5639,9 @@ namespace DigimonAndTamerCharacterSheets
                 CoreHPNow.Text = MaxHealth.Text;
             }
 
+            ModifyCoreHP.Text = "";
 
+            SaveCharacterInformation();
         }
 
 
@@ -5633,6 +5744,18 @@ namespace DigimonAndTamerCharacterSheets
                 DigimonWits.Text = "";
                 DigimonEducation.Text = "";
 
+                // Refresh Care Mistakes
+                ToiletOne.Checked = false;
+                ToiletTwo.Checked = false;
+                ToiletThree.Checked = false;
+                CrapOne.Checked = false;
+                CrapTwo.Checked = false;
+                CrapThree.Checked = false;
+                CrapFour.Checked = false;
+                CrapFive.Checked = false;
+                CrapSix.Checked = false;
+                CrapSeven.Checked = false;
+
                 //Reset the options to default
                 Partner.Items.Clear();
 
@@ -5656,6 +5779,8 @@ namespace DigimonAndTamerCharacterSheets
 
                 SaveCharacterInformation();
             }
+
+            ModifyCoreHP.Text = "";
 
             SaveCharacterInformation();
         }
@@ -5764,6 +5889,8 @@ namespace DigimonAndTamerCharacterSheets
                     Partner.Items.Remove(RecordUltimate);
                     Partner.Items.Remove(RecordMega);
                     DigivolutionDetails();
+
+                    MessageBox.Show($"Reverted to {Partner.Text} successfully.");
                 }
                 else
                 {
@@ -5844,107 +5971,110 @@ namespace DigimonAndTamerCharacterSheets
 
                                 if (ChampionLevel.Text == "________")
                                 {
-                                    
-                                        EvolutionPath.Append("/");
-                                        EvolutionPath.Append(Partner.Text);
-                                        EvolutionPath.Append("/");
-                                        EvolutionPath.Append("Champion/");
 
-                                        if (maxDiet == Diet.Strength)
-                                        {
-                                            /*
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
-                                            Partner.Items.Add("Greymon");
-                                            Partner.SelectedItem = "Greymon";
-                                            ChampionLevel.Text = "Greymon";
-                                            */
-                                            FreshEvolution = false;
-                                            TrainingEvolution = false;
-                                            RookieEvolution = false;
-                                            ChampionEvolution = true;
-                                            UltimateEvolution = false;
-                                            MegaEvolution = false;
-                                            EvolutionPath.Append("Strength");
+                                    EvolutionPath.Append("/");
+                                    EvolutionPath.Append(Partner.Text);
+                                    EvolutionPath.Append("/");
+                                    EvolutionPath.Append("Champion/");
 
-                                        }
-                                        else if (maxDiet == Diet.Agility)
-                                        {
-                                            /*
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
-                                            Partner.Items.Add("Tuskmon");
-                                            Partner.SelectedItem = "Tuskmon";
-                                            ChampionLevel.Text = "Tuskmon";
-                                            */
-                                            FreshEvolution = false;
-                                            TrainingEvolution = false;
-                                            RookieEvolution = false;
-                                            ChampionEvolution = true;
-                                            UltimateEvolution = false;
-                                            MegaEvolution = false;
-                                            EvolutionPath.Append("Agility");
-                                        }
-                                        else if (maxDiet == Diet.Vibes)
-                                        {
-                                            /*
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
-                                            Partner.Items.Add("Growlmon");
-                                            Partner.SelectedItem = ";
-                                            ChampionLevel.Text = "Growlmon";
-                                            */
-                                            FreshEvolution = false;
-                                            TrainingEvolution = false;
-                                            RookieEvolution = false;
-                                            ChampionEvolution = true;
-                                            UltimateEvolution = false;
-                                            MegaEvolution = false;
-                                            EvolutionPath.Append("Vibes");
-                                        }
-                                        else if (maxDiet == Diet.Wits)
-                                        {
-                                            /*
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
-                                            Partner.Items.Add("Flarizamon");
-                                            Partner.SelectedItem = "Flarizamon";
-                                            ChampionLevel.Text = "Flarizamon";
-                                            */
-                                            FreshEvolution = false;
-                                            TrainingEvolution = false;
-                                            RookieEvolution = false;
-                                            ChampionEvolution = true;
-                                            UltimateEvolution = false;
-                                            MegaEvolution = false;
-                                            EvolutionPath.Append("Wits");
-                                        }
-                                        else if (maxDiet == Diet.Education)
-                                        {
-                                            /*
-                                            MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
-                                            Partner.Items.Add("Tyrannomon");
-                                            Partner.SelectedItem = "Tyrannomon";
-                                            ChampionLevel.Text = "Tyrannomon"; 
-                                            */
-                                            FreshEvolution = false;
-                                            TrainingEvolution = false;
-                                            RookieEvolution = false;
-                                            ChampionEvolution = true;
-                                            UltimateEvolution = false;
-                                            MegaEvolution = false;
-                                            EvolutionPath.Append("Education");
-                                        }
+                                    if (maxDiet == Diet.Strength)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
+                                        Partner.Items.Add("Greymon");
+                                        Partner.SelectedItem = "Greymon";
+                                        ChampionLevel.Text = "Greymon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Strength");
+
+                                    }
+                                    else if (maxDiet == Diet.Agility)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
+                                        Partner.Items.Add("Tuskmon");
+                                        Partner.SelectedItem = "Tuskmon";
+                                        ChampionLevel.Text = "Tuskmon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Agility");
+                                    }
+                                    else if (maxDiet == Diet.Vibes)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
+                                        Partner.Items.Add("Growlmon");
+                                        Partner.SelectedItem = ";
+                                        ChampionLevel.Text = "Growlmon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Vibes");
+                                    }
+                                    else if (maxDiet == Diet.Wits)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
+                                        Partner.Items.Add("Flarizamon");
+                                        Partner.SelectedItem = "Flarizamon";
+                                        ChampionLevel.Text = "Flarizamon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Wits");
+                                    }
+                                    else if (maxDiet == Diet.Education)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
+                                        Partner.Items.Add("Tyrannomon");
+                                        Partner.SelectedItem = "Tyrannomon";
+                                        ChampionLevel.Text = "Tyrannomon"; 
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        ChampionEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Education");
+                                    }
 
 
-                                        EvolutionPath.Append(".json");
-                                        EvolutionFilePath = EvolutionPath.ToString();
-                                        EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
-                                        Partner.Items.Add(EvolutionAddress.DigimonName);
-                                        Partner.SelectedItem = EvolutionAddress.DigimonName;
-                                        if (RookieEvolution == false)
-                                        {
-                                            ChampionLevel.Text = EvolutionAddress.DigimonName;
-                                        }
-                                        DigivolutionDetails();
+                                    EvolutionPath.Append(".json");
+                                    EvolutionFilePath = EvolutionPath.ToString();
+                                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                    if (RookieEvolution == false)
+                                    {
+                                        ChampionLevel.Text = EvolutionAddress.DigimonName;
+                                    }
+                                    DigivolutionDetails();
 
                                     ChampionPath = EvolutionPath.ToString();
+
+
+                                    MessageBox.Show($"New Evolution Unlocked!\n Digivolution to {Partner.Text} successful.");
                                 }
                                 else
                                 {
@@ -5959,14 +6089,14 @@ namespace DigimonAndTamerCharacterSheets
                             }
                             else
                             {
-                                MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: Numemon");
-
                                 EvolutionFilePath = $"Resources/Digi/Fail/Champion/{EvolutionAddress.DigimonField.Substring(0, DigimonField.Text.IndexOf(" "))}.json";
                                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                                 Partner.Items.Add(EvolutionAddress.DigimonName);
                                 Partner.SelectedItem = EvolutionAddress.DigimonName;
                                 ChampionLevel.Text = "________";
                                 DigivolutionDetails();
+
+                                MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: {Partner.Text}.");
 
                             }
                         }
@@ -6073,18 +6203,33 @@ namespace DigimonAndTamerCharacterSheets
             // Unlock Champion Evolutions
             if (DayCount > 1 && LevelCount > 1)
             {
+                if (ChampionSelect.Enabled == false)
+                {
+                    MessageBox.Show($"You unlocked the ability to evolve your partner to Champion!");
+                }
+
                 ChampionSelect.Enabled = true;
             }
 
             // Unlock Ultimate Evolutions
             if (DayCount > 6 && LevelCount > 7)
             {
+                if (UltimateSelect.Enabled == false)
+                {
+                    MessageBox.Show($"You unlocked the ability to evolve your partner to Ultimate!");
+                }
+
                 UltimateSelect.Enabled = true;
             }
 
             // Unlock Mega Evolutions
             if (DayCount > 13 && LevelCount > 15)
             {
+                if (MegaSelect.Enabled == false)
+                {
+                    MessageBox.Show($"You unlocked the ability to evolve your partner to Mega!");
+                }
+
                 MegaSelect.Enabled = true;
             }
 
@@ -6147,20 +6292,31 @@ namespace DigimonAndTamerCharacterSheets
                 StratPoints.Text = "";
             }
 
+
+            MessageBox.Show($"Your bond with your partner has strengthened!");
+
             SaveCharacterInformation();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
-            if (TrainingEvolution == true)
+            if (TrainingEvolution == true || FreshEvolution == true)
             {
+                if (FreshEvolution == true)
+                {
+                    CareMistakeButton.PerformClick();
+
+                    MessageBox.Show($"Please stop let your baby starve, that was a big care-mistake.");
+                }
+
                 EvolutionFilePath = $"Resources/Digi/{RecordRookie}/{RecordRookie}.json";
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
                 DigivolutionDetails();
 
+                MessageBox.Show($"Your partner has reached Rookie level successfully and become {Partner.Text}.");
             }
 
             if (Partner.Text != "")
@@ -6172,6 +6328,9 @@ namespace DigimonAndTamerCharacterSheets
                 Day.Text = DayCount.ToString();
             };
 
+
+
+            MessageBox.Show($"Good morning sunshine, its a brand new day!");
 
             if (InjuryFive.Checked == true)
             {
@@ -6608,48 +6767,6 @@ namespace DigimonAndTamerCharacterSheets
         }
 
 
-        /*
-        public void RewordInventory()
-        {
-            // Read in text, splitting it at ",", and put them into an array
-            string InventoryItems = ReadableInventory.Text;
-            InventoryItems = InventoryItems.Replace("Strength", "(Strength");
-            InventoryItems = InventoryItems.Replace("Agility", "(Agility");
-            InventoryItems = InventoryItems.Replace("Vibes", "(Vibes");
-            InventoryItems = InventoryItems.Replace("Wits", "(Wits");
-            InventoryItems = InventoryItems.Replace("Education", "(Education");
-            InventoryItems = InventoryItems.Replace("Meat", "(Meat");
-            InventoryItems = InventoryItems.Replace("Veg", "(Veg");
-            InventoryItems = InventoryItems.Replace("Bread", "(Bread");
-            InventoryItems = InventoryItems.Replace("Fruit", "(Fruit");
-            InventoryItems = InventoryItems.Replace("Fish", "(Fish");
-            InventoryItems = InventoryItems.Replace("((", "(");
-            InventoryItems = InventoryItems.Replace("0 ", "0), ");
-            InventoryItems = InventoryItems.Replace("0,", "0),");
-            InventoryItems = InventoryItems.Replace("1 ", "1), ");
-            InventoryItems = InventoryItems.Replace("1,", "1),");
-            InventoryItems = InventoryItems.Replace("2 ", "2), ");
-            InventoryItems = InventoryItems.Replace("2,", "2),");
-            InventoryItems = InventoryItems.Replace("3 ", "3), ");
-            InventoryItems = InventoryItems.Replace("3,", "3),");
-            InventoryItems = InventoryItems.Replace("4 ", "4), ");
-            InventoryItems = InventoryItems.Replace("4,", "4),");
-            InventoryItems = InventoryItems.Replace("5 ", "5), ");
-            InventoryItems = InventoryItems.Replace("5,", "5),");
-            InventoryItems = InventoryItems.Replace("6 ", "6), ");
-            InventoryItems = InventoryItems.Replace("6,", "6),");
-            InventoryItems = InventoryItems.Replace("7 ", "7), ");
-            InventoryItems = InventoryItems.Replace("7,", "7),");
-            InventoryItems = InventoryItems.Replace("8 ", "8), ");
-            InventoryItems = InventoryItems.Replace("8,", "8),");
-            InventoryItems = InventoryItems.Replace("9 ", "9), ");
-            InventoryItems = InventoryItems.Replace("9,", "9),");
-            InventoryItems = InventoryItems.Replace("))", ")");
-            ReadableInventory.Text = InventoryItems;
-        }
-        */
-
-
         public void InventoryUpdate()
         {
             // Read in text, splitting it at ",", and put them into an array
@@ -7040,7 +7157,7 @@ namespace DigimonAndTamerCharacterSheets
             foreach (string item in MeatQuantity)
             {
                 // Trim the front to remove "*" and everything before it
-                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                 // Trim the back to remove ")" and everything after it
                 if (item.Contains(")"))
@@ -7060,7 +7177,7 @@ namespace DigimonAndTamerCharacterSheets
             foreach (string item in VeggiesQuantity)
             {
                 // Trim the front to remove "*" and everything before it
-                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                 // Trim the back to remove ")" and everything after it
                 if (item.Contains(")"))
@@ -7080,7 +7197,7 @@ namespace DigimonAndTamerCharacterSheets
             foreach (string item in BreadQuantity)
             {
                 // Trim the front to remove "*" and everything before it
-                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                 // Trim the back to remove ")" and everything after it
                 if (item.Contains(")"))
@@ -7100,7 +7217,7 @@ namespace DigimonAndTamerCharacterSheets
             foreach (string item in FruitQuantity)
             {
                 // Trim the front to remove "*" and everything before it
-                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                 // Trim the back to remove ")" and everything after it
                 if (item.Contains(")"))
@@ -7120,7 +7237,7 @@ namespace DigimonAndTamerCharacterSheets
             foreach (string item in FishQuantity)
             {
                 // Trim the front to remove "*" and everything before it
-                string ExistHolster = item.Substring(item.IndexOf("*") + 2);
+                string ExistHolster = item.Substring(item.IndexOf("*") + 1);
 
                 // Trim the back to remove ")" and everything after it
                 if (item.Contains(")"))
@@ -8312,6 +8429,36 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void DigiRollPlusFour_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label31_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label32_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label44_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label51_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label64_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label67_Click_1(object sender, EventArgs e)
         {
 
         }

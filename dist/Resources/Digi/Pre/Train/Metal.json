@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Kapurimon",
+  "DigimonField": "Metal Empire",
+  "DigitalFrame": "3",
+  "CoreHPMax": "10",
+  "HPLevelMod": 2,
+  "MoveSpeed": "1",
+
+  "Attribute": "Free",
+  "WeaknessElement": "Free",
+  "ResistanceElement": "Free",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": true,
+  "RookieEvolution": false,
+  "ChampionEvolution": false,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "_",
+  "CurrentQuirkTwo": "_",
+  "InheritableQuirkOne": "_",
+  "InheritableQuirkTwo": "_",
+  "InheritableQuirkThree": "_",
+
+  "BasicAttack": "Basic",
+  "StandardAttack": "Standard",
+  "SpecialAttack": "Special",
+  "SuperAttack": "Super",
+
+  "BasicDiceMin": "0",
+  "BasicDiceMax": "000",
+  "StandardDiceMin": "0",
+  "StandardDiceMax": "000",
+  "SpecialDiceMin": "0",
+  "SpecialDiceMax": "000",
+  "SuperDiceMin": "0",
+  "SuperDiceMax": "000",
+
+  "BasicElement": "Element",
+  "StandardElement": "Element",
+  "SpecialElement": "Element",
+  "SuperElement": "Element",
+
+  "BasicHardFail": "___",
+  "BasicFail": "___",
+  "BasicPartFail": "___",
+  "BasicPartHit": "___",
+  "BasicHit": "___",
+  "BasicHardHit": "___",
+
+  "StandardHardFail": "___",
+  "StandardFail": "___",
+  "StandardPartFail": "___",
+  "StandardPartHit": "___",
+  "StandardHit": "___",
+  "StandardHardHit": "___",
+
+  "SpecialHardFail": "___",
+  "SpecialFail": "___",
+  "SpecialPartFail": "___",
+  "SpecialPartHit": "___",
+  "SpecialHit": "___",
+  "SpecialHardHit": "___",
+
+  "SuperHardFail": "___",
+  "SuperFail": "___",
+  "SuperPartFail": "___",
+  "SuperPartHit": "___",
+  "SuperHit": "___",
+  "SuperHardHit": "___"
+}

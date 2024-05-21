@@ -1,0 +1,71 @@
+{
+  "DigimonName": "Commandramon",
+  "DigimonField": "Metal Empire",
+  "DigitalFrame": "8",
+  "CoreHPMax": "25",
+  "HPLevelMod": 5,
+  "MoveSpeed": "3",
+
+  "Attribute": "Virus",
+  "WeaknessElement": "Nature",
+  "ResistanceElement": "Piercing",
+
+  "RookieEvolution": true,
+  "ChampionEvolution": false,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Bomber Buddy: Spend 1 Bond to borrow a DCD Bomb.",
+  "CurrentQuirkTwo": "Radio Operator: Spend 1 Bond to send a 5 word message to a Digimon.",
+  "InheritableQuirkOne": "Cover-Fire Guard: All nearby enemy attack rolls are nerfed.",
+  "InheritableQuirkTwo": "Investigation and Reflex: Roll for Investigation or Reflex Checks.",
+  "InheritableQuirkThree": "Iron Spirit: Increase Digital Frame by 1, then again each evolution.",
+
+  "BasicAttack": "Helmet Bash",
+  "StandardAttack": "M16 Assassin",
+  "SpecialAttack": "DCD Bomb",
+  "SuperAttack": "Sniper Tag",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slamming - Contact",
+  "StandardElement": "Piercing - Range",
+  "SpecialElement": "Metal - Range",
+  "SuperElement": "Piercing - Range",
+
+  "BasicHardFail": "User can't attack next turn. (stunned)",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "Mutually unable to attack next turn. (stunned)",
+  "BasicPartHit": "-2HP on target.",
+  "BasicHit": "Mutually stunned. -2HP on target.",
+  "BasicHardHit": "Target stunned. -5HP on target.",
+
+  "StandardHardFail": "User can't attack next turn. (Stunned)",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "Nearby enemies target user next turn. (baited)",
+  "StandardPartHit": "-1HP to target and 2 target allies near them.",
+  "StandardHit": "Nearby enemies baited. -1HP to target and 2 allies.",
+  "StandardHardHit": "All enemies baited. -2HP to target and all allies.",
+
+  "SpecialHardFail": "-3HP to user and 1 user ally near them.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "-3HP to target and 1 user ally near them.",
+  "SpecialPartHit": "-3HP to target.",
+  "SpecialHit": "-3HP to target and 1 target ally near them.",
+  "SpecialHardHit": "-6HP to target and -3HP to 2 nearby allies.",
+
+  "SuperHardFail": "User's next attack roll is nerfed.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "Next  on target is buffed.",
+  "SuperPartHit": "-3HP to target.",
+  "SuperHit": "-3HP to target. Next attack on target is buffed.",
+  "SuperHardHit": "-6HP to target. Buff s on target this round."
+}

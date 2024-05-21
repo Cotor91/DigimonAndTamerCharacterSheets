@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Flarizamon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "13",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Water",
+  "ResistanceElement": "Cold",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "",
+  "CurrentQuirkTwo": "",
+  "InheritableQuirkOne": "",
+  "InheritableQuirkTwo": "Wits Champion: Same perks as a Wits Meal.",
+  "InheritableQuirkThree": "",
+
+  "BasicAttack": "Fire Breath",
+  "StandardAttack": "Flame Hit",
+  "SpecialAttack": "Fire Tower",
+  "SuperAttack": "Thrust Rush",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Fire - Range",
+  "StandardElement": "Fire - Contact",
+  "SpecialElement": "Fire - Range",
+  "SuperElement": "Fire - Contact",
+
+  "BasicHardFail": "",
+  "BasicFail": "",
+  "BasicPartFail": "",
+  "BasicPartHit": "",
+  "BasicHit": "",
+  "BasicHardHit": "",
+
+  "StandardHardFail": "",
+  "StandardFail": "",
+  "StandardPartFail": "",
+  "StandardPartHit": "",
+  "StandardHit": "",
+  "StandardHardHit": "",
+
+  "SpecialHardFail": "",
+  "SpecialFail": "",
+  "SpecialPartFail": "",
+  "SpecialPartHit": "",
+  "SpecialHit": "",
+  "SpecialHardHit": "",
+
+  "SuperHardFail": "",
+  "SuperFail": "",
+  "SuperPartFail": "",
+  "SuperPartHit": "",
+  "SuperHit": "",
+  "SuperHardHit": ""
+}
