@@ -18,11 +18,11 @@
   "MegaEvolution": false,
   "DarkEvolution": false,
 
-  "CurrentQuirkOne": "Intimidating Presence: For 1 Bond an enemy must beat it's Education Safe to approach.",
-  "CurrentQuirkTwo": "",
-  "InheritableQuirkOne": "",
+  "CurrentQuirkOne": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "CurrentQuirkTwo": "Encouraging Aura: Spend 1 Bond to empower the Tamer's next skill roll.",
+  "InheritableQuirkOne": "Bright Idea: Once per day, the Tamer can re-roll an Education skill.",
   "InheritableQuirkTwo": "Education Champion: Same perks as a Education Meal.",
-  "InheritableQuirkThree": "",
+  "InheritableQuirkThree": "Roaring Spirit: Below half HP all attacks by this Digimon do -2HP extra.",
 
   "BasicAttack": "Slash Claw",
   "StandardAttack": "Wild Buster",

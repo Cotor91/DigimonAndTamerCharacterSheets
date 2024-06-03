@@ -18,9 +18,9 @@
 
   "CurrentQuirkOne": "",
   "CurrentQuirkTwo": "",
-  "InheritableQuirkOne": "",
+  "InheritableQuirkOne": "Instant Overdrive: Once per scene, Tamer can use this Strength Safe.",
   "InheritableQuirkTwo": "Strength Champion: Same perks as a Strength Meal.",
-  "InheritableQuirkThree": "",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
 
   "BasicAttack": "",
   "StandardAttack": "",

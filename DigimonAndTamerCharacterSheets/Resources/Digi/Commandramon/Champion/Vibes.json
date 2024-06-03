@@ -18,9 +18,9 @@
 
   "CurrentQuirkOne": "",
   "CurrentQuirkTwo": "",
-  "InheritableQuirkOne": "",
+  "InheritableQuirkOne": "Social Block: Once per scene, Tamer can use this Vibes Safe.",
   "InheritableQuirkTwo": "Vibes Champion: Same perks as a Vibes Meal.",
-  "InheritableQuirkThree": "",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
 
   "BasicAttack": "",
   "StandardAttack": "",

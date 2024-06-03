@@ -3705,6 +3705,7 @@
             AgilityDiet.TabIndex = 293;
             AgilityDiet.Text = "0";
             AgilityDiet.TextAlign = HorizontalAlignment.Center;
+            AgilityDiet.TextChanged += AgilityDiet_TextChanged;
             // 
             // StrengthMeal
             // 
@@ -3728,6 +3729,7 @@
             StrengthDiet.TabIndex = 290;
             StrengthDiet.Text = "0";
             StrengthDiet.TextAlign = HorizontalAlignment.Center;
+            StrengthDiet.TextChanged += StrengthDiet_TextChanged;
             // 
             // DigimonEducationRoll
             // 

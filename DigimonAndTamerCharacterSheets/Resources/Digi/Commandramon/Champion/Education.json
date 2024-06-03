@@ -18,9 +18,9 @@
 
   "CurrentQuirkOne": "",
   "CurrentQuirkTwo": "",
-  "InheritableQuirkOne": "",
+  "InheritableQuirkOne": "Pop-Up Alert: Once per scene, Tamer can use this Education Safe.",
   "InheritableQuirkTwo": "Education Champion: Same perks as a Education Meal.",
-  "InheritableQuirkThree": "",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
 
   "BasicAttack": "",
   "StandardAttack": "",

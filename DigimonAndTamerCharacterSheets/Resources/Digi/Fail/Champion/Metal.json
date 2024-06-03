@@ -20,9 +20,9 @@
 
   "CurrentQuirkOne": "_",
   "CurrentQuirkTwo": "_",
-  "InheritableQuirkOne": "_",
-  "InheritableQuirkTwo": "_",
-  "InheritableQuirkThree": "_",
+  "InheritableQuirkOne": "Dark Dishonour: The Tamer's skill-rolls must succeed twice to work.",
+  "InheritableQuirkTwo": "Dark Champion: Rampages blindly, no longer allied to Tamer.",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
 
   "BasicAttack": "Basic",
   "StandardAttack": "Standard",

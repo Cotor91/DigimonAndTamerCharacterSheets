@@ -18,11 +18,11 @@
   "MegaEvolution": false,
   "DarkEvolution": false,
 
-  "CurrentQuirkOne": "",
-  "CurrentQuirkTwo": "",
-  "InheritableQuirkOne": "",
+  "CurrentQuirkOne": "Ramming Speed: For 1 Bond rush through 1 mundane door.",
+  "CurrentQuirkTwo": "Firm Stare: For 1 Bond enemy approach requires Wits above Strength Safe.",
+  "InheritableQuirkOne": "Supportive Spotter: Once per day, the Tamer can re-roll a Strength skill.",
   "InheritableQuirkTwo": "Strength Champion: Same perks as a Strength Meal.",
-  "InheritableQuirkThree": "",
+  "InheritableQuirkThree": "Roaring Spirit: Below half HP all attacks by this Digimon do -2HP extra.",
 
   "BasicAttack": "Great Antler",
   "StandardAttack": "Nova Flame",

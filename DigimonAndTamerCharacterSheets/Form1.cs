@@ -212,6 +212,8 @@ namespace DigimonAndTamerCharacterSheets
                 InfoExtractTrack.Enabled = loadedForm.UpgradePowers;
                 GigaSearchTrack.Enabled = loadedForm.UpgradePowers;
                 WaybackTrackTrack.Enabled = loadedForm.UpgradePowers;
+                FreshEvolution = loadedForm.FreshEvolution;
+                ReincarnationTime = loadedForm.ReincarnationTime;
 
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath)); ;
                 Partner.Items.Add(EvolutionAddress.DigimonName);
@@ -362,6 +364,7 @@ namespace DigimonAndTamerCharacterSheets
                     MegaEvolution = MegaEvolution,
                     UpgradeSkills = CarryTrack.Enabled,
                     UpgradePowers = InfoExtractTrack.Enabled,
+                    ReincarnationTime = ReincarnationTime,
                 }));
 
             }
@@ -4329,7 +4332,7 @@ namespace DigimonAndTamerCharacterSheets
             }
             else
             {
-                Digivolve.Enabled = true; 
+                Digivolve.Enabled = true;
             }
 
             if (ChampionEvolution == true && ChampionSelect.Checked == true)
@@ -4881,6 +4884,8 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     track.Enabled = true;
                 };
+
+                MessageBox.Show($"Level Up!");
 
                 SaveCharacterInformation();
             }
@@ -5460,11 +5465,15 @@ namespace DigimonAndTamerCharacterSheets
                     DigimonVibes.Text = "0";
                     DigimonWits.Text = "0";
                     DigimonEducation.Text = "0";
-                    StrengthDiet.Text = "0";
-                    AgilityDiet.Text = "0";
-                    VibesDiet.Text = "0";
-                    WitsDiet.Text = "0";
-                    EducationDiet.Text = "0";
+
+                if (!Partner.Text.Contains("mon"))
+                    {
+                        StrengthDiet.Text = "0";
+                        AgilityDiet.Text = "0";
+                        VibesDiet.Text = "0";
+                        WitsDiet.Text = "0";
+                        EducationDiet.Text = "0";
+                    }
 
                     // ____ Moves
                     //Basic Move
@@ -5684,12 +5693,12 @@ namespace DigimonAndTamerCharacterSheets
             if (HealthNowValue < 1)
             {
                 // Lose current form
+                Partner.Text = "";
                 Partner.SelectedIndex = -1;
                 Partner.Enabled = true;
                 Partner.Items.Remove(RecordChampion);
                 Partner.Items.Remove(RecordUltimate);
                 Partner.Items.Remove(RecordMega);
-
 
                 FreshEvolution = true;
                 TrainingEvolution = false;
@@ -5710,6 +5719,13 @@ namespace DigimonAndTamerCharacterSheets
                 MealWits = false;
                 MealEducation = false;
                 AutoMeal = false;
+                StrengthDiet.Text = "0";
+                AgilityDiet.Text = "0";
+                VibesDiet.Text = "0";
+                WitsDiet.Text = "0";
+                EducationDiet.Text = "0";
+
+                SaveCharacterInformation();
 
                 // Check if Dark-Digivolved, and if so do the same for personality
                 if (DarkEvolution == true)
@@ -5743,6 +5759,12 @@ namespace DigimonAndTamerCharacterSheets
                 DigimonVibes.Text = "";
                 DigimonWits.Text = "";
                 DigimonEducation.Text = "";
+                DigiAttackRoll.Text = "";
+                StrengthStat.Text = "";
+                AgilityStat.Text = "";
+                VibesStat.Text = "";
+                WitsStat.Text = "";
+                KnowledgeStat.Text = "";
 
                 // Refresh Care Mistakes
                 ToiletOne.Checked = false;
@@ -6081,6 +6103,7 @@ namespace DigimonAndTamerCharacterSheets
                                     MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {ChampionLevel.Text}");
                                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(ChampionPath));
                                     Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    EvolutionFilePath = ChampionPath;
                                     Partner.SelectedItem = EvolutionAddress.DigimonName;
                                     DigivolutionDetails();
 
@@ -8459,6 +8482,16 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void label67_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StrengthDiet_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AgilityDiet_TextChanged(object sender, EventArgs e)
         {
 
         }

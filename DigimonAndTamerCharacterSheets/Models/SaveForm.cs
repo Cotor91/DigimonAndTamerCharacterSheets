@@ -103,4 +103,5 @@ internal class SaveForm
     public bool MegaEvolution { get; set; } = false!;
     public bool UpgradeSkills { get; set; } = false!;
     public bool UpgradePowers { get; set; } = false!;
+    public bool ReincarnationTime { get; set; } = false!;
 }

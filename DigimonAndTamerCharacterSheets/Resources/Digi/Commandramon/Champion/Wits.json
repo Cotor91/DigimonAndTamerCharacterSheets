@@ -18,9 +18,9 @@
 
   "CurrentQuirkOne": "",
   "CurrentQuirkTwo": "",
-  "InheritableQuirkOne": "",
+  "InheritableQuirkOne": "Security Alert: Once per scene, Tamer can use this Wits Safe.",
   "InheritableQuirkTwo": "Wits Champion: Same perks as a Wits Meal.",
-  "InheritableQuirkThree": "",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
 
   "BasicAttack": "",
   "StandardAttack": "",
