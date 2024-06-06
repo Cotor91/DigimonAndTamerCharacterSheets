@@ -46,7 +46,7 @@
   "BasicPartFail": "___",
   "BasicPartHit": "___",
   "BasicHit": "-6HP to target and -3HP to nearby enemies.",
-  "BasicHardHit": "___",
+  "BasicHardHit": "-12HP to target and -6HP to nearby enemies.",
 
   "StandardHardFail": "___",
   "StandardFail": "___",
