@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Growlmon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "14",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Virus",
+  "WeaknessElement": "Holy",
+  "ResistanceElement": "Error",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "CurrentQuirkTwo": "Encouraging Aura: Spend 1 Bond to empower the Tamer's next skill roll.",
+  "InheritableQuirkOne": "Social Security: Once per day, the Tamer can re-roll a Vibes skill.",
+  "InheritableQuirkTwo": "Vibes Champion: Same perks as a Vibes Meal.",
+  "InheritableQuirkThree": "Roaring Spirit: Below half HP all attacks by this Digimon do -2HP extra.",
+
+  "BasicAttack": "Dragon Spine",
+  "StandardAttack": "Pyro Blaster",
+  "SpecialAttack": "Dragon Slash",
+  "SuperAttack": "Exhaust Flame",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slamming - Contact",
+  "StandardElement": "Slashing - Contact",
+  "SpecialElement": "Fire - Range",
+  "SuperElement": "Fire - Range",
+
+  "BasicHardFail": "User can't attack next turn.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "User and Target can't attack next turn.",
+  "BasicPartHit": "-6HP on target.",
+  "BasicHit": "User and Target can't attack next turn. -6HP on target.",
+  "BasicHardHit": "Target can't attack next turn. -12HP on target.",
+
+  "StandardHardFail": "-6HP on user.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "-6HP on target.",
+  "StandardPartHit": "3 turn recurring -3HP on target.",
+  "StandardHit": "-6HP on target. 3 turn recurring -3HP.",
+  "StandardHardHit": "-12HP on target. 3 turn recurring -6HP.",
+
+  "SpecialHardFail": "-6HP on user.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "Attacks on user nerfed for 2 rounds.",
+  "SpecialPartHit": "-6HP on target.",
+  "SpecialHit": "Attacks on user nerfed for 2 rounds. -6HP on target.",
+  "SpecialHardHit": "Attacks on user nerfed for 4 rounds. -12HP on target.",
+
+  "SuperHardFail": "-3HP recurring damage on user for 3 turns.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-6HP to target and 1 user ally near them.",
+  "SuperPartHit": "-6HP to target.",
+  "SuperHit": "-6HP to target and 1 target ally near them.",
+  "SuperHardHit": "-12HP to target and 2 target ally near them."
+}

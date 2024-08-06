@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Wezen Gammamon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "14",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Error",
+  "ResistanceElement": "Slam",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Ramming Speed: For 1 Bond rush through 1 mundane door.",
+  "CurrentQuirkTwo": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "InheritableQuirkOne": "Bright Idea: Once per day, the Tamer can re-roll an Education skill.",
+  "InheritableQuirkTwo": "Education Champion: Same perks as a Education Meal.",
+  "InheritableQuirkThree": "Roaring Spirit: Below half HP all attacks by this Digimon do -2HP extra.",
+
+  "BasicAttack": "Headbutt Ahead",
+  "StandardAttack": "Auto-Cannons",
+  "SpecialAttack": "Sedna",
+  "SuperAttack": "Albion",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slam - Contact",
+  "StandardElement": "Pierce - Ranged",
+  "SpecialElement": "Electric - Ranged",
+  "SuperElement": "Light - Ranged",
+
+  "BasicHardFail": "User can't attack next turn.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "User and Target can't attack next turn.",
+  "BasicPartHit": "-6HP on target.",
+  "BasicHit": "User and Target can't attack next turn. -6HP on target.",
+  "BasicHardHit": "Target can't attack next turn. -12HP on target.",
+
+  "StandardHardFail": "-3HP to one of this Digimon's allies.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "Enemies target user next turn.",
+  "StandardPartHit": "-3HP to target and 2 target allies near them.",
+  "StandardHit": "Enemies target this Digimon. -3HP to target and 2 allies.",
+  "StandardHardHit": "Enemies target this Digimon. -6HP to target and all allies.",
+
+  "SpecialHardFail": "-3HP to this Digimon.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "-3HP to target and one target ally.",
+  "SpecialPartHit": "-6HP to target.",
+  "SpecialHit": "-6HP to target and one target ally.",
+  "SpecialHardHit": "-6HP to target and one target ally.",
+
+  "SuperHardFail": "This Digimon can't attack next turn.'",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-3HP to target. This Digimon can't attack next turn.",
+  "SuperPartHit": "-6HP to target. This Digimon can't attack next turn.",
+  "SuperHit": "-12HP to target. This Digimon can't attack next turn.",
+  "SuperHardHit": "-12HP to target."
+}

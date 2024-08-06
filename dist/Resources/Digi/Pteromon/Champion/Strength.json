@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Tyrannomon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "14",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Cold",
+  "ResistanceElement": "Filth",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "CurrentQuirkTwo": "Encouraging Aura: Spend 1 Bond to empower the Tamer's next skill roll.",
+  "InheritableQuirkOne": "Supportive Spotter: Once per day, the Tamer can re-roll a Strength skill.",
+  "InheritableQuirkTwo": "Strength Champion: Same perks as a Strength Meal.",
+  "InheritableQuirkThree": "Roaring Spirit: Below half HP all attacks by this Digimon do -2HP extra.",
+
+  "BasicAttack": "Slash Claw",
+  "StandardAttack": "Wild Buster",
+  "SpecialAttack": "Blaze Blast",
+  "SuperAttack": "Buster Dive",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slashing - Contact",
+  "StandardElement": "Slamming - Contact",
+  "SpecialElement": "Fire - Range",
+  "SuperElement": "Fire - Contact",
+
+  "BasicHardFail": "-6HP on user.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "Attacks on user nerfed for 2 rounds.",
+  "BasicPartHit": "-6HP on target.",
+  "BasicHit": "Attacks on user nerfed for 2 rounds. -6HP on target.",
+  "BasicHardHit": "Attacks on user nerfed for 4 rounds. -12HP on target.",
+
+  "StandardHardFail": "-6HP to user.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "User can't be attacked next turn.",
+  "StandardPartHit": "-6HP to target.",
+  "StandardHit": "-6HP to target. User can't be attacked next turn.",
+  "StandardHardHit": "-12HP to target. User can't be attacked next turn.",
+
+  "SpecialHardFail": "-6HP on user.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "-6HP on target.",
+  "SpecialPartHit": "3 turn recurring -3HP on target.",
+  "SpecialHit": "-6HP on target. 3 turn recurring -3HP.",
+  "SpecialHardHit": "-12HP on target. 6 turn recurring -3HP.",
+
+  "SuperHardFail": "User can't attack next turn.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "User and Target can't attack next turn.",
+  "SuperPartHit": "-6HP on target.",
+  "SuperHit": "User and Target can't attack next turn. -12HP on target.",
+  "SuperHardHit": "Target can't attack next turn. -12HP on target."
+}

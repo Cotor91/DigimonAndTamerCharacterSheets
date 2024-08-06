@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Parasaurmon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "14",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Cold",
+  "ResistanceElement": "Nature",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Banana Bash: Spend 1 Bond to create 1 Banana (Fruit) per day.",
+  "CurrentQuirkTwo": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "InheritableQuirkOne": "Shining Insight: Once per day, the Tamer can re-roll a Wits skill.",
+  "InheritableQuirkTwo": "Wits Champion: Same perks as a Wits Meal.",
+  "InheritableQuirkThree": "Roaring Spirit: Below half HP all attacks by this Digimon do -2HP extra.",
+
+  "BasicAttack": "Banana Bash",
+  "StandardAttack": "Palsy Sweet",
+  "SpecialAttack": "Wavy Oktavist",
+  "SuperAttack": "Immbolising Sweetness",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slam - Contact",
+  "StandardElement": "Nature - Ranged",
+  "SpecialElement": "Error - Ranged",
+  "SuperElement": "Nature - Contact",
+
+  "BasicHardFail": "User can't attack next turn.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "User and Target can't attack next turn.",
+  "BasicPartHit": "-6HP on target.",
+  "BasicHit": "User and Target can't attack next turn. -6HP on target.",
+  "BasicHardHit": "Target can't attack next turn. -12HP on target.",
+
+  "StandardHardFail": "User can't attack next turn.'",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "-6HP on target.",
+  "StandardPartHit": "Target can't attack for 3 turns.",
+  "StandardHit": "Target can't attack for 3 turns. -6HP on target.",
+  "StandardHardHit": "Target can't attack for 5 turns. -6HP on target.",
+
+  "SpecialHardFail": "-3HP to one of this Digimon's allies.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "Enemies target user next turn.",
+  "SpecialPartHit": "-3HP to target and 2 target allies near them.",
+  "SpecialHit": "Enemies target this Digimon. -3HP to target and 2 allies.",
+  "SpecialHardHit": "Enemies target this Digimon. -6HP to target and all allies.",
+
+  "SuperHardFail": "User can't attack next turn.'",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "Target and two allies can't attack next turn.",
+  "SuperPartHit": "Target can't attack next 3 turns.",
+  "SuperHit": "Target and two allies can't attack next 3 turns.",
+  "SuperHardHit": "Target and two allies can't attack next 5 turns."
+}

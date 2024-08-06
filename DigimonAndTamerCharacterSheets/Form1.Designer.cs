@@ -3056,6 +3056,7 @@
             button5.TabIndex = 99;
             button5.Text = "Activate";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click_4;
             // 
             // TransmissionTrackLineTwo
             // 
@@ -3271,6 +3272,7 @@
             button4.TabIndex = 94;
             button4.Text = "Activate";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // HoloDisplayLineOne
             // 
@@ -4268,7 +4270,6 @@
             // 
             Partner.Font = new Font("Microsoft Sans Serif", 16F);
             Partner.FormattingEnabled = true;
-            Partner.Items.AddRange(new object[] { "Agumon", "Commandramon" });
             Partner.Location = new Point(70, 91);
             Partner.Margin = new Padding(3, 4, 3, 4);
             Partner.Name = "Partner";

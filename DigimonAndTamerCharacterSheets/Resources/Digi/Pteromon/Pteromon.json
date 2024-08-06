@@ -1,0 +1,73 @@
+{
+  "DigimonName": "Pteromon",
+  "DigimonField": "Dragon's Roar",
+  "DigitalFrame": "7",
+  "CoreHPMax": "25",
+  "HPLevelMod": 5,
+  "MoveSpeed": "3",
+
+  "Attribute": "Vaccine",
+  "WeaknessElement": "Cold",
+  "ResistanceElement": "Earth",
+
+  "FreshEvolution": false,
+  "TrainingEvolution": false,
+  "RookieEvolution": true,
+  "ChampionEvolution": false,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Decent Descent: Spend 1 Bond to prevent fall-damage to Tamer.",
+  "CurrentQuirkTwo": "Encouraging Aura: Spend 1 Bond to empower the Tamer's next skill roll.",
+  "InheritableQuirkOne": "Swift Evade: First failed attack on Gaurd boost Gaurd effectiveness.",
+  "InheritableQuirkTwo": "Empathy and Persuade: Roll for Empathy or Carry Checks.",
+  "InheritableQuirkThree": "Reinforcing Rage: If Tamer wounded, buff attack roll.",
+
+  "BasicAttack": "Horned Headbutt",
+  "StandardAttack": "Wind Cutter",
+  "SpecialAttack": "Rumble Claw",
+  "SuperAttack": "Wind Slicer",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Pierce - Contact",
+  "StandardElement": "Air - Ranged",
+  "SpecialElement": "Air  - Contact",
+  "SuperElement": "Air - Ranged",
+
+  "BasicHardFail": "User can't attack next turn.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "User and Target can't attack next turn.",
+  "BasicPartHit": "-3HP on target.",
+  "BasicHit": "User and Target can't attack next turn. -3HP on target.",
+  "BasicHardHit": "Target can't attack next turn. -6HP on target.",
+
+  "StandardHardFail": "-3HP on user.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "Next attack on user is nerfed.",
+  "StandardPartHit": "-3HP on target.",
+  "StandardHit": "Next attack on user is nerfed. -3HP on target.",
+  "StandardHardHit": "All attacks on user this round are nerfed. -6HP on target.",
+
+  "SpecialHardFail": "Must target the same opponent next turn.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "Target must target this Digimon next turn.",
+  "SpecialPartHit": "-3HP on target.",
+  "SpecialHit": "-3HP on target. Target must target this Digimon next turn.",
+  "SpecialHardHit": "-6HP on target. Target can't target attack next turn.",
+
+  "SuperHardFail": "-3HP to 1 user ally near target.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-3HP to target and 1 user ally near them.",
+  "SuperPartHit": "-3HP to target.",
+  "SuperHit": "-3HP to target and 1 target ally near them.",
+  "SuperHardHit": "-6HP to target and 2 target ally near them."
+}

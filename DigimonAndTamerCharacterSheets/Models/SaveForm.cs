@@ -72,6 +72,7 @@ internal class SaveForm
     public int InfoExtractTrack { get; set; } = 0!;
     public int GigaSearchTrack { get; set; } = 0!;
     public int WaybackTrackTrack { get; set; } = 0!;
+    public int DigiSoulCost { get; set; } = 0!;
     public bool ToiletOne { get; set; } = false!;
     public bool ToiletTwo { get; set; } = false!;
     public bool ToiletThree { get; set; } = false!;

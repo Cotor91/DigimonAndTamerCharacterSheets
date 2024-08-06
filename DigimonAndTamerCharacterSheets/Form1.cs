@@ -214,6 +214,7 @@ namespace DigimonAndTamerCharacterSheets
                 WaybackTrackTrack.Enabled = loadedForm.UpgradePowers;
                 FreshEvolution = loadedForm.FreshEvolution;
                 ReincarnationTime = loadedForm.ReincarnationTime;
+                digiSoulCost = loadedForm.DigiSoulCost;
 
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath)); ;
                 Partner.Items.Add(EvolutionAddress.DigimonName);
@@ -365,6 +366,7 @@ namespace DigimonAndTamerCharacterSheets
                     UpgradeSkills = CarryTrack.Enabled,
                     UpgradePowers = InfoExtractTrack.Enabled,
                     ReincarnationTime = ReincarnationTime,
+                    DigiSoulCost = digiSoulCost,
                 }));
 
             }
@@ -3164,15 +3166,8 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
-        private void button22_Click_3(object sender, EventArgs e)
-        {
-            int digiSoulScore;
-            if (int.TryParse(DigiSoulStat.Text, out digiSoulScore) && digiSoulScore > 0)
-            {
-                digiSoulScore -= 1; // Subtract 1 from the score
-                DigiSoulStat.Text = digiSoulScore.ToString();
-            }
-        }
+
+
 
         private void groupBox4_Enter(object sender, EventArgs e)
         {
@@ -3189,15 +3184,7 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
-        private void button24_Click(object sender, EventArgs e)
-        {
-            int digiSoulScore;
-            if (int.TryParse(DigiSoulStat.Text, out digiSoulScore) && digiSoulScore > 0)
-            {
-                digiSoulScore -= 1; // Subtract 1 from the score
-                DigiSoulStat.Text = digiSoulScore.ToString();
-            }
-        }
+
 
         bool MealStrength = false;
         bool MealAgility = false;
@@ -3210,6 +3197,13 @@ namespace DigimonAndTamerCharacterSheets
         {
             int ReduceMax = 0;
             int HighestQuantity = -1;
+
+
+            if (digiSoulCost > 0)
+            {
+                digiSoulCost -= 1;
+                DigiSoulStat.Text = "";
+            };
 
             if (FreshEvolution == true)
             {
@@ -4553,6 +4547,7 @@ namespace DigimonAndTamerCharacterSheets
                         EvolutionFilePath = null!,
                         UpgradeSkills = true,
                         UpgradePowers = true,
+                        DigiSoulCost = 0,
 
                     }));
 
@@ -5466,7 +5461,7 @@ namespace DigimonAndTamerCharacterSheets
                     DigimonWits.Text = "0";
                     DigimonEducation.Text = "0";
 
-                if (!Partner.Text.Contains("mon"))
+                    if (!Partner.Text.Contains("mon"))
                     {
                         StrengthDiet.Text = "0";
                         AgilityDiet.Text = "0";
@@ -6323,6 +6318,8 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button2_Click(object sender, EventArgs e)
         {
+            digiSoulCost = 0;
+            DigiSoulStat.Text = "";
 
             if (TrainingEvolution == true || FreshEvolution == true)
             {
@@ -8369,6 +8366,9 @@ namespace DigimonAndTamerCharacterSheets
             // Halve the totalValue and round up
             int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
 
+            // Subtract used points
+            halvedValue = halvedValue - digiSoulCost;
+
             // Output the halvedValue to the text box
             DigiSoulStat.Text = halvedValue.ToString();
 
@@ -8495,5 +8495,52 @@ namespace DigimonAndTamerCharacterSheets
         {
 
         }
+
+
+        int digiSoulCost = 0;
+        private void button22_Click_3(object sender, EventArgs e)
+        {
+
+            if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
+            {
+                digiSoulCost += 1; // Subtract 1 from the score
+            }
+
+            DigiSoulStat.Text = "";
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+
+            if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
+            {
+                digiSoulCost += 1; // Subtract 1 from the score
+            }
+
+            DigiSoulStat.Text = "";
+        }
+
+        private void button5_Click_4(object sender, EventArgs e)
+        {
+
+            if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
+            {
+                digiSoulCost += 1; // Subtract 1 from the score
+            }
+
+            DigiSoulStat.Text = "";
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+
+            if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
+            {
+                digiSoulCost += 1; // Subtract 1 from the score
+            }
+
+            DigiSoulStat.Text = "";
+        }
+
     }
 }
