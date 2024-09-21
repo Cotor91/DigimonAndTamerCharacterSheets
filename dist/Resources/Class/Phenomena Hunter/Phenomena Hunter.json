@@ -1,0 +1,33 @@
+{
+  "RollOne": "Error Scan",
+  "RollTwo": "Info Extract",
+  "RollThree": "Giga Search",
+  "RollFour": "Wayback Track",
+
+  "PhenomenaHunter": true,
+  "MysticArtist": false,
+  "CosmicVessel": false,
+  "RealityHacker": false,
+  "AnalogueBrawler": false,
+  "NullClass": false,
+
+  "PowerOneLineOne": "For the rest of the scene, all attacks against a character of",
+  "PowerOneLineTwo": "your choosing get a circumstance dice. You also get to know",
+  "PowerOneLineThree": "health and their elemental weaknesses and resistances.",
+  "PowerOneLineFour": "",
+
+  "PowerTwoLineOne": "Create a silent holographic display. This can be used to relay",
+  "PowerTwoLineTwo": "information to allies. It can also be used to help with persuade",
+  "PowerTwoLineThree": "rolls or to buff allies on their Wits and Education Rolls if you ",
+  "PowerTwoLineFour": "you pass yours.",
+
+  "PowerThreeLineOne": "Figure out the location of origin of any broadcast or recording ",
+  "PowerThreeLineTwo": "to which you're exposed. You can also detect any phenomena",
+  "PowerThreeLineThree": "involved in its creation, and sense any tampering or alteration. ",
+  "PowerThreeLineFour": "The creator and time of creation also become known to you.",
+
+  "PowerFourLineOne": "Know your way through an unfamiliar location, as if you had ",
+  "PowerFourLineTwo": "access to a mini-map. Complete with limited awareness of how",
+  "PowerFourLineThree": "many humans, animals, and Digimon are around you and",
+  "PowerFourLineFour": "where in the environment they are. "
+}

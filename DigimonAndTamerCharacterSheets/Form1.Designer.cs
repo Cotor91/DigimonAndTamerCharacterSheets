@@ -34,7 +34,8 @@
             Digivolve = new Button();
             HaveMeal = new Button();
             TamerDigimon = new TabControl();
-            TamerAttackRoll = new TabPage();
+            TamerStats = new TabPage();
+            ClassBox = new ComboBox();
             button3 = new Button();
             label26 = new Label();
             label27 = new Label();
@@ -67,7 +68,6 @@
             CharacterGender = new TextBox();
             label18 = new Label();
             label17 = new Label();
-            label16 = new Label();
             label14 = new Label();
             label15 = new Label();
             ReadableInventory = new RichTextBox();
@@ -233,36 +233,36 @@
             EmpathyTrack = new TrackBar();
             InvestigationTrack = new TrackBar();
             TamerPowers = new TabPage();
-            groupBox6 = new GroupBox();
-            TransmissionTrackLineFour = new Label();
-            TransmissionTrackLineThree = new Label();
+            SuperThree = new GroupBox();
+            SuperThreeLineFour = new Label();
+            SuperThreeLineThree = new Label();
             button5 = new Button();
-            TransmissionTrackLineTwo = new Label();
-            TransmissionTrackLineOne = new Label();
-            groupBox7 = new GroupBox();
-            GigaMapsLineFour = new Label();
-            GigaMapsLineThree = new Label();
-            GigaMapsLineTwo = new Label();
-            GigaMapsLineOne = new Label();
+            SuperThreeLineTwo = new Label();
+            SuperThreeLineOne = new Label();
+            SuperFour = new GroupBox();
+            SuperFourLineFour = new Label();
+            SuperFourLineThree = new Label();
+            SuperFourLineTwo = new Label();
+            SuperFourLineOne = new Label();
             button24 = new Button();
-            groupBox5 = new GroupBox();
-            BattleScanLineFour = new Label();
-            BattleScanLineThree = new Label();
-            BattleScanLineTwo = new Label();
-            BattleScanLineOne = new Label();
+            SuperOne = new GroupBox();
+            SuperOneLineFour = new Label();
+            SuperOneLineThree = new Label();
+            SuperOneLineTwo = new Label();
+            SuperOneLineOne = new Label();
             ActivateBS = new Button();
-            groupBox4 = new GroupBox();
-            HoloDisplayLineFour = new Label();
-            HoloDisplayLineThree = new Label();
-            HoloDisplayLineTwo = new Label();
+            SuperTwo = new GroupBox();
+            SuperTwoLineFour = new Label();
+            SuperTwoLineThree = new Label();
+            SuperTwoLineTwo = new Label();
             button4 = new Button();
-            HoloDisplayLineOne = new Label();
-            WaybackTrack = new Button();
+            SuperTwoLineOne = new Label();
+            PowerRollFour = new Button();
             WaybackTrackTrack = new TrackBar();
             DigiSoul = new Label();
-            GigaSearch = new Button();
-            InfoExtract = new Button();
-            ErrorScan = new Button();
+            PowerRollThree = new Button();
+            PowerRollTwo = new Button();
+            PowerRollOne = new Button();
             DigiSoulStat = new TextBox();
             GigaSearchTrack = new TrackBar();
             InfoExtractTrack = new TrackBar();
@@ -534,8 +534,12 @@
             Impulse = new Label();
             label114 = new Label();
             LevelUp = new Button();
+            label16 = new Label();
+            label49 = new Label();
+            ExpNext = new Label();
+            ExpCurrent = new Label();
             TamerDigimon.SuspendLayout();
-            TamerAttackRoll.SuspendLayout();
+            TamerStats.SuspendLayout();
             groupBox19.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox18.SuspendLayout();
@@ -558,10 +562,10 @@
             ((System.ComponentModel.ISupportInitialize)EmpathyTrack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)InvestigationTrack).BeginInit();
             TamerPowers.SuspendLayout();
-            groupBox6.SuspendLayout();
-            groupBox7.SuspendLayout();
-            groupBox5.SuspendLayout();
-            groupBox4.SuspendLayout();
+            SuperThree.SuspendLayout();
+            SuperFour.SuspendLayout();
+            SuperOne.SuspendLayout();
+            SuperTwo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)WaybackTrackTrack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)GigaSearchTrack).BeginInit();
             ((System.ComponentModel.ISupportInitialize)InfoExtractTrack).BeginInit();
@@ -620,7 +624,7 @@
             // Digivolve
             // 
             Digivolve.Enabled = false;
-            Digivolve.Location = new Point(1253, 521);
+            Digivolve.Location = new Point(1253, 492);
             Digivolve.Margin = new Padding(3, 2, 3, 2);
             Digivolve.Name = "Digivolve";
             Digivolve.Size = new Size(148, 108);
@@ -643,7 +647,7 @@
             // 
             // TamerDigimon
             // 
-            TamerDigimon.Controls.Add(TamerAttackRoll);
+            TamerDigimon.Controls.Add(TamerStats);
             TamerDigimon.Controls.Add(TamerSkills);
             TamerDigimon.Controls.Add(TamerPowers);
             TamerDigimon.Controls.Add(DigimonStats);
@@ -658,58 +662,70 @@
             TamerDigimon.TabIndex = 25;
             TamerDigimon.SelectedIndexChanged += TamerDigimon_SelectedIndexChanged;
             // 
-            // TamerAttackRoll
+            // TamerStats
             // 
-            TamerAttackRoll.BackColor = SystemColors.ButtonFace;
-            TamerAttackRoll.Controls.Add(button3);
-            TamerAttackRoll.Controls.Add(label26);
-            TamerAttackRoll.Controls.Add(label27);
-            TamerAttackRoll.Controls.Add(TamerRollMinusTwo);
-            TamerAttackRoll.Controls.Add(TamerRollMinusOne);
-            TamerAttackRoll.Controls.Add(TamerRollPlusTwo);
-            TamerAttackRoll.Controls.Add(TamerRollPlusOne);
-            TamerAttackRoll.Controls.Add(UpdateInventory);
-            TamerAttackRoll.Controls.Add(label172);
-            TamerAttackRoll.Controls.Add(label171);
-            TamerAttackRoll.Controls.Add(label170);
-            TamerAttackRoll.Controls.Add(groupBox19);
-            TamerAttackRoll.Controls.Add(groupBox3);
-            TamerAttackRoll.Controls.Add(groupBox18);
-            TamerAttackRoll.Controls.Add(groupBox2);
-            TamerAttackRoll.Controls.Add(CharacterLevel);
-            TamerAttackRoll.Controls.Add(label19);
-            TamerAttackRoll.Controls.Add(CharacterGender);
-            TamerAttackRoll.Controls.Add(label18);
-            TamerAttackRoll.Controls.Add(label17);
-            TamerAttackRoll.Controls.Add(label16);
-            TamerAttackRoll.Controls.Add(label14);
-            TamerAttackRoll.Controls.Add(label15);
-            TamerAttackRoll.Controls.Add(ReadableInventory);
-            TamerAttackRoll.Controls.Add(label13);
-            TamerAttackRoll.Controls.Add(label12);
-            TamerAttackRoll.Controls.Add(CharacterName);
-            TamerAttackRoll.Controls.Add(label11);
-            TamerAttackRoll.Controls.Add(PlayerName);
-            TamerAttackRoll.Controls.Add(Wound);
-            TamerAttackRoll.Controls.Add(Injury);
-            TamerAttackRoll.Controls.Add(Bruise);
-            TamerAttackRoll.Controls.Add(groupBox1);
-            TamerAttackRoll.Controls.Add(CurrentHealth);
-            TamerAttackRoll.Controls.Add(button21);
-            TamerAttackRoll.Controls.Add(button20);
-            TamerAttackRoll.Controls.Add(MaxHealth);
-            TamerAttackRoll.Controls.Add(label3);
-            TamerAttackRoll.Controls.Add(ModifyHealth);
-            TamerAttackRoll.Controls.Add(label2);
-            TamerAttackRoll.Controls.Add(label1);
-            TamerAttackRoll.Location = new Point(4, 40);
-            TamerAttackRoll.Margin = new Padding(3, 2, 3, 2);
-            TamerAttackRoll.Name = "TamerAttackRoll";
-            TamerAttackRoll.Padding = new Padding(3, 2, 3, 2);
-            TamerAttackRoll.Size = new Size(1213, 798);
-            TamerAttackRoll.TabIndex = 1;
-            TamerAttackRoll.Text = "Tamer Stats";
-            TamerAttackRoll.Click += TamerStats_Click;
+            TamerStats.BackColor = SystemColors.ButtonFace;
+            TamerStats.Controls.Add(ClassBox);
+            TamerStats.Controls.Add(button3);
+            TamerStats.Controls.Add(label26);
+            TamerStats.Controls.Add(label27);
+            TamerStats.Controls.Add(TamerRollMinusTwo);
+            TamerStats.Controls.Add(TamerRollMinusOne);
+            TamerStats.Controls.Add(TamerRollPlusTwo);
+            TamerStats.Controls.Add(TamerRollPlusOne);
+            TamerStats.Controls.Add(UpdateInventory);
+            TamerStats.Controls.Add(label172);
+            TamerStats.Controls.Add(label171);
+            TamerStats.Controls.Add(label170);
+            TamerStats.Controls.Add(groupBox19);
+            TamerStats.Controls.Add(groupBox3);
+            TamerStats.Controls.Add(groupBox18);
+            TamerStats.Controls.Add(groupBox2);
+            TamerStats.Controls.Add(CharacterLevel);
+            TamerStats.Controls.Add(label19);
+            TamerStats.Controls.Add(CharacterGender);
+            TamerStats.Controls.Add(label18);
+            TamerStats.Controls.Add(label17);
+            TamerStats.Controls.Add(label14);
+            TamerStats.Controls.Add(label15);
+            TamerStats.Controls.Add(ReadableInventory);
+            TamerStats.Controls.Add(label13);
+            TamerStats.Controls.Add(label12);
+            TamerStats.Controls.Add(CharacterName);
+            TamerStats.Controls.Add(label11);
+            TamerStats.Controls.Add(PlayerName);
+            TamerStats.Controls.Add(Wound);
+            TamerStats.Controls.Add(Injury);
+            TamerStats.Controls.Add(Bruise);
+            TamerStats.Controls.Add(groupBox1);
+            TamerStats.Controls.Add(CurrentHealth);
+            TamerStats.Controls.Add(button21);
+            TamerStats.Controls.Add(button20);
+            TamerStats.Controls.Add(MaxHealth);
+            TamerStats.Controls.Add(label3);
+            TamerStats.Controls.Add(ModifyHealth);
+            TamerStats.Controls.Add(label2);
+            TamerStats.Controls.Add(label1);
+            TamerStats.Location = new Point(4, 40);
+            TamerStats.Margin = new Padding(3, 2, 3, 2);
+            TamerStats.Name = "TamerStats";
+            TamerStats.Padding = new Padding(3, 2, 3, 2);
+            TamerStats.Size = new Size(1213, 798);
+            TamerStats.TabIndex = 1;
+            TamerStats.Text = "Tamer Stats";
+            TamerStats.Click += TamerStats_Click;
+            // 
+            // ClassBox
+            // 
+            ClassBox.FlatStyle = FlatStyle.System;
+            ClassBox.Font = new Font("Microsoft Sans Serif", 16F);
+            ClassBox.FormattingEnabled = true;
+            ClassBox.Location = new Point(402, 229);
+            ClassBox.Margin = new Padding(3, 4, 3, 4);
+            ClassBox.Name = "ClassBox";
+            ClassBox.Size = new Size(279, 39);
+            ClassBox.TabIndex = 115;
+            ClassBox.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button3
             // 
@@ -1063,16 +1079,6 @@
             label17.Text = "10";
             label17.Click += label17_Click;
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Microsoft Sans Serif", 12F);
-            label16.Location = new Point(440, 238);
-            label16.Name = "label16";
-            label16.Size = new Size(181, 25);
-            label16.TabIndex = 88;
-            label16.Text = "Phenomena Hunter";
-            // 
             // label14
             // 
             label14.AutoSize = true;
@@ -1208,7 +1214,6 @@
             groupBox1.Size = new Size(29, 161);
             groupBox1.TabIndex = 55;
             groupBox1.TabStop = false;
-            groupBox1.Enter += groupBox1_Enter;
             // 
             // WoundOne
             // 
@@ -1247,7 +1252,7 @@
             // 
             CurrentHealth.AutoSize = true;
             CurrentHealth.Font = new Font("Microsoft Sans Serif", 14F);
-            CurrentHealth.Location = new Point(127, 438);
+            CurrentHealth.Location = new Point(132, 438);
             CurrentHealth.Name = "CurrentHealth";
             CurrentHealth.Size = new Size(39, 29);
             CurrentHealth.TabIndex = 54;
@@ -1257,7 +1262,7 @@
             // button21
             // 
             button21.Font = new Font("Microsoft Sans Serif", 12F);
-            button21.Location = new Point(150, 504);
+            button21.Location = new Point(155, 504);
             button21.Margin = new Padding(3, 2, 3, 2);
             button21.Name = "button21";
             button21.Size = new Size(35, 39);
@@ -1269,7 +1274,7 @@
             // button20
             // 
             button20.Font = new Font("Microsoft Sans Serif", 12F);
-            button20.Location = new Point(94, 504);
+            button20.Location = new Point(99, 504);
             button20.Margin = new Padding(3, 2, 3, 2);
             button20.Name = "button20";
             button20.Size = new Size(35, 39);
@@ -1282,38 +1287,35 @@
             // 
             MaxHealth.AutoSize = true;
             MaxHealth.Font = new Font("Microsoft Sans Serif", 14F);
-            MaxHealth.Location = new Point(228, 438);
+            MaxHealth.Location = new Point(233, 438);
             MaxHealth.Name = "MaxHealth";
             MaxHealth.Size = new Size(39, 29);
             MaxHealth.TabIndex = 51;
             MaxHealth.Text = "25";
-            MaxHealth.Click += label4_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 14F);
-            label3.Location = new Point(184, 438);
+            label3.Location = new Point(189, 438);
             label3.Name = "label3";
             label3.Size = new Size(20, 29);
             label3.TabIndex = 50;
             label3.Text = "/";
-            label3.Click += label3_Click;
             // 
             // ModifyHealth
             // 
-            ModifyHealth.Location = new Point(213, 500);
+            ModifyHealth.Location = new Point(218, 500);
             ModifyHealth.Margin = new Padding(3, 2, 3, 2);
             ModifyHealth.Name = "ModifyHealth";
             ModifyHealth.Size = new Size(82, 38);
             ModifyHealth.TabIndex = 49;
-            ModifyHealth.TextChanged += textBox7_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 14F);
-            label2.Location = new Point(118, 378);
+            label2.Location = new Point(123, 378);
             label2.Name = "label2";
             label2.Size = new Size(156, 29);
             label2.TabIndex = 47;
@@ -1329,7 +1331,6 @@
             label1.Size = new Size(190, 29);
             label1.TabIndex = 46;
             label1.Text = "Analogue Health";
-            label1.Click += label1_Click;
             // 
             // TamerSkills
             // 
@@ -1481,7 +1482,6 @@
             TamerSkills.Size = new Size(1213, 798);
             TamerSkills.TabIndex = 0;
             TamerSkills.Text = "Tamer Skills";
-            TamerSkills.Click += TamerSkills_Click;
             // 
             // TamerStrengthSave
             // 
@@ -2521,7 +2521,6 @@
             label7.TabIndex = 78;
             label7.Text = "Wits";
             label7.TextAlign = ContentAlignment.TopCenter;
-            label7.Click += label7_Click;
             // 
             // label8
             // 
@@ -2533,7 +2532,6 @@
             label8.TabIndex = 77;
             label8.Text = "Vibes";
             label8.TextAlign = ContentAlignment.TopCenter;
-            label8.Click += label8_Click;
             // 
             // label6
             // 
@@ -2981,21 +2979,21 @@
             InvestigationTrack.Size = new Size(165, 56);
             InvestigationTrack.SmallChange = 0;
             InvestigationTrack.TabIndex = 40;
-            InvestigationTrack.Scroll += InvestigatonTrack_Scroll;
+            InvestigationTrack.Scroll += InvestigationTrack_Scroll;
             // 
             // TamerPowers
             // 
             TamerPowers.BackColor = SystemColors.ButtonFace;
-            TamerPowers.Controls.Add(groupBox6);
-            TamerPowers.Controls.Add(groupBox7);
-            TamerPowers.Controls.Add(groupBox5);
-            TamerPowers.Controls.Add(groupBox4);
-            TamerPowers.Controls.Add(WaybackTrack);
+            TamerPowers.Controls.Add(SuperThree);
+            TamerPowers.Controls.Add(SuperFour);
+            TamerPowers.Controls.Add(SuperOne);
+            TamerPowers.Controls.Add(SuperTwo);
+            TamerPowers.Controls.Add(PowerRollFour);
             TamerPowers.Controls.Add(WaybackTrackTrack);
             TamerPowers.Controls.Add(DigiSoul);
-            TamerPowers.Controls.Add(GigaSearch);
-            TamerPowers.Controls.Add(InfoExtract);
-            TamerPowers.Controls.Add(ErrorScan);
+            TamerPowers.Controls.Add(PowerRollThree);
+            TamerPowers.Controls.Add(PowerRollTwo);
+            TamerPowers.Controls.Add(PowerRollOne);
             TamerPowers.Controls.Add(DigiSoulStat);
             TamerPowers.Controls.Add(GigaSearchTrack);
             TamerPowers.Controls.Add(InfoExtractTrack);
@@ -3009,42 +3007,42 @@
             TamerPowers.Text = "Tamer Powers";
             TamerPowers.Click += TamerPowers_Click;
             // 
-            // groupBox6
+            // SuperThree
             // 
-            groupBox6.Controls.Add(TransmissionTrackLineFour);
-            groupBox6.Controls.Add(TransmissionTrackLineThree);
-            groupBox6.Controls.Add(button5);
-            groupBox6.Controls.Add(TransmissionTrackLineTwo);
-            groupBox6.Controls.Add(TransmissionTrackLineOne);
-            groupBox6.Location = new Point(21, 489);
-            groupBox6.Margin = new Padding(4, 5, 4, 5);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Padding = new Padding(4, 5, 4, 5);
-            groupBox6.Size = new Size(549, 255);
-            groupBox6.TabIndex = 98;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "Transmission Track";
-            groupBox6.Enter += groupBox6_Enter;
+            SuperThree.Controls.Add(SuperThreeLineFour);
+            SuperThree.Controls.Add(SuperThreeLineThree);
+            SuperThree.Controls.Add(button5);
+            SuperThree.Controls.Add(SuperThreeLineTwo);
+            SuperThree.Controls.Add(SuperThreeLineOne);
+            SuperThree.Location = new Point(21, 489);
+            SuperThree.Margin = new Padding(4, 5, 4, 5);
+            SuperThree.Name = "SuperThree";
+            SuperThree.Padding = new Padding(4, 5, 4, 5);
+            SuperThree.Size = new Size(549, 255);
+            SuperThree.TabIndex = 98;
+            SuperThree.TabStop = false;
+            SuperThree.Text = "Transmission Track";
+            SuperThree.Enter += groupBox6_Enter;
             // 
-            // TransmissionTrackLineFour
+            // SuperThreeLineFour
             // 
-            TransmissionTrackLineFour.AutoSize = true;
-            TransmissionTrackLineFour.Font = new Font("Microsoft Sans Serif", 10F);
-            TransmissionTrackLineFour.Location = new Point(8, 161);
-            TransmissionTrackLineFour.Name = "TransmissionTrackLineFour";
-            TransmissionTrackLineFour.Size = new Size(454, 20);
-            TransmissionTrackLineFour.TabIndex = 103;
-            TransmissionTrackLineFour.Text = "The creator and time of creation also become known to you.";
+            SuperThreeLineFour.AutoSize = true;
+            SuperThreeLineFour.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperThreeLineFour.Location = new Point(8, 161);
+            SuperThreeLineFour.Name = "SuperThreeLineFour";
+            SuperThreeLineFour.Size = new Size(454, 20);
+            SuperThreeLineFour.TabIndex = 103;
+            SuperThreeLineFour.Text = "The creator and time of creation also become known to you.";
             // 
-            // TransmissionTrackLineThree
+            // SuperThreeLineThree
             // 
-            TransmissionTrackLineThree.AutoSize = true;
-            TransmissionTrackLineThree.Font = new Font("Microsoft Sans Serif", 10F);
-            TransmissionTrackLineThree.Location = new Point(8, 124);
-            TransmissionTrackLineThree.Name = "TransmissionTrackLineThree";
-            TransmissionTrackLineThree.Size = new Size(474, 20);
-            TransmissionTrackLineThree.TabIndex = 102;
-            TransmissionTrackLineThree.Text = "involved in its creation, and sense any tampering or alteration. ";
+            SuperThreeLineThree.AutoSize = true;
+            SuperThreeLineThree.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperThreeLineThree.Location = new Point(8, 124);
+            SuperThreeLineThree.Name = "SuperThreeLineThree";
+            SuperThreeLineThree.Size = new Size(474, 20);
+            SuperThreeLineThree.TabIndex = 102;
+            SuperThreeLineThree.Text = "involved in its creation, and sense any tampering or alteration. ";
             // 
             // button5
             // 
@@ -3058,81 +3056,84 @@
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click_4;
             // 
-            // TransmissionTrackLineTwo
+            // SuperThreeLineTwo
             // 
-            TransmissionTrackLineTwo.AutoSize = true;
-            TransmissionTrackLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
-            TransmissionTrackLineTwo.Location = new Point(8, 86);
-            TransmissionTrackLineTwo.Name = "TransmissionTrackLineTwo";
-            TransmissionTrackLineTwo.Size = new Size(466, 20);
-            TransmissionTrackLineTwo.TabIndex = 101;
-            TransmissionTrackLineTwo.Text = "to which you're exposed. You can also detect any phenomena";
+            SuperThreeLineTwo.AutoSize = true;
+            SuperThreeLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperThreeLineTwo.Location = new Point(8, 86);
+            SuperThreeLineTwo.Name = "SuperThreeLineTwo";
+            SuperThreeLineTwo.Size = new Size(466, 20);
+            SuperThreeLineTwo.TabIndex = 101;
+            SuperThreeLineTwo.Text = "to which you're exposed. You can also detect any phenomena";
             // 
-            // TransmissionTrackLineOne
+            // SuperThreeLineOne
             // 
-            TransmissionTrackLineOne.AutoSize = true;
-            TransmissionTrackLineOne.Font = new Font("Microsoft Sans Serif", 10F);
-            TransmissionTrackLineOne.Location = new Point(8, 49);
-            TransmissionTrackLineOne.Name = "TransmissionTrackLineOne";
-            TransmissionTrackLineOne.Size = new Size(469, 20);
-            TransmissionTrackLineOne.TabIndex = 100;
-            TransmissionTrackLineOne.Text = "Figure out the location of origin of any broadcast or recording ";
+            SuperThreeLineOne.AutoSize = true;
+            SuperThreeLineOne.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperThreeLineOne.Location = new Point(8, 49);
+            SuperThreeLineOne.Name = "SuperThreeLineOne";
+            SuperThreeLineOne.Size = new Size(469, 20);
+            SuperThreeLineOne.TabIndex = 100;
+            SuperThreeLineOne.Text = "Figure out the location of origin of any broadcast or recording ";
             // 
-            // groupBox7
+            // SuperFour
             // 
-            groupBox7.Controls.Add(GigaMapsLineFour);
-            groupBox7.Controls.Add(GigaMapsLineThree);
-            groupBox7.Controls.Add(GigaMapsLineTwo);
-            groupBox7.Controls.Add(GigaMapsLineOne);
-            groupBox7.Controls.Add(button24);
-            groupBox7.Location = new Point(628, 489);
-            groupBox7.Margin = new Padding(4, 5, 4, 5);
-            groupBox7.Name = "groupBox7";
-            groupBox7.Padding = new Padding(4, 5, 4, 5);
-            groupBox7.Size = new Size(549, 255);
-            groupBox7.TabIndex = 97;
-            groupBox7.TabStop = false;
-            groupBox7.Text = "Giga Maps";
+            SuperFour.Controls.Add(SuperFourLineFour);
+            SuperFour.Controls.Add(SuperFourLineThree);
+            SuperFour.Controls.Add(SuperFourLineTwo);
+            SuperFour.Controls.Add(SuperFourLineOne);
+            SuperFour.Controls.Add(button24);
+            SuperFour.Location = new Point(628, 489);
+            SuperFour.Margin = new Padding(4, 5, 4, 5);
+            SuperFour.Name = "SuperFour";
+            SuperFour.Padding = new Padding(4, 5, 4, 5);
+            SuperFour.Size = new Size(549, 255);
+            SuperFour.TabIndex = 97;
+            SuperFour.TabStop = false;
+            SuperFour.Text = "Giga Maps";
+            SuperFour.Enter += SuperFour_Enter;
             // 
-            // GigaMapsLineFour
+            // SuperFourLineFour
             // 
-            GigaMapsLineFour.AutoSize = true;
-            GigaMapsLineFour.Font = new Font("Microsoft Sans Serif", 10F);
-            GigaMapsLineFour.Location = new Point(8, 161);
-            GigaMapsLineFour.Name = "GigaMapsLineFour";
-            GigaMapsLineFour.Size = new Size(270, 20);
-            GigaMapsLineFour.TabIndex = 103;
-            GigaMapsLineFour.Text = "where in the environment they are. ";
+            SuperFourLineFour.AutoSize = true;
+            SuperFourLineFour.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperFourLineFour.Location = new Point(8, 161);
+            SuperFourLineFour.Name = "SuperFourLineFour";
+            SuperFourLineFour.Size = new Size(270, 20);
+            SuperFourLineFour.TabIndex = 103;
+            SuperFourLineFour.Text = "where in the environment they are. ";
             // 
-            // GigaMapsLineThree
+            // SuperFourLineThree
             // 
-            GigaMapsLineThree.AutoSize = true;
-            GigaMapsLineThree.Font = new Font("Microsoft Sans Serif", 10F);
-            GigaMapsLineThree.Location = new Point(8, 124);
-            GigaMapsLineThree.Name = "GigaMapsLineThree";
-            GigaMapsLineThree.Size = new Size(431, 20);
-            GigaMapsLineThree.TabIndex = 102;
-            GigaMapsLineThree.Text = "many humans, animals, and Digimon are around you and";
+            SuperFourLineThree.AutoSize = true;
+            SuperFourLineThree.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperFourLineThree.Location = new Point(8, 124);
+            SuperFourLineThree.Name = "SuperFourLineThree";
+            SuperFourLineThree.Size = new Size(431, 20);
+            SuperFourLineThree.TabIndex = 102;
+            SuperFourLineThree.Text = "many humans, animals, and Digimon are around you and";
             // 
-            // GigaMapsLineTwo
+            // SuperFourLineTwo
             // 
-            GigaMapsLineTwo.AutoSize = true;
-            GigaMapsLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
-            GigaMapsLineTwo.Location = new Point(8, 86);
-            GigaMapsLineTwo.Name = "GigaMapsLineTwo";
-            GigaMapsLineTwo.Size = new Size(479, 20);
-            GigaMapsLineTwo.TabIndex = 101;
-            GigaMapsLineTwo.Text = "access to a mini-map. Complete with limited awareness of how";
+            SuperFourLineTwo.AutoSize = true;
+            SuperFourLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperFourLineTwo.Location = new Point(8, 86);
+            SuperFourLineTwo.Name = "SuperFourLineTwo";
+            SuperFourLineTwo.Size = new Size(479, 20);
+            SuperFourLineTwo.TabIndex = 101;
+            SuperFourLineTwo.Text = "access to a mini-map. Complete with limited awareness of how";
+            SuperFourLineTwo.Click += GigaMapsLineTwo_Click;
             // 
-            // GigaMapsLineOne
+            // SuperFourLineOne
             // 
-            GigaMapsLineOne.AutoSize = true;
-            GigaMapsLineOne.Font = new Font("Microsoft Sans Serif", 10F);
-            GigaMapsLineOne.Location = new Point(8, 49);
-            GigaMapsLineOne.Name = "GigaMapsLineOne";
-            GigaMapsLineOne.Size = new Size(455, 20);
-            GigaMapsLineOne.TabIndex = 100;
-            GigaMapsLineOne.Text = "Know your way through an unfamiliar location, as if you had ";
+            SuperFourLineOne.AutoSize = true;
+            SuperFourLineOne.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperFourLineOne.Location = new Point(8, 49);
+            SuperFourLineOne.Name = "SuperFourLineOne";
+            SuperFourLineOne.Size = new Size(455, 20);
+            SuperFourLineOne.TabIndex = 100;
+            SuperFourLineOne.Text = "Know your way through an unfamiliar location, as if you had ";
+            SuperFourLineOne.Click += GigaMapsLineOne_Click;
             // 
             // button24
             // 
@@ -3146,62 +3147,64 @@
             button24.UseVisualStyleBackColor = true;
             button24.Click += button24_Click;
             // 
-            // groupBox5
+            // SuperOne
             // 
-            groupBox5.Controls.Add(BattleScanLineFour);
-            groupBox5.Controls.Add(BattleScanLineThree);
-            groupBox5.Controls.Add(BattleScanLineTwo);
-            groupBox5.Controls.Add(BattleScanLineOne);
-            groupBox5.Controls.Add(ActivateBS);
-            groupBox5.Location = new Point(21, 212);
-            groupBox5.Margin = new Padding(4, 5, 4, 5);
-            groupBox5.Name = "groupBox5";
-            groupBox5.Padding = new Padding(4, 5, 4, 5);
-            groupBox5.Size = new Size(549, 255);
-            groupBox5.TabIndex = 96;
-            groupBox5.TabStop = false;
-            groupBox5.Text = "Battle Scan";
-            groupBox5.Enter += groupBox5_Enter;
+            SuperOne.Controls.Add(SuperOneLineFour);
+            SuperOne.Controls.Add(SuperOneLineThree);
+            SuperOne.Controls.Add(SuperOneLineTwo);
+            SuperOne.Controls.Add(SuperOneLineOne);
+            SuperOne.Controls.Add(ActivateBS);
+            SuperOne.Location = new Point(21, 212);
+            SuperOne.Margin = new Padding(4, 5, 4, 5);
+            SuperOne.Name = "SuperOne";
+            SuperOne.Padding = new Padding(4, 5, 4, 5);
+            SuperOne.Size = new Size(549, 255);
+            SuperOne.TabIndex = 96;
+            SuperOne.TabStop = false;
+            SuperOne.Text = "Battle Scan";
+            SuperOne.Enter += groupBox5_Enter;
             // 
-            // BattleScanLineFour
+            // SuperOneLineFour
             // 
-            BattleScanLineFour.AutoSize = true;
-            BattleScanLineFour.Font = new Font("Microsoft Sans Serif", 10F);
-            BattleScanLineFour.Location = new Point(8, 161);
-            BattleScanLineFour.Name = "BattleScanLineFour";
-            BattleScanLineFour.Size = new Size(0, 20);
-            BattleScanLineFour.TabIndex = 99;
+            SuperOneLineFour.AutoSize = true;
+            SuperOneLineFour.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperOneLineFour.Location = new Point(8, 161);
+            SuperOneLineFour.Name = "SuperOneLineFour";
+            SuperOneLineFour.Size = new Size(0, 20);
+            SuperOneLineFour.TabIndex = 99;
             // 
-            // BattleScanLineThree
+            // SuperOneLineThree
             // 
-            BattleScanLineThree.AutoSize = true;
-            BattleScanLineThree.Font = new Font("Microsoft Sans Serif", 10F);
-            BattleScanLineThree.Location = new Point(8, 124);
-            BattleScanLineThree.Name = "BattleScanLineThree";
-            BattleScanLineThree.Size = new Size(426, 20);
-            BattleScanLineThree.TabIndex = 93;
-            BattleScanLineThree.Text = "health and their elemental weaknesses and resistances.";
+            SuperOneLineThree.AutoSize = true;
+            SuperOneLineThree.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperOneLineThree.Location = new Point(8, 124);
+            SuperOneLineThree.Name = "SuperOneLineThree";
+            SuperOneLineThree.Size = new Size(426, 20);
+            SuperOneLineThree.TabIndex = 93;
+            SuperOneLineThree.Text = "health and their elemental weaknesses and resistances.";
+            SuperOneLineThree.Click += BattleScanLineThree_Click;
             // 
-            // BattleScanLineTwo
+            // SuperOneLineTwo
             // 
-            BattleScanLineTwo.AutoSize = true;
-            BattleScanLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
-            BattleScanLineTwo.Location = new Point(8, 86);
-            BattleScanLineTwo.Name = "BattleScanLineTwo";
-            BattleScanLineTwo.Size = new Size(460, 20);
-            BattleScanLineTwo.TabIndex = 92;
-            BattleScanLineTwo.Text = "your choosing get a circumstance dice. You also get to know";
+            SuperOneLineTwo.AutoSize = true;
+            SuperOneLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperOneLineTwo.Location = new Point(8, 86);
+            SuperOneLineTwo.Name = "SuperOneLineTwo";
+            SuperOneLineTwo.Size = new Size(460, 20);
+            SuperOneLineTwo.TabIndex = 92;
+            SuperOneLineTwo.Text = "your choosing get a circumstance dice. You also get to know";
+            SuperOneLineTwo.Click += SuperOneLineTwo_Click;
             // 
-            // BattleScanLineOne
+            // SuperOneLineOne
             // 
-            BattleScanLineOne.AutoSize = true;
-            BattleScanLineOne.Font = new Font("Microsoft Sans Serif", 10F);
-            BattleScanLineOne.Location = new Point(8, 49);
-            BattleScanLineOne.Name = "BattleScanLineOne";
-            BattleScanLineOne.Size = new Size(446, 20);
-            BattleScanLineOne.TabIndex = 91;
-            BattleScanLineOne.Text = "For the rest of the scene, all attacks against a character of";
-            BattleScanLineOne.Click += label31_Click_1;
+            SuperOneLineOne.AutoSize = true;
+            SuperOneLineOne.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperOneLineOne.Location = new Point(8, 49);
+            SuperOneLineOne.Name = "SuperOneLineOne";
+            SuperOneLineOne.Size = new Size(446, 20);
+            SuperOneLineOne.TabIndex = 91;
+            SuperOneLineOne.Text = "For the rest of the scene, all attacks against a character of";
+            SuperOneLineOne.Click += label31_Click_1;
             // 
             // ActivateBS
             // 
@@ -3215,52 +3218,53 @@
             ActivateBS.UseVisualStyleBackColor = true;
             ActivateBS.Click += button22_Click_3;
             // 
-            // groupBox4
+            // SuperTwo
             // 
-            groupBox4.Controls.Add(HoloDisplayLineFour);
-            groupBox4.Controls.Add(HoloDisplayLineThree);
-            groupBox4.Controls.Add(HoloDisplayLineTwo);
-            groupBox4.Controls.Add(button4);
-            groupBox4.Controls.Add(HoloDisplayLineOne);
-            groupBox4.Location = new Point(628, 212);
-            groupBox4.Margin = new Padding(4, 5, 4, 5);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Padding = new Padding(4, 5, 4, 5);
-            groupBox4.Size = new Size(549, 255);
-            groupBox4.TabIndex = 95;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Holo-Display";
-            groupBox4.Enter += groupBox4_Enter;
+            SuperTwo.Controls.Add(SuperTwoLineFour);
+            SuperTwo.Controls.Add(SuperTwoLineThree);
+            SuperTwo.Controls.Add(SuperTwoLineTwo);
+            SuperTwo.Controls.Add(button4);
+            SuperTwo.Controls.Add(SuperTwoLineOne);
+            SuperTwo.Location = new Point(628, 212);
+            SuperTwo.Margin = new Padding(4, 5, 4, 5);
+            SuperTwo.Name = "SuperTwo";
+            SuperTwo.Padding = new Padding(4, 5, 4, 5);
+            SuperTwo.Size = new Size(549, 255);
+            SuperTwo.TabIndex = 95;
+            SuperTwo.TabStop = false;
+            SuperTwo.Text = "Holo-Display";
+            SuperTwo.Enter += groupBox4_Enter;
             // 
-            // HoloDisplayLineFour
+            // SuperTwoLineFour
             // 
-            HoloDisplayLineFour.AutoSize = true;
-            HoloDisplayLineFour.Font = new Font("Microsoft Sans Serif", 10F);
-            HoloDisplayLineFour.Location = new Point(8, 161);
-            HoloDisplayLineFour.Name = "HoloDisplayLineFour";
-            HoloDisplayLineFour.Size = new Size(126, 20);
-            HoloDisplayLineFour.TabIndex = 98;
-            HoloDisplayLineFour.Text = "you pass yours.";
+            SuperTwoLineFour.AutoSize = true;
+            SuperTwoLineFour.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperTwoLineFour.Location = new Point(8, 161);
+            SuperTwoLineFour.Name = "SuperTwoLineFour";
+            SuperTwoLineFour.Size = new Size(126, 20);
+            SuperTwoLineFour.TabIndex = 98;
+            SuperTwoLineFour.Text = "you pass yours.";
             // 
-            // HoloDisplayLineThree
+            // SuperTwoLineThree
             // 
-            HoloDisplayLineThree.AutoSize = true;
-            HoloDisplayLineThree.Font = new Font("Microsoft Sans Serif", 10F);
-            HoloDisplayLineThree.Location = new Point(8, 124);
-            HoloDisplayLineThree.Name = "HoloDisplayLineThree";
-            HoloDisplayLineThree.Size = new Size(461, 20);
-            HoloDisplayLineThree.TabIndex = 97;
-            HoloDisplayLineThree.Text = "rolls or to buff allies on their Wits and Education Rolls if you ";
+            SuperTwoLineThree.AutoSize = true;
+            SuperTwoLineThree.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperTwoLineThree.Location = new Point(8, 124);
+            SuperTwoLineThree.Name = "SuperTwoLineThree";
+            SuperTwoLineThree.Size = new Size(461, 20);
+            SuperTwoLineThree.TabIndex = 97;
+            SuperTwoLineThree.Text = "rolls or to buff allies on their Wits and Education Rolls if you ";
+            SuperTwoLineThree.Click += HoloDisplayLineThree_Click;
             // 
-            // HoloDisplayLineTwo
+            // SuperTwoLineTwo
             // 
-            HoloDisplayLineTwo.AutoSize = true;
-            HoloDisplayLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
-            HoloDisplayLineTwo.Location = new Point(8, 86);
-            HoloDisplayLineTwo.Name = "HoloDisplayLineTwo";
-            HoloDisplayLineTwo.Size = new Size(469, 20);
-            HoloDisplayLineTwo.TabIndex = 96;
-            HoloDisplayLineTwo.Text = "information to allies. It can also be used to help with persuade";
+            SuperTwoLineTwo.AutoSize = true;
+            SuperTwoLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperTwoLineTwo.Location = new Point(8, 86);
+            SuperTwoLineTwo.Name = "SuperTwoLineTwo";
+            SuperTwoLineTwo.Size = new Size(469, 20);
+            SuperTwoLineTwo.TabIndex = 96;
+            SuperTwoLineTwo.Text = "information to allies. It can also be used to help with persuade";
             // 
             // button4
             // 
@@ -3274,27 +3278,27 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click_1;
             // 
-            // HoloDisplayLineOne
+            // SuperTwoLineOne
             // 
-            HoloDisplayLineOne.AutoSize = true;
-            HoloDisplayLineOne.Font = new Font("Microsoft Sans Serif", 10F);
-            HoloDisplayLineOne.Location = new Point(8, 49);
-            HoloDisplayLineOne.Name = "HoloDisplayLineOne";
-            HoloDisplayLineOne.Size = new Size(463, 20);
-            HoloDisplayLineOne.TabIndex = 95;
-            HoloDisplayLineOne.Text = "Create a silent holographic display. This can be used to relay";
+            SuperTwoLineOne.AutoSize = true;
+            SuperTwoLineOne.Font = new Font("Microsoft Sans Serif", 10F);
+            SuperTwoLineOne.Location = new Point(8, 49);
+            SuperTwoLineOne.Name = "SuperTwoLineOne";
+            SuperTwoLineOne.Size = new Size(463, 20);
+            SuperTwoLineOne.TabIndex = 95;
+            SuperTwoLineOne.Text = "Create a silent holographic display. This can be used to relay";
             // 
-            // WaybackTrack
+            // PowerRollFour
             // 
-            WaybackTrack.Font = new Font("Microsoft Sans Serif", 10F);
-            WaybackTrack.Location = new Point(957, 101);
-            WaybackTrack.Margin = new Padding(3, 2, 3, 2);
-            WaybackTrack.Name = "WaybackTrack";
-            WaybackTrack.Size = new Size(165, 42);
-            WaybackTrack.TabIndex = 85;
-            WaybackTrack.Text = "Wayback Track";
-            WaybackTrack.UseVisualStyleBackColor = true;
-            WaybackTrack.Click += button22_Click_1;
+            PowerRollFour.Font = new Font("Microsoft Sans Serif", 10F);
+            PowerRollFour.Location = new Point(957, 101);
+            PowerRollFour.Margin = new Padding(3, 2, 3, 2);
+            PowerRollFour.Name = "PowerRollFour";
+            PowerRollFour.Size = new Size(165, 42);
+            PowerRollFour.TabIndex = 85;
+            PowerRollFour.Text = "Wayback Track";
+            PowerRollFour.UseVisualStyleBackColor = true;
+            PowerRollFour.Click += button22_Click_1;
             // 
             // WaybackTrackTrack
             // 
@@ -3318,41 +3322,41 @@
             DigiSoul.Text = "Digi-Soul";
             DigiSoul.TextAlign = ContentAlignment.TopCenter;
             // 
-            // GigaSearch
+            // PowerRollThree
             // 
-            GigaSearch.Font = new Font("Microsoft Sans Serif", 10F);
-            GigaSearch.Location = new Point(724, 101);
-            GigaSearch.Margin = new Padding(3, 2, 3, 2);
-            GigaSearch.Name = "GigaSearch";
-            GigaSearch.Size = new Size(165, 42);
-            GigaSearch.TabIndex = 82;
-            GigaSearch.Text = "Giga Search";
-            GigaSearch.UseVisualStyleBackColor = true;
-            GigaSearch.Click += GigaSearch_Click;
+            PowerRollThree.Font = new Font("Microsoft Sans Serif", 10F);
+            PowerRollThree.Location = new Point(724, 101);
+            PowerRollThree.Margin = new Padding(3, 2, 3, 2);
+            PowerRollThree.Name = "PowerRollThree";
+            PowerRollThree.Size = new Size(165, 42);
+            PowerRollThree.TabIndex = 82;
+            PowerRollThree.Text = "Giga Search";
+            PowerRollThree.UseVisualStyleBackColor = true;
+            PowerRollThree.Click += GigaSearch_Click;
             // 
-            // InfoExtract
+            // PowerRollTwo
             // 
-            InfoExtract.Font = new Font("Microsoft Sans Serif", 10F);
-            InfoExtract.Location = new Point(493, 101);
-            InfoExtract.Margin = new Padding(3, 2, 3, 2);
-            InfoExtract.Name = "InfoExtract";
-            InfoExtract.Size = new Size(165, 42);
-            InfoExtract.TabIndex = 81;
-            InfoExtract.Text = "Info Extract";
-            InfoExtract.UseVisualStyleBackColor = true;
-            InfoExtract.Click += InfoExtract_Click;
+            PowerRollTwo.Font = new Font("Microsoft Sans Serif", 10F);
+            PowerRollTwo.Location = new Point(493, 101);
+            PowerRollTwo.Margin = new Padding(3, 2, 3, 2);
+            PowerRollTwo.Name = "PowerRollTwo";
+            PowerRollTwo.Size = new Size(165, 42);
+            PowerRollTwo.TabIndex = 81;
+            PowerRollTwo.Text = "Info Extract";
+            PowerRollTwo.UseVisualStyleBackColor = true;
+            PowerRollTwo.Click += InfoExtract_Click;
             // 
-            // ErrorScan
+            // PowerRollOne
             // 
-            ErrorScan.Font = new Font("Microsoft Sans Serif", 10F);
-            ErrorScan.Location = new Point(263, 101);
-            ErrorScan.Margin = new Padding(3, 2, 3, 2);
-            ErrorScan.Name = "ErrorScan";
-            ErrorScan.Size = new Size(165, 45);
-            ErrorScan.TabIndex = 80;
-            ErrorScan.Text = "Error Scan";
-            ErrorScan.UseVisualStyleBackColor = true;
-            ErrorScan.Click += ErrorScan_Click;
+            PowerRollOne.Font = new Font("Microsoft Sans Serif", 10F);
+            PowerRollOne.Location = new Point(263, 101);
+            PowerRollOne.Margin = new Padding(3, 2, 3, 2);
+            PowerRollOne.Name = "PowerRollOne";
+            PowerRollOne.Size = new Size(165, 45);
+            PowerRollOne.TabIndex = 80;
+            PowerRollOne.Text = "Error Scan";
+            PowerRollOne.UseVisualStyleBackColor = true;
+            PowerRollOne.Click += ErrorScan_Click;
             // 
             // DigiSoulStat
             // 
@@ -6637,7 +6641,7 @@
             // 
             // LevelUp
             // 
-            LevelUp.Location = new Point(1253, 718);
+            LevelUp.Location = new Point(1253, 677);
             LevelUp.Margin = new Padding(3, 2, 3, 2);
             LevelUp.Name = "LevelUp";
             LevelUp.Size = new Size(148, 108);
@@ -6646,11 +6650,56 @@
             LevelUp.UseVisualStyleBackColor = true;
             LevelUp.Click += button22_Click_4;
             // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label16.Location = new Point(1261, 813);
+            label16.Name = "label16";
+            label16.Size = new Size(37, 16);
+            label16.TabIndex = 196;
+            label16.Text = "Exp:";
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label49.Location = new Point(1348, 813);
+            label49.Name = "label49";
+            label49.Size = new Size(12, 16);
+            label49.TabIndex = 195;
+            label49.Text = "/";
+            // 
+            // ExpNext
+            // 
+            ExpNext.AutoSize = true;
+            ExpNext.Font = new Font("Microsoft Sans Serif", 8F);
+            ExpNext.Location = new Point(1379, 813);
+            ExpNext.Name = "ExpNext";
+            ExpNext.Size = new Size(16, 17);
+            ExpNext.TabIndex = 194;
+            ExpNext.Text = "3";
+            // 
+            // ExpCurrent
+            // 
+            ExpCurrent.AutoSize = true;
+            ExpCurrent.Font = new Font("Microsoft Sans Serif", 8F);
+            ExpCurrent.Location = new Point(1313, 813);
+            ExpCurrent.Name = "ExpCurrent";
+            ExpCurrent.Size = new Size(16, 17);
+            ExpCurrent.TabIndex = 193;
+            ExpCurrent.Text = "0";
+            ExpCurrent.TextChanged += ExpCurrent_Changed;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1424, 859);
+            ClientSize = new Size(1424, 853);
+            Controls.Add(label16);
+            Controls.Add(label49);
+            Controls.Add(ExpNext);
+            Controls.Add(ExpCurrent);
             Controls.Add(LevelUp);
             Controls.Add(Digivolve);
             Controls.Add(HaveMeal);
@@ -6662,8 +6711,8 @@
             Text = "Digivice";
             Load += Form1_Load;
             TamerDigimon.ResumeLayout(false);
-            TamerAttackRoll.ResumeLayout(false);
-            TamerAttackRoll.PerformLayout();
+            TamerStats.ResumeLayout(false);
+            TamerStats.PerformLayout();
             groupBox19.ResumeLayout(false);
             groupBox19.PerformLayout();
             groupBox3.ResumeLayout(false);
@@ -6693,14 +6742,14 @@
             ((System.ComponentModel.ISupportInitialize)InvestigationTrack).EndInit();
             TamerPowers.ResumeLayout(false);
             TamerPowers.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            groupBox6.PerformLayout();
-            groupBox7.ResumeLayout(false);
-            groupBox7.PerformLayout();
-            groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
-            groupBox4.ResumeLayout(false);
-            groupBox4.PerformLayout();
+            SuperThree.ResumeLayout(false);
+            SuperThree.PerformLayout();
+            SuperFour.ResumeLayout(false);
+            SuperFour.PerformLayout();
+            SuperOne.ResumeLayout(false);
+            SuperOne.PerformLayout();
+            SuperTwo.ResumeLayout(false);
+            SuperTwo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)WaybackTrackTrack).EndInit();
             ((System.ComponentModel.ISupportInitialize)GigaSearchTrack).EndInit();
             ((System.ComponentModel.ISupportInitialize)InfoExtractTrack).EndInit();
@@ -6745,6 +6794,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -6757,26 +6807,25 @@
         private System.Windows.Forms.TabPage DigimonMoves;
         private System.Windows.Forms.TabPage DigimonStats;
         private System.Windows.Forms.TabPage DigimonLifecycle;
-        private System.Windows.Forms.Button WaybackTrack;
+        private System.Windows.Forms.Button PowerRollFour;
         public System.Windows.Forms.TrackBar WaybackTrackTrack;
         private System.Windows.Forms.Label DigiSoul;
-        private System.Windows.Forms.Button GigaSearch;
-        private System.Windows.Forms.Button InfoExtract;
-        private System.Windows.Forms.Button ErrorScan;
+        private System.Windows.Forms.Button PowerRollThree;
+        private System.Windows.Forms.Button PowerRollTwo;
+        private System.Windows.Forms.Button PowerRollOne;
         private System.Windows.Forms.TextBox DigiSoulStat;
         public System.Windows.Forms.TrackBar GigaSearchTrack;
         public System.Windows.Forms.TrackBar InfoExtractTrack;
         public System.Windows.Forms.TrackBar ErrorScanTrack;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox SuperOne;
         private System.Windows.Forms.Button ActivateBS;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox SuperTwo;
+        private System.Windows.Forms.GroupBox SuperThree;
+        private System.Windows.Forms.GroupBox SuperFour;
         private System.Windows.Forms.Button button24;
         private System.Windows.Forms.Button LevelUp;
-        private System.Windows.Forms.TabPage TamerAttackRoll;
+        private System.Windows.Forms.TabPage TamerStats;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox ReadableInventory;
@@ -7209,24 +7258,24 @@
         private System.Windows.Forms.CheckBox TamerRollMinusOne;
         private System.Windows.Forms.CheckBox TamerRollPlusTwo;
         private System.Windows.Forms.CheckBox TamerRollPlusOne;
-        private System.Windows.Forms.Label BattleScanLineOne;
-        private System.Windows.Forms.Label BattleScanLineThree;
-        private System.Windows.Forms.Label BattleScanLineTwo;
-        private System.Windows.Forms.Label HoloDisplayLineThree;
-        private System.Windows.Forms.Label HoloDisplayLineTwo;
+        private System.Windows.Forms.Label SuperOneLineOne;
+        private System.Windows.Forms.Label SuperOneLineThree;
+        private System.Windows.Forms.Label SuperOneLineTwo;
+        private System.Windows.Forms.Label SuperTwoLineThree;
+        private System.Windows.Forms.Label SuperTwoLineTwo;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label HoloDisplayLineOne;
-        private System.Windows.Forms.Label HoloDisplayLineFour;
-        private System.Windows.Forms.Label BattleScanLineFour;
-        private System.Windows.Forms.Label GigaMapsLineFour;
-        private System.Windows.Forms.Label GigaMapsLineThree;
-        private System.Windows.Forms.Label GigaMapsLineTwo;
-        private System.Windows.Forms.Label GigaMapsLineOne;
-        private System.Windows.Forms.Label TransmissionTrackLineFour;
-        private System.Windows.Forms.Label TransmissionTrackLineThree;
+        private System.Windows.Forms.Label SuperTwoLineOne;
+        private System.Windows.Forms.Label SuperTwoLineFour;
+        private System.Windows.Forms.Label SuperOneLineFour;
+        private System.Windows.Forms.Label SuperFourLineFour;
+        private System.Windows.Forms.Label SuperFourLineThree;
+        private System.Windows.Forms.Label SuperFourLineTwo;
+        private System.Windows.Forms.Label SuperFourLineOne;
+        private System.Windows.Forms.Label SuperThreeLineFour;
+        private System.Windows.Forms.Label SuperThreeLineThree;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label TransmissionTrackLineTwo;
-        private System.Windows.Forms.Label TransmissionTrackLineOne;
+        private System.Windows.Forms.Label SuperThreeLineTwo;
+        private System.Windows.Forms.Label SuperThreeLineOne;
         private Label label32;
         private Label DigiStrengthSave;
         private Label DigiAgilitySave;
@@ -7253,6 +7302,11 @@
         private CheckBox DigiRollMinusFive;
         private CheckBox DigiRollPlusFive;
         private CheckBox DigiRollPlusFour;
+        private ComboBox ClassBox;
+        private Label label16;
+        private Label label49;
+        private Label ExpNext;
+        private Label ExpCurrent;
     }
 }
 

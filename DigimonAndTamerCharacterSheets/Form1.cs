@@ -28,14 +28,21 @@ namespace DigimonAndTamerCharacterSheets
 
             //Reset the options to default
             Partner.Items.Clear();
+            ClassBox.Items.Clear();
 
             try
             {
                 // Get all directories containing "mon" in their name
                 var DigimonFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Digi"), "*mon", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
 
+                // Get all directories 
+                var ClassFolders = Directory.EnumerateDirectories(Path.Combine(Directory.GetCurrentDirectory(), "Resources", "Class"), "*", SearchOption.TopDirectoryOnly).Select(Path.GetFileNameWithoutExtension);
+
                 // Add options to Partner Selection options
                 Partner.Items.AddRange(DigimonFolders.ToArray());
+
+                // Add options to Class Selection options
+                ClassBox.Items.AddRange(ClassFolders.ToArray());
             }
             catch (Exception ex)
             {
@@ -215,8 +222,10 @@ namespace DigimonAndTamerCharacterSheets
                 FreshEvolution = loadedForm.FreshEvolution;
                 ReincarnationTime = loadedForm.ReincarnationTime;
                 digiSoulCost = loadedForm.DigiSoulCost;
+                ExpCurrent.Text = loadedForm.ExpNow;
+                ExpNext.Text = loadedForm.ExpNext;
 
-                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath)); ;
+                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
                 DigivolutionDetails();
@@ -367,6 +376,8 @@ namespace DigimonAndTamerCharacterSheets
                     UpgradePowers = InfoExtractTrack.Enabled,
                     ReincarnationTime = ReincarnationTime,
                     DigiSoulCost = digiSoulCost,
+                    ExpNow = ExpCurrent.Text,
+                    ExpNext = ExpNext.Text,
                 }));
 
             }
@@ -532,226 +543,6 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button18_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TamerSkills_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Bruise_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TamerStats_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton14_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton10_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BruiseFive_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InjuryTwo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InjuryThree_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InjuryFour_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InjuryFive_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundTwo_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundThree_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundFour_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton14_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton13_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton12_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundOne_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton5_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton2_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button20_Click(object sender, EventArgs e)
         {
 
@@ -832,60 +623,6 @@ namespace DigimonAndTamerCharacterSheets
             SaveCharacterInformation();
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundTwo_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundFive_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void WoundFour_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void InjuryOne_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
 
         private void button22_Click(object sender, EventArgs e)
         {
@@ -2165,7 +1902,7 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         // Investigation Tracker
-        public void InvestigatonTrack_Scroll(object sender, EventArgs e)
+        public void InvestigationTrack_Scroll(object sender, EventArgs e)
         {
             {
 
@@ -4548,6 +4285,8 @@ namespace DigimonAndTamerCharacterSheets
                         UpgradeSkills = true,
                         UpgradePowers = true,
                         DigiSoulCost = 0,
+                        ExpNow = "0",
+                        ExpNext = "3",
 
                     }));
 
@@ -4833,8 +4572,12 @@ namespace DigimonAndTamerCharacterSheets
         // Press The Button
         private void button22_Click_4(object sender, EventArgs e)
         {
-
+            // Level Up Code
             int.TryParse(TamersLevel.Text, out TamerLevel);
+            ExpCurrent.Text = "0";
+            ExpNext.Text = (((TamerLevel + 1) * 2) + 1).ToString();
+            LevelUp.Enabled = false;
+
             if (TamerLevel < 20)
             {
                 // Get the Lifespan
@@ -5404,6 +5147,8 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         DigimonInfo EvolutionAddress;
+        TamerInfo ClassAddress;
+
 
         private void SuperSkillGain_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -6318,6 +6063,9 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ExperienceQuestions LevelSheet = new ExperienceQuestions(this);
+            LevelSheet.Show();
+
             digiSoulCost = 0;
             DigiSoulStat.Text = "";
 
@@ -6350,7 +6098,6 @@ namespace DigimonAndTamerCharacterSheets
 
 
 
-            MessageBox.Show($"Good morning sunshine, its a brand new day!");
 
             if (InjuryFive.Checked == true)
             {
@@ -6391,6 +6138,13 @@ namespace DigimonAndTamerCharacterSheets
             SaveCharacterInformation();
 
         }
+
+        public string ExperienceModify
+        {
+            get { return ExpCurrent.Text; }
+            set { int.TryParse(ExpCurrent.Text, out int ExpGrab); int.TryParse(value, out int ExpGrowth); ExpCurrent.Text = (ExpGrowth + ExpGrab).ToString(); }
+        }
+
 
         private void groupBox16_Enter(object sender, EventArgs e)
         {
@@ -8235,9 +7989,13 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalStrike--;
             }
 
+
             if (DigiRollMinusTwo.Checked == true)
             {
-                DigitalStrike--;
+                if (DigiRollMinusTwo.Checked == true)
+
+
+                    DigitalStrike--;
             }
 
             if (DigiRollMinusThree.Checked == true)
@@ -8542,5 +8300,88 @@ namespace DigimonAndTamerCharacterSheets
             DigiSoulStat.Text = "";
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+            TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+            PowerRollOne.Text = ClassAddress.RollOne;
+            PowerRollTwo.Text = ClassAddress.RollTwo;
+            PowerRollThree.Text = ClassAddress.RollThree;
+            PowerRollFour.Text = ClassAddress.RollFour;
+
+            SuperOne.Text = ClassAddress.PowerOne;
+            SuperOneLineOne.Text = ClassAddress.PowerOneLineOne;
+            SuperOneLineTwo.Text = ClassAddress.PowerOneLineTwo;
+            SuperOneLineThree.Text = ClassAddress.PowerOneLineThree;
+            SuperOneLineFour.Text = ClassAddress.PowerOneLineFour;
+
+            SuperTwo.Text = ClassAddress.PowerTwo;
+            SuperTwoLineOne.Text = ClassAddress.PowerTwoLineOne;
+            SuperTwoLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+            SuperTwoLineThree.Text = ClassAddress.PowerTwoLineThree;
+            SuperTwoLineFour.Text = ClassAddress.PowerTwoLineFour;
+
+            SuperThree.Text = ClassAddress.PowerThree;
+            SuperThreeLineOne.Text = ClassAddress.PowerThreeLineOne;
+            SuperThreeLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+            SuperThreeLineThree.Text = ClassAddress.PowerThreeLineThree;
+            SuperThreeLineFour.Text = ClassAddress.PowerThreeLineFour;
+
+            SuperFour.Text = ClassAddress.PowerFour;
+            SuperFourLineOne.Text = ClassAddress.PowerFourLineOne;
+            SuperFourLineTwo.Text = ClassAddress.PowerFourLineTwo;
+            SuperFourLineThree.Text = ClassAddress.PowerFourLineThree;
+            SuperFourLineFour.Text = ClassAddress.PowerFourLineFour;
+
+
+        }
+
+        private void TamerStats_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ExpCurrent_Changed(object sender, EventArgs e)
+        {
+            int.TryParse(ExpCurrent.Text, out int ExpNow);
+            int.TryParse(ExpNext.Text, out int ExpMax);
+
+            if (ExpNow > ExpMax - 1)
+            {
+                LevelUp.Enabled = true;
+                ExpCurrent.Text = ExpNext.Text;
+            }
+        }
+
+        private void SuperOneLineTwo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BattleScanLineThree_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HoloDisplayLineThree_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GigaMapsLineOne_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GigaMapsLineTwo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SuperFour_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

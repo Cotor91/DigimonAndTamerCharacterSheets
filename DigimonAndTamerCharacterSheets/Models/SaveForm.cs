@@ -105,4 +105,6 @@ internal class SaveForm
     public bool UpgradeSkills { get; set; } = false!;
     public bool UpgradePowers { get; set; } = false!;
     public bool ReincarnationTime { get; set; } = false!;
+    public string ExpNow { get; set; } = null!; 
+    public string ExpNext { get; set; } = null!;
 }
