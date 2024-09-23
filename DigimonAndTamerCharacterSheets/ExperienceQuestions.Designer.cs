@@ -127,6 +127,7 @@
             Controls.Add(SecondQuestion);
             Controls.Add(FirstQuestion);
             Name = "ExperienceQuestions";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Experience Questions";
             Load += ExperienceQuestions_Load;
             ResumeLayout(false);

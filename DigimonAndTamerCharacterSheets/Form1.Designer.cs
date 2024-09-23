@@ -236,7 +236,7 @@
             SuperThree = new GroupBox();
             SuperThreeLineFour = new Label();
             SuperThreeLineThree = new Label();
-            button5 = new Button();
+            ActivatePowerThree = new Button();
             SuperThreeLineTwo = new Label();
             SuperThreeLineOne = new Label();
             SuperFour = new GroupBox();
@@ -244,18 +244,18 @@
             SuperFourLineThree = new Label();
             SuperFourLineTwo = new Label();
             SuperFourLineOne = new Label();
-            button24 = new Button();
+            ActivatePowerFour = new Button();
             SuperOne = new GroupBox();
             SuperOneLineFour = new Label();
             SuperOneLineThree = new Label();
             SuperOneLineTwo = new Label();
             SuperOneLineOne = new Label();
-            ActivateBS = new Button();
+            ActivatePowerOne = new Button();
             SuperTwo = new GroupBox();
             SuperTwoLineFour = new Label();
             SuperTwoLineThree = new Label();
             SuperTwoLineTwo = new Label();
-            button4 = new Button();
+            ActivatePowerTwo = new Button();
             SuperTwoLineOne = new Label();
             PowerRollFour = new Button();
             WaybackTrackTrack = new TrackBar();
@@ -839,7 +839,6 @@
             label170.Size = new Size(61, 20);
             label170.TabIndex = 95;
             label170.Text = "Wound";
-            label170.Click += label170_Click;
             // 
             // groupBox19
             // 
@@ -857,7 +856,7 @@
             // WoundFive
             // 
             WoundFive.AutoSize = true;
-            WoundFive.Location = new Point(5, 31);
+            WoundFive.Location = new Point(7, 31);
             WoundFive.Margin = new Padding(3, 2, 3, 2);
             WoundFive.Name = "WoundFive";
             WoundFive.Size = new Size(18, 17);
@@ -903,7 +902,7 @@
             // WoundThree
             // 
             WoundThree.AutoSize = true;
-            WoundThree.Location = new Point(5, 31);
+            WoundThree.Location = new Point(7, 31);
             WoundThree.Margin = new Padding(3, 2, 3, 2);
             WoundThree.Name = "WoundThree";
             WoundThree.Size = new Size(18, 17);
@@ -949,7 +948,7 @@
             // WoundFour
             // 
             WoundFour.AutoSize = true;
-            WoundFour.Location = new Point(5, 31);
+            WoundFour.Location = new Point(7, 31);
             WoundFour.Margin = new Padding(3, 2, 3, 2);
             WoundFour.Name = "WoundFour";
             WoundFour.Size = new Size(18, 17);
@@ -995,7 +994,7 @@
             // WoundTwo
             // 
             WoundTwo.AutoSize = true;
-            WoundTwo.Location = new Point(5, 31);
+            WoundTwo.Location = new Point(7, 31);
             WoundTwo.Margin = new Padding(3, 2, 3, 2);
             WoundTwo.Name = "WoundTwo";
             WoundTwo.Size = new Size(18, 17);
@@ -1035,7 +1034,6 @@
             CharacterLevel.Size = new Size(23, 25);
             CharacterLevel.TabIndex = 94;
             CharacterLevel.Text = "1";
-            CharacterLevel.Click += CharacterLevel_Click;
             // 
             // label19
             // 
@@ -1077,7 +1075,6 @@
             label17.Size = new Size(34, 25);
             label17.TabIndex = 89;
             label17.Text = "10";
-            label17.Click += label17_Click;
             // 
             // label14
             // 
@@ -1088,7 +1085,6 @@
             label14.Size = new Size(177, 29);
             label14.TabIndex = 87;
             label14.Text = "Defense Check";
-            label14.Click += label14_Click;
             // 
             // label15
             // 
@@ -1099,7 +1095,6 @@
             label15.Size = new Size(183, 29);
             label15.TabIndex = 86;
             label15.Text = "Character Class";
-            label15.Click += label15_Click;
             // 
             // ReadableInventory
             // 
@@ -1130,7 +1125,6 @@
             label12.Size = new Size(188, 29);
             label12.TabIndex = 83;
             label12.Text = "Character Name";
-            label12.Click += label12_Click;
             // 
             // CharacterName
             // 
@@ -1257,7 +1251,6 @@
             CurrentHealth.Size = new Size(39, 29);
             CurrentHealth.TabIndex = 54;
             CurrentHealth.Text = "25";
-            CurrentHealth.Click += CurrentHealth_Click;
             // 
             // button21
             // 
@@ -1548,7 +1541,6 @@
             label64.TabIndex = 322;
             label64.Text = "Safe:";
             label64.TextAlign = ContentAlignment.TopCenter;
-            label64.Click += label64_Click;
             // 
             // label65
             // 
@@ -1571,7 +1563,6 @@
             label67.TabIndex = 320;
             label67.Text = "Safe:";
             label67.TextAlign = ContentAlignment.TopCenter;
-            label67.Click += label67_Click_1;
             // 
             // label68
             // 
@@ -1725,7 +1716,6 @@
             OccultismPlusOne.Size = new Size(18, 17);
             OccultismPlusOne.TabIndex = 226;
             OccultismPlusOne.UseVisualStyleBackColor = true;
-            OccultismPlusOne.CheckedChanged += checkBox36_CheckedChanged;
             // 
             // label162
             // 
@@ -2476,7 +2466,6 @@
             CarryMinusTwo.Size = new Size(18, 17);
             CarryMinusTwo.TabIndex = 84;
             CarryMinusTwo.UseVisualStyleBackColor = true;
-            CarryMinusTwo.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // CarryMinusOne
             // 
@@ -2487,7 +2476,6 @@
             CarryMinusOne.Size = new Size(18, 17);
             CarryMinusOne.TabIndex = 83;
             CarryMinusOne.UseVisualStyleBackColor = true;
-            CarryMinusOne.CheckedChanged += checkBox4_CheckedChanged;
             // 
             // CarryPlusTwo
             // 
@@ -2498,7 +2486,6 @@
             CarryPlusTwo.Size = new Size(18, 17);
             CarryPlusTwo.TabIndex = 82;
             CarryPlusTwo.UseVisualStyleBackColor = true;
-            CarryPlusTwo.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // CarryPlusOne
             // 
@@ -2509,7 +2496,6 @@
             CarryPlusOne.Size = new Size(18, 17);
             CarryPlusOne.TabIndex = 81;
             CarryPlusOne.UseVisualStyleBackColor = true;
-            CarryPlusOne.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label7
             // 
@@ -3011,7 +2997,7 @@
             // 
             SuperThree.Controls.Add(SuperThreeLineFour);
             SuperThree.Controls.Add(SuperThreeLineThree);
-            SuperThree.Controls.Add(button5);
+            SuperThree.Controls.Add(ActivatePowerThree);
             SuperThree.Controls.Add(SuperThreeLineTwo);
             SuperThree.Controls.Add(SuperThreeLineOne);
             SuperThree.Location = new Point(21, 489);
@@ -3021,7 +3007,6 @@
             SuperThree.Size = new Size(549, 255);
             SuperThree.TabIndex = 98;
             SuperThree.TabStop = false;
-            SuperThree.Text = "Transmission Track";
             SuperThree.Enter += groupBox6_Enter;
             // 
             // SuperThreeLineFour
@@ -3030,9 +3015,8 @@
             SuperThreeLineFour.Font = new Font("Microsoft Sans Serif", 10F);
             SuperThreeLineFour.Location = new Point(8, 161);
             SuperThreeLineFour.Name = "SuperThreeLineFour";
-            SuperThreeLineFour.Size = new Size(454, 20);
+            SuperThreeLineFour.Size = new Size(0, 20);
             SuperThreeLineFour.TabIndex = 103;
-            SuperThreeLineFour.Text = "The creator and time of creation also become known to you.";
             // 
             // SuperThreeLineThree
             // 
@@ -3040,21 +3024,21 @@
             SuperThreeLineThree.Font = new Font("Microsoft Sans Serif", 10F);
             SuperThreeLineThree.Location = new Point(8, 124);
             SuperThreeLineThree.Name = "SuperThreeLineThree";
-            SuperThreeLineThree.Size = new Size(474, 20);
+            SuperThreeLineThree.Size = new Size(0, 20);
             SuperThreeLineThree.TabIndex = 102;
-            SuperThreeLineThree.Text = "involved in its creation, and sense any tampering or alteration. ";
             // 
-            // button5
+            // ActivatePowerThree
             // 
-            button5.Font = new Font("Microsoft Sans Serif", 10F);
-            button5.Location = new Point(377, 205);
-            button5.Margin = new Padding(3, 2, 3, 2);
-            button5.Name = "button5";
-            button5.Size = new Size(165, 42);
-            button5.TabIndex = 99;
-            button5.Text = "Activate";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click_4;
+            ActivatePowerThree.Enabled = false;
+            ActivatePowerThree.Font = new Font("Microsoft Sans Serif", 10F);
+            ActivatePowerThree.Location = new Point(377, 205);
+            ActivatePowerThree.Margin = new Padding(3, 2, 3, 2);
+            ActivatePowerThree.Name = "ActivatePowerThree";
+            ActivatePowerThree.Size = new Size(165, 42);
+            ActivatePowerThree.TabIndex = 99;
+            ActivatePowerThree.Text = "Activate";
+            ActivatePowerThree.UseVisualStyleBackColor = true;
+            ActivatePowerThree.Click += button5_Click_4;
             // 
             // SuperThreeLineTwo
             // 
@@ -3062,9 +3046,8 @@
             SuperThreeLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
             SuperThreeLineTwo.Location = new Point(8, 86);
             SuperThreeLineTwo.Name = "SuperThreeLineTwo";
-            SuperThreeLineTwo.Size = new Size(466, 20);
+            SuperThreeLineTwo.Size = new Size(0, 20);
             SuperThreeLineTwo.TabIndex = 101;
-            SuperThreeLineTwo.Text = "to which you're exposed. You can also detect any phenomena";
             // 
             // SuperThreeLineOne
             // 
@@ -3072,9 +3055,8 @@
             SuperThreeLineOne.Font = new Font("Microsoft Sans Serif", 10F);
             SuperThreeLineOne.Location = new Point(8, 49);
             SuperThreeLineOne.Name = "SuperThreeLineOne";
-            SuperThreeLineOne.Size = new Size(469, 20);
+            SuperThreeLineOne.Size = new Size(0, 20);
             SuperThreeLineOne.TabIndex = 100;
-            SuperThreeLineOne.Text = "Figure out the location of origin of any broadcast or recording ";
             // 
             // SuperFour
             // 
@@ -3082,7 +3064,7 @@
             SuperFour.Controls.Add(SuperFourLineThree);
             SuperFour.Controls.Add(SuperFourLineTwo);
             SuperFour.Controls.Add(SuperFourLineOne);
-            SuperFour.Controls.Add(button24);
+            SuperFour.Controls.Add(ActivatePowerFour);
             SuperFour.Location = new Point(628, 489);
             SuperFour.Margin = new Padding(4, 5, 4, 5);
             SuperFour.Name = "SuperFour";
@@ -3090,8 +3072,6 @@
             SuperFour.Size = new Size(549, 255);
             SuperFour.TabIndex = 97;
             SuperFour.TabStop = false;
-            SuperFour.Text = "Giga Maps";
-            SuperFour.Enter += SuperFour_Enter;
             // 
             // SuperFourLineFour
             // 
@@ -3099,9 +3079,8 @@
             SuperFourLineFour.Font = new Font("Microsoft Sans Serif", 10F);
             SuperFourLineFour.Location = new Point(8, 161);
             SuperFourLineFour.Name = "SuperFourLineFour";
-            SuperFourLineFour.Size = new Size(270, 20);
+            SuperFourLineFour.Size = new Size(0, 20);
             SuperFourLineFour.TabIndex = 103;
-            SuperFourLineFour.Text = "where in the environment they are. ";
             // 
             // SuperFourLineThree
             // 
@@ -3109,9 +3088,8 @@
             SuperFourLineThree.Font = new Font("Microsoft Sans Serif", 10F);
             SuperFourLineThree.Location = new Point(8, 124);
             SuperFourLineThree.Name = "SuperFourLineThree";
-            SuperFourLineThree.Size = new Size(431, 20);
+            SuperFourLineThree.Size = new Size(0, 20);
             SuperFourLineThree.TabIndex = 102;
-            SuperFourLineThree.Text = "many humans, animals, and Digimon are around you and";
             // 
             // SuperFourLineTwo
             // 
@@ -3119,10 +3097,8 @@
             SuperFourLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
             SuperFourLineTwo.Location = new Point(8, 86);
             SuperFourLineTwo.Name = "SuperFourLineTwo";
-            SuperFourLineTwo.Size = new Size(479, 20);
+            SuperFourLineTwo.Size = new Size(0, 20);
             SuperFourLineTwo.TabIndex = 101;
-            SuperFourLineTwo.Text = "access to a mini-map. Complete with limited awareness of how";
-            SuperFourLineTwo.Click += GigaMapsLineTwo_Click;
             // 
             // SuperFourLineOne
             // 
@@ -3130,22 +3106,21 @@
             SuperFourLineOne.Font = new Font("Microsoft Sans Serif", 10F);
             SuperFourLineOne.Location = new Point(8, 49);
             SuperFourLineOne.Name = "SuperFourLineOne";
-            SuperFourLineOne.Size = new Size(455, 20);
+            SuperFourLineOne.Size = new Size(0, 20);
             SuperFourLineOne.TabIndex = 100;
-            SuperFourLineOne.Text = "Know your way through an unfamiliar location, as if you had ";
-            SuperFourLineOne.Click += GigaMapsLineOne_Click;
             // 
-            // button24
+            // ActivatePowerFour
             // 
-            button24.Font = new Font("Microsoft Sans Serif", 10F);
-            button24.Location = new Point(377, 205);
-            button24.Margin = new Padding(3, 2, 3, 2);
-            button24.Name = "button24";
-            button24.Size = new Size(165, 42);
-            button24.TabIndex = 90;
-            button24.Text = "Activate";
-            button24.UseVisualStyleBackColor = true;
-            button24.Click += button24_Click;
+            ActivatePowerFour.Enabled = false;
+            ActivatePowerFour.Font = new Font("Microsoft Sans Serif", 10F);
+            ActivatePowerFour.Location = new Point(377, 205);
+            ActivatePowerFour.Margin = new Padding(3, 2, 3, 2);
+            ActivatePowerFour.Name = "ActivatePowerFour";
+            ActivatePowerFour.Size = new Size(165, 42);
+            ActivatePowerFour.TabIndex = 90;
+            ActivatePowerFour.Text = "Activate";
+            ActivatePowerFour.UseVisualStyleBackColor = true;
+            ActivatePowerFour.Click += button24_Click;
             // 
             // SuperOne
             // 
@@ -3153,7 +3128,7 @@
             SuperOne.Controls.Add(SuperOneLineThree);
             SuperOne.Controls.Add(SuperOneLineTwo);
             SuperOne.Controls.Add(SuperOneLineOne);
-            SuperOne.Controls.Add(ActivateBS);
+            SuperOne.Controls.Add(ActivatePowerOne);
             SuperOne.Location = new Point(21, 212);
             SuperOne.Margin = new Padding(4, 5, 4, 5);
             SuperOne.Name = "SuperOne";
@@ -3161,7 +3136,6 @@
             SuperOne.Size = new Size(549, 255);
             SuperOne.TabIndex = 96;
             SuperOne.TabStop = false;
-            SuperOne.Text = "Battle Scan";
             SuperOne.Enter += groupBox5_Enter;
             // 
             // SuperOneLineFour
@@ -3179,10 +3153,8 @@
             SuperOneLineThree.Font = new Font("Microsoft Sans Serif", 10F);
             SuperOneLineThree.Location = new Point(8, 124);
             SuperOneLineThree.Name = "SuperOneLineThree";
-            SuperOneLineThree.Size = new Size(426, 20);
+            SuperOneLineThree.Size = new Size(0, 20);
             SuperOneLineThree.TabIndex = 93;
-            SuperOneLineThree.Text = "health and their elemental weaknesses and resistances.";
-            SuperOneLineThree.Click += BattleScanLineThree_Click;
             // 
             // SuperOneLineTwo
             // 
@@ -3190,10 +3162,8 @@
             SuperOneLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
             SuperOneLineTwo.Location = new Point(8, 86);
             SuperOneLineTwo.Name = "SuperOneLineTwo";
-            SuperOneLineTwo.Size = new Size(460, 20);
+            SuperOneLineTwo.Size = new Size(0, 20);
             SuperOneLineTwo.TabIndex = 92;
-            SuperOneLineTwo.Text = "your choosing get a circumstance dice. You also get to know";
-            SuperOneLineTwo.Click += SuperOneLineTwo_Click;
             // 
             // SuperOneLineOne
             // 
@@ -3201,29 +3171,28 @@
             SuperOneLineOne.Font = new Font("Microsoft Sans Serif", 10F);
             SuperOneLineOne.Location = new Point(8, 49);
             SuperOneLineOne.Name = "SuperOneLineOne";
-            SuperOneLineOne.Size = new Size(446, 20);
+            SuperOneLineOne.Size = new Size(0, 20);
             SuperOneLineOne.TabIndex = 91;
-            SuperOneLineOne.Text = "For the rest of the scene, all attacks against a character of";
-            SuperOneLineOne.Click += label31_Click_1;
             // 
-            // ActivateBS
+            // ActivatePowerOne
             // 
-            ActivateBS.Font = new Font("Microsoft Sans Serif", 10F);
-            ActivateBS.Location = new Point(377, 205);
-            ActivateBS.Margin = new Padding(3, 2, 3, 2);
-            ActivateBS.Name = "ActivateBS";
-            ActivateBS.Size = new Size(165, 42);
-            ActivateBS.TabIndex = 90;
-            ActivateBS.Text = "Activate";
-            ActivateBS.UseVisualStyleBackColor = true;
-            ActivateBS.Click += button22_Click_3;
+            ActivatePowerOne.Enabled = false;
+            ActivatePowerOne.Font = new Font("Microsoft Sans Serif", 10F);
+            ActivatePowerOne.Location = new Point(377, 205);
+            ActivatePowerOne.Margin = new Padding(3, 2, 3, 2);
+            ActivatePowerOne.Name = "ActivatePowerOne";
+            ActivatePowerOne.Size = new Size(165, 42);
+            ActivatePowerOne.TabIndex = 90;
+            ActivatePowerOne.Text = "Activate";
+            ActivatePowerOne.UseVisualStyleBackColor = true;
+            ActivatePowerOne.Click += button22_Click_3;
             // 
             // SuperTwo
             // 
             SuperTwo.Controls.Add(SuperTwoLineFour);
             SuperTwo.Controls.Add(SuperTwoLineThree);
             SuperTwo.Controls.Add(SuperTwoLineTwo);
-            SuperTwo.Controls.Add(button4);
+            SuperTwo.Controls.Add(ActivatePowerTwo);
             SuperTwo.Controls.Add(SuperTwoLineOne);
             SuperTwo.Location = new Point(628, 212);
             SuperTwo.Margin = new Padding(4, 5, 4, 5);
@@ -3232,7 +3201,6 @@
             SuperTwo.Size = new Size(549, 255);
             SuperTwo.TabIndex = 95;
             SuperTwo.TabStop = false;
-            SuperTwo.Text = "Holo-Display";
             SuperTwo.Enter += groupBox4_Enter;
             // 
             // SuperTwoLineFour
@@ -3241,9 +3209,8 @@
             SuperTwoLineFour.Font = new Font("Microsoft Sans Serif", 10F);
             SuperTwoLineFour.Location = new Point(8, 161);
             SuperTwoLineFour.Name = "SuperTwoLineFour";
-            SuperTwoLineFour.Size = new Size(126, 20);
+            SuperTwoLineFour.Size = new Size(0, 20);
             SuperTwoLineFour.TabIndex = 98;
-            SuperTwoLineFour.Text = "you pass yours.";
             // 
             // SuperTwoLineThree
             // 
@@ -3251,10 +3218,8 @@
             SuperTwoLineThree.Font = new Font("Microsoft Sans Serif", 10F);
             SuperTwoLineThree.Location = new Point(8, 124);
             SuperTwoLineThree.Name = "SuperTwoLineThree";
-            SuperTwoLineThree.Size = new Size(461, 20);
+            SuperTwoLineThree.Size = new Size(0, 20);
             SuperTwoLineThree.TabIndex = 97;
-            SuperTwoLineThree.Text = "rolls or to buff allies on their Wits and Education Rolls if you ";
-            SuperTwoLineThree.Click += HoloDisplayLineThree_Click;
             // 
             // SuperTwoLineTwo
             // 
@@ -3262,21 +3227,21 @@
             SuperTwoLineTwo.Font = new Font("Microsoft Sans Serif", 10F);
             SuperTwoLineTwo.Location = new Point(8, 86);
             SuperTwoLineTwo.Name = "SuperTwoLineTwo";
-            SuperTwoLineTwo.Size = new Size(469, 20);
+            SuperTwoLineTwo.Size = new Size(0, 20);
             SuperTwoLineTwo.TabIndex = 96;
-            SuperTwoLineTwo.Text = "information to allies. It can also be used to help with persuade";
             // 
-            // button4
+            // ActivatePowerTwo
             // 
-            button4.Font = new Font("Microsoft Sans Serif", 10F);
-            button4.Location = new Point(377, 205);
-            button4.Margin = new Padding(3, 2, 3, 2);
-            button4.Name = "button4";
-            button4.Size = new Size(165, 42);
-            button4.TabIndex = 94;
-            button4.Text = "Activate";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click_1;
+            ActivatePowerTwo.Enabled = false;
+            ActivatePowerTwo.Font = new Font("Microsoft Sans Serif", 10F);
+            ActivatePowerTwo.Location = new Point(377, 205);
+            ActivatePowerTwo.Margin = new Padding(3, 2, 3, 2);
+            ActivatePowerTwo.Name = "ActivatePowerTwo";
+            ActivatePowerTwo.Size = new Size(165, 42);
+            ActivatePowerTwo.TabIndex = 94;
+            ActivatePowerTwo.Text = "Activate";
+            ActivatePowerTwo.UseVisualStyleBackColor = true;
+            ActivatePowerTwo.Click += button4_Click_1;
             // 
             // SuperTwoLineOne
             // 
@@ -3284,9 +3249,8 @@
             SuperTwoLineOne.Font = new Font("Microsoft Sans Serif", 10F);
             SuperTwoLineOne.Location = new Point(8, 49);
             SuperTwoLineOne.Name = "SuperTwoLineOne";
-            SuperTwoLineOne.Size = new Size(463, 20);
+            SuperTwoLineOne.Size = new Size(0, 20);
             SuperTwoLineOne.TabIndex = 95;
-            SuperTwoLineOne.Text = "Create a silent holographic display. This can be used to relay";
             // 
             // PowerRollFour
             // 
@@ -3503,7 +3467,6 @@
             DigimonStats.Size = new Size(1213, 798);
             DigimonStats.TabIndex = 4;
             DigimonStats.Text = "Digimon Stats";
-            DigimonStats.Click += DigimonStats_Click;
             // 
             // DigiStrengthSave
             // 
@@ -3570,7 +3533,6 @@
             label33.TabIndex = 312;
             label33.Text = "Safe:";
             label33.TextAlign = ContentAlignment.TopCenter;
-            label33.Click += label33_Click_1;
             // 
             // label51
             // 
@@ -3582,7 +3544,6 @@
             label51.TabIndex = 310;
             label51.Text = "Safe:";
             label51.TextAlign = ContentAlignment.TopCenter;
-            label51.Click += label51_Click;
             // 
             // label44
             // 
@@ -3594,7 +3555,6 @@
             label44.TabIndex = 309;
             label44.Text = "Safe:";
             label44.TextAlign = ContentAlignment.TopCenter;
-            label44.Click += label44_Click;
             // 
             // label31
             // 
@@ -3606,7 +3566,6 @@
             label31.TabIndex = 308;
             label31.Text = "Safe:";
             label31.TextAlign = ContentAlignment.TopCenter;
-            label31.Click += label31_Click_2;
             // 
             // label32
             // 
@@ -3618,7 +3577,6 @@
             label32.TabIndex = 306;
             label32.Text = "Safe:";
             label32.TextAlign = ContentAlignment.TopCenter;
-            label32.Click += label32_Click_1;
             // 
             // EducationMeal
             // 
@@ -3711,7 +3669,6 @@
             AgilityDiet.TabIndex = 293;
             AgilityDiet.Text = "0";
             AgilityDiet.TextAlign = HorizontalAlignment.Center;
-            AgilityDiet.TextChanged += AgilityDiet_TextChanged;
             // 
             // StrengthMeal
             // 
@@ -3735,7 +3692,6 @@
             StrengthDiet.TabIndex = 290;
             StrengthDiet.Text = "0";
             StrengthDiet.TextAlign = HorizontalAlignment.Center;
-            StrengthDiet.TextChanged += StrengthDiet_TextChanged;
             // 
             // DigimonEducationRoll
             // 
@@ -4235,7 +4191,6 @@
             groupBox17.TabIndex = 115;
             groupBox17.TabStop = false;
             groupBox17.Text = "Inheritable";
-            groupBox17.Enter += groupBox17_Enter_1;
             // 
             // InheritableQuirkThree
             // 
@@ -4379,7 +4334,6 @@
             InheritedQuirkSeven.Size = new Size(18, 20);
             InheritedQuirkSeven.TabIndex = 110;
             InheritedQuirkSeven.Text = "_";
-            InheritedQuirkSeven.Click += label106_Click_1;
             // 
             // InheritedQuirkSix
             // 
@@ -4402,7 +4356,6 @@
             InheritedQuirkFive.Size = new Size(18, 20);
             InheritedQuirkFive.TabIndex = 108;
             InheritedQuirkFive.Text = "_";
-            InheritedQuirkFive.Click += label100_Click;
             // 
             // InheritedQuirkFour
             // 
@@ -4414,7 +4367,6 @@
             InheritedQuirkFour.Size = new Size(18, 20);
             InheritedQuirkFour.TabIndex = 106;
             InheritedQuirkFour.Text = "_";
-            InheritedQuirkFour.Click += label102_Click;
             // 
             // InheritedQuirkThree
             // 
@@ -4461,7 +4413,6 @@
             groupBox12.TabIndex = 100;
             groupBox12.TabStop = false;
             groupBox12.Text = "Current";
-            groupBox12.Enter += groupBox12_Enter;
             // 
             // CurrentQuirkOne
             // 
@@ -4473,7 +4424,6 @@
             CurrentQuirkOne.Size = new Size(18, 20);
             CurrentQuirkOne.TabIndex = 104;
             CurrentQuirkOne.Text = "_";
-            CurrentQuirkOne.Click += label97_Click;
             // 
             // CurrentQuirkTwo
             // 
@@ -4485,7 +4435,6 @@
             CurrentQuirkTwo.Size = new Size(18, 20);
             CurrentQuirkTwo.TabIndex = 103;
             CurrentQuirkTwo.Text = "_";
-            CurrentQuirkTwo.Click += label96_Click;
             // 
             // ResistanceElement
             // 
@@ -4536,7 +4485,6 @@
             Attribute.Size = new Size(81, 20);
             Attribute.TabIndex = 12;
             Attribute.Text = "________";
-            Attribute.Click += label40_Click;
             // 
             // label41
             // 
@@ -4547,7 +4495,6 @@
             label41.Size = new Size(87, 20);
             label41.TabIndex = 11;
             label41.Text = "Attribute:";
-            label41.Click += label41_Click;
             // 
             // MoveSpeed
             // 
@@ -4578,7 +4525,6 @@
             label39.Size = new Size(15, 20);
             label39.TabIndex = 8;
             label39.Text = "/";
-            label39.Click += label39_Click;
             // 
             // CoreHPMax
             // 
@@ -4614,7 +4560,6 @@
             label37.Size = new Size(128, 20);
             label37.TabIndex = 5;
             label37.Text = "Digi-Core HP:";
-            label37.Click += label37_Click;
             // 
             // DigitalFrame
             // 
@@ -4645,7 +4590,6 @@
             DigimonField.Size = new Size(81, 20);
             DigimonField.TabIndex = 2;
             DigimonField.Text = "________";
-            DigimonField.Click += label30_Click;
             // 
             // label29
             // 
@@ -4945,7 +4889,6 @@
             SpecialDiceMax.Size = new Size(39, 20);
             SpecialDiceMax.TabIndex = 163;
             SpecialDiceMax.Text = "000";
-            SpecialDiceMax.Click += SpecialDiceMax_Click;
             // 
             // label122
             // 
@@ -4956,7 +4899,6 @@
             label122.Size = new Size(48, 20);
             label122.TabIndex = 162;
             label122.Text = "Roll:";
-            label122.Click += label122_Click;
             // 
             // label104
             // 
@@ -4968,7 +4910,6 @@
             label104.TabIndex = 136;
             label104.Text = "-";
             label104.TextAlign = ContentAlignment.MiddleCenter;
-            label104.Click += label104_Click;
             // 
             // SpecialAttackHardFail
             // 
@@ -4980,7 +4921,6 @@
             SpecialAttackHardFail.Size = new Size(36, 20);
             SpecialAttackHardFail.TabIndex = 134;
             SpecialAttackHardFail.Text = "___";
-            SpecialAttackHardFail.Click += label62_Click;
             // 
             // SpecialDiceMin
             // 
@@ -4991,7 +4931,6 @@
             SpecialDiceMin.Size = new Size(19, 20);
             SpecialDiceMin.TabIndex = 93;
             SpecialDiceMin.Text = "0";
-            SpecialDiceMin.Click += label32_Click;
             // 
             // label63
             // 
@@ -5012,7 +4951,6 @@
             SpecialElement.Size = new Size(70, 20);
             SpecialElement.TabIndex = 92;
             SpecialElement.Text = "Element";
-            SpecialElement.Click += label22_Click;
             // 
             // SpecialAttackFail
             // 
@@ -5035,7 +4973,6 @@
             SpecialAttackPartFail.Size = new Size(36, 20);
             SpecialAttackPartFail.TabIndex = 132;
             SpecialAttackPartFail.Text = "___";
-            SpecialAttackPartFail.Click += label65_Click;
             // 
             // ActSpecialAttack
             // 
@@ -5080,7 +5017,6 @@
             SpecialAttackPartHit.Size = new Size(36, 20);
             SpecialAttackPartHit.TabIndex = 131;
             SpecialAttackPartHit.Text = "___";
-            SpecialAttackPartHit.Click += label67_Click;
             // 
             // label73
             // 
@@ -5102,7 +5038,6 @@
             SpecialAttackHit.Size = new Size(36, 20);
             SpecialAttackHit.TabIndex = 130;
             SpecialAttackHit.Text = "___";
-            SpecialAttackHit.Click += label68_Click;
             // 
             // label72
             // 
@@ -5135,7 +5070,6 @@
             SpecialAttackHardHit.Size = new Size(36, 20);
             SpecialAttackHardHit.TabIndex = 129;
             SpecialAttackHardHit.Text = "___";
-            SpecialAttackHardHit.Click += label71_Click;
             // 
             // SuperAttack
             // 
@@ -5237,7 +5171,6 @@
             SuperElement.Size = new Size(70, 20);
             SuperElement.TabIndex = 94;
             SuperElement.Text = "Element";
-            SuperElement.Click += label23_Click;
             // 
             // SuperAttackFail
             // 
@@ -5385,7 +5318,6 @@
             BasicAttack.TabIndex = 100;
             BasicAttack.TabStop = false;
             BasicAttack.Text = "Basic";
-            BasicAttack.Enter += groupBox10_Enter;
             // 
             // label22
             // 
@@ -5438,7 +5370,6 @@
             BasicAttackHardFail.Size = new Size(36, 20);
             BasicAttackHardFail.TabIndex = 147;
             BasicAttackHardFail.Text = "___";
-            BasicAttackHardFail.Click += label80_Click;
             // 
             // BasicDiceMin
             // 
@@ -5449,7 +5380,6 @@
             BasicDiceMin.Size = new Size(19, 20);
             BasicDiceMin.TabIndex = 97;
             BasicDiceMin.Text = "0";
-            BasicDiceMin.Click += label27_Click;
             // 
             // label81
             // 
@@ -5470,7 +5400,6 @@
             BasicElement.Size = new Size(70, 20);
             BasicElement.TabIndex = 91;
             BasicElement.Text = "Element";
-            BasicElement.Click += label21_Click;
             // 
             // BasicAttackFail
             // 
@@ -5482,7 +5411,6 @@
             BasicAttackFail.Size = new Size(36, 20);
             BasicAttackFail.TabIndex = 146;
             BasicAttackFail.Text = "___";
-            BasicAttackFail.Click += label82_Click;
             // 
             // BasicAttackPartFail
             // 
@@ -5494,7 +5422,6 @@
             BasicAttackPartFail.Size = new Size(36, 20);
             BasicAttackPartFail.TabIndex = 145;
             BasicAttackPartFail.Text = "___";
-            BasicAttackPartFail.Click += label83_Click;
             // 
             // ActBasicAttack
             // 
@@ -5518,7 +5445,6 @@
             label84.Size = new Size(40, 20);
             label84.TabIndex = 140;
             label84.Text = "Hit:";
-            label84.Click += label84_Click;
             // 
             // label91
             // 
@@ -5540,7 +5466,6 @@
             BasicAttackPartHit.Size = new Size(36, 20);
             BasicAttackPartHit.TabIndex = 144;
             BasicAttackPartHit.Text = "___";
-            BasicAttackPartHit.Click += label85_Click;
             // 
             // BasicAttackHit
             // 
@@ -5552,7 +5477,6 @@
             BasicAttackHit.Size = new Size(36, 20);
             BasicAttackHit.TabIndex = 143;
             BasicAttackHit.Text = "___";
-            BasicAttackHit.Click += label86_Click;
             // 
             // BasicAttackPartFailText
             // 
@@ -5573,7 +5497,6 @@
             label87.Size = new Size(81, 20);
             label87.TabIndex = 139;
             label87.Text = "Part Hit:";
-            label87.Click += label87_Click;
             // 
             // BasicAttackHardHit
             // 
@@ -5585,7 +5508,6 @@
             BasicAttackHardHit.Size = new Size(36, 20);
             BasicAttackHardHit.TabIndex = 142;
             BasicAttackHardHit.Text = "___";
-            BasicAttackHardHit.Click += label88_Click;
             // 
             // StandardAttack
             // 
@@ -5615,7 +5537,6 @@
             StandardAttack.TabIndex = 99;
             StandardAttack.TabStop = false;
             StandardAttack.Text = "Standard";
-            StandardAttack.Enter += StandardAttack_Enter;
             // 
             // StandardDiceMax
             // 
@@ -5637,7 +5558,6 @@
             StandardAttackHardFail.Size = new Size(36, 20);
             StandardAttackHardFail.TabIndex = 121;
             StandardAttackHardFail.Text = "___";
-            StandardAttackHardFail.Click += label69_Click_1;
             // 
             // label105
             // 
@@ -5690,7 +5610,6 @@
             StandardAttackFail.Size = new Size(36, 20);
             StandardAttackFail.TabIndex = 120;
             StandardAttackFail.Text = "___";
-            StandardAttackFail.Click += label75_Click;
             // 
             // StandardDiceMin
             // 
@@ -5701,7 +5620,6 @@
             StandardDiceMin.Size = new Size(19, 20);
             StandardDiceMin.TabIndex = 97;
             StandardDiceMin.Text = "0";
-            StandardDiceMin.Click += label31_Click;
             // 
             // StandardAttackPartFail
             // 
@@ -5713,7 +5631,6 @@
             StandardAttackPartFail.Size = new Size(36, 20);
             StandardAttackPartFail.TabIndex = 119;
             StandardAttackPartFail.Text = "___";
-            StandardAttackPartFail.Click += label76_Click;
             // 
             // label47
             // 
@@ -5735,7 +5652,6 @@
             StandardAttackPartHit.Size = new Size(36, 20);
             StandardAttackPartHit.TabIndex = 118;
             StandardAttackPartHit.Text = "___";
-            StandardAttackPartHit.Click += label77_Click;
             // 
             // StandardElement
             // 
@@ -5746,7 +5662,6 @@
             StandardElement.Size = new Size(70, 20);
             StandardElement.TabIndex = 96;
             StandardElement.Text = "Element";
-            StandardElement.Click += label25_Click;
             // 
             // StandardAttackHit
             // 
@@ -5758,7 +5673,6 @@
             StandardAttackHit.Size = new Size(36, 20);
             StandardAttackHit.TabIndex = 117;
             StandardAttackHit.Text = "___";
-            StandardAttackHit.Click += label78_Click;
             // 
             // label52
             // 
@@ -5780,7 +5694,6 @@
             StandardAttackHardHit.Size = new Size(36, 20);
             StandardAttackHardHit.TabIndex = 116;
             StandardAttackHardHit.Text = "___";
-            StandardAttackHardHit.Click += label79_Click;
             // 
             // label53
             // 
@@ -5814,7 +5727,6 @@
             label55.Size = new Size(93, 20);
             label55.TabIndex = 108;
             label55.Text = "Hard Fail:";
-            label55.Click += label55_Click;
             // 
             // DigimonLifecycle
             // 
@@ -5857,7 +5769,6 @@
             DigimonLifecycle.Size = new Size(1213, 798);
             DigimonLifecycle.TabIndex = 5;
             DigimonLifecycle.Text = "Digimon Lifecycle";
-            DigimonLifecycle.Click += DigimonLifecycle_Click;
             // 
             // GainBond
             // 
@@ -6019,7 +5930,6 @@
             label136.Size = new Size(75, 20);
             label136.TabIndex = 90;
             label136.Text = "(Level 8)";
-            label136.Click += label136_Click;
             // 
             // label137
             // 
@@ -6030,7 +5940,6 @@
             label137.Size = new Size(53, 20);
             label137.TabIndex = 89;
             label137.Text = "Day 7";
-            label137.Click += label137_Click;
             // 
             // label134
             // 
@@ -6041,7 +5950,6 @@
             label134.Size = new Size(75, 20);
             label134.TabIndex = 88;
             label134.Text = "(Level 2)";
-            label134.Click += label134_Click;
             // 
             // UltimateSelect
             // 
@@ -6065,7 +5973,6 @@
             label135.Size = new Size(53, 20);
             label135.TabIndex = 87;
             label135.Text = "Day 2";
-            label135.Click += label135_Click;
             // 
             // ChampionSelect
             // 
@@ -6102,7 +6009,6 @@
             TamersLevel.Size = new Size(18, 20);
             TamersLevel.TabIndex = 86;
             TamersLevel.Text = "1";
-            TamersLevel.Click += TamersLevel_Click;
             // 
             // label131
             // 
@@ -6123,7 +6029,6 @@
             Day.Size = new Size(18, 20);
             Day.TabIndex = 84;
             Day.Text = "0";
-            Day.Click += Day_Click;
             // 
             // label133
             // 
@@ -6134,7 +6039,6 @@
             label133.Size = new Size(152, 20);
             label133.TabIndex = 83;
             label133.Text = "Days Incarnated:";
-            label133.Click += label133_Click;
             // 
             // groupBox14
             // 
@@ -6158,7 +6062,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // groupBox13
             // 
@@ -6190,7 +6093,6 @@
             groupBox13.Size = new Size(458, 181);
             groupBox13.TabIndex = 72;
             groupBox13.TabStop = false;
-            groupBox13.Enter += groupBox13_Enter_1;
             // 
             // pictureBox10
             // 
@@ -6203,7 +6105,6 @@
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox10.TabIndex = 108;
             pictureBox10.TabStop = false;
-            pictureBox10.Click += pictureBox10_Click;
             // 
             // CrapSeven
             // 
@@ -6215,7 +6116,6 @@
             CrapSeven.Size = new Size(17, 16);
             CrapSeven.TabIndex = 107;
             CrapSeven.UseVisualStyleBackColor = true;
-            CrapSeven.CheckedChanged += radioButton8_CheckedChanged;
             // 
             // pictureBox11
             // 
@@ -6228,7 +6128,6 @@
             pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox11.TabIndex = 106;
             pictureBox11.TabStop = false;
-            pictureBox11.Click += pictureBox11_Click;
             // 
             // CrapSix
             // 
@@ -6253,7 +6152,6 @@
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox12.TabIndex = 104;
             pictureBox12.TabStop = false;
-            pictureBox12.Click += pictureBox12_Click;
             // 
             // CrapFive
             // 
@@ -6350,7 +6248,6 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 96;
             pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
             // 
             // CrapOne
             // 
@@ -6362,7 +6259,6 @@
             CrapOne.Size = new Size(17, 16);
             CrapOne.TabIndex = 95;
             CrapOne.UseVisualStyleBackColor = true;
-            CrapOne.CheckedChanged += radioButton4_CheckedChanged_2;
             // 
             // pictureBox2
             // 
@@ -6387,7 +6283,6 @@
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 92;
             pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
             // 
             // ToiletThree
             // 
@@ -6412,7 +6307,6 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 90;
             pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
             // 
             // CareMistakeButton
             // 
@@ -6489,7 +6383,6 @@
             label125.Size = new Size(85, 20);
             label125.TabIndex = 66;
             label125.Text = "Ultimate:";
-            label125.Click += label125_Click;
             // 
             // MegaLevel
             // 
@@ -6500,7 +6393,6 @@
             MegaLevel.Size = new Size(81, 20);
             MegaLevel.TabIndex = 65;
             MegaLevel.Text = "________";
-            MegaLevel.Click += label126_Click;
             // 
             // label127
             // 
@@ -6511,7 +6403,6 @@
             label127.Size = new Size(60, 20);
             label127.TabIndex = 64;
             label127.Text = "Mega:";
-            label127.Click += label127_Click;
             // 
             // MaximumLife
             // 
@@ -6522,7 +6413,6 @@
             MaximumLife.Size = new Size(18, 20);
             MaximumLife.TabIndex = 63;
             MaximumLife.Text = "1";
-            MaximumLife.Click += MaximumLife_Click;
             // 
             // label123
             // 
@@ -6595,7 +6485,6 @@
             Betrayal.Size = new Size(81, 20);
             Betrayal.TabIndex = 12;
             Betrayal.Text = "________";
-            Betrayal.Click += label115_Click;
             // 
             // label116
             // 
@@ -6606,7 +6495,6 @@
             label116.Size = new Size(85, 20);
             label116.TabIndex = 11;
             label116.Text = "Betrayal:";
-            label116.Click += label116_Click;
             // 
             // label112
             // 
@@ -6617,7 +6505,6 @@
             label112.Size = new Size(62, 20);
             label112.TabIndex = 7;
             label112.Text = "Value:";
-            label112.Click += label112_Click;
             // 
             // Impulse
             // 
@@ -6695,7 +6582,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1424, 853);
+            ClientSize = new Size(1424, 862);
             Controls.Add(label16);
             Controls.Add(label49);
             Controls.Add(ExpNext);
@@ -6708,8 +6595,8 @@
             Controls.Add(TamerDigimon);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Digivice";
-            Load += Form1_Load;
             TamerDigimon.ResumeLayout(false);
             TamerStats.ResumeLayout(false);
             TamerStats.PerformLayout();
@@ -6818,11 +6705,11 @@
         public System.Windows.Forms.TrackBar InfoExtractTrack;
         public System.Windows.Forms.TrackBar ErrorScanTrack;
         private System.Windows.Forms.GroupBox SuperOne;
-        private System.Windows.Forms.Button ActivateBS;
+        private System.Windows.Forms.Button ActivatePowerOne;
         private System.Windows.Forms.GroupBox SuperTwo;
         private System.Windows.Forms.GroupBox SuperThree;
         private System.Windows.Forms.GroupBox SuperFour;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button ActivatePowerFour;
         private System.Windows.Forms.Button LevelUp;
         private System.Windows.Forms.TabPage TamerStats;
         private System.Windows.Forms.Label label17;
@@ -7263,7 +7150,7 @@
         private System.Windows.Forms.Label SuperOneLineTwo;
         private System.Windows.Forms.Label SuperTwoLineThree;
         private System.Windows.Forms.Label SuperTwoLineTwo;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ActivatePowerTwo;
         private System.Windows.Forms.Label SuperTwoLineOne;
         private System.Windows.Forms.Label SuperTwoLineFour;
         private System.Windows.Forms.Label SuperOneLineFour;
@@ -7273,7 +7160,7 @@
         private System.Windows.Forms.Label SuperFourLineOne;
         private System.Windows.Forms.Label SuperThreeLineFour;
         private System.Windows.Forms.Label SuperThreeLineThree;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button ActivatePowerThree;
         private System.Windows.Forms.Label SuperThreeLineTwo;
         private System.Windows.Forms.Label SuperThreeLineOne;
         private Label label32;

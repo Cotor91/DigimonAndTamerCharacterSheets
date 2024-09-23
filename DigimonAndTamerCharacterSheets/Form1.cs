@@ -390,110 +390,19 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
-        public void trackBar1_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar4_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar5_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar6_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar2_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar3_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar12_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar11_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar10_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar15_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar14_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar13_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar9_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar8_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        public void trackBar7_Scroll(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             GaurdPoints = 0;
             StratPoints.Text = "";
+
+            // Increase Digi-Soul
+            if (digiSoulCost != 0)
+            {
+                digiSoulCost -= 1;
+            }
+            DigiSoulStat.Text = "";
+
 
             int.TryParse(RemainingLife.Text, out int LifeOver);
             if (LifeOver < 1)
@@ -538,6 +447,300 @@ namespace DigimonAndTamerCharacterSheets
 
             // Output the halvedValue to the text box
             DigiSoulStat.Text = halvedValue.ToString();
+
+
+            // Replenish One Spent Card
+
+            if (ClassBox.SelectedIndex > -1)
+            {
+                string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+                TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+
+                Random random = new Random();
+
+                if (SuperOne.Text == "---")
+                {
+                    int RandomOne = random.Next(1, 9);
+
+                    if (RandomOne == 1)
+                    {
+                        SuperOne.Text = ClassAddress.PowerOne;
+                        SuperOneLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomOne == 2)
+                    {
+                        SuperOne.Text = ClassAddress.PowerTwo;
+                        SuperOneLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomOne == 3)
+                    {
+                        SuperOne.Text = ClassAddress.PowerThree;
+                        SuperOneLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomOne == 4)
+                    {
+                        SuperOne.Text = ClassAddress.PowerFour;
+                        SuperOneLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomOne == 5)
+                    {
+                        SuperOne.Text = ClassAddress.PowerFive;
+                        SuperOneLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomOne == 6)
+                    {
+                        SuperOne.Text = ClassAddress.PowerSix;
+                        SuperOneLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomOne == 7)
+                    {
+                        SuperOne.Text = ClassAddress.PowerOne;
+                        SuperOneLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomOne == 8)
+                    {
+                        SuperOne.Text = ClassAddress.PowerEight;
+                        SuperOneLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+
+                }
+                else if (SuperTwo.Text == "---")
+                {
+                    int RandomTwo = random.Next(1, 9);
+
+                    if (RandomTwo == 1)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerOne;
+                        SuperTwoLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomTwo == 2)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerTwo;
+                        SuperTwoLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomTwo == 3)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerThree;
+                        SuperTwoLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomTwo == 4)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerFour;
+                        SuperTwoLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomTwo == 5)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerFive;
+                        SuperTwoLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomTwo == 6)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerSix;
+                        SuperTwoLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomTwo == 7)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerOne;
+                        SuperTwoLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomTwo == 8)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerEight;
+                        SuperTwoLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+                else if (SuperThree.Text == "---")
+                {
+                    int RandomThree = random.Next(1, 9);
+
+                    if (RandomThree == 1)
+                    {
+                        SuperThree.Text = ClassAddress.PowerOne;
+                        SuperThreeLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomThree == 2)
+                    {
+                        SuperThree.Text = ClassAddress.PowerTwo;
+                        SuperThreeLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomThree == 3)
+                    {
+                        SuperThree.Text = ClassAddress.PowerThree;
+                        SuperThreeLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomThree == 4)
+                    {
+                        SuperThree.Text = ClassAddress.PowerFour;
+                        SuperThreeLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomThree == 5)
+                    {
+                        SuperThree.Text = ClassAddress.PowerFive;
+                        SuperThreeLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomThree == 6)
+                    {
+                        SuperThree.Text = ClassAddress.PowerSix;
+                        SuperThreeLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomThree == 7)
+                    {
+                        SuperThree.Text = ClassAddress.PowerOne;
+                        SuperThreeLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomThree == 8)
+                    {
+                        SuperThree.Text = ClassAddress.PowerEight;
+                        SuperThreeLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+                else if (SuperFour.Text == "---")
+                {
+                    int RandomFour = random.Next(1, 9);
+
+                    if (RandomFour == 1)
+                    {
+                        SuperFour.Text = ClassAddress.PowerOne;
+                        SuperFourLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomFour == 2)
+                    {
+                        SuperFour.Text = ClassAddress.PowerTwo;
+                        SuperFourLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomFour == 3)
+                    {
+                        SuperFour.Text = ClassAddress.PowerThree;
+                        SuperFourLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomFour == 4)
+                    {
+                        SuperFour.Text = ClassAddress.PowerFour;
+                        SuperFourLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomFour == 5)
+                    {
+                        SuperFour.Text = ClassAddress.PowerFive;
+                        SuperFourLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomFour == 6)
+                    {
+                        SuperFour.Text = ClassAddress.PowerSix;
+                        SuperFourLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomFour == 7)
+                    {
+                        SuperFour.Text = ClassAddress.PowerOne;
+                        SuperFourLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomFour == 8)
+                    {
+                        SuperFour.Text = ClassAddress.PowerEight;
+                        SuperFourLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+            }
 
             SaveCharacterInformation();
 
@@ -705,9 +908,9 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillStrength = CarryTrack.Value + HoldTrack.Value + ThrowTrack.Value;
             int TotalStrength = (int)Math.Ceiling(SkillStrength / 3.0);
-            TotalStrength = TotalStrength + StrengthIncrease;
+            TotalStrength = TotalStrength + StrengthIncrease + 3;
             StrengthStat.Text = TotalStrength.ToString();
-            TamerStrengthSave.Text = (((int)Math.Floor(TotalStrength * 3.5)) + 5).ToString();
+            TamerStrengthSave.Text = (((int)Math.Floor(TotalStrength * 3.5)) - 3).ToString();
 
             SaveCharacterInformation();
         }
@@ -825,17 +1028,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -849,7 +1041,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += CarryTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nCarry Skill: {CarryTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Carry Skill: {CarryTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -949,17 +1141,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -972,7 +1153,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += ThrowTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nThrow Skill: {ThrowTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Throw Skill: {ThrowTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1070,16 +1251,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 for (int i = 0; i < NumberOfDice; i++)
                 {
@@ -1093,7 +1264,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += HoldTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nHold Skill: {HoldTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Hold Skill: {HoldTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1108,9 +1279,9 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillAgility = BalanceTrack.Value + ParkourTrack.Value + ReflexTrack.Value;
             int TotalAgility = (int)Math.Ceiling(SkillAgility / 3.0);
-            TotalAgility = TotalAgility + AgilityIncrease;
+            TotalAgility = TotalAgility + AgilityIncrease + 3;
             AgilityStat.Text = TotalAgility.ToString();
-            TamerAgilitySave.Text = (((int)Math.Floor(TotalAgility * 3.5)) + 5).ToString();
+            TamerAgilitySave.Text = (((int)Math.Floor(TotalAgility * 3.5)) - 3).ToString();
 
             SaveCharacterInformation();
         }
@@ -1207,17 +1378,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1230,7 +1390,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += BalanceTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nBalance Skill: {BalanceTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Balance Skill: {BalanceTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1332,16 +1492,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 for (int i = 0; i < NumberOfDice; i++)
                 {
@@ -1355,7 +1505,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += ParkourTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nParkour Skill: {ParkourTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Parkour Skill: {ParkourTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1456,16 +1606,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 for (int i = 0; i < NumberOfDice; i++)
                 {
@@ -1479,7 +1619,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += ReflexTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nReflex Skill: {ReflexTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Reflex Skill: {ReflexTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
             else
             {
@@ -1494,8 +1634,7 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillVibes = PerformTrack.Value + PersuadeTrack.Value + IntimidateTrack.Value;
             int TotalVibes = (int)Math.Ceiling(SkillVibes / 3.0);
-            TotalVibes = TotalVibes + VibesIncrease;
-
+            TotalVibes = TotalVibes + VibesIncrease + 3;
 
             if (MealVibes == true)
             {
@@ -1508,7 +1647,7 @@ namespace DigimonAndTamerCharacterSheets
             }
 
             VibesStat.Text = TotalVibes.ToString();
-            TamerVibesSave.Text = (((int)Math.Floor(TotalVibes * 3.5)) + 5).ToString();
+            TamerVibesSave.Text = (((int)Math.Floor(TotalVibes * 3.5)) - 3).ToString();
 
             SaveCharacterInformation();
         }
@@ -1605,16 +1744,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
 
                 for (int i = 0; i < NumberOfDice; i++)
                 {
@@ -1628,7 +1757,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += PerformTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nPerform Skill: {PerformTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Perform Skill: {PerformTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1731,17 +1860,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1754,7 +1872,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += IntimidateTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nIntimidate Skill: {IntimidateTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Intimidate Skill: {IntimidateTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1856,17 +1974,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -1879,7 +1986,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += PersuadeTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nPersuade Skill: {PersuadeTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Persuade Skill: {PersuadeTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -1894,9 +2001,9 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillWits = InvestigationTrack.Value + EmpathyTrack.Value + IngenuityTrack.Value;
             int TotalWits = (int)Math.Ceiling(SkillWits / 3.0);
-            TotalWits = TotalWits + WitsIncrease;
+            TotalWits = TotalWits + WitsIncrease + 3;
             WitsStat.Text = TotalWits.ToString();
-            TamerWitsSave.Text = (((int)Math.Floor(TotalWits * 3.5)) + 5).ToString();
+            TamerWitsSave.Text = (((int)Math.Floor(TotalWits * 3.5)) - 3).ToString();
 
             SaveCharacterInformation();
         }
@@ -1994,17 +2101,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2017,7 +2113,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += InvestigationTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nInvestigation Skill: {InvestigationTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Investigation Skill: {InvestigationTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2120,17 +2216,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2143,7 +2228,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += EmpathyTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nEmpathy Skill: {EmpathyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Empathy Skill: {EmpathyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2246,21 +2331,10 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
-                    int DiceResult = random.Next(1, 11);
+                    int DiceResult = random.Next(1, 5);
                     TotalResult += DiceResult;
                     // Collect individual rolls
                     IndividualRolls += DiceResult + " ";
@@ -2269,7 +2343,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += IngenuityTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nWits Skill: {IngenuityTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Wits Skill: {IngenuityTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2284,7 +2358,7 @@ namespace DigimonAndTamerCharacterSheets
         {
             int SkillEducation = SocietyTrack.Value + TechnologyTrack.Value + OccultismTrack.Value;
             int TotalEducation = (int)Math.Ceiling(SkillEducation / 3.0);
-            TotalEducation = TotalEducation + EducationIncrease;
+            TotalEducation = TotalEducation + EducationIncrease + 3;
 
             if (MealEducation == true)
             {
@@ -2298,7 +2372,7 @@ namespace DigimonAndTamerCharacterSheets
 
 
             KnowledgeStat.Text = TotalEducation.ToString();
-            TamerEducationSave.Text = (((int)Math.Floor(TotalEducation * 3.5)) + 5).ToString();
+            TamerEducationSave.Text = (((int)Math.Floor(TotalEducation * 3.5)) - 3).ToString();
 
             SaveCharacterInformation();
         }
@@ -2395,17 +2469,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2418,7 +2481,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += TechnologyTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nTechnology Skill: {TechnologyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Technology Skill: {TechnologyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2520,17 +2583,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2543,7 +2595,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += OccultismTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nOccultism Skill: {OccultismTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Occultism Skill: {OccultismTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -2645,17 +2697,6 @@ namespace DigimonAndTamerCharacterSheets
                 string IndividualRolls = "";
                 string CoreRoll = "";
 
-                // Generates a random number between 1 and 20
-                int D20Result = random.Next(1, 21);
-                TotalResult += D20Result;
-                // Nat 20 reward
-                if (D20Result == 20)
-                {
-                    NumberOfDice++;
-                }
-                // Collect individual rolls
-                CoreRoll += D20Result + " ";
-
                 for (int i = 0; i < NumberOfDice; i++)
                 {
                     // Generates a random number between 1 and 10
@@ -2668,7 +2709,7 @@ namespace DigimonAndTamerCharacterSheets
                 TotalResult += SocietyTrack.Value * 2;
 
                 // Display the result
-                MessageBox.Show($"Character Roll: {CoreRoll}\nSociety Skill: {SocietyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+                MessageBox.Show($"Society Skill: {SocietyTrack.Value * 2}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
             }
 
             else
@@ -3620,439 +3661,16 @@ namespace DigimonAndTamerCharacterSheets
             SaveCharacterInformation();
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DigimonMoves_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox10_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DigimonStats_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label37_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label36_Click(object sender, EventArgs e)
         {
             SaveCharacterInformation();
         }
 
-        private void label30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label55_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label69_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label75_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label77_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label79_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label78_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label76_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label69_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label82_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label85_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label88_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label86_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label83_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label80_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label62_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label65_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label68_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label71_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label67_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label110_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox12_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox13_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox15_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label96_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label97_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label98_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label99_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox17_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label106_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label100_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label102_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label98_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label106_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label39_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void label38_Click(object sender, EventArgs e)
         {
             SaveCharacterInformation();
-        }
-
-        private void radioButton2_CheckedChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DigimonLifecycle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton3_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton4_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton5_CheckedChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton7_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label112_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label116_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label115_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label127_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label126_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label124_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label125_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton16_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton13_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton14_CheckedChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton15_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton12_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox13_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label133_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton13_CheckedChanged_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton15_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton17_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton22_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton20_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton18_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton16_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton19_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButton14_CheckedChanged_3(object sender, EventArgs e)
@@ -4119,65 +3737,6 @@ namespace DigimonAndTamerCharacterSheets
             }
         }
 
-        private void label134_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label135_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label137_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label136_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox36_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BruiseOne_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label170_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Wound_Click(object sender, EventArgs e)
         {
@@ -4629,80 +4188,17 @@ namespace DigimonAndTamerCharacterSheets
             }
         }
 
-        private void CharacterLevel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CurrentHealth_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton4_CheckedChanged_2(object sender, EventArgs e)
-        {
-            SaveCharacterInformation();
-        }
-
         private void radioButton13_CheckedChanged_3(object sender, EventArgs e)
         {
             SaveCharacterInformation();
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton11_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton10_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton8_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void radioButton9_CheckedChanged(object sender, EventArgs e)
         {
             SaveCharacterInformation();
         }
 
-        private void pictureBox12_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void radioButton10_CheckedChanged_2(object sender, EventArgs e)
         {
@@ -4716,10 +4212,7 @@ namespace DigimonAndTamerCharacterSheets
             StratPoints.Text = DigiBond.Text;
         }
 
-        private void label111_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void SuperSkillGain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -6066,6 +5559,9 @@ namespace DigimonAndTamerCharacterSheets
             ExperienceQuestions LevelSheet = new ExperienceQuestions(this);
             LevelSheet.Show();
 
+            MessageBox.Show($"Reflect on the day you've had, and earn your experience points.");
+
+
             digiSoulCost = 0;
             DigiSoulStat.Text = "";
 
@@ -6132,6 +5628,300 @@ namespace DigimonAndTamerCharacterSheets
                 if (WoundOne.Checked != true)
                 {
                     InjuryOne.Checked = false;
+                }
+            }
+
+
+            // Replenish One Spent Card
+
+            if (ClassBox.SelectedIndex > -1)
+            {
+                string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+                TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+
+                Random random = new Random();
+
+                if (SuperOne.Text == "---")
+                {
+                    int RandomOne = random.Next(1, 9);
+
+                    if (RandomOne == 1)
+                    {
+                        SuperOne.Text = ClassAddress.PowerOne;
+                        SuperOneLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomOne == 2)
+                    {
+                        SuperOne.Text = ClassAddress.PowerTwo;
+                        SuperOneLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomOne == 3)
+                    {
+                        SuperOne.Text = ClassAddress.PowerThree;
+                        SuperOneLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomOne == 4)
+                    {
+                        SuperOne.Text = ClassAddress.PowerFour;
+                        SuperOneLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomOne == 5)
+                    {
+                        SuperOne.Text = ClassAddress.PowerFive;
+                        SuperOneLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomOne == 6)
+                    {
+                        SuperOne.Text = ClassAddress.PowerSix;
+                        SuperOneLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomOne == 7)
+                    {
+                        SuperOne.Text = ClassAddress.PowerOne;
+                        SuperOneLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomOne == 8)
+                    {
+                        SuperOne.Text = ClassAddress.PowerEight;
+                        SuperOneLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+
+                }
+                if (SuperTwo.Text == "---")
+                {
+                    int RandomTwo = random.Next(1, 9);
+
+                    if (RandomTwo == 1)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerOne;
+                        SuperTwoLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomTwo == 2)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerTwo;
+                        SuperTwoLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomTwo == 3)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerThree;
+                        SuperTwoLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomTwo == 4)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerFour;
+                        SuperTwoLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomTwo == 5)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerFive;
+                        SuperTwoLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomTwo == 6)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerSix;
+                        SuperTwoLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomTwo == 7)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerOne;
+                        SuperTwoLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomTwo == 8)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerEight;
+                        SuperTwoLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+                if (SuperThree.Text == "---")
+                {
+                    int RandomThree = random.Next(1, 9);
+
+                    if (RandomThree == 1)
+                    {
+                        SuperThree.Text = ClassAddress.PowerOne;
+                        SuperThreeLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomThree == 2)
+                    {
+                        SuperThree.Text = ClassAddress.PowerTwo;
+                        SuperThreeLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomThree == 3)
+                    {
+                        SuperThree.Text = ClassAddress.PowerThree;
+                        SuperThreeLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomThree == 4)
+                    {
+                        SuperThree.Text = ClassAddress.PowerFour;
+                        SuperThreeLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomThree == 5)
+                    {
+                        SuperThree.Text = ClassAddress.PowerFive;
+                        SuperThreeLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomThree == 6)
+                    {
+                        SuperThree.Text = ClassAddress.PowerSix;
+                        SuperThreeLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomThree == 7)
+                    {
+                        SuperThree.Text = ClassAddress.PowerOne;
+                        SuperThreeLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomThree == 8)
+                    {
+                        SuperThree.Text = ClassAddress.PowerEight;
+                        SuperThreeLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+                if (SuperFour.Text == "---")
+                {
+                    int RandomFour = random.Next(1, 9);
+
+                    if (RandomFour == 1)
+                    {
+                        SuperFour.Text = ClassAddress.PowerOne;
+                        SuperFourLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomFour == 2)
+                    {
+                        SuperFour.Text = ClassAddress.PowerTwo;
+                        SuperFourLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomFour == 3)
+                    {
+                        SuperFour.Text = ClassAddress.PowerThree;
+                        SuperFourLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomFour == 4)
+                    {
+                        SuperFour.Text = ClassAddress.PowerFour;
+                        SuperFourLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomFour == 5)
+                    {
+                        SuperFour.Text = ClassAddress.PowerFive;
+                        SuperFourLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomFour == 6)
+                    {
+                        SuperFour.Text = ClassAddress.PowerSix;
+                        SuperFourLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomFour == 7)
+                    {
+                        SuperFour.Text = ClassAddress.PowerOne;
+                        SuperFourLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomFour == 8)
+                    {
+                        SuperFour.Text = ClassAddress.PowerEight;
+                        SuperFourLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
                 }
             }
 
@@ -7190,6 +6980,12 @@ namespace DigimonAndTamerCharacterSheets
             {
                 BasicAttackNow = false;
                 ActBasicAttack.Text = "Activate";
+
+                if (StratPoints.Text == "0")
+                {
+                    ActBasicAttack.Enabled = false;
+                }
+
             }
             else
             {
@@ -7263,6 +7059,12 @@ namespace DigimonAndTamerCharacterSheets
             {
                 StandardAttackNow = false;
                 ActStandardAttack.Text = "Activate";
+
+                if (StratPoints.Text == "0")
+                {
+                    ActStandardAttack.Enabled = false;
+                }
+
             }
             else
             {
@@ -7332,6 +7134,12 @@ namespace DigimonAndTamerCharacterSheets
             {
                 SpecialAttackNow = false;
                 ActSpecialAttack.Text = "Activate";
+
+                if (StratPoints.Text == "0")
+                {
+                    ActSpecialAttack.Enabled = false;
+                }
+
             }
             else
             {
@@ -7401,6 +7209,12 @@ namespace DigimonAndTamerCharacterSheets
             {
                 SuperAttackNow = false;
                 ActSuperAttack.Text = "Activate";
+
+                if (StratPoints.Text == "0")
+                {
+                    ActSuperAttack.Enabled = false;
+                }
+
             }
             else
             {
@@ -7511,52 +7325,31 @@ namespace DigimonAndTamerCharacterSheets
                 {
                     MessageBox.Show(BasicAttack.Text);
                     ActBasicAttack.Text = "ACTIVATE";
+                    ActBasicAttack.Enabled = true;
                     BasicAttackNow = true;
                 }
                 else if (DiceResult >= MinStandard && DiceResult <= MaxStandard)
                 {
                     MessageBox.Show(StandardAttack.Text);
                     ActStandardAttack.Text = "ACTIVATE";
+                    ActStandardAttack.Enabled = true;
                     StandardAttackNow = true;
                 }
                 else if (DiceResult >= MinSpecial && DiceResult <= MaxSpecial)
                 {
                     MessageBox.Show(SpecialAttack.Text);
                     ActSpecialAttack.Text = "ACTIVATE";
+                    ActSpecialAttack.Enabled = true;
                     SpecialAttackNow = true;
                 }
                 else if (DiceResult >= MinSuper && DiceResult <= MaxSuper)
                 {
                     MessageBox.Show(SuperAttack.Text);
                     ActSuperAttack.Text = "ACTIVATE";
+                    ActSuperAttack.Enabled = true;
                     SuperAttackNow = true;
                 }
             }
-        }
-
-        private void StandardAttack_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label87_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label84_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -7590,49 +7383,9 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
-        private void SpecialDiceMax_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label104_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label122_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox17_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void CharacterName_TextChanged(object sender, EventArgs e)
         {
             SaveCharacterInformation();
-        }
-
-        private void MaximumLife_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TamersLevel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Day_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void DigimonStrength_TextChanged(object sender, EventArgs e)
@@ -7676,6 +7429,13 @@ namespace DigimonAndTamerCharacterSheets
 
             if (InheritableQuirkTwo.Text.Contains("Strength Ultimate") || InheritedQuirkSeven.Text.Contains("Strength"))
             {
+                DigitalStrength++;
+                DigitalStrength++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Strength Mega"))
+            {
+                DigitalStrength++;
                 DigitalStrength++;
                 DigitalStrength++;
             }
@@ -7732,6 +7492,13 @@ namespace DigimonAndTamerCharacterSheets
 
             if (InheritableQuirkTwo.Text.Contains("Agility Ultimate") || InheritedQuirkSeven.Text.Contains("Agility"))
             {
+                DigitalAgility++;
+                DigitalAgility++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Agility Mega"))
+            {
+                DigitalAgility++;
                 DigitalAgility++;
                 DigitalAgility++;
             }
@@ -7794,6 +7561,13 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalVibes++;
             }
 
+            if (InheritableQuirkTwo.Text.Contains("Vibes Mega"))
+            {
+                DigitalVibes++;
+                DigitalVibes++;
+                DigitalVibes++;
+            }
+
             DigimonVibes.Text = DigitalVibes.ToString();
 
             if (MealWits == true)
@@ -7850,6 +7624,13 @@ namespace DigimonAndTamerCharacterSheets
                 DigitalWits++;
             }
 
+            if (InheritableQuirkTwo.Text.Contains("Wits Mega"))
+            {
+                DigitalWits++;
+                DigitalWits++;
+                DigitalWits++;
+            }
+
             DigimonWits.Text = DigitalWits.ToString();
 
             DigiWitsSave.Text = ((int)Math.Floor(DigitalWits * 3.5)).ToString();
@@ -7897,6 +7678,13 @@ namespace DigimonAndTamerCharacterSheets
 
             if (InheritableQuirkTwo.Text.Contains("Education Ultimate") || InheritedQuirkSeven.Text.Contains("Education"))
             {
+                DigitalEducation++;
+                DigitalEducation++;
+            }
+
+            if (InheritableQuirkTwo.Text.Contains("Education Mega"))
+            {
+                DigitalEducation++;
                 DigitalEducation++;
                 DigitalEducation++;
             }
@@ -8053,6 +7841,8 @@ namespace DigimonAndTamerCharacterSheets
             DialogResult InitiativeCheck = MessageBox.Show("Is this an Initiative Roll?", "Initiative", MessageBoxButtons.YesNo);
             if (InitiativeCheck == DialogResult.Yes)
             {
+
+
                 if (MealAgility == true)
                 {
                     NumberOfDice++;
@@ -8112,7 +7902,7 @@ namespace DigimonAndTamerCharacterSheets
             TotalResult += CarryTrack.Value * 3;
 
             // Display the result
-            MessageBox.Show($"Character Roll: {CoreRoll}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
+            MessageBox.Show($"Main Roll: {CoreRoll}\nAdditional Rolls: {IndividualRolls}\nTotal Result: {TotalResult}");
 
         }
 
@@ -8122,7 +7912,7 @@ namespace DigimonAndTamerCharacterSheets
             int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
             // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0);
+            int halvedValue = (int)Math.Ceiling(totalValue / 2.0) + 2;
 
             // Subtract used points
             halvedValue = halvedValue - digiSoulCost;
@@ -8130,6 +7920,20 @@ namespace DigimonAndTamerCharacterSheets
             // Output the halvedValue to the text box
             DigiSoulStat.Text = halvedValue.ToString();
 
+            if (DigiSoulStat.Text == "0")
+            {
+                ActivatePowerOne.Enabled = false;
+                ActivatePowerTwo.Enabled = false;
+                ActivatePowerThree.Enabled = false;
+                ActivatePowerFour.Enabled = false;
+            }
+            else if (DigiSoulStat.Text != "0" && ClassBox.SelectedIndex > -1)
+            {
+                ActivatePowerOne.Enabled = true;
+                ActivatePowerTwo.Enabled = true;
+                ActivatePowerThree.Enabled = true;
+                ActivatePowerFour.Enabled = true;
+            }
 
             SaveCharacterInformation();
         }
@@ -8159,10 +7963,6 @@ namespace DigimonAndTamerCharacterSheets
             SaveCharacterInformation();
         }
 
-        private void label33_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void checkBox4_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -8209,55 +8009,32 @@ namespace DigimonAndTamerCharacterSheets
             DigiAttackRoll.Text = "";
         }
 
-        private void DigiRollPlusFour_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label32_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label44_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label51_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label64_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label67_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StrengthDiet_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AgilityDiet_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
 
         int digiSoulCost = 0;
         private void button22_Click_3(object sender, EventArgs e)
         {
+
+            if (ClassBox.SelectedIndex > -1)
+            {
+                string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+                TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+                if (ClassAddress.MysticArtist)
+                {
+                    SuperOne.Text = "---";
+
+                    SuperOneLineOne.Text = "---";
+
+                    SuperOneLineTwo.Text = "---";
+
+                    SuperOneLineThree.Text = "---";
+
+                    SuperOneLineFour.Text = "---";
+
+                    digiSoulCost -= 1;
+                }
+            }
 
             if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
             {
@@ -8270,6 +8047,27 @@ namespace DigimonAndTamerCharacterSheets
         private void button4_Click_1(object sender, EventArgs e)
         {
 
+            if (ClassBox.SelectedIndex > -1)
+            {
+                string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+                TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+                if (ClassAddress.MysticArtist)
+                {
+                    SuperTwo.Text = "---";
+
+                    SuperTwoLineOne.Text = "---";
+
+                    SuperTwoLineTwo.Text = "---";
+
+                    SuperTwoLineThree.Text = "---";
+
+                    SuperTwoLineFour.Text = "---";
+
+                    digiSoulCost -= 1;
+                }
+            }
+
             if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
             {
                 digiSoulCost += 1; // Subtract 1 from the score
@@ -8280,6 +8078,27 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button5_Click_4(object sender, EventArgs e)
         {
+
+            if (ClassBox.SelectedIndex > -1)
+            {
+                string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+                TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+                if (ClassAddress.MysticArtist)
+                {
+                    SuperThree.Text = "---";
+
+                    SuperThreeLineOne.Text = "---";
+
+                    SuperThreeLineTwo.Text = "---";
+
+                    SuperThreeLineThree.Text = "---";
+
+                    SuperThreeLineFour.Text = "---";
+
+                    digiSoulCost -= 1;
+                }
+            }
 
             if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
             {
@@ -8292,6 +8111,27 @@ namespace DigimonAndTamerCharacterSheets
         private void button24_Click(object sender, EventArgs e)
         {
 
+            if (ClassBox.SelectedIndex > -1)
+            {
+                string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+                TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+
+                if (ClassAddress.MysticArtist)
+                {
+                    SuperFour.Text = "---";
+
+                    SuperFourLineOne.Text = "---";
+
+                    SuperFourLineTwo.Text = "---";
+
+                    SuperFourLineThree.Text = "---";
+
+                    SuperFourLineFour.Text = "---";
+
+                    digiSoulCost -= 1;
+                }
+            }
+
             if (int.TryParse(DigiSoulStat.Text, out int digiSoulScore) && digiSoulScore > 0)
             {
                 digiSoulCost += 1; // Subtract 1 from the score
@@ -8302,6 +8142,16 @@ namespace DigimonAndTamerCharacterSheets
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (ClassBox.Text == "")
+            {
+                ClassBox.Enabled = true;
+            }
+            else
+            {
+                ClassBox.Enabled = false;
+            };
+
             string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
             TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
 
@@ -8354,32 +8204,7 @@ namespace DigimonAndTamerCharacterSheets
             }
         }
 
-        private void SuperOneLineTwo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BattleScanLineThree_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HoloDisplayLineThree_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GigaMapsLineOne_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GigaMapsLineTwo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SuperFour_Enter(object sender, EventArgs e)
+        private void DigimonMoves_Click(object sender, EventArgs e)
         {
 
         }
