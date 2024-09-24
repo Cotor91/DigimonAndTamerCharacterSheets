@@ -430,24 +430,29 @@
             label59 = new Label();
             SuperAttackHardHit = new Label();
             BasicAttack = new GroupBox();
+            BasicCritSuccessLabel = new Label();
+            BasicCritSuccess = new Label();
+            BasicCritFailLabel = new Label();
+            BasicCritFail = new Label();
             label22 = new Label();
+            BasicDefendStat = new Label();
+            AttackStatLabel = new Label();
+            BasicConcept = new Label();
+            BasicPenaltyLabel = new Label();
+            label54 = new Label();
+            BasicAttackStat = new Label();
+            BasicBonusLabel = new Label();
+            BasicConceptLabel = new Label();
+            BasicEffect = new Label();
+            BasicBonus = new Label();
+            BasicEffectLabel = new Label();
+            BasicPenalty = new Label();
             BasicDiceMax = new Label();
             label109 = new Label();
             label106 = new Label();
-            BasicAttackHardFail = new Label();
             BasicDiceMin = new Label();
-            label81 = new Label();
             BasicElement = new Label();
-            BasicAttackFail = new Label();
-            BasicAttackPartFail = new Label();
             ActBasicAttack = new Button();
-            label84 = new Label();
-            label91 = new Label();
-            BasicAttackPartHit = new Label();
-            BasicAttackHit = new Label();
-            BasicAttackPartFailText = new Label();
-            label87 = new Label();
-            BasicAttackHardHit = new Label();
             StandardAttack = new GroupBox();
             StandardDiceMax = new Label();
             StandardAttackHardFail = new Label();
@@ -5292,24 +5297,29 @@
             // 
             // BasicAttack
             // 
+            BasicAttack.Controls.Add(BasicCritSuccessLabel);
+            BasicAttack.Controls.Add(BasicCritSuccess);
+            BasicAttack.Controls.Add(BasicCritFailLabel);
+            BasicAttack.Controls.Add(BasicCritFail);
             BasicAttack.Controls.Add(label22);
+            BasicAttack.Controls.Add(BasicDefendStat);
+            BasicAttack.Controls.Add(AttackStatLabel);
+            BasicAttack.Controls.Add(BasicConcept);
+            BasicAttack.Controls.Add(BasicPenaltyLabel);
+            BasicAttack.Controls.Add(label54);
+            BasicAttack.Controls.Add(BasicAttackStat);
+            BasicAttack.Controls.Add(BasicBonusLabel);
+            BasicAttack.Controls.Add(BasicConceptLabel);
+            BasicAttack.Controls.Add(BasicEffect);
+            BasicAttack.Controls.Add(BasicBonus);
+            BasicAttack.Controls.Add(BasicEffectLabel);
+            BasicAttack.Controls.Add(BasicPenalty);
             BasicAttack.Controls.Add(BasicDiceMax);
             BasicAttack.Controls.Add(label109);
             BasicAttack.Controls.Add(label106);
-            BasicAttack.Controls.Add(BasicAttackHardFail);
             BasicAttack.Controls.Add(BasicDiceMin);
-            BasicAttack.Controls.Add(label81);
             BasicAttack.Controls.Add(BasicElement);
-            BasicAttack.Controls.Add(BasicAttackFail);
-            BasicAttack.Controls.Add(BasicAttackPartFail);
             BasicAttack.Controls.Add(ActBasicAttack);
-            BasicAttack.Controls.Add(label84);
-            BasicAttack.Controls.Add(label91);
-            BasicAttack.Controls.Add(BasicAttackPartHit);
-            BasicAttack.Controls.Add(BasicAttackHit);
-            BasicAttack.Controls.Add(BasicAttackPartFailText);
-            BasicAttack.Controls.Add(label87);
-            BasicAttack.Controls.Add(BasicAttackHardHit);
             BasicAttack.Location = new Point(21, 24);
             BasicAttack.Margin = new Padding(4, 5, 4, 5);
             BasicAttack.Name = "BasicAttack";
@@ -5319,15 +5329,184 @@
             BasicAttack.TabStop = false;
             BasicAttack.Text = "Basic";
             // 
+            // BasicCritSuccessLabel
+            // 
+            BasicCritSuccessLabel.AutoSize = true;
+            BasicCritSuccessLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BasicCritSuccessLabel.Location = new Point(273, 135);
+            BasicCritSuccessLabel.Name = "BasicCritSuccessLabel";
+            BasicCritSuccessLabel.Size = new Size(124, 20);
+            BasicCritSuccessLabel.TabIndex = 189;
+            BasicCritSuccessLabel.Text = "Crit Success:";
+            // 
+            // BasicCritSuccess
+            // 
+            BasicCritSuccess.AutoSize = true;
+            BasicCritSuccess.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicCritSuccess.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicCritSuccess.Location = new Point(405, 135);
+            BasicCritSuccess.Name = "BasicCritSuccess";
+            BasicCritSuccess.Size = new Size(26, 20);
+            BasicCritSuccess.TabIndex = 188;
+            BasicCritSuccess.Text = "x7";
+            BasicCritSuccess.Click += BasicCritSuccess_Click;
+            // 
+            // BasicCritFailLabel
+            // 
+            BasicCritFailLabel.AutoSize = true;
+            BasicCritFailLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BasicCritFailLabel.Location = new Point(65, 135);
+            BasicCritFailLabel.Name = "BasicCritFailLabel";
+            BasicCritFailLabel.Size = new Size(83, 20);
+            BasicCritFailLabel.TabIndex = 187;
+            BasicCritFailLabel.Text = "Crit Fail:";
+            // 
+            // BasicCritFail
+            // 
+            BasicCritFail.AutoSize = true;
+            BasicCritFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicCritFail.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicCritFail.Location = new Point(156, 135);
+            BasicCritFail.Name = "BasicCritFail";
+            BasicCritFail.Size = new Size(26, 20);
+            BasicCritFail.TabIndex = 186;
+            BasicCritFail.Text = "x7";
+            // 
             // label22
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.Location = new Point(55, 95);
+            label22.Location = new Point(289, 97);
             label22.Name = "label22";
-            label22.Size = new Size(46, 20);
-            label22.TabIndex = 165;
-            label22.Text = "Fail:";
+            label22.Size = new Size(108, 20);
+            label22.TabIndex = 185;
+            label22.Text = "Challenges:";
+            // 
+            // BasicDefendStat
+            // 
+            BasicDefendStat.AutoSize = true;
+            BasicDefendStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicDefendStat.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicDefendStat.Location = new Point(405, 97);
+            BasicDefendStat.Name = "BasicDefendStat";
+            BasicDefendStat.Size = new Size(36, 20);
+            BasicDefendStat.TabIndex = 184;
+            BasicDefendStat.Text = "___";
+            // 
+            // AttackStatLabel
+            // 
+            AttackStatLabel.AutoSize = true;
+            AttackStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AttackStatLabel.Location = new Point(87, 97);
+            AttackStatLabel.Name = "AttackStatLabel";
+            AttackStatLabel.Size = new Size(58, 20);
+            AttackStatLabel.TabIndex = 183;
+            AttackStatLabel.Text = "Uses:";
+            // 
+            // BasicConcept
+            // 
+            BasicConcept.AutoSize = true;
+            BasicConcept.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicConcept.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicConcept.Location = new Point(109, 62);
+            BasicConcept.Name = "BasicConcept";
+            BasicConcept.Size = new Size(36, 20);
+            BasicConcept.TabIndex = 182;
+            BasicConcept.Text = "___";
+            // 
+            // BasicPenaltyLabel
+            // 
+            BasicPenaltyLabel.AutoSize = true;
+            BasicPenaltyLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BasicPenaltyLabel.Location = new Point(24, 245);
+            BasicPenaltyLabel.Name = "BasicPenaltyLabel";
+            BasicPenaltyLabel.Size = new Size(77, 20);
+            BasicPenaltyLabel.TabIndex = 177;
+            BasicPenaltyLabel.Text = "Penalty:";
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label54.Location = new Point(355, 30);
+            label54.Name = "label54";
+            label54.Size = new Size(70, 20);
+            label54.TabIndex = 172;
+            label54.Text = "Element";
+            // 
+            // BasicAttackStat
+            // 
+            BasicAttackStat.AutoSize = true;
+            BasicAttackStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicAttackStat.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicAttackStat.Location = new Point(156, 97);
+            BasicAttackStat.Name = "BasicAttackStat";
+            BasicAttackStat.Size = new Size(72, 20);
+            BasicAttackStat.TabIndex = 181;
+            BasicAttackStat.Text = "Strength";
+            // 
+            // BasicBonusLabel
+            // 
+            BasicBonusLabel.AutoSize = true;
+            BasicBonusLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BasicBonusLabel.Location = new Point(33, 209);
+            BasicBonusLabel.Name = "BasicBonusLabel";
+            BasicBonusLabel.Size = new Size(68, 20);
+            BasicBonusLabel.TabIndex = 176;
+            BasicBonusLabel.Text = "Bonus:";
+            // 
+            // BasicConceptLabel
+            // 
+            BasicConceptLabel.AutoSize = true;
+            BasicConceptLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BasicConceptLabel.Location = new Point(18, 62);
+            BasicConceptLabel.Name = "BasicConceptLabel";
+            BasicConceptLabel.Size = new Size(84, 20);
+            BasicConceptLabel.TabIndex = 174;
+            BasicConceptLabel.Text = "Concept:";
+            // 
+            // BasicEffect
+            // 
+            BasicEffect.AutoSize = true;
+            BasicEffect.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicEffect.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicEffect.Location = new Point(109, 173);
+            BasicEffect.Name = "BasicEffect";
+            BasicEffect.Size = new Size(52, 20);
+            BasicEffect.TabIndex = 180;
+            BasicEffect.Text = "Basis";
+            // 
+            // BasicBonus
+            // 
+            BasicBonus.AutoSize = true;
+            BasicBonus.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicBonus.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicBonus.Location = new Point(109, 209);
+            BasicBonus.Name = "BasicBonus";
+            BasicBonus.Size = new Size(48, 20);
+            BasicBonus.TabIndex = 179;
+            BasicBonus.Text = "Boon";
+            // 
+            // BasicEffectLabel
+            // 
+            BasicEffectLabel.AutoSize = true;
+            BasicEffectLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BasicEffectLabel.Location = new Point(36, 173);
+            BasicEffectLabel.Name = "BasicEffectLabel";
+            BasicEffectLabel.Size = new Size(65, 20);
+            BasicEffectLabel.TabIndex = 175;
+            BasicEffectLabel.Text = "Effect:";
+            // 
+            // BasicPenalty
+            // 
+            BasicPenalty.AutoSize = true;
+            BasicPenalty.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            BasicPenalty.ImageAlign = ContentAlignment.MiddleLeft;
+            BasicPenalty.Location = new Point(109, 245);
+            BasicPenalty.Name = "BasicPenalty";
+            BasicPenalty.Size = new Size(44, 20);
+            BasicPenalty.TabIndex = 178;
+            BasicPenalty.Text = "Bust";
             // 
             // BasicDiceMax
             // 
@@ -5360,17 +5539,6 @@
             label106.Text = "-";
             label106.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // BasicAttackHardFail
-            // 
-            BasicAttackHardFail.AutoSize = true;
-            BasicAttackHardFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            BasicAttackHardFail.ImageAlign = ContentAlignment.MiddleLeft;
-            BasicAttackHardFail.Location = new Point(107, 58);
-            BasicAttackHardFail.Name = "BasicAttackHardFail";
-            BasicAttackHardFail.Size = new Size(36, 20);
-            BasicAttackHardFail.TabIndex = 147;
-            BasicAttackHardFail.Text = "___";
-            // 
             // BasicDiceMin
             // 
             BasicDiceMin.AutoSize = true;
@@ -5381,16 +5549,6 @@
             BasicDiceMin.TabIndex = 97;
             BasicDiceMin.Text = "0";
             // 
-            // label81
-            // 
-            label81.AutoSize = true;
-            label81.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label81.Location = new Point(13, 241);
-            label81.Name = "label81";
-            label81.Size = new Size(87, 20);
-            label81.TabIndex = 141;
-            label81.Text = "Hard Hit:";
-            // 
             // BasicElement
             // 
             BasicElement.AutoSize = true;
@@ -5400,28 +5558,6 @@
             BasicElement.Size = new Size(70, 20);
             BasicElement.TabIndex = 91;
             BasicElement.Text = "Element";
-            // 
-            // BasicAttackFail
-            // 
-            BasicAttackFail.AutoSize = true;
-            BasicAttackFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            BasicAttackFail.ImageAlign = ContentAlignment.MiddleLeft;
-            BasicAttackFail.Location = new Point(107, 95);
-            BasicAttackFail.Name = "BasicAttackFail";
-            BasicAttackFail.Size = new Size(36, 20);
-            BasicAttackFail.TabIndex = 146;
-            BasicAttackFail.Text = "___";
-            // 
-            // BasicAttackPartFail
-            // 
-            BasicAttackPartFail.AutoSize = true;
-            BasicAttackPartFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            BasicAttackPartFail.ImageAlign = ContentAlignment.MiddleLeft;
-            BasicAttackPartFail.Location = new Point(107, 131);
-            BasicAttackPartFail.Name = "BasicAttackPartFail";
-            BasicAttackPartFail.Size = new Size(36, 20);
-            BasicAttackPartFail.TabIndex = 145;
-            BasicAttackPartFail.Text = "___";
             // 
             // ActBasicAttack
             // 
@@ -5435,79 +5571,6 @@
             ActBasicAttack.Text = "Activate";
             ActBasicAttack.UseVisualStyleBackColor = true;
             ActBasicAttack.Click += BasicAttack_Click;
-            // 
-            // label84
-            // 
-            label84.AutoSize = true;
-            label84.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label84.Location = new Point(59, 205);
-            label84.Name = "label84";
-            label84.Size = new Size(40, 20);
-            label84.TabIndex = 140;
-            label84.Text = "Hit:";
-            // 
-            // label91
-            // 
-            label91.AutoSize = true;
-            label91.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label91.Location = new Point(7, 58);
-            label91.Name = "label91";
-            label91.Size = new Size(93, 20);
-            label91.TabIndex = 136;
-            label91.Text = "Hard Fail:";
-            // 
-            // BasicAttackPartHit
-            // 
-            BasicAttackPartHit.AutoSize = true;
-            BasicAttackPartHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            BasicAttackPartHit.ImageAlign = ContentAlignment.MiddleLeft;
-            BasicAttackPartHit.Location = new Point(107, 169);
-            BasicAttackPartHit.Name = "BasicAttackPartHit";
-            BasicAttackPartHit.Size = new Size(36, 20);
-            BasicAttackPartHit.TabIndex = 144;
-            BasicAttackPartHit.Text = "___";
-            // 
-            // BasicAttackHit
-            // 
-            BasicAttackHit.AutoSize = true;
-            BasicAttackHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            BasicAttackHit.ImageAlign = ContentAlignment.MiddleLeft;
-            BasicAttackHit.Location = new Point(107, 205);
-            BasicAttackHit.Name = "BasicAttackHit";
-            BasicAttackHit.Size = new Size(36, 20);
-            BasicAttackHit.TabIndex = 143;
-            BasicAttackHit.Text = "___";
-            // 
-            // BasicAttackPartFailText
-            // 
-            BasicAttackPartFailText.AutoSize = true;
-            BasicAttackPartFailText.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BasicAttackPartFailText.Location = new Point(13, 131);
-            BasicAttackPartFailText.Name = "BasicAttackPartFailText";
-            BasicAttackPartFailText.Size = new Size(87, 20);
-            BasicAttackPartFailText.TabIndex = 138;
-            BasicAttackPartFailText.Text = "Part Fail:";
-            // 
-            // label87
-            // 
-            label87.AutoSize = true;
-            label87.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label87.Location = new Point(19, 169);
-            label87.Name = "label87";
-            label87.Size = new Size(81, 20);
-            label87.TabIndex = 139;
-            label87.Text = "Part Hit:";
-            // 
-            // BasicAttackHardHit
-            // 
-            BasicAttackHardHit.AutoSize = true;
-            BasicAttackHardHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            BasicAttackHardHit.ImageAlign = ContentAlignment.MiddleLeft;
-            BasicAttackHardHit.Location = new Point(107, 241);
-            BasicAttackHardHit.Name = "BasicAttackHardHit";
-            BasicAttackHardHit.Size = new Size(36, 20);
-            BasicAttackHardHit.TabIndex = 142;
-            BasicAttackHardHit.Text = "___";
             // 
             // StandardAttack
             // 
@@ -6794,18 +6857,7 @@
         private System.Windows.Forms.Label label57;
         private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label SuperAttackHardHit;
-        private System.Windows.Forms.Label BasicAttackHardFail;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Label BasicAttackFail;
-        private System.Windows.Forms.Label BasicAttackPartFail;
         private System.Windows.Forms.Button ActBasicAttack;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.Label BasicAttackPartHit;
-        private System.Windows.Forms.Label BasicAttackHit;
-        private System.Windows.Forms.Label BasicAttackPartFailText;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Label BasicAttackHardHit;
         private System.Windows.Forms.Label ResistanceElement;
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label WeaknessElement;
@@ -7125,7 +7177,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox TargetArmour;
         private System.Windows.Forms.Label SuperAttackPartFail;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label SpecialElement;
         private System.Windows.Forms.Button GainBond;
@@ -7194,6 +7245,23 @@
         private Label label49;
         private Label ExpNext;
         private Label ExpCurrent;
+        private Label BasicCritSuccessLabel;
+        private Label BasicCritSuccess;
+        private Label BasicCritFailLabel;
+        private Label BasicCritFail;
+        private Label label22;
+        private Label BasicDefendStat;
+        private Label AttackStatLabel;
+        private Label BasicConcept;
+        private Label BasicPenaltyLabel;
+        private Label label54;
+        private Label BasicAttackStat;
+        private Label BasicBonusLabel;
+        private Label BasicConceptLabel;
+        private Label BasicEffect;
+        private Label BasicBonus;
+        private Label BasicEffectLabel;
+        private Label BasicPenalty;
     }
 }
 

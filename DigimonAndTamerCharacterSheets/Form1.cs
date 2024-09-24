@@ -4504,12 +4504,6 @@ namespace DigimonAndTamerCharacterSheets
 
             // Basic Move
             BasicAttack.Text = EvolutionAddress.BasicAttack;
-            BasicAttackHardFail.Text = EvolutionAddress.BasicHardFail;
-            BasicAttackFail.Text = EvolutionAddress.BasicFail;
-            BasicAttackPartFail.Text = EvolutionAddress.BasicPartFail;
-            BasicAttackPartHit.Text = EvolutionAddress.BasicPartHit;
-            BasicAttackHit.Text = EvolutionAddress.BasicHit;
-            BasicAttackHardHit.Text = EvolutionAddress.BasicHardHit;
             BasicDiceMin.Text = EvolutionAddress.BasicDiceMin;
             BasicDiceMax.Text = EvolutionAddress.BasicDiceMax;
             BasicElement.Text = EvolutionAddress.BasicElement;
@@ -4711,12 +4705,6 @@ namespace DigimonAndTamerCharacterSheets
                     // ____ Moves
                     //Basic Move
                     BasicAttack.Text = "____";
-                    BasicAttackHardFail.Text = "____";
-                    BasicAttackFail.Text = "____";
-                    BasicAttackPartFail.Text = "____";
-                    BasicAttackPartHit.Text = "____";
-                    BasicAttackHit.Text = "____";
-                    BasicAttackHardHit.Text = "____";
                     BasicDiceMin.Text = "_";
                     BasicDiceMax.Text = "_";
                     BasicElement.Text = "____";
@@ -6976,45 +6964,56 @@ namespace DigimonAndTamerCharacterSheets
 
         private void BasicAttack_Click(object sender, EventArgs e)
         {
-            if (BasicAttackNow == true)
+            bool MultiCrit = BasicCritSuccess.Text.Contains("x");
+            bool MultiFail = BasicCritFail.Text.Contains("x");
+            int.TryParse(BasicCritSuccess.Text.Replace("x", ""), out int CritRequire);
+            int.TryParse(BasicCritFail.Text.Replace("x", ""), out int FailRequire);
+
+
+            // Get the individual dice
+            Random random = new Random();
+            string IndividualRolls = null;
+            int TotalResult = 0;
+            int DiceRolling = 0;
+            int DiceScore = 0;
+
+            if (BasicAttackStat.Text == "Attack")
             {
-                BasicAttackNow = false;
-                ActBasicAttack.Text = "Activate";
-
-                if (StratPoints.Text == "0")
-                {
-                    ActBasicAttack.Enabled = false;
-                }
-
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (BasicAttackStat.Text == "Strength")
+            {
+                int.TryParse(DigimonStrength.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (BasicAttackStat.Text == "Agility")
+            {
+                int.TryParse(DigimonAgility.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (BasicAttackStat.Text == "Vibes")
+            {
+                int.TryParse(DigimonVibes.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (BasicAttackStat.Text == "Wits")
+            {
+                int.TryParse(DigimonWits.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (BasicAttackStat.Text == "Education")
+            {
+                int.TryParse(DigimonEducation.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
             else
             {
-                GaurdPoints--;
-                StratPoints.Text = "";
-                BasicAttackNow = false;
-                ActBasicAttack.Text = "Activate";
-                StandardAttackNow = false;
-                ActStandardAttack.Text = "Activate";
-                SpecialAttackNow = false;
-                ActSpecialAttack.Text = "Activate";
-                SuperAttackNow = false;
-                ActSuperAttack.Text = "Activate";
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
 
-
-
-
-            // Get the number of dice from the Attack Box
-            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
-
-            Random random = new Random();
-            int TotalResult = 0;
-            string IndividualRolls = "";
-            int TargetDefense = 0;
-            int.TryParse(TargetArmour.Text, out TargetDefense);
-            string StrikeInflicted = "";
-
-            for (int i = 0; i < NumberOfDice; i++)
+            for (int i = 0; i < DiceRolling; i++)
             {
                 // Generates a random number between 1 and 10
                 int DiceResult = random.Next(1, 11);
@@ -7023,33 +7022,57 @@ namespace DigimonAndTamerCharacterSheets
                 IndividualRolls += DiceResult + " ";
             }
 
-            if (TotalResult < TargetDefense - 15)
+            // Get the target score
+
+            int.TryParse(TargetArmour.Text, out int TargetDefense);
+            int TargetDice = TotalResult;
+
+            string StrikeInflicted = null;
+
+            MessageBox.Show($"Attack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetArmour.Text}\nResults: {StrikeInflicted}");
+
+            if (TargetDefense > TotalResult - 1)
             {
-                StrikeInflicted = "Hard Fail - " + BasicAttackHardFail.Text;
-            }
-            else if (TotalResult < TargetDefense - 5)
-            {
-                StrikeInflicted = "Fail - " + BasicAttackFail.Text;
-            }
-            else if (TotalResult < TargetDefense)
-            {
-                StrikeInflicted = "Part Fail - " + BasicAttackPartFail.Text;
-            }
-            else if (TotalResult < TargetDefense + 5)
-            {
-                StrikeInflicted = "Part Hit - " + BasicAttackPartHit.Text;
-            }
-            else if (TotalResult < TargetDefense + 15)
-            {
-                StrikeInflicted = "Hit - " + BasicAttackHit.Text;
+                if (TotalResult - TargetDefense > CritRequire)
+                {
+                    if (MultiCrit)
+                    {
+                        string MultiPoint = ((DiceScore - TargetDice) / CritRequire).ToString();
+                        BasicBonus.Text.Replace("x", MultiPoint);
+                        MessageBox.Show($"{BasicEffect}\n{BasicBonus}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{BasicEffect}\n{BasicBonus}");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"{BasicEffect}");
+                }
             }
             else
             {
-                StrikeInflicted = "Hard Hit - " + BasicAttackHardHit.Text;
-            }
+                if (TotalResult - TargetDefense > FailRequire)
+                {
+                    if (MultiCrit)
+                    {
+                        string MultiPoint = ((TargetDice - DiceScore) / FailRequire).ToString();
+                        BasicPenalty.Text.Replace("x", MultiPoint);
+                        MessageBox.Show($"{BasicPenalty}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{BasicPenalty}");
+                    }
 
-            // Display the result
-            MessageBox.Show($"\n{BasicAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
+                }
+                else
+                {
+                    MessageBox.Show($"Nothing happened...");
+                }
+            }
         }
 
 
@@ -8205,6 +8228,11 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void DigimonMoves_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BasicCritSuccess_Click(object sender, EventArgs e)
         {
 
         }
