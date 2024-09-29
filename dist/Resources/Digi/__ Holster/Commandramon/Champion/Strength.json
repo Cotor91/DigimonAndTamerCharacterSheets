@@ -1,0 +1,71 @@
+{
+  "DigimonName": "Hi-Commandramon",
+  "DigimonField": "Metal Empire",
+  "DigitalFrame": "16",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Virus",
+  "WeaknessElement": "Air",
+  "ResistanceElement": "Slam",
+
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Ramming Speed: For 1 Bond rush through 1 mundane door.",
+  "CurrentQuirkTwo": "Bomber Buddy: Spend 1 Bond to borrow a Bomb.",
+  "InheritableQuirkOne": "Instant Overdrive: Once per scene, Tamer can use this Strength Safe.",
+  "InheritableQuirkTwo": "Strength Champion: Same perks as a Strength Meal.",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
+
+  "BasicAttack": "Shield Bash",
+  "StandardAttack": "Lone Launch",
+  "SpecialAttack": "Destroy Charge",
+  "SuperAttack": "DCD Grenades",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Metal - Contact",
+  "StandardElement": "Fire - Range",
+  "SpecialElement": "Slam - Contact",
+  "SuperElement": "Metal - Range",
+
+  "BasicHardFail": "User can't attack next turn.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "User and Target can't attack next turn.",
+  "BasicPartHit": "-3HP on target.",
+  "BasicHit": "User and Target can't attack next turn. -3HP on target.",
+  "BasicHardHit": "Target can't attack next turn. -6HP on target.",
+
+  "StandardHardFail": "This Digimon can't attack next turn.'",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "-3HP to target. This Digimon can't attack next turn.",
+  "StandardPartHit": "-6HP to target. This Digimon can't attack next turn.",
+  "StandardHit": "-12HP to target. This Digimon can't attack next turn.",
+  "StandardHardHit": "-24HP to target.",
+
+  "SpecialHardFail": "-6HP to user.",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "User can't be attacked next turn.",
+  "SpecialPartHit": "-6HP to target.",
+  "SpecialHit": "-6HP to target. User can't be attacked next turn.",
+  "SpecialHardHit": "-12HP to target. User can't be attacked next turn.",
+
+  "SuperHardFail": "-6HP to user and 1 user ally near them.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-6HP to target and 1 user ally near them.",
+  "SuperPartHit": "-6HP to target.",
+  "SuperHit": "-6HP to target and 1 target ally near them.",
+  "SuperHardHit": "-12HP to target and to 2 target allies."
+}

@@ -191,6 +191,10 @@ namespace DigimonAndTamerCharacterSheets
                 GaurdPoints = loadedForm.GaurdPoints;
                 EvolutionFilePath = loadedForm.EvolutionFilePath;
                 ChampionPath = loadedForm.ChampionPath;
+                UltimatePath = loadedForm.UltimatePath;
+                MegaPath = loadedForm.MegaPath;
+                ClassPath = loadedForm.ClassPath;
+                ClassName = loadedForm.ClassName;
                 RookieInheritOne = loadedForm.RookieInheritOne;
                 RookieInheritTwo = loadedForm.RookieInheritTwo;
                 RookieInheritThree = loadedForm.RookieInheritThree;
@@ -224,13 +228,313 @@ namespace DigimonAndTamerCharacterSheets
                 digiSoulCost = loadedForm.DigiSoulCost;
                 ExpCurrent.Text = loadedForm.ExpNow;
                 ExpNext.Text = loadedForm.ExpNext;
+                RandomOne = loadedForm.RandomOne;
+                RandomTwo = loadedForm.RandomTwo;
+                RandomThree = loadedForm.RandomThree;
+                RandomFour = loadedForm.RandomFour;
+                ExpCurrent.Text = loadedForm.ExpCurrent;
+
+
+                if (ExpCurrent.Text == ExpNext.Text)
+                {
+                    LevelUp.Enabled = true;
+                }
+
+                ClassAssignment();
+
+                if (PowerRollOne.Text == "---")
+                {
+                    ClassBox.Enabled = true;
+                }
+                else
+                {
+                    ClassBox.Enabled = false;
+                }
 
                 EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
                 Partner.Items.Add(EvolutionAddress.DigimonName);
                 Partner.SelectedItem = EvolutionAddress.DigimonName;
+
                 DigivolutionDetails();
 
-            }
+
+                if (CardClass)
+                {
+                    if (RandomOne == 1)
+                    {
+                        SuperOne.Text = ClassAddress.PowerOne;
+                        SuperOneLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomOne == 2)
+                    {
+                        SuperOne.Text = ClassAddress.PowerTwo;
+                        SuperOneLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomOne == 3)
+                    {
+                        SuperOne.Text = ClassAddress.PowerThree;
+                        SuperOneLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomOne == 4)
+                    {
+                        SuperOne.Text = ClassAddress.PowerFour;
+                        SuperOneLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomOne == 5)
+                    {
+                        SuperOne.Text = ClassAddress.PowerFive;
+                        SuperOneLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomOne == 6)
+                    {
+                        SuperOne.Text = ClassAddress.PowerSix;
+                        SuperOneLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomOne == 7)
+                    {
+                        SuperOne.Text = ClassAddress.PowerOne;
+                        SuperOneLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomOne == 8)
+                    {
+                        SuperOne.Text = ClassAddress.PowerEight;
+                        SuperOneLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperOneLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperOneLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperOneLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                    if (ClassBox.Text == "Mystic Artist")
+
+                    if (RandomTwo == 1)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerOne;
+                        SuperTwoLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomTwo == 2)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerTwo;
+                        SuperTwoLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomTwo == 3)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerThree;
+                        SuperTwoLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomTwo == 4)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerFour;
+                        SuperTwoLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomTwo == 5)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerFive;
+                        SuperTwoLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomTwo == 6)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerSix;
+                        SuperTwoLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomTwo == 7)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerOne;
+                        SuperTwoLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomTwo == 8)
+                    {
+                        SuperTwo.Text = ClassAddress.PowerEight;
+                        SuperTwoLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperTwoLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperTwoLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperTwoLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+
+                if (ClassBox.Text == "Mystic Artist")
+                { 
+
+                    if (RandomThree == 1)
+                    {
+                        SuperThree.Text = ClassAddress.PowerOne;
+                        SuperThreeLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomThree == 2)
+                    {
+                        SuperThree.Text = ClassAddress.PowerTwo;
+                        SuperThreeLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomThree == 3)
+                    {
+                        SuperThree.Text = ClassAddress.PowerThree;
+                        SuperThreeLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomThree == 4)
+                    {
+                        SuperThree.Text = ClassAddress.PowerFour;
+                        SuperThreeLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomThree == 5)
+                    {
+                        SuperThree.Text = ClassAddress.PowerFive;
+                        SuperThreeLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomThree == 6)
+                    {
+                        SuperThree.Text = ClassAddress.PowerSix;
+                        SuperThreeLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomThree == 7)
+                    {
+                        SuperThree.Text = ClassAddress.PowerOne;
+                        SuperThreeLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomThree == 8)
+                    {
+                        SuperThree.Text = ClassAddress.PowerEight;
+                        SuperThreeLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperThreeLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperThreeLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperThreeLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+
+                }
+
+                if (ClassBox.Text == "Mystic Artist")
+                {
+
+                    if (RandomThree == 1)
+                    {
+                        SuperFour.Text = ClassAddress.PowerOne;
+                        SuperFourLineOne.Text = ClassAddress.PowerOneLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerOneLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerOneLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerOneLineFour;
+                    }
+                    else if (RandomFour == 2)
+                    {
+                        SuperFour.Text = ClassAddress.PowerTwo;
+                        SuperFourLineOne.Text = ClassAddress.PowerTwoLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerTwoLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerTwoLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerTwoLineFour;
+                    }
+                    else if (RandomFour == 3)
+                    {
+                        SuperFour.Text = ClassAddress.PowerThree;
+                        SuperFourLineOne.Text = ClassAddress.PowerThreeLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerThreeLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerThreeLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerThreeLineFour;
+                    }
+                    else if (RandomFour == 4)
+                    {
+                        SuperFour.Text = ClassAddress.PowerFour;
+                        SuperFourLineOne.Text = ClassAddress.PowerFourLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerFourLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerFourLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerFourLineFour;
+                    }
+                    else if (RandomFour == 5)
+                    {
+                        SuperFour.Text = ClassAddress.PowerFive;
+                        SuperFourLineOne.Text = ClassAddress.PowerFiveLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerFiveLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerFiveLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerFiveLineFour;
+                    }
+                    else if (RandomFour == 6)
+                    {
+                        SuperFour.Text = ClassAddress.PowerSix;
+                        SuperFourLineOne.Text = ClassAddress.PowerSixLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerSixLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerSixLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerSixLineFour;
+                    }
+                    else if (RandomFour == 7)
+                    {
+                        SuperFour.Text = ClassAddress.PowerOne;
+                        SuperFourLineOne.Text = ClassAddress.PowerSevenLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerSevenLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerSevenLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerSevenLineFour;
+                    }
+                    else if (RandomFour == 8)
+                    {
+                        SuperFour.Text = ClassAddress.PowerEight;
+                        SuperFourLineOne.Text = ClassAddress.PowerEightLineOne;
+                        SuperFourLineTwo.Text = ClassAddress.PowerEightLineTwo;
+                        SuperFourLineThree.Text = ClassAddress.PowerEightLineThree;
+                        SuperFourLineFour.Text = ClassAddress.PowerEightLineFour;
+                    }
+                }
+
+
+                }
             catch (Exception ex)
             {
 
@@ -357,6 +661,9 @@ namespace DigimonAndTamerCharacterSheets
                     GaurdPoints = GaurdPoints,
                     EvolutionFilePath = EvolutionFilePath,
                     ChampionPath = ChampionPath,
+                    UltimatePath = UltimatePath,
+                    MegaPath = MegaPath,
+                    ClassPath = ClassPath,
                     RookieInheritOne = RookieInheritOne,
                     RookieInheritTwo = RookieInheritTwo,
                     RookieInheritThree = RookieInheritThree,
@@ -378,6 +685,13 @@ namespace DigimonAndTamerCharacterSheets
                     DigiSoulCost = digiSoulCost,
                     ExpNow = ExpCurrent.Text,
                     ExpNext = ExpNext.Text,
+                    RandomOne = RandomOne,
+                    RandomTwo = RandomTwo,
+                    RandomThree = RandomThree,
+                    RandomFour = RandomFour,
+                    ClassName = ClassBox.Text,
+                    ExpCurrent = ExpCurrent.Text,
+
                 }));
 
             }
@@ -390,14 +704,22 @@ namespace DigimonAndTamerCharacterSheets
 
         }
 
+        int RandomOne = 1;
+        int RandomTwo = 2;
+        int RandomThree = 3;
+        int RandomFour = 4;
+
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show("A new scene fades in...");
+
             GaurdPoints = 0;
             StratPoints.Text = "";
 
             // Increase Digi-Soul
-            if (digiSoulCost != 0)
+            if (digiSoulCost != 0 && SceneClass == true)
             {
                 digiSoulCost -= 1;
             }
@@ -461,7 +783,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 if (SuperOne.Text == "---")
                 {
-                    int RandomOne = random.Next(1, 9);
+                    RandomOne = random.Next(1, 9);
 
                     if (RandomOne == 1)
                     {
@@ -532,7 +854,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (SuperTwo.Text == "---")
                 {
-                    int RandomTwo = random.Next(1, 9);
+                    RandomTwo = random.Next(1, 9);
 
                     if (RandomTwo == 1)
                     {
@@ -602,7 +924,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else if (SuperThree.Text == "---")
                 {
-                    int RandomThree = random.Next(1, 9);
+                    RandomThree = random.Next(1, 9);
 
                     if (RandomThree == 1)
                     {
@@ -2735,11 +3057,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Giga Search power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show($"Do you want to increase your {PowerRollThree.Text} power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Giga Search power increased!");
+                    MessageBox.Show($"{PowerRollThree.Text} power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -2778,11 +3100,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Wayback Track power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show($"Do you want to increase your {PowerRollFour.Text} power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Wayback Track power increased!");
+                    MessageBox.Show($"{PowerRollFour.Text} power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -2828,7 +3150,7 @@ namespace DigimonAndTamerCharacterSheets
             }
 
             // Final result
-            DigiSoulScore = DigiSoulScore * 3;
+            DigiSoulScore = DigiSoulScore * SoulRollMod;
             TotalResult += DigiSoulScore;
 
             // Display the result
@@ -2859,7 +3181,7 @@ namespace DigimonAndTamerCharacterSheets
             }
 
             // Final result
-            DigiSoulScore = DigiSoulScore * 3;
+            DigiSoulScore = DigiSoulScore * SoulRollMod;
             TotalResult += DigiSoulScore;
 
             // Display the result
@@ -2890,7 +3212,7 @@ namespace DigimonAndTamerCharacterSheets
             }
 
             // Final result
-            DigiSoulScore = DigiSoulScore * 3;
+            DigiSoulScore = DigiSoulScore * SoulRollMod;
             TotalResult += DigiSoulScore;
 
             // Display the result
@@ -2921,7 +3243,7 @@ namespace DigimonAndTamerCharacterSheets
             }
 
             // Final result
-            DigiSoulScore = DigiSoulScore * 3;
+            DigiSoulScore = DigiSoulScore * SoulRollMod;
             TotalResult += DigiSoulScore;
 
             // Display the result
@@ -3840,12 +4162,21 @@ namespace DigimonAndTamerCharacterSheets
                         UltimateEvolution = false,
                         MegaEvolution = false,
                         ChampionPath = null!,
+                        UltimatePath = null!,
+                        MegaPath = null!,
+                        ClassPath = null,
+                        ClassName = null,
                         EvolutionFilePath = null!,
                         UpgradeSkills = true,
                         UpgradePowers = true,
                         DigiSoulCost = 0,
                         ExpNow = "0",
                         ExpNext = "3",
+                        RandomOne = 1,
+                        RandomTwo = 2,
+                        RandomThree = 3,
+                        RandomFour = 4,
+                        ExpCurrent = "0",
 
                     }));
 
@@ -4040,11 +4371,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Error Scan power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show($"Do you want to increase your {PowerRollOne.Text} power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Error Scan power increased!");
+                    MessageBox.Show($"{PowerRollOne.Text} power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -4079,11 +4410,11 @@ namespace DigimonAndTamerCharacterSheets
                 // Spent Skill Points
                 TrackBar[] tracks = new TrackBar[] { ErrorScanTrack, InfoExtractTrack, GigaSearchTrack, WaybackTrackTrack };
 
-                DialogResult BoostCarry = MessageBox.Show("Do you want to increase your Info Extract power?", "Power Increase", MessageBoxButtons.YesNo);
+                DialogResult BoostCarry = MessageBox.Show($"Do you want to increase your {PowerRollTwo.Text} power?", "Power Increase", MessageBoxButtons.YesNo);
                 if (BoostCarry == DialogResult.Yes)
                 {
                     // Perform actions if user clicked Yes (e.g., display message, update skill points)
-                    MessageBox.Show("Info Extract power increased!");
+                    MessageBox.Show($"{PowerRollTwo.Text} power increased!");
                     foreach (TrackBar track in tracks)
                     {
                         ErrorScanTrack.Value = HighestErrorScan;
@@ -4502,44 +4833,67 @@ namespace DigimonAndTamerCharacterSheets
                 }
             }
 
+
             // Basic Move
             BasicAttack.Text = EvolutionAddress.BasicAttack;
+
+            BasicConcept.Text = EvolutionAddress.BasicConcept;
+            BasicAttackStat.Text = EvolutionAddress.BasicAttackStat;
+            BasicDefendStat.Text = EvolutionAddress.BasicDefendStat;
+            BasicCritFail.Text = EvolutionAddress.BasicCritFail;
+            BasicCritSuccess.Text = EvolutionAddress.BasicCritSuccess;
+            BasicEffect.Text = EvolutionAddress.BasicEffect;
+            BasicBonus.Text = EvolutionAddress.BasicBonus;
+            BasicPenalty.Text = EvolutionAddress.BasicPenalty;
+
             BasicDiceMin.Text = EvolutionAddress.BasicDiceMin;
             BasicDiceMax.Text = EvolutionAddress.BasicDiceMax;
             BasicElement.Text = EvolutionAddress.BasicElement;
 
             //Standard Move
             StandardAttack.Text = EvolutionAddress.StandardAttack;
-            StandardAttackHardFail.Text = EvolutionAddress.StandardHardFail;
-            StandardAttackFail.Text = EvolutionAddress.StandardFail;
-            StandardAttackPartFail.Text = EvolutionAddress.StandardPartFail;
-            StandardAttackPartHit.Text = EvolutionAddress.StandardPartHit;
-            StandardAttackHit.Text = EvolutionAddress.StandardHit;
-            StandardAttackHardHit.Text = EvolutionAddress.StandardHardHit;
+
+            StandardConcept.Text = EvolutionAddress.StandardConcept;
+            StandardAttackStat.Text = EvolutionAddress.StandardAttackStat;
+            StandardDefendStat.Text = EvolutionAddress.StandardDefendStat;
+            StandardCritFail.Text = EvolutionAddress.StandardCritFail;
+            StandardCritSuccess.Text = EvolutionAddress.StandardCritSuccess;
+            StandardEffect.Text = EvolutionAddress.StandardEffect;
+            StandardBonus.Text = EvolutionAddress.StandardBonus;
+            StandardPenalty.Text = EvolutionAddress.StandardPenalty;
+
             StandardDiceMin.Text = EvolutionAddress.StandardDiceMin;
             StandardDiceMax.Text = EvolutionAddress.StandardDiceMax;
             StandardElement.Text = EvolutionAddress.StandardElement;
 
             //Special Move
             SpecialAttack.Text = EvolutionAddress.SpecialAttack;
-            SpecialAttackHardFail.Text = EvolutionAddress.SpecialHardFail;
-            SpecialAttackFail.Text = EvolutionAddress.SpecialFail;
-            SpecialAttackPartFail.Text = EvolutionAddress.SpecialPartFail;
-            SpecialAttackPartHit.Text = EvolutionAddress.SpecialPartHit;
-            SpecialAttackHit.Text = EvolutionAddress.SpecialHit;
-            SpecialAttackHardHit.Text = EvolutionAddress.SpecialHardHit;
+
+            SpecialConcept.Text = EvolutionAddress.SpecialConcept;
+            SpecialAttackStat.Text = EvolutionAddress.SpecialAttackStat;
+            SpecialDefendStat.Text = EvolutionAddress.SpecialDefendStat;
+            SpecialCritFail.Text = EvolutionAddress.SpecialCritFail;
+            SpecialCritSuccess.Text = EvolutionAddress.SpecialCritSuccess;
+            SpecialEffect.Text = EvolutionAddress.SpecialEffect;
+            SpecialBonus.Text = EvolutionAddress.SpecialBonus;
+            SpecialPenalty.Text = EvolutionAddress.SpecialPenalty;
+
             SpecialDiceMin.Text = EvolutionAddress.SpecialDiceMin;
             SpecialDiceMax.Text = EvolutionAddress.SpecialDiceMax;
             SpecialElement.Text = EvolutionAddress.SpecialElement;
 
             //Super Move
             SuperAttack.Text = EvolutionAddress.SuperAttack;
-            SuperAttackHardFail.Text = EvolutionAddress.SuperHardFail;
-            SuperAttackFail.Text = EvolutionAddress.SuperFail;
-            SuperAttackPartFail.Text = EvolutionAddress.SuperPartFail;
-            SuperAttackPartHit.Text = EvolutionAddress.SuperPartHit;
-            SuperAttackHit.Text = EvolutionAddress.SuperHit;
-            SuperAttackHardHit.Text = EvolutionAddress.SuperHardHit;
+
+            SuperConcept.Text = EvolutionAddress.SuperConcept;
+            SuperAttackStat.Text = EvolutionAddress.SuperAttackStat;
+            SuperDefendStat.Text = EvolutionAddress.SuperDefendStat;
+            SuperCritFail.Text = EvolutionAddress.SuperCritFail;
+            SuperCritSuccess.Text = EvolutionAddress.SuperCritSuccess;
+            SuperEffect.Text = EvolutionAddress.SuperEffect;
+            SuperBonus.Text = EvolutionAddress.SuperBonus;
+            SuperPenalty.Text = EvolutionAddress.SuperPenalty;
+
             SuperDiceMin.Text = EvolutionAddress.SuperDiceMin;
             SuperDiceMax.Text = EvolutionAddress.SuperDiceMax;
             SuperElement.Text = EvolutionAddress.SuperElement;
@@ -4702,45 +5056,61 @@ namespace DigimonAndTamerCharacterSheets
                         EducationDiet.Text = "0";
                     }
 
+
+
                     // ____ Moves
                     //Basic Move
                     BasicAttack.Text = "____";
+                    BasicConcept.Text = "___";
+                    BasicAttackStat.Text = "___";
+                    BasicDefendStat.Text = "___";
+                    BasicCritFail.Text = "___";
+                    BasicCritSuccess.Text = "___";
+                    BasicEffect.Text = "___";
+                    BasicBonus.Text = "___";
+                    BasicPenalty.Text = "___";
                     BasicDiceMin.Text = "_";
                     BasicDiceMax.Text = "_";
                     BasicElement.Text = "____";
 
                     //Standard Move
                     StandardAttack.Text = "____";
-                    StandardAttackHardFail.Text = "____";
-                    StandardAttackFail.Text = "____";
-                    StandardAttackPartFail.Text = "____";
-                    StandardAttackPartHit.Text = "____";
-                    StandardAttackHit.Text = "____";
-                    StandardAttackHardHit.Text = "____";
+                    StandardConcept.Text = "___";
+                    StandardAttackStat.Text = "___";
+                    StandardDefendStat.Text = "___";
+                    StandardCritFail.Text = "___";
+                    StandardCritSuccess.Text = "___";
+                    StandardEffect.Text = "___";
+                    StandardBonus.Text = "___";
+                    StandardPenalty.Text = "___";
                     StandardDiceMin.Text = "_";
                     StandardDiceMax.Text = "_";
                     StandardElement.Text = "____";
 
                     //Special Move
                     SpecialAttack.Text = "____";
-                    SpecialAttackHardFail.Text = "____";
-                    SpecialAttackFail.Text = "____";
-                    SpecialAttackPartFail.Text = "____";
-                    SpecialAttackPartHit.Text = "____";
-                    SpecialAttackHit.Text = "____";
-                    SpecialAttackHardHit.Text = "____";
+                    SpecialConcept.Text = "___";
+                    SpecialAttackStat.Text = "___";
+                    SpecialDefendStat.Text = "___";
+                    SpecialCritFail.Text = "___";
+                    SpecialCritSuccess.Text = "___";
+                    SpecialEffect.Text = "___";
+                    SpecialBonus.Text = "___";
+                    SpecialPenalty.Text = "___";
                     SpecialDiceMin.Text = "_";
                     SpecialDiceMax.Text = "_";
                     SpecialElement.Text = "____";
 
                     //Super Move
                     SuperAttack.Text = "____";
-                    SuperAttackHardFail.Text = "____";
-                    SuperAttackFail.Text = "____";
-                    SuperAttackPartFail.Text = "____";
-                    SuperAttackPartHit.Text = "____";
-                    SuperAttackHit.Text = "____";
-                    SuperAttackHardHit.Text = "____";
+                    SuperConcept.Text = "___";
+                    SuperAttackStat.Text = "___";
+                    SuperDefendStat.Text = "___";
+                    SuperCritFail.Text = "___";
+                    SuperCritSuccess.Text = "___";
+                    SuperEffect.Text = "___";
+                    SuperBonus.Text = "___";
+                    SuperPenalty.Text = "___";
                     SuperDiceMin.Text = "_";
                     SuperDiceMax.Text = "_";
                     SuperElement.Text = "____";
@@ -5110,10 +5480,13 @@ namespace DigimonAndTamerCharacterSheets
 
         string EvolutionFilePath;
         string ChampionPath;
+        string UltimatePath;
+        string MegaPath;
+
 
         private void Digivolve_Click(object sender, EventArgs e)
         {
-            if (UltimateSelect.Checked == true || MegaSelect.Checked == true)
+            if (MegaSelect.Checked == true)
             {
 
                 MessageBox.Show("That is not within the scope of this Demo, so it was not included.\nIf you want to do more sessions with me, or to use this game personally, reach out and we can talk about it.\n\nThere might even be other features added over-time (such as Armour or Spirit Evolution) when I'm not working on other stuff. So if you want to use this system further its definitely worth asking occasionally about any upgrades.\n\nPlease do not share either version to the public, as despite the abysmal odds I would love to pitch an improved version of this to Bandai Namco someday.\n\n    - Twilord");
@@ -5303,6 +5676,8 @@ namespace DigimonAndTamerCharacterSheets
                                     }
 
 
+
+
                                     EvolutionPath.Append(".json");
                                     EvolutionFilePath = EvolutionPath.ToString();
                                     EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
@@ -5345,6 +5720,305 @@ namespace DigimonAndTamerCharacterSheets
                             }
                         }
 
+                        else if (UltimateSelect.Checked == true)
+                        {
+                            int RemainingLifespan;
+                            int.TryParse(RemainingLife.Text, out RemainingLifespan);
+                            RemainingLifespan = RemainingLifespan - 1;
+                            RemainingLife.Text = RemainingLifespan.ToString();
+
+
+                            StringBuilder EvolutionPath = new StringBuilder();
+                            EvolutionPath.Append("Resources/Digi");
+
+                            if (DigivolutionRoll > DarkCheck)
+                            {
+
+                                if (UltimateLevel.Text == "________")
+                                {
+
+                                    EvolutionPath.Append("/");
+                                    EvolutionPath.Append(Partner.Text);
+                                    EvolutionPath.Append("/");
+                                    EvolutionPath.Append("Ultimate/");
+
+                                    if (maxDiet == Diet.Strength)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
+                                        Partner.Items.Add("Greymon");
+                                        Partner.SelectedItem = "Greymon";
+                                        UltimateLevel.Text = "Greymon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        UltimateEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Strength");
+
+                                    }
+                                    else if (maxDiet == Diet.Agility)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
+                                        Partner.Items.Add("Tuskmon");
+                                        Partner.SelectedItem = "Tuskmon";
+                                        UltimateLevel.Text = "Tuskmon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        UltimateEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Agility");
+                                    }
+                                    else if (maxDiet == Diet.Vibes)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
+                                        Partner.Items.Add("Growlmon");
+                                        Partner.SelectedItem = ";
+                                        UltimateLevel.Text = "Growlmon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        UltimateEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Vibes");
+                                    }
+                                    else if (maxDiet == Diet.Wits)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
+                                        Partner.Items.Add("Flarizamon");
+                                        Partner.SelectedItem = "Flarizamon";
+                                        UltimateLevel.Text = "Flarizamon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        UltimateEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Wits");
+                                    }
+                                    else if (maxDiet == Diet.Education)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
+                                        Partner.Items.Add("Tyrannomon");
+                                        Partner.SelectedItem = "Tyrannomon";
+                                        UltimateLevel.Text = "Tyrannomon"; 
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        UltimateEvolution = true;
+                                        UltimateEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Education");
+                                    }
+
+
+
+
+                                    EvolutionPath.Append(".json");
+                                    EvolutionFilePath = EvolutionPath.ToString();
+                                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                    if (RookieEvolution == false)
+                                    {
+                                        UltimateLevel.Text = EvolutionAddress.DigimonName;
+                                    }
+                                    DigivolutionDetails();
+
+                                    UltimatePath = EvolutionPath.ToString();
+
+
+                                    MessageBox.Show($"New Evolution Unlocked!\n Digivolution to {Partner.Text} successful.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {UltimateLevel.Text}");
+                                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(UltimatePath));
+                                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    EvolutionFilePath = UltimatePath;
+                                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                    DigivolutionDetails();
+
+                                }
+
+                            }
+                            else
+                            {
+                                EvolutionFilePath = $"Resources/Digi/Fail/Ultimate/{EvolutionAddress.DigimonField.Substring(0, DigimonField.Text.IndexOf(" "))}.json";
+                                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                Partner.Items.Add(EvolutionAddress.DigimonName);
+                                Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                UltimateLevel.Text = "________";
+                                DigivolutionDetails();
+
+                                MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: {Partner.Text}.");
+
+                            }
+                        }
+
+
+
+                        else if (MegaSelect.Checked == true)
+                        {
+                            int RemainingLifespan;
+                            int.TryParse(RemainingLife.Text, out RemainingLifespan);
+                            RemainingLifespan = RemainingLifespan - 1;
+                            RemainingLife.Text = RemainingLifespan.ToString();
+
+
+                            StringBuilder EvolutionPath = new StringBuilder();
+                            EvolutionPath.Append("Resources/Digi");
+
+                            if (DigivolutionRoll > DarkCheck)
+                            {
+
+                                if (MegaLevel.Text == "________")
+                                {
+
+                                    EvolutionPath.Append("/");
+                                    EvolutionPath.Append(Partner.Text);
+                                    EvolutionPath.Append("/");
+                                    EvolutionPath.Append("Mega/");
+
+                                    if (maxDiet == Diet.Strength)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Greymon");
+                                        Partner.Items.Add("Greymon");
+                                        Partner.SelectedItem = "Greymon";
+                                        MegaLevel.Text = "Greymon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        MegaEvolution = true;
+                                        MegaEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Strength");
+
+                                    }
+                                    else if (maxDiet == Diet.Agility)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tuskmon");
+                                        Partner.Items.Add("Tuskmon");
+                                        Partner.SelectedItem = "Tuskmon";
+                                        MegaLevel.Text = "Tuskmon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        MegaEvolution = true;
+                                        MegaEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Agility");
+                                    }
+                                    else if (maxDiet == Diet.Vibes)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Growlmon");
+                                        Partner.Items.Add("Growlmon");
+                                        Partner.SelectedItem = ";
+                                        MegaLevel.Text = "Growlmon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        MegaEvolution = true;
+                                        MegaEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Vibes");
+                                    }
+                                    else if (maxDiet == Diet.Wits)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Flarizamon");
+                                        Partner.Items.Add("Flarizamon");
+                                        Partner.SelectedItem = "Flarizamon";
+                                        MegaLevel.Text = "Flarizamon";
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        MegaEvolution = true;
+                                        MegaEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Wits");
+                                    }
+                                    else if (maxDiet == Diet.Education)
+                                    {
+                                        /*
+                                        MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: Tyrannomon");
+                                        Partner.Items.Add("Tyrannomon");
+                                        Partner.SelectedItem = "Tyrannomon";
+                                        MegaLevel.Text = "Tyrannomon"; 
+                                        */
+                                        FreshEvolution = false;
+                                        TrainingEvolution = false;
+                                        RookieEvolution = false;
+                                        MegaEvolution = true;
+                                        MegaEvolution = false;
+                                        MegaEvolution = false;
+                                        EvolutionPath.Append("Education");
+                                    }
+
+
+
+
+                                    EvolutionPath.Append(".json");
+                                    EvolutionFilePath = EvolutionPath.ToString();
+                                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                    if (RookieEvolution == false)
+                                    {
+                                        MegaLevel.Text = EvolutionAddress.DigimonName;
+                                    }
+                                    DigivolutionDetails();
+
+                                    MegaPath = EvolutionPath.ToString();
+
+
+                                    MessageBox.Show($"New Evolution Unlocked!\n Digivolution to {Partner.Text} successful.");
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nSuccessful Digivolution. \nEvolution Result: {MegaLevel.Text}");
+                                    EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(MegaPath));
+                                    Partner.Items.Add(EvolutionAddress.DigimonName);
+                                    EvolutionFilePath = MegaPath;
+                                    Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                    DigivolutionDetails();
+
+                                }
+
+                            }
+                            else
+                            {
+                                EvolutionFilePath = $"Resources/Digi/Fail/Mega/{EvolutionAddress.DigimonField.Substring(0, DigimonField.Text.IndexOf(" "))}.json";
+                                EvolutionAddress = JsonSerializer.Deserialize<DigimonInfo>(File.ReadAllText(EvolutionFilePath));
+                                Partner.Items.Add(EvolutionAddress.DigimonName);
+                                Partner.SelectedItem = EvolutionAddress.DigimonName;
+                                MegaLevel.Text = "________";
+                                DigivolutionDetails();
+
+                                MessageBox.Show($"Inner Darkness: {DarkCheck} \nDigivolution Light: {DigivolutionRoll} \n \nDark Digivolution Triggered. \nEvolution Result: {Partner.Text}.");
+
+                            }
+                        }
 
                     }
                     RecordChampion = ChampionLevel.Text;
@@ -5544,11 +6218,11 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ExperienceQuestions LevelSheet = new ExperienceQuestions(this);
-            LevelSheet.Show();
-
             MessageBox.Show($"Reflect on the day you've had, and earn your experience points.");
 
+            // Daily Healing
+            CoreHPNow.Text = CoreHPMax.Text;
+            CurrentHealth.Text = MaxHealth.Text;
 
             digiSoulCost = 0;
             DigiSoulStat.Text = "";
@@ -5632,7 +6306,7 @@ namespace DigimonAndTamerCharacterSheets
 
                 if (SuperOne.Text == "---")
                 {
-                    int RandomOne = random.Next(1, 9);
+                    RandomOne = random.Next(1, 9);
 
                     if (RandomOne == 1)
                     {
@@ -5703,7 +6377,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 if (SuperTwo.Text == "---")
                 {
-                    int RandomTwo = random.Next(1, 9);
+                    RandomTwo = random.Next(1, 9);
 
                     if (RandomTwo == 1)
                     {
@@ -5773,7 +6447,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 if (SuperThree.Text == "---")
                 {
-                    int RandomThree = random.Next(1, 9);
+                    RandomThree = random.Next(1, 9);
 
                     if (RandomThree == 1)
                     {
@@ -5843,7 +6517,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 if (SuperFour.Text == "---")
                 {
-                    int RandomFour = random.Next(1, 9);
+                    RandomFour = random.Next(1, 9);
 
                     if (RandomFour == 1)
                     {
@@ -5912,6 +6586,10 @@ namespace DigimonAndTamerCharacterSheets
 
                 }
             }
+
+
+            ExperienceQuestions LevelSheet = new ExperienceQuestions(this);
+            LevelSheet.Show();
 
             SaveCharacterInformation();
 
@@ -6964,19 +7642,22 @@ namespace DigimonAndTamerCharacterSheets
 
         private void BasicAttack_Click(object sender, EventArgs e)
         {
+            // Check the details for the math
             bool MultiCrit = BasicCritSuccess.Text.Contains("x");
             bool MultiFail = BasicCritFail.Text.Contains("x");
             int.TryParse(BasicCritSuccess.Text.Replace("x", ""), out int CritRequire);
             int.TryParse(BasicCritFail.Text.Replace("x", ""), out int FailRequire);
 
 
-            // Get the individual dice
+            // Get the individual dice set-up
             Random random = new Random();
             string IndividualRolls = null;
             int TotalResult = 0;
             int DiceRolling = 0;
             int DiceScore = 0;
 
+
+            // Find the attacking stat
             if (BasicAttackStat.Text == "Attack")
             {
                 int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
@@ -7013,6 +7694,8 @@ namespace DigimonAndTamerCharacterSheets
                 DiceRolling = DiceRoller;
             }
 
+
+            // Do The Rolls
             for (int i = 0; i < DiceRolling; i++)
             {
                 // Generates a random number between 1 and 10
@@ -7022,8 +7705,8 @@ namespace DigimonAndTamerCharacterSheets
                 IndividualRolls += DiceResult + " ";
             }
 
-            // Get the target score
 
+            // Get the target score
             int.TryParse(TargetArmour.Text, out int TargetDefense);
             int TargetDice = TotalResult;
 
@@ -7031,40 +7714,38 @@ namespace DigimonAndTamerCharacterSheets
 
             MessageBox.Show($"Attack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetArmour.Text}\nResults: {StrikeInflicted}");
 
-            if (TargetDefense > TotalResult - 1)
+            if (TargetDefense < TotalResult - 1)
             {
-                if (TotalResult - TargetDefense > CritRequire)
+                if (TotalResult - TargetDefense > CritRequire -1)
                 {
                     if (MultiCrit)
                     {
-                        string MultiPoint = ((DiceScore - TargetDice) / CritRequire).ToString();
-                        BasicBonus.Text.Replace("x", MultiPoint);
-                        MessageBox.Show($"{BasicEffect}\n{BasicBonus}");
+                        string MultiPoint = ((TargetDice - DiceScore) / CritRequire).ToString();
+                        MessageBox.Show($"{BasicEffect.Text}\n{BasicBonus.Text.Replace(" x ", " " + MultiPoint + " ")}");
                     }
                     else
                     {
-                        MessageBox.Show($"{BasicEffect}\n{BasicBonus}");
+                        MessageBox.Show($"{BasicEffect.Text}\n{BasicBonus.Text}");
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show($"{BasicEffect}");
+                    MessageBox.Show($"{BasicEffect.Text}");
                 }
             }
             else
             {
-                if (TotalResult - TargetDefense > FailRequire)
+                if (TotalResult - TargetDefense < (-1 * (FailRequire -1)))
                 {
-                    if (MultiCrit)
+                    if (MultiFail)
                     {
                         string MultiPoint = ((TargetDice - DiceScore) / FailRequire).ToString();
-                        BasicPenalty.Text.Replace("x", MultiPoint);
-                        MessageBox.Show($"{BasicPenalty}");
+                        MessageBox.Show($"{BasicPenalty.Text.Replace(" x ", " " + MultiPoint + " ")}");
                     }
                     else
                     {
-                        MessageBox.Show($"{BasicPenalty}");
+                        MessageBox.Show($"{BasicPenalty.Text}");
                     }
 
                 }
@@ -7073,47 +7754,70 @@ namespace DigimonAndTamerCharacterSheets
                     MessageBox.Show($"Nothing happened...");
                 }
             }
+
+            GaurdPoints--;
+            StratPoints.Text = "";
         }
+
 
 
         private void StandardAttack_Click(object sender, EventArgs e)
         {
-            if (StandardAttackNow == true)
+            // Check the details for the math
+            bool MultiCrit = StandardCritSuccess.Text.Contains("x");
+            bool MultiFail = StandardCritFail.Text.Contains("x");
+            int.TryParse(StandardCritSuccess.Text.Replace("x", ""), out int CritRequire);
+            int.TryParse(StandardCritFail.Text.Replace("x", ""), out int FailRequire);
+
+
+            // Get the individual dice set-up
+            Random random = new Random();
+            string IndividualRolls = null;
+            int TotalResult = 0;
+            int DiceRolling = 0;
+            int DiceScore = 0;
+
+
+            // Find the attacking stat
+            if (StandardAttackStat.Text == "Attack")
             {
-                StandardAttackNow = false;
-                ActStandardAttack.Text = "Activate";
-
-                if (StratPoints.Text == "0")
-                {
-                    ActStandardAttack.Enabled = false;
-                }
-
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (StandardAttackStat.Text == "Strength")
+            {
+                int.TryParse(DigimonStrength.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (StandardAttackStat.Text == "Agility")
+            {
+                int.TryParse(DigimonAgility.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (StandardAttackStat.Text == "Vibes")
+            {
+                int.TryParse(DigimonVibes.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (StandardAttackStat.Text == "Wits")
+            {
+                int.TryParse(DigimonWits.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (StandardAttackStat.Text == "Education")
+            {
+                int.TryParse(DigimonEducation.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
             else
             {
-                GaurdPoints--;
-                StratPoints.Text = "";
-                BasicAttackNow = false;
-                ActBasicAttack.Text = "Activate";
-                StandardAttackNow = false;
-                ActStandardAttack.Text = "Activate";
-                SpecialAttackNow = false;
-                ActSpecialAttack.Text = "Activate";
-                SuperAttackNow = false;
-                ActSuperAttack.Text = "Activate";
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
 
-            // Get the number of dice from the Attack Box
-            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
 
-            Random random = new Random();
-            int TotalResult = 0;
-            string IndividualRolls = "";
-            int TargetDefense = 0;
-            int.TryParse(TargetArmour.Text, out TargetDefense);
-            string StrikeInflicted = "";
-
-            for (int i = 0; i < NumberOfDice; i++)
+            // Do The Rolls
+            for (int i = 0; i < DiceRolling; i++)
             {
                 // Generates a random number between 1 and 10
                 int DiceResult = random.Next(1, 11);
@@ -7122,73 +7826,118 @@ namespace DigimonAndTamerCharacterSheets
                 IndividualRolls += DiceResult + " ";
             }
 
-            if (TotalResult < TargetDefense - 15)
+
+            // Get the target score
+            int.TryParse(TargetArmour.Text, out int TargetDefense);
+            int TargetDice = TotalResult;
+
+            string StrikeInflicted = null;
+
+            MessageBox.Show($"Attack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetArmour.Text}\nResults: {StrikeInflicted}");
+
+            if (TargetDefense < TotalResult - 1)
             {
-                StrikeInflicted = "Hard Fail - " + StandardAttackHardFail.Text;
-            }
-            else if (TotalResult < TargetDefense - 5)
-            {
-                StrikeInflicted = "Fail - " + StandardAttackFail.Text;
-            }
-            else if (TotalResult < TargetDefense)
-            {
-                StrikeInflicted = "Part Fail - " + StandardAttackPartFail.Text;
-            }
-            else if (TotalResult < TargetDefense + 5)
-            {
-                StrikeInflicted = "Part Hit - " + StandardAttackPartHit.Text;
-            }
-            else if (TotalResult < TargetDefense + 15)
-            {
-                StrikeInflicted = "Hit - " + StandardAttackHit.Text;
+                if (TotalResult - TargetDefense > CritRequire - 1)
+                {
+                    if (MultiCrit)
+                    {
+                        string MultiPoint = ((TargetDice - DiceScore) / CritRequire).ToString();
+                        MessageBox.Show($"{StandardEffect.Text}\n{StandardBonus.Text.Replace(" x ", " " + MultiPoint + " ")}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{StandardEffect.Text}\n{StandardBonus.Text}");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"{StandardEffect.Text}");
+                }
             }
             else
             {
-                StrikeInflicted = "Hard Hit - " + StandardAttackHardHit.Text;
+                if (TotalResult - TargetDefense < (-1 * (FailRequire - 1)))
+                {
+                    if (MultiFail)
+                    {
+                        string MultiPoint = ((TargetDice - DiceScore) / FailRequire).ToString();
+                        MessageBox.Show($"{StandardPenalty.Text.Replace(" x ", " " + MultiPoint + " ")}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{StandardPenalty.Text}");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"Nothing happened...");
+                }
             }
 
-            // Display the result
-            MessageBox.Show($"\n{StandardAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
+            GaurdPoints--;
+            StratPoints.Text = "";
         }
+
 
         private void SpecialAttack_Click(object sender, EventArgs e)
         {
-            if (SpecialAttackNow == true)
+            // Check the details for the math
+            bool MultiCrit = SpecialCritSuccess.Text.Contains("x");
+            bool MultiFail = SpecialCritFail.Text.Contains("x");
+            int.TryParse(SpecialCritSuccess.Text.Replace("x", ""), out int CritRequire);
+            int.TryParse(SpecialCritFail.Text.Replace("x", ""), out int FailRequire);
+
+
+            // Get the individual dice set-up
+            Random random = new Random();
+            string IndividualRolls = null;
+            int TotalResult = 0;
+            int DiceRolling = 0;
+            int DiceScore = 0;
+
+
+            // Find the attacking stat
+            if (SpecialAttackStat.Text == "Attack")
             {
-                SpecialAttackNow = false;
-                ActSpecialAttack.Text = "Activate";
-
-                if (StratPoints.Text == "0")
-                {
-                    ActSpecialAttack.Enabled = false;
-                }
-
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SpecialAttackStat.Text == "Strength")
+            {
+                int.TryParse(DigimonStrength.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SpecialAttackStat.Text == "Agility")
+            {
+                int.TryParse(DigimonAgility.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SpecialAttackStat.Text == "Vibes")
+            {
+                int.TryParse(DigimonVibes.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SpecialAttackStat.Text == "Wits")
+            {
+                int.TryParse(DigimonWits.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SpecialAttackStat.Text == "Education")
+            {
+                int.TryParse(DigimonEducation.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
             else
             {
-                GaurdPoints--;
-                StratPoints.Text = "";
-                BasicAttackNow = false;
-                ActBasicAttack.Text = "Activate";
-                StandardAttackNow = false;
-                ActStandardAttack.Text = "Activate";
-                SpecialAttackNow = false;
-                ActSpecialAttack.Text = "Activate";
-                SuperAttackNow = false;
-                ActSuperAttack.Text = "Activate";
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
 
-            // Get the number of dice from the Attack Box
-            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
 
-            Random random = new Random();
-            int TotalResult = 0;
-            string IndividualRolls = "";
-            int TargetDefense = 0;
-            int.TryParse(TargetArmour.Text, out TargetDefense);
-            string StrikeInflicted = "";
-
-            for (int i = 0; i < NumberOfDice; i++)
+            // Do The Rolls
+            for (int i = 0; i < DiceRolling; i++)
             {
                 // Generates a random number between 1 and 10
                 int DiceResult = random.Next(1, 11);
@@ -7197,74 +7946,137 @@ namespace DigimonAndTamerCharacterSheets
                 IndividualRolls += DiceResult + " ";
             }
 
-            if (TotalResult < TargetDefense - 15)
+
+            // Get the target score
+            int.TryParse(TargetArmour.Text, out int TargetDefense);
+            int TargetDice = TotalResult;
+
+            string StrikeInflicted = null;
+
+            MessageBox.Show($"Attack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetArmour.Text}\nResults: {StrikeInflicted}");
+
+            if (TargetDefense < TotalResult - 1)
             {
-                StrikeInflicted = "Hard Fail - " + SpecialAttackHardFail.Text;
-            }
-            else if (TotalResult < TargetDefense - 5)
-            {
-                StrikeInflicted = "Fail - " + SpecialAttackFail.Text;
-            }
-            else if (TotalResult < TargetDefense)
-            {
-                StrikeInflicted = "Part Fail - " + SpecialAttackPartFail.Text;
-            }
-            else if (TotalResult < TargetDefense + 5)
-            {
-                StrikeInflicted = "Part Hit - " + SpecialAttackPartHit.Text;
-            }
-            else if (TotalResult < TargetDefense + 15)
-            {
-                StrikeInflicted = "Hit - " + SpecialAttackHit.Text;
+                if (TotalResult - TargetDefense > CritRequire - 1)
+                {
+                    if (MultiCrit)
+                    {
+                        string MultiPoint = ((TotalResult - TargetDefense) / CritRequire).ToString();
+                        MessageBox.Show($"{SpecialEffect.Text}\n{SpecialBonus.Text.Replace(" x ", " " + MultiPoint + " ")}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{SpecialEffect.Text}\n{SpecialBonus.Text}");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"{SpecialEffect.Text}");
+                }
             }
             else
             {
-                StrikeInflicted = "Hard Hit - " + SpecialAttackHardHit.Text;
+                if (TotalResult - TargetDefense < (-1 * (FailRequire - 1)))
+                {
+                    if (MultiFail)
+                    {
+                        string MultiPoint = ((TargetDefense - TotalResult) / FailRequire).ToString();
+                        MessageBox.Show($"{SpecialPenalty.Text.Replace(" x ", " " + MultiPoint + " ")}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{SpecialPenalty.Text}");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"Nothing happened...");
+                }
             }
 
-            // Display the result
-            MessageBox.Show($"\n{SpecialAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
+            GaurdPoints--;
+            StratPoints.Text = "";
         }
 
         private void SuperAttack_Click(object sender, EventArgs e)
         {
-            if (SuperAttackNow == true)
+            // Check the details for the math
+            bool MultiCrit = SuperCritSuccess.Text.Contains("x");
+            bool MultiFail = SuperCritFail.Text.Contains("x");
+            int.TryParse(SuperCritSuccess.Text.Replace("x", ""), out int CritRequire);
+            int.TryParse(SuperCritFail.Text.Replace("x", ""), out int FailRequire);
+
+
+            // Get the individual dice set-up
+            Random random = new Random();
+            string IndividualRolls = null;
+            int TotalResult = 0;
+            int DiceRolling = 0;
+            int DiceScore = 0;
+
+
+            // Find the attacking stat
+            if (SuperAttackStat.Text == "Attack")
             {
-                SuperAttackNow = false;
-                ActSuperAttack.Text = "Activate";
-
-                if (StratPoints.Text == "0")
-                {
-                    ActSuperAttack.Enabled = false;
-                }
-
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SuperAttackStat.Text == "Strength")
+            {
+                int.TryParse(DigimonStrength.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SuperAttackStat.Text == "Agility")
+            {
+                int.TryParse(DigimonAgility.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SuperAttackStat.Text == "Vibes")
+            {
+                int.TryParse(DigimonVibes.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SuperAttackStat.Text == "Wits")
+            {
+                int.TryParse(DigimonWits.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
+            }
+            else if (SuperAttackStat.Text == "Education")
+            {
+                int.TryParse(DigimonEducation.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
             else
             {
-                GaurdPoints--;
-                StratPoints.Text = "";
-                BasicAttackNow = false;
-                ActBasicAttack.Text = "Activate";
-                StandardAttackNow = false;
-                ActStandardAttack.Text = "Activate";
-                SpecialAttackNow = false;
-                ActSpecialAttack.Text = "Activate";
-                SuperAttackNow = false;
-                ActSuperAttack.Text = "Activate";
+                int.TryParse(DigiAttackRoll.Text, out int DiceRoller);
+                DiceRolling = DiceRoller;
             }
 
-            // Get the number of dice from the Attack Box
-            int.TryParse(DigiAttackRoll.Text, out int NumberOfDice);
 
 
-            Random random = new Random();
-            int TotalResult = 0;
-            string IndividualRolls = "";
-            int TargetDefense = 0;
-            int.TryParse(TargetArmour.Text, out TargetDefense);
-            string StrikeInflicted = "";
+            // Modified Roll Counter
+            if (SuperAttackStat.Text == "Education" || SuperAttackStat.Text == "Agility" || SuperAttackStat.Text == "Vibes" || SuperAttackStat.Text == "Wits" || SuperAttackStat.Text == "Education")
+            {
+                if (DigiRollPlusOne.Checked) { DiceRolling++; };
+                if (DigiRollPlusTwo.Checked) { DiceRolling++; };
+                if (DigiRollPlusThree.Checked) { DiceRolling++; };
+                if (DigiRollPlusFour.Checked) { DiceRolling++; };
+                if (DigiRollPlusFive.Checked) { DiceRolling++; };
 
-            for (int i = 0; i < NumberOfDice; i++)
+                if (DigiRollMinusOne.Checked) { DiceRolling--; };
+                if (DigiRollMinusTwo.Checked) { DiceRolling--; };
+                if (DigiRollMinusThree.Checked) { DiceRolling--; };
+                if (DigiRollMinusFour.Checked) { DiceRolling--; };
+                if (DigiRollMinusFive.Checked) { DiceRolling--; };
+
+                if (DiceRolling < 0) { DiceRolling = 0; };
+            }
+
+
+            // Do The Rolls
+            for (int i = 0; i < DiceRolling; i++)
             {
                 // Generates a random number between 1 and 10
                 int DiceResult = random.Next(1, 11);
@@ -7273,33 +8085,55 @@ namespace DigimonAndTamerCharacterSheets
                 IndividualRolls += DiceResult + " ";
             }
 
-            if (TotalResult < TargetDefense - 15)
+
+            // Get the target score
+            int.TryParse(TargetArmour.Text, out int TargetDefense);
+            int TargetDice = TotalResult;
+
+            string StrikeInflicted = null;
+
+            MessageBox.Show($"Attack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetArmour.Text}\nResults: {StrikeInflicted}");
+
+            if (TargetDefense < TotalResult - 1)
             {
-                StrikeInflicted = "Hard Fail - " + SuperAttackHardFail.Text;
-            }
-            else if (TotalResult < TargetDefense - 5)
-            {
-                StrikeInflicted = "Fail - " + SuperAttackFail.Text;
-            }
-            else if (TotalResult < TargetDefense)
-            {
-                StrikeInflicted = "Part Fail - " + SuperAttackPartFail.Text;
-            }
-            else if (TotalResult < TargetDefense + 5)
-            {
-                StrikeInflicted = "Part Hit - " + SuperAttackPartHit.Text;
-            }
-            else if (TotalResult < TargetDefense + 15)
-            {
-                StrikeInflicted = "Hit - " + SuperAttackHit.Text;
+                if (TotalResult - TargetDefense > CritRequire - 1)
+                {
+                    if (MultiCrit)
+                    {
+                        string MultiPoint = ((TotalResult - TargetDefense) / CritRequire).ToString();
+                        MessageBox.Show($"{SuperEffect.Text}\n{SuperBonus.Text.Replace(" x ", " " + MultiPoint + " ")}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{SuperEffect.Text}\n{SuperBonus.Text}");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show($"{SuperEffect.Text}");
+                }
             }
             else
             {
-                StrikeInflicted = "Hard Hit - " + SuperAttackHardHit.Text;
-            }
+                if (TotalResult - TargetDefense < (-1 * (FailRequire - 1)))
+                {
+                    if (MultiFail)
+                    {
+                        string MultiPoint = ((TargetDefense - TotalResult) / FailRequire).ToString();
+                        MessageBox.Show($"{SuperPenalty.Text.Replace(" x ", " " + MultiPoint + " ")}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{SuperPenalty.Text}");
+                    }
 
-            // Display the result
-            MessageBox.Show($"\n{SuperAttack.Text}\nAttack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
+                }
+                else
+                {
+                    MessageBox.Show($"Nothing happened...");
+                }
+            }
         }
 
         private void label72_Click(object sender, EventArgs e)
@@ -7373,7 +8207,9 @@ namespace DigimonAndTamerCharacterSheets
                     SuperAttackNow = true;
                 }
             }
+
         }
+
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -7935,7 +8771,12 @@ namespace DigimonAndTamerCharacterSheets
             int totalValue = (int)ErrorScanTrack.Value + (int)InfoExtractTrack.Value + (int)GigaSearchTrack.Value + (int)WaybackTrackTrack.Value;
 
             // Halve the totalValue and round up
-            int halvedValue = (int)Math.Ceiling(totalValue / 2.0) + 2;
+            totalValue = totalValue / SoulGrowthRate;
+            int halvedValue = (int)Math.Ceiling(totalValue / 1.0);
+
+            // Modify for the classes
+            halvedValue += SoulStartCount;
+            
 
             // Subtract used points
             halvedValue = halvedValue - digiSoulCost;
@@ -7951,6 +8792,16 @@ namespace DigimonAndTamerCharacterSheets
                 ActivatePowerFour.Enabled = false;
             }
             else if (DigiSoulStat.Text != "0" && ClassBox.SelectedIndex > -1)
+            {
+                ActivatePowerOne.Enabled = true;
+                ActivatePowerTwo.Enabled = true;
+                ActivatePowerThree.Enabled = true;
+                ActivatePowerFour.Enabled = true;
+            }
+
+
+
+            if (PowerRollOne.Text != "---" && DigiSoulStat.Text != "0")
             {
                 ActivatePowerOne.Enabled = true;
                 ActivatePowerTwo.Enabled = true;
@@ -8163,6 +9014,15 @@ namespace DigimonAndTamerCharacterSheets
             DigiSoulStat.Text = "";
         }
 
+
+
+        string ClassPath;
+        string ClassName;
+        bool CardClass = false;
+        bool SceneClass = false;
+        int SoulGrowthRate = 1;
+        int SoulStartCount = 1;
+        int SoulRollMod = 1;
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -8175,8 +9035,21 @@ namespace DigimonAndTamerCharacterSheets
                 ClassBox.Enabled = false;
             };
 
-            string TamerFilePath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
-            TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(TamerFilePath));
+            ClassPath = $"Resources/Class/{ClassBox.Text}/{ClassBox.Text}.json";
+            ClassName = ClassBox.Text;
+            ClassAssignment();
+        }
+
+        private void ClassAssignment()
+        {
+        TamerInfo ClassAddress = JsonSerializer.Deserialize<TamerInfo>(File.ReadAllText(ClassPath));
+            ClassBox.Text = ClassName;
+
+            CardClass = ClassAddress.CardClass;
+            SceneClass = ClassAddress.SceneClass;
+            SoulGrowthRate = ClassAddress.SoulGrowthRate;
+            SoulStartCount = ClassAddress.SoulStartCount;
+            SoulRollMod = ClassAddress.SoulRollMod;
 
             PowerRollOne.Text = ClassAddress.RollOne;
             PowerRollTwo.Text = ClassAddress.RollTwo;
@@ -8207,7 +9080,9 @@ namespace DigimonAndTamerCharacterSheets
             SuperFourLineThree.Text = ClassAddress.PowerFourLineThree;
             SuperFourLineFour.Text = ClassAddress.PowerFourLineFour;
 
+            DigiSoulStat.Text = "";
 
+            SaveCharacterInformation();
         }
 
         private void TamerStats_Click(object sender, EventArgs e)
@@ -8225,6 +9100,9 @@ namespace DigimonAndTamerCharacterSheets
                 LevelUp.Enabled = true;
                 ExpCurrent.Text = ExpNext.Text;
             }
+
+
+            SaveCharacterInformation();
         }
 
         private void DigimonMoves_Click(object sender, EventArgs e)
@@ -8233,6 +9111,61 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void BasicCritSuccess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BasicCritFail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BasicAttackStat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label46_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialAttack_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label52_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label47_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label55_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialElement_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BasicDefendStat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BasicPenalty_Click(object sender, EventArgs e)
         {
 
         }

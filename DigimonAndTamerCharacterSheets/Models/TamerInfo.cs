@@ -54,5 +54,11 @@ internal class TamerInfo
     public string PowerEightLineTwo { get; set; } = null!;
     public string PowerEightLineThree { get; set; } = null!;
     public string PowerEightLineFour { get; set; } = null!;
+    public string ClassName { get; set; } = null!;
+    public bool CardClass { get; set; } = false!;
+    public bool SceneClass { get; set; } = false!;
+    public int SoulGrowthRate { get; set; } = 0!;
+    public int SoulStartCount { get; set; } = 0!;
+    public int SoulRollMod { get; set; } = 0!;
 
 } 

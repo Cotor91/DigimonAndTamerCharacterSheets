@@ -1,0 +1,70 @@
+{
+  "DigimonName": "Centarumon",
+  "DigitalFrame": "16",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Electric",
+  "ResistanceElement": "Holy",
+
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Grand Leap: For 1 Bond this Digimon jumps a great distance.",
+  "CurrentQuirkTwo": "Tamer Piggyback: For 1 Bond the Tamer moves with their partner.",
+  "InheritableQuirkOne": "Instant Overdrive: Once per scene, Tamer can use this Agility Safe",
+  "InheritableQuirkTwo": "Agility Champion: Same perks as a Agility Meal.",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
+
+  "BasicAttack": "Heat Uppercut",
+  "StandardAttack": "Jet Kick",
+  "SpecialAttack": "Solar Ray",
+  "SuperAttack": "Energy Ray",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slam - Contact",
+  "StandardElement": "Fire - Contact",
+  "SpecialElement": "Fire - Range",
+  "SuperElement": "Neutral - Range",
+
+  "BasicHardFail": "User can't attack next turn.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "Target must target this Digimon next turn.",
+  "BasicPartHit": "-6HP on target.",
+  "BasicHit": "-6HP on target. Target must target this Digimon next turn.",
+  "BasicHardHit": "-12HP on target. Target can't target any Digimon next turn.",
+
+  "StandardHardFail": "User can't attack next turn.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "User and Target can't attack next turn.",
+  "StandardPartHit": "-3HP on target.",
+  "StandardHit": "User and Target can't attack next turn. -3HP on target.",
+  "StandardHardHit": "Target can't attack next turn. -6HP on target.",
+
+  "SpecialHardFail": "This Digimon can't attack next turn.'",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "-3HP to target. This Digimon can't attack next turn.",
+  "SpecialPartHit": "-6HP to target. This Digimon can't attack next turn.",
+  "SpecialHit": "-12HP to target. This Digimon can't attack next turn.",
+  "SpecialHardHit": "-24HP to target.",
+
+  "SuperHardFail": "-6HP on user.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-6HP on target.",
+  "SuperPartHit": "1 turn recurring -3HP on target.",
+  "SuperHit": "-6HP on target. 1 turn recurring -3HP.",
+  "SuperHardHit": "-12HP on target. 3 turn recurring -3HP."
+}

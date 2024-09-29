@@ -87,6 +87,10 @@ internal class SaveForm
     public int GaurdPoints { get; set; } = 0!;
     public string EvolutionFilePath { get; set; } = null;
     public string ChampionPath { get; set; } = null!;
+    public string UltimatePath { get; set; } = null!;
+    public string MegaPath { get; set; } = null!;
+    public string ClassPath { get; set; } = null!;
+    public string ExpCurrent { get; set; } = null!;
     public string RookieInheritOne { get; set; } = null!;
     public string RookieInheritTwo { get; set; } = null!;
     public string RookieInheritThree { get; set; } = null!;
@@ -107,4 +111,9 @@ internal class SaveForm
     public bool ReincarnationTime { get; set; } = false!;
     public string ExpNow { get; set; } = null!; 
     public string ExpNext { get; set; } = null!;
+    public int RandomOne { get; set; } = 0!;
+    public int RandomTwo { get; set; } = 0!;
+    public int RandomThree { get; set; } = 0!;
+    public int RandomFour { get; set; } = 0!;
+    public string ClassName { get; set; } = null!;
 }

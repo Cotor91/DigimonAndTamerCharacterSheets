@@ -59,10 +59,10 @@ namespace DigimonAndTamerCharacterSheets
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool MultiCrit = BasicCritSuccess.Text.Contains("x");
-            bool MultiFail = BasicCritFail.Text.Contains("x");
-            int.TryParse(BasicCritSuccess.Text.Replace("x", ""), out int CritRequire);
-            int.TryParse(BasicCritFail.Text.Replace("x", ""), out int FailRequire);
+            bool MultiCrit = SuperCritSuccess.Text.Contains("x");
+            bool MultiFail = SuperCritFail.Text.Contains("x");
+            int.TryParse(SuperCritSuccess.Text.Replace("x", ""), out int CritRequire);
+            int.TryParse(SuperCritFail.Text.Replace("x", ""), out int FailRequire);
 
 
 
@@ -138,7 +138,7 @@ namespace DigimonAndTamerCharacterSheets
             // Get the target score
             string TargetDefense = null;
             int TargetDice = 0;
-            
+
             string StrikeInflicted = null;
 
             MessageBox.Show($"Attack Rolls: {IndividualRolls}\nTotal Attack: {TotalResult} VS Target Defense: {TargetDefense}\nResults: {StrikeInflicted}");
@@ -150,18 +150,18 @@ namespace DigimonAndTamerCharacterSheets
                     if (MultiCrit)
                     {
                         string MultiPoint = ((DiceScore - TargetDice) / CritRequire).ToString();
-                        BasicBonus.Text.Replace("x", MultiPoint);
-                        MessageBox.Show($"{BasicEffect}\n{BasicBonus}");
+                        SuperBonus.Text.Replace("x", MultiPoint);
+                        MessageBox.Show($"{SuperEffect}\n{SuperBonus}");
                     }
                     else
                     {
-                        MessageBox.Show($"{BasicEffect}\n{BasicBonus}");
+                        MessageBox.Show($"{SuperEffect}\n{SuperBonus}");
                     }
 
                 }
                 else
                 {
-                    MessageBox.Show($"{BasicEffect}");
+                    MessageBox.Show($"{SuperEffect}");
                 }
             }
             else
@@ -171,8 +171,8 @@ namespace DigimonAndTamerCharacterSheets
                     if (MultiCrit)
                     {
                         string MultiPoint = ((TargetDice - DiceScore) / FailRequire).ToString();
-                        BasicPenalty.Text.Replace("x", MultiPoint);
-                        MessageBox.Show($"{BasicPenalty}");
+                        SuperPenalty.Text.Replace("x", MultiPoint);
+                        MessageBox.Show($"{SuperPenalty}");
                     }
                     else
                     {
@@ -182,7 +182,7 @@ namespace DigimonAndTamerCharacterSheets
                 }
                 else
                 {
-                    MessageBox.Show($"{BasicEffect}");
+                    MessageBox.Show($"{SuperEffect}");
                 }
             }
         }
@@ -193,6 +193,36 @@ namespace DigimonAndTamerCharacterSheets
         }
 
         private void BasicPenalty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialConceptLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StandardPenaltyLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StandardCritSuccessLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialAttackStat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SpecialEffect_Click(object sender, EventArgs e)
         {
 
         }

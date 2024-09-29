@@ -29,9 +29,9 @@
   "PowerThreeLineThree": "then you can take the chance of using Mega Lunge. If you haven't used",
   "PowerThreeLineFour": "your tamer action last turn you can use this once to intercept an attack.",
 
-  "PowerFour": "----",
-  "PowerFourLineOne": " ",
-  "PowerFourLineTwo": " ",
-  "PowerFourLineThree": " ",
+  "PowerFour": "Flurry Of Fury",
+  "PowerFourLineOne": "Once per turn you can use this to give your Tamer an extra move provided it",
+  "PowerFourLineTwo": "is a use of one of the following: Soulful Fist, Fixer Uppercut, Calming Headbutt",
+  "PowerFourLineThree": "or Soulful Shot.",
   "PowerFourLineFour": " "
 }

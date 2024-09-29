@@ -1,0 +1,71 @@
+{
+  "DigimonName": "Clockmon",
+  "DigimonField": "Metal Empire",
+  "DigitalFrame": "16",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Data",
+  "WeaknessElement": "Filth",
+  "ResistanceElement": "Fire",
+
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Quick Repair: For 1 Bond repair one inanimated object damaged today.",
+  "CurrentQuirkTwo": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "InheritableQuirkOne": "Pop-Up Message: Once per scene, Tamer can use this Education Safe.",
+  "InheritableQuirkTwo": "Education Champion: Same perks as a Education Meal.",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
+
+  "BasicAttack": "Quicktime Tap",
+  "StandardAttack": "Ear Burster",
+  "SpecialAttack": "Chrono Breaker",
+  "SuperAttack": "Hammer Time",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Slam - Contact",
+  "StandardElement": "Neutral - Range",
+  "SpecialElement": "Error - Contact",
+  "SuperElement": "Slam - Contact",
+
+  "BasicHardFail": "User can't attack next turn.'",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "-3HP to target.",
+  "BasicPartHit": "-6HP to target.",
+  "BasicHit": "-6HP to target and one target ally.",
+  "BasicHardHit": "-6HP to target and three target allies",
+
+  "StandardHardFail": "-3HP to one of this Digimon's allies.",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "Enemies target user next turn.",
+  "StandardPartHit": "-3HP to target and 2 target allies near them.",
+  "StandardHit": "Enemies target this Digimon. -3HP to target and 2 allies.",
+  "StandardHardHit": "Enemies target this Digimon. -6HP to target and all allies.",
+
+  "SpecialHardFail": "User can't attack next turn.'",
+  "SpecialFail": "No effect.",
+  "SpecialPartFail": "-6HP on target.",
+  "SpecialPartHit": "Target can't attack for 3 turns.",
+  "SpecialHit": "Target can't attack for 3 turns. -6HP on target.",
+  "SpecialHardHit": "Target can't attack for 5 turns. -6HP on target.",
+
+  "SuperHardFail": "User can't attack next turn.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "Heals last damage by target.",
+  "SuperPartHit": "-6HP to Target.",
+  "SuperHit": "-6HP to Target. Heals last damage by target.",
+  "SuperHardHit": "-12HP to Target. Heals last damage by target."
+}

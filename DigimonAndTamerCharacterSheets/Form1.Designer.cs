@@ -372,6 +372,7 @@
             DigimonField = new Label();
             label29 = new Label();
             DigimonMoves = new TabPage();
+            label46 = new Label();
             DigiRollPlusFour = new CheckBox();
             DigiRollMinusFive = new CheckBox();
             DigiRollPlusFive = new CheckBox();
@@ -392,43 +393,51 @@
             GaurdAction = new Button();
             AutoSelect = new Button();
             SpecialAttack = new GroupBox();
+            SpecialCritSuccessLabel = new Label();
+            SpecialCritSuccess = new Label();
+            SpecialCritFailLabel = new Label();
+            SpecialCritFail = new Label();
+            SpecialDefendStatLabel = new Label();
+            SpecialDefendStat = new Label();
+            SpecialAttackStatLabel = new Label();
+            SpecialConcept = new Label();
+            SpecialPenaltyLabel = new Label();
+            SpecialAttackStat = new Label();
+            SpecialBonusLabel = new Label();
+            SpecialConceptLabel = new Label();
+            SpecialEffect = new Label();
+            SpecialBonus = new Label();
+            SpecialEffectLabel = new Label();
+            SpecialPenalty = new Label();
             SpecialDiceMax = new Label();
             label122 = new Label();
             label104 = new Label();
-            SpecialAttackHardFail = new Label();
             SpecialDiceMin = new Label();
-            label63 = new Label();
             SpecialElement = new Label();
-            SpecialAttackFail = new Label();
-            SpecialAttackPartFail = new Label();
             ActSpecialAttack = new Button();
-            label66 = new Label();
-            label74 = new Label();
-            SpecialAttackPartHit = new Label();
-            label73 = new Label();
-            SpecialAttackHit = new Label();
-            label72 = new Label();
-            label70 = new Label();
-            SpecialAttackHardHit = new Label();
             SuperAttack = new GroupBox();
+            SuperCritSuccessLabel = new Label();
+            SuperCritSuccess = new Label();
+            SuperCritFailLabel = new Label();
+            SuperCritFail = new Label();
+            SuperDefendStatLabel = new Label();
+            SuperDefendStat = new Label();
+            SuperAttackStatLabel = new Label();
+            SuperConcept = new Label();
+            SuperPenaltyLabel = new Label();
+            SuperAttackStat = new Label();
+            SuperBonusLabel = new Label();
+            SuperConceptLabel = new Label();
+            SuperEffect = new Label();
+            SuperBonus = new Label();
+            SuperEffectLabel = new Label();
+            SuperPenalty = new Label();
             SuperDiceMax = new Label();
-            SuperAttackHardFail = new Label();
             label113 = new Label();
             label115 = new Label();
-            label45 = new Label();
             SuperDiceMin = new Label();
             SuperElement = new Label();
-            SuperAttackFail = new Label();
-            SuperAttackPartFail = new Label();
-            label50 = new Label();
             ActSuperAttack = new Button();
-            SuperAttackPartHit = new Label();
-            label61 = new Label();
-            SuperAttackHit = new Label();
-            label60 = new Label();
-            label57 = new Label();
-            label59 = new Label();
-            SuperAttackHardHit = new Label();
             BasicAttack = new GroupBox();
             BasicCritSuccessLabel = new Label();
             BasicCritSuccess = new Label();
@@ -439,7 +448,6 @@
             AttackStatLabel = new Label();
             BasicConcept = new Label();
             BasicPenaltyLabel = new Label();
-            label54 = new Label();
             BasicAttackStat = new Label();
             BasicBonusLabel = new Label();
             BasicConceptLabel = new Label();
@@ -454,24 +462,28 @@
             BasicElement = new Label();
             ActBasicAttack = new Button();
             StandardAttack = new GroupBox();
+            StandardCritSuccessLabel = new Label();
+            StandardCritSuccess = new Label();
+            StandardCritFailLabel = new Label();
+            StandardCritFail = new Label();
+            StandardDefendStatLabel = new Label();
+            StandardDefendStat = new Label();
+            StandardAttackStatLabel = new Label();
+            StandardConcept = new Label();
+            StandardPenaltyLabel = new Label();
+            StandardAttackStat = new Label();
+            StandardBonusLabel = new Label();
+            StandardConceptLabel = new Label();
+            StandardEffect = new Label();
+            StandardBonus = new Label();
+            StandardEffectLabel = new Label();
+            StandardPenalty = new Label();
             StandardDiceMax = new Label();
-            StandardAttackHardFail = new Label();
             label105 = new Label();
-            label46 = new Label();
-            label48 = new Label();
             label107 = new Label();
-            StandardAttackFail = new Label();
             StandardDiceMin = new Label();
-            StandardAttackPartFail = new Label();
-            label47 = new Label();
-            StandardAttackPartHit = new Label();
             StandardElement = new Label();
-            StandardAttackHit = new Label();
-            label52 = new Label();
-            StandardAttackHardHit = new Label();
-            label53 = new Label();
             ActStandardAttack = new Button();
-            label55 = new Label();
             DigimonLifecycle = new TabPage();
             GainBond = new Button();
             LoseBond = new Button();
@@ -3265,7 +3277,7 @@
             PowerRollFour.Name = "PowerRollFour";
             PowerRollFour.Size = new Size(165, 42);
             PowerRollFour.TabIndex = 85;
-            PowerRollFour.Text = "Wayback Track";
+            PowerRollFour.Text = "---";
             PowerRollFour.UseVisualStyleBackColor = true;
             PowerRollFour.Click += button22_Click_1;
             // 
@@ -3299,7 +3311,7 @@
             PowerRollThree.Name = "PowerRollThree";
             PowerRollThree.Size = new Size(165, 42);
             PowerRollThree.TabIndex = 82;
-            PowerRollThree.Text = "Giga Search";
+            PowerRollThree.Text = "---";
             PowerRollThree.UseVisualStyleBackColor = true;
             PowerRollThree.Click += GigaSearch_Click;
             // 
@@ -3311,7 +3323,7 @@
             PowerRollTwo.Name = "PowerRollTwo";
             PowerRollTwo.Size = new Size(165, 42);
             PowerRollTwo.TabIndex = 81;
-            PowerRollTwo.Text = "Info Extract";
+            PowerRollTwo.Text = "---";
             PowerRollTwo.UseVisualStyleBackColor = true;
             PowerRollTwo.Click += InfoExtract_Click;
             // 
@@ -3323,7 +3335,7 @@
             PowerRollOne.Name = "PowerRollOne";
             PowerRollOne.Size = new Size(165, 45);
             PowerRollOne.TabIndex = 80;
-            PowerRollOne.Text = "Error Scan";
+            PowerRollOne.Text = "---";
             PowerRollOne.UseVisualStyleBackColor = true;
             PowerRollOne.Click += ErrorScan_Click;
             // 
@@ -4609,6 +4621,7 @@
             // DigimonMoves
             // 
             DigimonMoves.BackColor = SystemColors.ButtonFace;
+            DigimonMoves.Controls.Add(label46);
             DigimonMoves.Controls.Add(DigiRollPlusFour);
             DigimonMoves.Controls.Add(DigiRollMinusFive);
             DigimonMoves.Controls.Add(DigiRollPlusFive);
@@ -4641,10 +4654,21 @@
             DigimonMoves.Text = "Digimon Moves";
             DigimonMoves.Click += DigimonMoves_Click;
             // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label46.Location = new Point(15, 688);
+            label46.Name = "label46";
+            label46.Size = new Size(62, 20);
+            label46.TabIndex = 178;
+            label46.Text = "Attack";
+            label46.Click += label46_Click;
+            // 
             // DigiRollPlusFour
             // 
             DigiRollPlusFour.AutoSize = true;
-            DigiRollPlusFour.Location = new Point(265, 700);
+            DigiRollPlusFour.Location = new Point(278, 708);
             DigiRollPlusFour.Margin = new Padding(3, 2, 3, 2);
             DigiRollPlusFour.Name = "DigiRollPlusFour";
             DigiRollPlusFour.Size = new Size(18, 17);
@@ -4655,7 +4679,7 @@
             // DigiRollMinusFive
             // 
             DigiRollMinusFive.AutoSize = true;
-            DigiRollMinusFive.Location = new Point(289, 740);
+            DigiRollMinusFive.Location = new Point(302, 748);
             DigiRollMinusFive.Margin = new Padding(3, 2, 3, 2);
             DigiRollMinusFive.Name = "DigiRollMinusFive";
             DigiRollMinusFive.Size = new Size(18, 17);
@@ -4666,7 +4690,7 @@
             // DigiRollPlusFive
             // 
             DigiRollPlusFive.AutoSize = true;
-            DigiRollPlusFive.Location = new Point(289, 700);
+            DigiRollPlusFive.Location = new Point(302, 708);
             DigiRollPlusFive.Margin = new Padding(3, 2, 3, 2);
             DigiRollPlusFive.Name = "DigiRollPlusFive";
             DigiRollPlusFive.Size = new Size(18, 17);
@@ -4677,7 +4701,7 @@
             // DigiRollMinusFour
             // 
             DigiRollMinusFour.AutoSize = true;
-            DigiRollMinusFour.Location = new Point(265, 740);
+            DigiRollMinusFour.Location = new Point(278, 748);
             DigiRollMinusFour.Margin = new Padding(3, 2, 3, 2);
             DigiRollMinusFour.Name = "DigiRollMinusFour";
             DigiRollMinusFour.Size = new Size(18, 17);
@@ -4688,7 +4712,7 @@
             // DigiRollMinusThree
             // 
             DigiRollMinusThree.AutoSize = true;
-            DigiRollMinusThree.Location = new Point(241, 740);
+            DigiRollMinusThree.Location = new Point(254, 748);
             DigiRollMinusThree.Margin = new Padding(3, 2, 3, 2);
             DigiRollMinusThree.Name = "DigiRollMinusThree";
             DigiRollMinusThree.Size = new Size(18, 17);
@@ -4699,7 +4723,7 @@
             // DigiRollPlusThree
             // 
             DigiRollPlusThree.AutoSize = true;
-            DigiRollPlusThree.Location = new Point(241, 700);
+            DigiRollPlusThree.Location = new Point(254, 708);
             DigiRollPlusThree.Margin = new Padding(3, 2, 3, 2);
             DigiRollPlusThree.Name = "DigiRollPlusThree";
             DigiRollPlusThree.Size = new Size(18, 17);
@@ -4711,7 +4735,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label24.Location = new Point(165, 730);
+            label24.Location = new Point(178, 738);
             label24.Name = "label24";
             label24.Size = new Size(20, 25);
             label24.TabIndex = 165;
@@ -4721,7 +4745,7 @@
             // 
             label25.AutoSize = true;
             label25.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label25.Location = new Point(162, 692);
+            label25.Location = new Point(175, 700);
             label25.Name = "label25";
             label25.Size = new Size(25, 25);
             label25.TabIndex = 164;
@@ -4730,7 +4754,7 @@
             // DigiRollMinusTwo
             // 
             DigiRollMinusTwo.AutoSize = true;
-            DigiRollMinusTwo.Location = new Point(217, 740);
+            DigiRollMinusTwo.Location = new Point(230, 748);
             DigiRollMinusTwo.Margin = new Padding(3, 2, 3, 2);
             DigiRollMinusTwo.Name = "DigiRollMinusTwo";
             DigiRollMinusTwo.Size = new Size(18, 17);
@@ -4741,7 +4765,7 @@
             // DigiRollMinusOne
             // 
             DigiRollMinusOne.AutoSize = true;
-            DigiRollMinusOne.Location = new Point(193, 740);
+            DigiRollMinusOne.Location = new Point(206, 748);
             DigiRollMinusOne.Margin = new Padding(3, 2, 3, 2);
             DigiRollMinusOne.Name = "DigiRollMinusOne";
             DigiRollMinusOne.Size = new Size(18, 17);
@@ -4752,7 +4776,7 @@
             // DigiRollPlusTwo
             // 
             DigiRollPlusTwo.AutoSize = true;
-            DigiRollPlusTwo.Location = new Point(217, 700);
+            DigiRollPlusTwo.Location = new Point(230, 708);
             DigiRollPlusTwo.Margin = new Padding(3, 2, 3, 2);
             DigiRollPlusTwo.Name = "DigiRollPlusTwo";
             DigiRollPlusTwo.Size = new Size(18, 17);
@@ -4763,7 +4787,7 @@
             // DigiRollPlusOne
             // 
             DigiRollPlusOne.AutoSize = true;
-            DigiRollPlusOne.Location = new Point(193, 700);
+            DigiRollPlusOne.Location = new Point(206, 708);
             DigiRollPlusOne.Margin = new Padding(3, 2, 3, 2);
             DigiRollPlusOne.Name = "DigiRollPlusOne";
             DigiRollPlusOne.Size = new Size(18, 17);
@@ -4775,18 +4799,19 @@
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Microsoft Sans Serif", 18F);
-            label23.Location = new Point(22, 705);
+            label23.Location = new Point(97, 713);
             label23.Name = "label23";
             label23.Size = new Size(76, 36);
             label23.TabIndex = 159;
             label23.Text = "Roll:";
             label23.TextAlign = ContentAlignment.TopCenter;
+            label23.Click += label23_Click;
             // 
             // DigiAttackRoll
             // 
             DigiAttackRoll.Enabled = false;
             DigiAttackRoll.Font = new Font("Microsoft Sans Serif", 16F);
-            DigiAttackRoll.Location = new Point(104, 705);
+            DigiAttackRoll.Location = new Point(20, 713);
             DigiAttackRoll.Margin = new Padding(3, 2, 3, 2);
             DigiAttackRoll.Name = "DigiAttackRoll";
             DigiAttackRoll.Size = new Size(52, 38);
@@ -4839,7 +4864,7 @@
             GaurdAction.Name = "GaurdAction";
             GaurdAction.Size = new Size(165, 42);
             GaurdAction.TabIndex = 103;
-            GaurdAction.Text = "Gaurd";
+            GaurdAction.Text = "Guard";
             GaurdAction.UseVisualStyleBackColor = true;
             GaurdAction.Click += button5_Click_3;
             // 
@@ -4858,24 +4883,28 @@
             // 
             // SpecialAttack
             // 
+            SpecialAttack.Controls.Add(SpecialCritSuccessLabel);
+            SpecialAttack.Controls.Add(SpecialCritSuccess);
+            SpecialAttack.Controls.Add(SpecialCritFailLabel);
+            SpecialAttack.Controls.Add(SpecialCritFail);
+            SpecialAttack.Controls.Add(SpecialDefendStatLabel);
+            SpecialAttack.Controls.Add(SpecialDefendStat);
+            SpecialAttack.Controls.Add(SpecialAttackStatLabel);
+            SpecialAttack.Controls.Add(SpecialConcept);
+            SpecialAttack.Controls.Add(SpecialPenaltyLabel);
+            SpecialAttack.Controls.Add(SpecialAttackStat);
+            SpecialAttack.Controls.Add(SpecialBonusLabel);
+            SpecialAttack.Controls.Add(SpecialConceptLabel);
+            SpecialAttack.Controls.Add(SpecialEffect);
+            SpecialAttack.Controls.Add(SpecialBonus);
+            SpecialAttack.Controls.Add(SpecialEffectLabel);
+            SpecialAttack.Controls.Add(SpecialPenalty);
             SpecialAttack.Controls.Add(SpecialDiceMax);
             SpecialAttack.Controls.Add(label122);
             SpecialAttack.Controls.Add(label104);
-            SpecialAttack.Controls.Add(SpecialAttackHardFail);
             SpecialAttack.Controls.Add(SpecialDiceMin);
-            SpecialAttack.Controls.Add(label63);
             SpecialAttack.Controls.Add(SpecialElement);
-            SpecialAttack.Controls.Add(SpecialAttackFail);
-            SpecialAttack.Controls.Add(SpecialAttackPartFail);
             SpecialAttack.Controls.Add(ActSpecialAttack);
-            SpecialAttack.Controls.Add(label66);
-            SpecialAttack.Controls.Add(label74);
-            SpecialAttack.Controls.Add(SpecialAttackPartHit);
-            SpecialAttack.Controls.Add(label73);
-            SpecialAttack.Controls.Add(SpecialAttackHit);
-            SpecialAttack.Controls.Add(label72);
-            SpecialAttack.Controls.Add(label70);
-            SpecialAttack.Controls.Add(SpecialAttackHardHit);
             SpecialAttack.Location = new Point(21, 351);
             SpecialAttack.Margin = new Padding(4, 5, 4, 5);
             SpecialAttack.Name = "SpecialAttack";
@@ -4884,6 +4913,175 @@
             SpecialAttack.TabIndex = 102;
             SpecialAttack.TabStop = false;
             SpecialAttack.Text = "Special";
+            SpecialAttack.Enter += SpecialAttack_Enter;
+            // 
+            // SpecialCritSuccessLabel
+            // 
+            SpecialCritSuccessLabel.AutoSize = true;
+            SpecialCritSuccessLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialCritSuccessLabel.Location = new Point(273, 135);
+            SpecialCritSuccessLabel.Name = "SpecialCritSuccessLabel";
+            SpecialCritSuccessLabel.Size = new Size(124, 20);
+            SpecialCritSuccessLabel.TabIndex = 188;
+            SpecialCritSuccessLabel.Text = "Crit Success:";
+            // 
+            // SpecialCritSuccess
+            // 
+            SpecialCritSuccess.AutoSize = true;
+            SpecialCritSuccess.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialCritSuccess.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialCritSuccess.Location = new Point(405, 135);
+            SpecialCritSuccess.Name = "SpecialCritSuccess";
+            SpecialCritSuccess.Size = new Size(36, 20);
+            SpecialCritSuccess.TabIndex = 187;
+            SpecialCritSuccess.Text = "___";
+            // 
+            // SpecialCritFailLabel
+            // 
+            SpecialCritFailLabel.AutoSize = true;
+            SpecialCritFailLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialCritFailLabel.Location = new Point(65, 135);
+            SpecialCritFailLabel.Name = "SpecialCritFailLabel";
+            SpecialCritFailLabel.Size = new Size(83, 20);
+            SpecialCritFailLabel.TabIndex = 186;
+            SpecialCritFailLabel.Text = "Crit Fail:";
+            // 
+            // SpecialCritFail
+            // 
+            SpecialCritFail.AutoSize = true;
+            SpecialCritFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialCritFail.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialCritFail.Location = new Point(156, 135);
+            SpecialCritFail.Name = "SpecialCritFail";
+            SpecialCritFail.Size = new Size(36, 20);
+            SpecialCritFail.TabIndex = 185;
+            SpecialCritFail.Text = "___";
+            // 
+            // SpecialDefendStatLabel
+            // 
+            SpecialDefendStatLabel.AutoSize = true;
+            SpecialDefendStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialDefendStatLabel.Location = new Point(289, 97);
+            SpecialDefendStatLabel.Name = "SpecialDefendStatLabel";
+            SpecialDefendStatLabel.Size = new Size(108, 20);
+            SpecialDefendStatLabel.TabIndex = 184;
+            SpecialDefendStatLabel.Text = "Challenges:";
+            // 
+            // SpecialDefendStat
+            // 
+            SpecialDefendStat.AutoSize = true;
+            SpecialDefendStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialDefendStat.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialDefendStat.Location = new Point(405, 97);
+            SpecialDefendStat.Name = "SpecialDefendStat";
+            SpecialDefendStat.Size = new Size(36, 20);
+            SpecialDefendStat.TabIndex = 183;
+            SpecialDefendStat.Text = "___";
+            // 
+            // SpecialAttackStatLabel
+            // 
+            SpecialAttackStatLabel.AutoSize = true;
+            SpecialAttackStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialAttackStatLabel.Location = new Point(87, 97);
+            SpecialAttackStatLabel.Name = "SpecialAttackStatLabel";
+            SpecialAttackStatLabel.Size = new Size(58, 20);
+            SpecialAttackStatLabel.TabIndex = 182;
+            SpecialAttackStatLabel.Text = "Uses:";
+            // 
+            // SpecialConcept
+            // 
+            SpecialConcept.AutoSize = true;
+            SpecialConcept.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialConcept.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialConcept.Location = new Point(109, 62);
+            SpecialConcept.Name = "SpecialConcept";
+            SpecialConcept.Size = new Size(36, 20);
+            SpecialConcept.TabIndex = 181;
+            SpecialConcept.Text = "___";
+            // 
+            // SpecialPenaltyLabel
+            // 
+            SpecialPenaltyLabel.AutoSize = true;
+            SpecialPenaltyLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialPenaltyLabel.Location = new Point(24, 245);
+            SpecialPenaltyLabel.Name = "SpecialPenaltyLabel";
+            SpecialPenaltyLabel.Size = new Size(77, 20);
+            SpecialPenaltyLabel.TabIndex = 176;
+            SpecialPenaltyLabel.Text = "Penalty:";
+            // 
+            // SpecialAttackStat
+            // 
+            SpecialAttackStat.AutoSize = true;
+            SpecialAttackStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialAttackStat.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialAttackStat.Location = new Point(156, 97);
+            SpecialAttackStat.Name = "SpecialAttackStat";
+            SpecialAttackStat.Size = new Size(36, 20);
+            SpecialAttackStat.TabIndex = 180;
+            SpecialAttackStat.Text = "___";
+            // 
+            // SpecialBonusLabel
+            // 
+            SpecialBonusLabel.AutoSize = true;
+            SpecialBonusLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialBonusLabel.Location = new Point(33, 209);
+            SpecialBonusLabel.Name = "SpecialBonusLabel";
+            SpecialBonusLabel.Size = new Size(68, 20);
+            SpecialBonusLabel.TabIndex = 175;
+            SpecialBonusLabel.Text = "Bonus:";
+            // 
+            // SpecialConceptLabel
+            // 
+            SpecialConceptLabel.AutoSize = true;
+            SpecialConceptLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialConceptLabel.Location = new Point(18, 62);
+            SpecialConceptLabel.Name = "SpecialConceptLabel";
+            SpecialConceptLabel.Size = new Size(84, 20);
+            SpecialConceptLabel.TabIndex = 173;
+            SpecialConceptLabel.Text = "Concept:";
+            // 
+            // SpecialEffect
+            // 
+            SpecialEffect.AutoSize = true;
+            SpecialEffect.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialEffect.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialEffect.Location = new Point(109, 173);
+            SpecialEffect.Name = "SpecialEffect";
+            SpecialEffect.Size = new Size(36, 20);
+            SpecialEffect.TabIndex = 179;
+            SpecialEffect.Text = "___";
+            // 
+            // SpecialBonus
+            // 
+            SpecialBonus.AutoSize = true;
+            SpecialBonus.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialBonus.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialBonus.Location = new Point(109, 209);
+            SpecialBonus.Name = "SpecialBonus";
+            SpecialBonus.Size = new Size(36, 20);
+            SpecialBonus.TabIndex = 178;
+            SpecialBonus.Text = "___";
+            // 
+            // SpecialEffectLabel
+            // 
+            SpecialEffectLabel.AutoSize = true;
+            SpecialEffectLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SpecialEffectLabel.Location = new Point(36, 173);
+            SpecialEffectLabel.Name = "SpecialEffectLabel";
+            SpecialEffectLabel.Size = new Size(65, 20);
+            SpecialEffectLabel.TabIndex = 174;
+            SpecialEffectLabel.Text = "Effect:";
+            // 
+            // SpecialPenalty
+            // 
+            SpecialPenalty.AutoSize = true;
+            SpecialPenalty.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SpecialPenalty.ImageAlign = ContentAlignment.MiddleLeft;
+            SpecialPenalty.Location = new Point(109, 245);
+            SpecialPenalty.Name = "SpecialPenalty";
+            SpecialPenalty.Size = new Size(36, 20);
+            SpecialPenalty.TabIndex = 177;
+            SpecialPenalty.Text = "___";
             // 
             // SpecialDiceMax
             // 
@@ -4916,17 +5114,6 @@
             label104.Text = "-";
             label104.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // SpecialAttackHardFail
-            // 
-            SpecialAttackHardFail.AutoSize = true;
-            SpecialAttackHardFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SpecialAttackHardFail.ImageAlign = ContentAlignment.MiddleLeft;
-            SpecialAttackHardFail.Location = new Point(107, 55);
-            SpecialAttackHardFail.Name = "SpecialAttackHardFail";
-            SpecialAttackHardFail.Size = new Size(36, 20);
-            SpecialAttackHardFail.TabIndex = 134;
-            SpecialAttackHardFail.Text = "___";
-            // 
             // SpecialDiceMin
             // 
             SpecialDiceMin.AutoSize = true;
@@ -4937,16 +5124,6 @@
             SpecialDiceMin.TabIndex = 93;
             SpecialDiceMin.Text = "0";
             // 
-            // label63
-            // 
-            label63.AutoSize = true;
-            label63.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label63.Location = new Point(14, 239);
-            label63.Name = "label63";
-            label63.Size = new Size(87, 20);
-            label63.TabIndex = 128;
-            label63.Text = "Hard Hit:";
-            // 
             // SpecialElement
             // 
             SpecialElement.AutoSize = true;
@@ -4956,28 +5133,7 @@
             SpecialElement.Size = new Size(70, 20);
             SpecialElement.TabIndex = 92;
             SpecialElement.Text = "Element";
-            // 
-            // SpecialAttackFail
-            // 
-            SpecialAttackFail.AutoSize = true;
-            SpecialAttackFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SpecialAttackFail.ImageAlign = ContentAlignment.MiddleLeft;
-            SpecialAttackFail.Location = new Point(107, 92);
-            SpecialAttackFail.Name = "SpecialAttackFail";
-            SpecialAttackFail.Size = new Size(36, 20);
-            SpecialAttackFail.TabIndex = 133;
-            SpecialAttackFail.Text = "___";
-            // 
-            // SpecialAttackPartFail
-            // 
-            SpecialAttackPartFail.AutoSize = true;
-            SpecialAttackPartFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SpecialAttackPartFail.ImageAlign = ContentAlignment.MiddleLeft;
-            SpecialAttackPartFail.Location = new Point(108, 129);
-            SpecialAttackPartFail.Name = "SpecialAttackPartFail";
-            SpecialAttackPartFail.Size = new Size(36, 20);
-            SpecialAttackPartFail.TabIndex = 132;
-            SpecialAttackPartFail.Text = "___";
+            SpecialElement.Click += SpecialElement_Click;
             // 
             // ActSpecialAttack
             // 
@@ -4992,110 +5148,30 @@
             ActSpecialAttack.UseVisualStyleBackColor = true;
             ActSpecialAttack.Click += SpecialAttack_Click;
             // 
-            // label66
-            // 
-            label66.AutoSize = true;
-            label66.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label66.Location = new Point(60, 202);
-            label66.Name = "label66";
-            label66.Size = new Size(40, 20);
-            label66.TabIndex = 127;
-            label66.Text = "Hit:";
-            // 
-            // label74
-            // 
-            label74.AutoSize = true;
-            label74.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label74.Location = new Point(7, 55);
-            label74.Name = "label74";
-            label74.Size = new Size(93, 20);
-            label74.TabIndex = 123;
-            label74.Text = "Hard Fail:";
-            // 
-            // SpecialAttackPartHit
-            // 
-            SpecialAttackPartHit.AutoSize = true;
-            SpecialAttackPartHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SpecialAttackPartHit.ImageAlign = ContentAlignment.MiddleLeft;
-            SpecialAttackPartHit.Location = new Point(107, 166);
-            SpecialAttackPartHit.Name = "SpecialAttackPartHit";
-            SpecialAttackPartHit.Size = new Size(36, 20);
-            SpecialAttackPartHit.TabIndex = 131;
-            SpecialAttackPartHit.Text = "___";
-            // 
-            // label73
-            // 
-            label73.AutoSize = true;
-            label73.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label73.Location = new Point(55, 92);
-            label73.Name = "label73";
-            label73.Size = new Size(46, 20);
-            label73.TabIndex = 124;
-            label73.Text = "Fail:";
-            // 
-            // SpecialAttackHit
-            // 
-            SpecialAttackHit.AutoSize = true;
-            SpecialAttackHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SpecialAttackHit.ImageAlign = ContentAlignment.MiddleLeft;
-            SpecialAttackHit.Location = new Point(108, 202);
-            SpecialAttackHit.Name = "SpecialAttackHit";
-            SpecialAttackHit.Size = new Size(36, 20);
-            SpecialAttackHit.TabIndex = 130;
-            SpecialAttackHit.Text = "___";
-            // 
-            // label72
-            // 
-            label72.AutoSize = true;
-            label72.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label72.Location = new Point(13, 129);
-            label72.Name = "label72";
-            label72.Size = new Size(87, 20);
-            label72.TabIndex = 125;
-            label72.Text = "Part Fail:";
-            label72.Click += label72_Click;
-            // 
-            // label70
-            // 
-            label70.AutoSize = true;
-            label70.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label70.Location = new Point(19, 166);
-            label70.Name = "label70";
-            label70.Size = new Size(81, 20);
-            label70.TabIndex = 126;
-            label70.Text = "Part Hit:";
-            // 
-            // SpecialAttackHardHit
-            // 
-            SpecialAttackHardHit.AutoSize = true;
-            SpecialAttackHardHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SpecialAttackHardHit.ImageAlign = ContentAlignment.MiddleLeft;
-            SpecialAttackHardHit.Location = new Point(108, 239);
-            SpecialAttackHardHit.Name = "SpecialAttackHardHit";
-            SpecialAttackHardHit.Size = new Size(36, 20);
-            SpecialAttackHardHit.TabIndex = 129;
-            SpecialAttackHardHit.Text = "___";
-            // 
             // SuperAttack
             // 
+            SuperAttack.Controls.Add(SuperCritSuccessLabel);
+            SuperAttack.Controls.Add(SuperCritSuccess);
+            SuperAttack.Controls.Add(SuperCritFailLabel);
+            SuperAttack.Controls.Add(SuperCritFail);
+            SuperAttack.Controls.Add(SuperDefendStatLabel);
+            SuperAttack.Controls.Add(SuperDefendStat);
+            SuperAttack.Controls.Add(SuperAttackStatLabel);
+            SuperAttack.Controls.Add(SuperConcept);
+            SuperAttack.Controls.Add(SuperPenaltyLabel);
+            SuperAttack.Controls.Add(SuperAttackStat);
+            SuperAttack.Controls.Add(SuperBonusLabel);
+            SuperAttack.Controls.Add(SuperConceptLabel);
+            SuperAttack.Controls.Add(SuperEffect);
+            SuperAttack.Controls.Add(SuperBonus);
+            SuperAttack.Controls.Add(SuperEffectLabel);
+            SuperAttack.Controls.Add(SuperPenalty);
             SuperAttack.Controls.Add(SuperDiceMax);
-            SuperAttack.Controls.Add(SuperAttackHardFail);
             SuperAttack.Controls.Add(label113);
             SuperAttack.Controls.Add(label115);
-            SuperAttack.Controls.Add(label45);
             SuperAttack.Controls.Add(SuperDiceMin);
             SuperAttack.Controls.Add(SuperElement);
-            SuperAttack.Controls.Add(SuperAttackFail);
-            SuperAttack.Controls.Add(SuperAttackPartFail);
-            SuperAttack.Controls.Add(label50);
             SuperAttack.Controls.Add(ActSuperAttack);
-            SuperAttack.Controls.Add(SuperAttackPartHit);
-            SuperAttack.Controls.Add(label61);
-            SuperAttack.Controls.Add(SuperAttackHit);
-            SuperAttack.Controls.Add(label60);
-            SuperAttack.Controls.Add(label57);
-            SuperAttack.Controls.Add(label59);
-            SuperAttack.Controls.Add(SuperAttackHardHit);
             SuperAttack.Location = new Point(628, 351);
             SuperAttack.Margin = new Padding(4, 5, 4, 5);
             SuperAttack.Name = "SuperAttack";
@@ -5104,6 +5180,174 @@
             SuperAttack.TabIndex = 101;
             SuperAttack.TabStop = false;
             SuperAttack.Text = "Super";
+            // 
+            // SuperCritSuccessLabel
+            // 
+            SuperCritSuccessLabel.AutoSize = true;
+            SuperCritSuccessLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperCritSuccessLabel.Location = new Point(273, 135);
+            SuperCritSuccessLabel.Name = "SuperCritSuccessLabel";
+            SuperCritSuccessLabel.Size = new Size(124, 20);
+            SuperCritSuccessLabel.TabIndex = 188;
+            SuperCritSuccessLabel.Text = "Crit Success:";
+            // 
+            // SuperCritSuccess
+            // 
+            SuperCritSuccess.AutoSize = true;
+            SuperCritSuccess.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperCritSuccess.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperCritSuccess.Location = new Point(405, 135);
+            SuperCritSuccess.Name = "SuperCritSuccess";
+            SuperCritSuccess.Size = new Size(36, 20);
+            SuperCritSuccess.TabIndex = 187;
+            SuperCritSuccess.Text = "___";
+            // 
+            // SuperCritFailLabel
+            // 
+            SuperCritFailLabel.AutoSize = true;
+            SuperCritFailLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperCritFailLabel.Location = new Point(65, 135);
+            SuperCritFailLabel.Name = "SuperCritFailLabel";
+            SuperCritFailLabel.Size = new Size(83, 20);
+            SuperCritFailLabel.TabIndex = 186;
+            SuperCritFailLabel.Text = "Crit Fail:";
+            // 
+            // SuperCritFail
+            // 
+            SuperCritFail.AutoSize = true;
+            SuperCritFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperCritFail.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperCritFail.Location = new Point(156, 135);
+            SuperCritFail.Name = "SuperCritFail";
+            SuperCritFail.Size = new Size(36, 20);
+            SuperCritFail.TabIndex = 185;
+            SuperCritFail.Text = "___";
+            // 
+            // SuperDefendStatLabel
+            // 
+            SuperDefendStatLabel.AutoSize = true;
+            SuperDefendStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperDefendStatLabel.Location = new Point(289, 97);
+            SuperDefendStatLabel.Name = "SuperDefendStatLabel";
+            SuperDefendStatLabel.Size = new Size(108, 20);
+            SuperDefendStatLabel.TabIndex = 184;
+            SuperDefendStatLabel.Text = "Challenges:";
+            // 
+            // SuperDefendStat
+            // 
+            SuperDefendStat.AutoSize = true;
+            SuperDefendStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperDefendStat.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperDefendStat.Location = new Point(405, 97);
+            SuperDefendStat.Name = "SuperDefendStat";
+            SuperDefendStat.Size = new Size(36, 20);
+            SuperDefendStat.TabIndex = 183;
+            SuperDefendStat.Text = "___";
+            // 
+            // SuperAttackStatLabel
+            // 
+            SuperAttackStatLabel.AutoSize = true;
+            SuperAttackStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperAttackStatLabel.Location = new Point(87, 97);
+            SuperAttackStatLabel.Name = "SuperAttackStatLabel";
+            SuperAttackStatLabel.Size = new Size(58, 20);
+            SuperAttackStatLabel.TabIndex = 182;
+            SuperAttackStatLabel.Text = "Uses:";
+            // 
+            // SuperConcept
+            // 
+            SuperConcept.AutoSize = true;
+            SuperConcept.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperConcept.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperConcept.Location = new Point(109, 62);
+            SuperConcept.Name = "SuperConcept";
+            SuperConcept.Size = new Size(36, 20);
+            SuperConcept.TabIndex = 181;
+            SuperConcept.Text = "___";
+            // 
+            // SuperPenaltyLabel
+            // 
+            SuperPenaltyLabel.AutoSize = true;
+            SuperPenaltyLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperPenaltyLabel.Location = new Point(24, 245);
+            SuperPenaltyLabel.Name = "SuperPenaltyLabel";
+            SuperPenaltyLabel.Size = new Size(77, 20);
+            SuperPenaltyLabel.TabIndex = 176;
+            SuperPenaltyLabel.Text = "Penalty:";
+            // 
+            // SuperAttackStat
+            // 
+            SuperAttackStat.AutoSize = true;
+            SuperAttackStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperAttackStat.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperAttackStat.Location = new Point(156, 97);
+            SuperAttackStat.Name = "SuperAttackStat";
+            SuperAttackStat.Size = new Size(36, 20);
+            SuperAttackStat.TabIndex = 180;
+            SuperAttackStat.Text = "___";
+            // 
+            // SuperBonusLabel
+            // 
+            SuperBonusLabel.AutoSize = true;
+            SuperBonusLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperBonusLabel.Location = new Point(33, 209);
+            SuperBonusLabel.Name = "SuperBonusLabel";
+            SuperBonusLabel.Size = new Size(68, 20);
+            SuperBonusLabel.TabIndex = 175;
+            SuperBonusLabel.Text = "Bonus:";
+            // 
+            // SuperConceptLabel
+            // 
+            SuperConceptLabel.AutoSize = true;
+            SuperConceptLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperConceptLabel.Location = new Point(18, 62);
+            SuperConceptLabel.Name = "SuperConceptLabel";
+            SuperConceptLabel.Size = new Size(84, 20);
+            SuperConceptLabel.TabIndex = 173;
+            SuperConceptLabel.Text = "Concept:";
+            // 
+            // SuperEffect
+            // 
+            SuperEffect.AutoSize = true;
+            SuperEffect.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperEffect.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperEffect.Location = new Point(109, 173);
+            SuperEffect.Name = "SuperEffect";
+            SuperEffect.Size = new Size(36, 20);
+            SuperEffect.TabIndex = 179;
+            SuperEffect.Text = "___";
+            // 
+            // SuperBonus
+            // 
+            SuperBonus.AutoSize = true;
+            SuperBonus.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperBonus.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperBonus.Location = new Point(109, 209);
+            SuperBonus.Name = "SuperBonus";
+            SuperBonus.Size = new Size(36, 20);
+            SuperBonus.TabIndex = 178;
+            SuperBonus.Text = "___";
+            // 
+            // SuperEffectLabel
+            // 
+            SuperEffectLabel.AutoSize = true;
+            SuperEffectLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SuperEffectLabel.Location = new Point(36, 173);
+            SuperEffectLabel.Name = "SuperEffectLabel";
+            SuperEffectLabel.Size = new Size(65, 20);
+            SuperEffectLabel.TabIndex = 174;
+            SuperEffectLabel.Text = "Effect:";
+            // 
+            // SuperPenalty
+            // 
+            SuperPenalty.AutoSize = true;
+            SuperPenalty.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            SuperPenalty.ImageAlign = ContentAlignment.MiddleLeft;
+            SuperPenalty.Location = new Point(109, 245);
+            SuperPenalty.Name = "SuperPenalty";
+            SuperPenalty.Size = new Size(36, 20);
+            SuperPenalty.TabIndex = 177;
+            SuperPenalty.Text = "___";
             // 
             // SuperDiceMax
             // 
@@ -5114,17 +5358,6 @@
             SuperDiceMax.Size = new Size(39, 20);
             SuperDiceMax.TabIndex = 159;
             SuperDiceMax.Text = "000";
-            // 
-            // SuperAttackHardFail
-            // 
-            SuperAttackHardFail.AutoSize = true;
-            SuperAttackHardFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SuperAttackHardFail.ImageAlign = ContentAlignment.MiddleLeft;
-            SuperAttackHardFail.Location = new Point(107, 55);
-            SuperAttackHardFail.Name = "SuperAttackHardFail";
-            SuperAttackHardFail.Size = new Size(36, 20);
-            SuperAttackHardFail.TabIndex = 134;
-            SuperAttackHardFail.Text = "___";
             // 
             // label113
             // 
@@ -5147,16 +5380,6 @@
             label115.Text = "-";
             label115.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label45.Location = new Point(13, 240);
-            label45.Name = "label45";
-            label45.Size = new Size(87, 20);
-            label45.TabIndex = 128;
-            label45.Text = "Hard Hit:";
-            // 
             // SuperDiceMin
             // 
             SuperDiceMin.AutoSize = true;
@@ -5177,38 +5400,6 @@
             SuperElement.TabIndex = 94;
             SuperElement.Text = "Element";
             // 
-            // SuperAttackFail
-            // 
-            SuperAttackFail.AutoSize = true;
-            SuperAttackFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SuperAttackFail.ImageAlign = ContentAlignment.MiddleLeft;
-            SuperAttackFail.Location = new Point(107, 92);
-            SuperAttackFail.Name = "SuperAttackFail";
-            SuperAttackFail.Size = new Size(36, 20);
-            SuperAttackFail.TabIndex = 133;
-            SuperAttackFail.Text = "___";
-            // 
-            // SuperAttackPartFail
-            // 
-            SuperAttackPartFail.AutoSize = true;
-            SuperAttackPartFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SuperAttackPartFail.ImageAlign = ContentAlignment.MiddleLeft;
-            SuperAttackPartFail.Location = new Point(107, 129);
-            SuperAttackPartFail.Name = "SuperAttackPartFail";
-            SuperAttackPartFail.Size = new Size(36, 20);
-            SuperAttackPartFail.TabIndex = 132;
-            SuperAttackPartFail.Text = "___";
-            // 
-            // label50
-            // 
-            label50.AutoSize = true;
-            label50.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label50.Location = new Point(59, 202);
-            label50.Name = "label50";
-            label50.Size = new Size(40, 20);
-            label50.TabIndex = 127;
-            label50.Text = "Hit:";
-            // 
             // ActSuperAttack
             // 
             ActSuperAttack.Enabled = false;
@@ -5222,79 +5413,6 @@
             ActSuperAttack.UseVisualStyleBackColor = true;
             ActSuperAttack.Click += SuperAttack_Click;
             // 
-            // SuperAttackPartHit
-            // 
-            SuperAttackPartHit.AutoSize = true;
-            SuperAttackPartHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SuperAttackPartHit.ImageAlign = ContentAlignment.MiddleLeft;
-            SuperAttackPartHit.Location = new Point(107, 166);
-            SuperAttackPartHit.Name = "SuperAttackPartHit";
-            SuperAttackPartHit.Size = new Size(36, 20);
-            SuperAttackPartHit.TabIndex = 131;
-            SuperAttackPartHit.Text = "___";
-            // 
-            // label61
-            // 
-            label61.AutoSize = true;
-            label61.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label61.Location = new Point(7, 55);
-            label61.Name = "label61";
-            label61.Size = new Size(93, 20);
-            label61.TabIndex = 123;
-            label61.Text = "Hard Fail:";
-            // 
-            // SuperAttackHit
-            // 
-            SuperAttackHit.AutoSize = true;
-            SuperAttackHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SuperAttackHit.ImageAlign = ContentAlignment.MiddleLeft;
-            SuperAttackHit.Location = new Point(107, 202);
-            SuperAttackHit.Name = "SuperAttackHit";
-            SuperAttackHit.Size = new Size(36, 20);
-            SuperAttackHit.TabIndex = 130;
-            SuperAttackHit.Text = "___";
-            // 
-            // label60
-            // 
-            label60.AutoSize = true;
-            label60.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label60.Location = new Point(55, 92);
-            label60.Name = "label60";
-            label60.Size = new Size(46, 20);
-            label60.TabIndex = 124;
-            label60.Text = "Fail:";
-            // 
-            // label57
-            // 
-            label57.AutoSize = true;
-            label57.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label57.Location = new Point(19, 166);
-            label57.Name = "label57";
-            label57.Size = new Size(81, 20);
-            label57.TabIndex = 126;
-            label57.Text = "Part Hit:";
-            // 
-            // label59
-            // 
-            label59.AutoSize = true;
-            label59.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label59.Location = new Point(12, 129);
-            label59.Name = "label59";
-            label59.Size = new Size(87, 20);
-            label59.TabIndex = 125;
-            label59.Text = "Part Fail:";
-            // 
-            // SuperAttackHardHit
-            // 
-            SuperAttackHardHit.AutoSize = true;
-            SuperAttackHardHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            SuperAttackHardHit.ImageAlign = ContentAlignment.MiddleLeft;
-            SuperAttackHardHit.Location = new Point(107, 240);
-            SuperAttackHardHit.Name = "SuperAttackHardHit";
-            SuperAttackHardHit.Size = new Size(36, 20);
-            SuperAttackHardHit.TabIndex = 129;
-            SuperAttackHardHit.Text = "___";
-            // 
             // BasicAttack
             // 
             BasicAttack.Controls.Add(BasicCritSuccessLabel);
@@ -5306,7 +5424,6 @@
             BasicAttack.Controls.Add(AttackStatLabel);
             BasicAttack.Controls.Add(BasicConcept);
             BasicAttack.Controls.Add(BasicPenaltyLabel);
-            BasicAttack.Controls.Add(label54);
             BasicAttack.Controls.Add(BasicAttackStat);
             BasicAttack.Controls.Add(BasicBonusLabel);
             BasicAttack.Controls.Add(BasicConceptLabel);
@@ -5346,9 +5463,9 @@
             BasicCritSuccess.ImageAlign = ContentAlignment.MiddleLeft;
             BasicCritSuccess.Location = new Point(405, 135);
             BasicCritSuccess.Name = "BasicCritSuccess";
-            BasicCritSuccess.Size = new Size(26, 20);
+            BasicCritSuccess.Size = new Size(36, 20);
             BasicCritSuccess.TabIndex = 188;
-            BasicCritSuccess.Text = "x7";
+            BasicCritSuccess.Text = "___";
             BasicCritSuccess.Click += BasicCritSuccess_Click;
             // 
             // BasicCritFailLabel
@@ -5368,9 +5485,10 @@
             BasicCritFail.ImageAlign = ContentAlignment.MiddleLeft;
             BasicCritFail.Location = new Point(156, 135);
             BasicCritFail.Name = "BasicCritFail";
-            BasicCritFail.Size = new Size(26, 20);
+            BasicCritFail.Size = new Size(36, 20);
             BasicCritFail.TabIndex = 186;
-            BasicCritFail.Text = "x7";
+            BasicCritFail.Text = "___";
+            BasicCritFail.Click += BasicCritFail_Click;
             // 
             // label22
             // 
@@ -5392,6 +5510,7 @@
             BasicDefendStat.Size = new Size(36, 20);
             BasicDefendStat.TabIndex = 184;
             BasicDefendStat.Text = "___";
+            BasicDefendStat.Click += BasicDefendStat_Click;
             // 
             // AttackStatLabel
             // 
@@ -5424,16 +5543,6 @@
             BasicPenaltyLabel.TabIndex = 177;
             BasicPenaltyLabel.Text = "Penalty:";
             // 
-            // label54
-            // 
-            label54.AutoSize = true;
-            label54.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label54.Location = new Point(355, 30);
-            label54.Name = "label54";
-            label54.Size = new Size(70, 20);
-            label54.TabIndex = 172;
-            label54.Text = "Element";
-            // 
             // BasicAttackStat
             // 
             BasicAttackStat.AutoSize = true;
@@ -5441,9 +5550,10 @@
             BasicAttackStat.ImageAlign = ContentAlignment.MiddleLeft;
             BasicAttackStat.Location = new Point(156, 97);
             BasicAttackStat.Name = "BasicAttackStat";
-            BasicAttackStat.Size = new Size(72, 20);
+            BasicAttackStat.Size = new Size(36, 20);
             BasicAttackStat.TabIndex = 181;
-            BasicAttackStat.Text = "Strength";
+            BasicAttackStat.Text = "___";
+            BasicAttackStat.Click += BasicAttackStat_Click;
             // 
             // BasicBonusLabel
             // 
@@ -5472,9 +5582,9 @@
             BasicEffect.ImageAlign = ContentAlignment.MiddleLeft;
             BasicEffect.Location = new Point(109, 173);
             BasicEffect.Name = "BasicEffect";
-            BasicEffect.Size = new Size(52, 20);
+            BasicEffect.Size = new Size(36, 20);
             BasicEffect.TabIndex = 180;
-            BasicEffect.Text = "Basis";
+            BasicEffect.Text = "___";
             // 
             // BasicBonus
             // 
@@ -5483,9 +5593,9 @@
             BasicBonus.ImageAlign = ContentAlignment.MiddleLeft;
             BasicBonus.Location = new Point(109, 209);
             BasicBonus.Name = "BasicBonus";
-            BasicBonus.Size = new Size(48, 20);
+            BasicBonus.Size = new Size(36, 20);
             BasicBonus.TabIndex = 179;
-            BasicBonus.Text = "Boon";
+            BasicBonus.Text = "___";
             // 
             // BasicEffectLabel
             // 
@@ -5504,9 +5614,10 @@
             BasicPenalty.ImageAlign = ContentAlignment.MiddleLeft;
             BasicPenalty.Location = new Point(109, 245);
             BasicPenalty.Name = "BasicPenalty";
-            BasicPenalty.Size = new Size(44, 20);
+            BasicPenalty.Size = new Size(36, 20);
             BasicPenalty.TabIndex = 178;
-            BasicPenalty.Text = "Bust";
+            BasicPenalty.Text = "___";
+            BasicPenalty.Click += BasicPenalty_Click;
             // 
             // BasicDiceMax
             // 
@@ -5574,24 +5685,28 @@
             // 
             // StandardAttack
             // 
+            StandardAttack.Controls.Add(StandardCritSuccessLabel);
+            StandardAttack.Controls.Add(StandardCritSuccess);
+            StandardAttack.Controls.Add(StandardCritFailLabel);
+            StandardAttack.Controls.Add(StandardCritFail);
+            StandardAttack.Controls.Add(StandardDefendStatLabel);
+            StandardAttack.Controls.Add(StandardDefendStat);
+            StandardAttack.Controls.Add(StandardAttackStatLabel);
+            StandardAttack.Controls.Add(StandardConcept);
+            StandardAttack.Controls.Add(StandardPenaltyLabel);
+            StandardAttack.Controls.Add(StandardAttackStat);
+            StandardAttack.Controls.Add(StandardBonusLabel);
+            StandardAttack.Controls.Add(StandardConceptLabel);
+            StandardAttack.Controls.Add(StandardEffect);
+            StandardAttack.Controls.Add(StandardBonus);
+            StandardAttack.Controls.Add(StandardEffectLabel);
+            StandardAttack.Controls.Add(StandardPenalty);
             StandardAttack.Controls.Add(StandardDiceMax);
-            StandardAttack.Controls.Add(StandardAttackHardFail);
             StandardAttack.Controls.Add(label105);
-            StandardAttack.Controls.Add(label46);
-            StandardAttack.Controls.Add(label48);
             StandardAttack.Controls.Add(label107);
-            StandardAttack.Controls.Add(StandardAttackFail);
             StandardAttack.Controls.Add(StandardDiceMin);
-            StandardAttack.Controls.Add(StandardAttackPartFail);
-            StandardAttack.Controls.Add(label47);
-            StandardAttack.Controls.Add(StandardAttackPartHit);
             StandardAttack.Controls.Add(StandardElement);
-            StandardAttack.Controls.Add(StandardAttackHit);
-            StandardAttack.Controls.Add(label52);
-            StandardAttack.Controls.Add(StandardAttackHardHit);
-            StandardAttack.Controls.Add(label53);
             StandardAttack.Controls.Add(ActStandardAttack);
-            StandardAttack.Controls.Add(label55);
             StandardAttack.Location = new Point(628, 24);
             StandardAttack.Margin = new Padding(4, 5, 4, 5);
             StandardAttack.Name = "StandardAttack";
@@ -5600,6 +5715,174 @@
             StandardAttack.TabIndex = 99;
             StandardAttack.TabStop = false;
             StandardAttack.Text = "Standard";
+            // 
+            // StandardCritSuccessLabel
+            // 
+            StandardCritSuccessLabel.AutoSize = true;
+            StandardCritSuccessLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardCritSuccessLabel.Location = new Point(273, 135);
+            StandardCritSuccessLabel.Name = "StandardCritSuccessLabel";
+            StandardCritSuccessLabel.Size = new Size(124, 20);
+            StandardCritSuccessLabel.TabIndex = 188;
+            StandardCritSuccessLabel.Text = "Crit Success:";
+            // 
+            // StandardCritSuccess
+            // 
+            StandardCritSuccess.AutoSize = true;
+            StandardCritSuccess.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardCritSuccess.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardCritSuccess.Location = new Point(405, 135);
+            StandardCritSuccess.Name = "StandardCritSuccess";
+            StandardCritSuccess.Size = new Size(36, 20);
+            StandardCritSuccess.TabIndex = 187;
+            StandardCritSuccess.Text = "___";
+            // 
+            // StandardCritFailLabel
+            // 
+            StandardCritFailLabel.AutoSize = true;
+            StandardCritFailLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardCritFailLabel.Location = new Point(65, 135);
+            StandardCritFailLabel.Name = "StandardCritFailLabel";
+            StandardCritFailLabel.Size = new Size(83, 20);
+            StandardCritFailLabel.TabIndex = 186;
+            StandardCritFailLabel.Text = "Crit Fail:";
+            // 
+            // StandardCritFail
+            // 
+            StandardCritFail.AutoSize = true;
+            StandardCritFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardCritFail.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardCritFail.Location = new Point(156, 135);
+            StandardCritFail.Name = "StandardCritFail";
+            StandardCritFail.Size = new Size(36, 20);
+            StandardCritFail.TabIndex = 185;
+            StandardCritFail.Text = "___";
+            // 
+            // StandardDefendStatLabel
+            // 
+            StandardDefendStatLabel.AutoSize = true;
+            StandardDefendStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardDefendStatLabel.Location = new Point(289, 97);
+            StandardDefendStatLabel.Name = "StandardDefendStatLabel";
+            StandardDefendStatLabel.Size = new Size(108, 20);
+            StandardDefendStatLabel.TabIndex = 184;
+            StandardDefendStatLabel.Text = "Challenges:";
+            // 
+            // StandardDefendStat
+            // 
+            StandardDefendStat.AutoSize = true;
+            StandardDefendStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardDefendStat.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardDefendStat.Location = new Point(405, 97);
+            StandardDefendStat.Name = "StandardDefendStat";
+            StandardDefendStat.Size = new Size(36, 20);
+            StandardDefendStat.TabIndex = 183;
+            StandardDefendStat.Text = "___";
+            // 
+            // StandardAttackStatLabel
+            // 
+            StandardAttackStatLabel.AutoSize = true;
+            StandardAttackStatLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardAttackStatLabel.Location = new Point(87, 97);
+            StandardAttackStatLabel.Name = "StandardAttackStatLabel";
+            StandardAttackStatLabel.Size = new Size(58, 20);
+            StandardAttackStatLabel.TabIndex = 182;
+            StandardAttackStatLabel.Text = "Uses:";
+            // 
+            // StandardConcept
+            // 
+            StandardConcept.AutoSize = true;
+            StandardConcept.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardConcept.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardConcept.Location = new Point(109, 62);
+            StandardConcept.Name = "StandardConcept";
+            StandardConcept.Size = new Size(36, 20);
+            StandardConcept.TabIndex = 181;
+            StandardConcept.Text = "___";
+            // 
+            // StandardPenaltyLabel
+            // 
+            StandardPenaltyLabel.AutoSize = true;
+            StandardPenaltyLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardPenaltyLabel.Location = new Point(24, 245);
+            StandardPenaltyLabel.Name = "StandardPenaltyLabel";
+            StandardPenaltyLabel.Size = new Size(77, 20);
+            StandardPenaltyLabel.TabIndex = 176;
+            StandardPenaltyLabel.Text = "Penalty:";
+            // 
+            // StandardAttackStat
+            // 
+            StandardAttackStat.AutoSize = true;
+            StandardAttackStat.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardAttackStat.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardAttackStat.Location = new Point(156, 97);
+            StandardAttackStat.Name = "StandardAttackStat";
+            StandardAttackStat.Size = new Size(36, 20);
+            StandardAttackStat.TabIndex = 180;
+            StandardAttackStat.Text = "___";
+            // 
+            // StandardBonusLabel
+            // 
+            StandardBonusLabel.AutoSize = true;
+            StandardBonusLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardBonusLabel.Location = new Point(33, 209);
+            StandardBonusLabel.Name = "StandardBonusLabel";
+            StandardBonusLabel.Size = new Size(68, 20);
+            StandardBonusLabel.TabIndex = 175;
+            StandardBonusLabel.Text = "Bonus:";
+            // 
+            // StandardConceptLabel
+            // 
+            StandardConceptLabel.AutoSize = true;
+            StandardConceptLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardConceptLabel.Location = new Point(18, 62);
+            StandardConceptLabel.Name = "StandardConceptLabel";
+            StandardConceptLabel.Size = new Size(84, 20);
+            StandardConceptLabel.TabIndex = 173;
+            StandardConceptLabel.Text = "Concept:";
+            // 
+            // StandardEffect
+            // 
+            StandardEffect.AutoSize = true;
+            StandardEffect.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardEffect.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardEffect.Location = new Point(109, 173);
+            StandardEffect.Name = "StandardEffect";
+            StandardEffect.Size = new Size(36, 20);
+            StandardEffect.TabIndex = 179;
+            StandardEffect.Text = "___";
+            // 
+            // StandardBonus
+            // 
+            StandardBonus.AutoSize = true;
+            StandardBonus.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardBonus.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardBonus.Location = new Point(109, 209);
+            StandardBonus.Name = "StandardBonus";
+            StandardBonus.Size = new Size(36, 20);
+            StandardBonus.TabIndex = 178;
+            StandardBonus.Text = "___";
+            // 
+            // StandardEffectLabel
+            // 
+            StandardEffectLabel.AutoSize = true;
+            StandardEffectLabel.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StandardEffectLabel.Location = new Point(36, 173);
+            StandardEffectLabel.Name = "StandardEffectLabel";
+            StandardEffectLabel.Size = new Size(65, 20);
+            StandardEffectLabel.TabIndex = 174;
+            StandardEffectLabel.Text = "Effect:";
+            // 
+            // StandardPenalty
+            // 
+            StandardPenalty.AutoSize = true;
+            StandardPenalty.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            StandardPenalty.ImageAlign = ContentAlignment.MiddleLeft;
+            StandardPenalty.Location = new Point(109, 245);
+            StandardPenalty.Name = "StandardPenalty";
+            StandardPenalty.Size = new Size(36, 20);
+            StandardPenalty.TabIndex = 177;
+            StandardPenalty.Text = "___";
             // 
             // StandardDiceMax
             // 
@@ -5611,17 +5894,6 @@
             StandardDiceMax.TabIndex = 155;
             StandardDiceMax.Text = "000";
             // 
-            // StandardAttackHardFail
-            // 
-            StandardAttackHardFail.AutoSize = true;
-            StandardAttackHardFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            StandardAttackHardFail.ImageAlign = ContentAlignment.MiddleLeft;
-            StandardAttackHardFail.Location = new Point(107, 55);
-            StandardAttackHardFail.Name = "StandardAttackHardFail";
-            StandardAttackHardFail.Size = new Size(36, 20);
-            StandardAttackHardFail.TabIndex = 121;
-            StandardAttackHardFail.Text = "___";
-            // 
             // label105
             // 
             label105.AutoSize = true;
@@ -5631,26 +5903,6 @@
             label105.Size = new Size(48, 20);
             label105.TabIndex = 154;
             label105.Text = "Roll:";
-            // 
-            // label46
-            // 
-            label46.AutoSize = true;
-            label46.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label46.Location = new Point(12, 239);
-            label46.Name = "label46";
-            label46.Size = new Size(87, 20);
-            label46.TabIndex = 113;
-            label46.Text = "Hard Hit:";
-            // 
-            // label48
-            // 
-            label48.AutoSize = true;
-            label48.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label48.Location = new Point(55, 91);
-            label48.Name = "label48";
-            label48.Size = new Size(46, 20);
-            label48.TabIndex = 173;
-            label48.Text = "Fail:";
             // 
             // label107
             // 
@@ -5663,17 +5915,6 @@
             label107.Text = "-";
             label107.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // StandardAttackFail
-            // 
-            StandardAttackFail.AutoSize = true;
-            StandardAttackFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            StandardAttackFail.ImageAlign = ContentAlignment.MiddleLeft;
-            StandardAttackFail.Location = new Point(107, 91);
-            StandardAttackFail.Name = "StandardAttackFail";
-            StandardAttackFail.Size = new Size(36, 20);
-            StandardAttackFail.TabIndex = 120;
-            StandardAttackFail.Text = "___";
-            // 
             // StandardDiceMin
             // 
             StandardDiceMin.AutoSize = true;
@@ -5684,38 +5925,6 @@
             StandardDiceMin.TabIndex = 97;
             StandardDiceMin.Text = "0";
             // 
-            // StandardAttackPartFail
-            // 
-            StandardAttackPartFail.AutoSize = true;
-            StandardAttackPartFail.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            StandardAttackPartFail.ImageAlign = ContentAlignment.MiddleLeft;
-            StandardAttackPartFail.Location = new Point(107, 129);
-            StandardAttackPartFail.Name = "StandardAttackPartFail";
-            StandardAttackPartFail.Size = new Size(36, 20);
-            StandardAttackPartFail.TabIndex = 119;
-            StandardAttackPartFail.Text = "___";
-            // 
-            // label47
-            // 
-            label47.AutoSize = true;
-            label47.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label47.Location = new Point(59, 202);
-            label47.Name = "label47";
-            label47.Size = new Size(40, 20);
-            label47.TabIndex = 112;
-            label47.Text = "Hit:";
-            // 
-            // StandardAttackPartHit
-            // 
-            StandardAttackPartHit.AutoSize = true;
-            StandardAttackPartHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            StandardAttackPartHit.ImageAlign = ContentAlignment.MiddleLeft;
-            StandardAttackPartHit.Location = new Point(107, 165);
-            StandardAttackPartHit.Name = "StandardAttackPartHit";
-            StandardAttackPartHit.Size = new Size(36, 20);
-            StandardAttackPartHit.TabIndex = 118;
-            StandardAttackPartHit.Text = "___";
-            // 
             // StandardElement
             // 
             StandardElement.AutoSize = true;
@@ -5725,48 +5934,6 @@
             StandardElement.Size = new Size(70, 20);
             StandardElement.TabIndex = 96;
             StandardElement.Text = "Element";
-            // 
-            // StandardAttackHit
-            // 
-            StandardAttackHit.AutoSize = true;
-            StandardAttackHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            StandardAttackHit.ImageAlign = ContentAlignment.MiddleLeft;
-            StandardAttackHit.Location = new Point(107, 202);
-            StandardAttackHit.Name = "StandardAttackHit";
-            StandardAttackHit.Size = new Size(36, 20);
-            StandardAttackHit.TabIndex = 117;
-            StandardAttackHit.Text = "___";
-            // 
-            // label52
-            // 
-            label52.AutoSize = true;
-            label52.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label52.Location = new Point(19, 165);
-            label52.Name = "label52";
-            label52.Size = new Size(81, 20);
-            label52.TabIndex = 111;
-            label52.Text = "Part Hit:";
-            // 
-            // StandardAttackHardHit
-            // 
-            StandardAttackHardHit.AutoSize = true;
-            StandardAttackHardHit.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            StandardAttackHardHit.ImageAlign = ContentAlignment.MiddleLeft;
-            StandardAttackHardHit.Location = new Point(106, 239);
-            StandardAttackHardHit.Name = "StandardAttackHardHit";
-            StandardAttackHardHit.Size = new Size(36, 20);
-            StandardAttackHardHit.TabIndex = 116;
-            StandardAttackHardHit.Text = "___";
-            // 
-            // label53
-            // 
-            label53.AutoSize = true;
-            label53.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label53.Location = new Point(12, 129);
-            label53.Name = "label53";
-            label53.Size = new Size(87, 20);
-            label53.TabIndex = 110;
-            label53.Text = "Part Fail:";
             // 
             // ActStandardAttack
             // 
@@ -5780,16 +5947,6 @@
             ActStandardAttack.Text = "Activate";
             ActStandardAttack.UseVisualStyleBackColor = true;
             ActStandardAttack.Click += StandardAttack_Click;
-            // 
-            // label55
-            // 
-            label55.AutoSize = true;
-            label55.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label55.Location = new Point(7, 55);
-            label55.Name = "label55";
-            label55.Size = new Size(93, 20);
-            label55.TabIndex = 108;
-            label55.Text = "Hard Fail:";
             // 
             // DigimonLifecycle
             // 
@@ -6591,6 +6748,7 @@
             // 
             // LevelUp
             // 
+            LevelUp.Enabled = false;
             LevelUp.Location = new Point(1253, 677);
             LevelUp.Margin = new Padding(3, 2, 3, 2);
             LevelUp.Name = "LevelUp";
@@ -6820,43 +6978,9 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label MoveSpeed;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Button ActStandardAttack;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label StandardAttackHardFail;
-        private System.Windows.Forms.Label StandardAttackFail;
-        private System.Windows.Forms.Label StandardAttackPartFail;
-        private System.Windows.Forms.Label StandardAttackPartHit;
-        private System.Windows.Forms.Label StandardAttackHit;
-        private System.Windows.Forms.Label StandardAttackHardHit;
-        private System.Windows.Forms.Label SpecialAttackHardFail;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label SpecialAttackFail;
-        private System.Windows.Forms.Label SpecialAttackPartFail;
         private System.Windows.Forms.Button ActSpecialAttack;
-        private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label SpecialAttackPartHit;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.Label SpecialAttackHit;
-        private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.Label SpecialAttackHardHit;
-        private System.Windows.Forms.Label SuperAttackHardFail;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label SuperAttackFail;
-        private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Button ActSuperAttack;
-        private System.Windows.Forms.Label SuperAttackPartHit;
-        private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.Label SuperAttackHit;
-        private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Label SuperAttackHardHit;
         private System.Windows.Forms.Button ActBasicAttack;
         private System.Windows.Forms.Label ResistanceElement;
         private System.Windows.Forms.Label label93;
@@ -7176,8 +7300,6 @@
         private System.Windows.Forms.Label SuperElement;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox TargetArmour;
-        private System.Windows.Forms.Label SuperAttackPartFail;
-        private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label SpecialElement;
         private System.Windows.Forms.Button GainBond;
         private System.Windows.Forms.Button LoseBond;
@@ -7254,7 +7376,6 @@
         private Label AttackStatLabel;
         private Label BasicConcept;
         private Label BasicPenaltyLabel;
-        private Label label54;
         private Label BasicAttackStat;
         private Label BasicBonusLabel;
         private Label BasicConceptLabel;
@@ -7262,6 +7383,55 @@
         private Label BasicBonus;
         private Label BasicEffectLabel;
         private Label BasicPenalty;
+        private Label StandardCritSuccessLabel;
+        private Label StandardCritSuccess;
+        private Label StandardCritFailLabel;
+        private Label StandardCritFail;
+        private Label StandardDefendStatLabel;
+        private Label StandardDefendStat;
+        private Label StandardAttackStatLabel;
+        private Label StandardConcept;
+        private Label StandardPenaltyLabel;
+        private Label StandardAttackStat;
+        private Label StandardBonusLabel;
+        private Label StandardConceptLabel;
+        private Label StandardEffect;
+        private Label StandardBonus;
+        private Label StandardEffectLabel;
+        private Label StandardPenalty;
+        private Label label46;
+        private Label SpecialCritSuccessLabel;
+        private Label SpecialCritSuccess;
+        private Label SpecialCritFailLabel;
+        private Label SpecialCritFail;
+        private Label SpecialDefendStatLabel;
+        private Label SpecialDefendStat;
+        private Label SpecialAttackStatLabel;
+        private Label SpecialConcept;
+        private Label SpecialPenaltyLabel;
+        private Label SpecialAttackStat;
+        private Label SpecialBonusLabel;
+        private Label SpecialConceptLabel;
+        private Label SpecialEffect;
+        private Label SpecialBonus;
+        private Label SpecialEffectLabel;
+        private Label SpecialPenalty;
+        private Label SuperCritSuccessLabel;
+        private Label SuperCritSuccess;
+        private Label SuperCritFailLabel;
+        private Label SuperCritFail;
+        private Label SuperDefendStatLabel;
+        private Label SuperDefendStat;
+        private Label SuperAttackStatLabel;
+        private Label SuperConcept;
+        private Label SuperPenaltyLabel;
+        private Label SuperAttackStat;
+        private Label SuperBonusLabel;
+        private Label SuperConceptLabel;
+        private Label SuperEffect;
+        private Label SuperBonus;
+        private Label SuperEffectLabel;
+        private Label SuperPenalty;
     }
 }
 

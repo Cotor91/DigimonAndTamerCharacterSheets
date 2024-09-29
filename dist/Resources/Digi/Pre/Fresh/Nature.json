@@ -1,14 +1,14 @@
 {
-  "DigimonName": "",
-  "DigimonField": "________",
-  "DigitalFrame": "________",
-  "CoreHPMax": "_____",
+  "DigimonName": "Dodomon",
+  "DigimonField": "Nature Spirits",
+  "DigitalFrame": "1",
+  "CoreHPMax": "5",
   "HPLevelMod": 0,
-  "MoveSpeed": "________",
+  "MoveSpeed": "0",
 
-  "Attribute": "________",
-  "WeaknessElement": "________",
-  "ResistanceElement": "________",
+  "Attribute": "Free",
+  "WeaknessElement": "Free",
+  "ResistanceElement": "Free",
 
   "FreshEvolution": true,
   "TrainingEvolution": false,

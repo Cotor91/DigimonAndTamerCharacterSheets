@@ -1,0 +1,71 @@
+{
+  "DigimonName": "Deputymon",
+  "DigimonField": "Metal Empire",
+  "DigitalFrame": "16",
+  "CoreHPMax": "40",
+  "HPLevelMod": 8,
+  "MoveSpeed": "3",
+
+  "Attribute": "Vaccine",
+  "WeaknessElement": "Slash",
+  "ResistanceElement": "Pierce",
+
+  "RookieEvolution": false,
+  "ChampionEvolution": true,
+  "UltimateEvolution": false,
+  "MegaEvolution": false,
+  "DarkEvolution": false,
+
+  "CurrentQuirkOne": "Speak Louder: Spend 1 Bond so they repeat your message much louder.",
+  "CurrentQuirkTwo": "Encouraging Aura: Spend 1 Bond to empower the Tamer's next skill roll.",
+  "InheritableQuirkOne": "Social Block: Once per scene, Tamer can use this Vibes Safe.",
+  "InheritableQuirkTwo": "Vibes Champion: Same perks as a Vibes Meal.",
+  "InheritableQuirkThree": "Access Denial: Once per scene, reduce an attack's dice-pool",
+
+  "BasicAttack": "Pistol-Pummel",
+  "StandardAttack": "Quick Shot",
+  "SpecialAttack": "Russian Roulette",
+  "SuperAttack": "Justice Bullet",
+
+  "BasicDiceMin": "1",
+  "BasicDiceMax": "2",
+  "StandardDiceMin": "3",
+  "StandardDiceMax": "5",
+  "SpecialDiceMin": "6",
+  "SpecialDiceMax": "8",
+  "SuperDiceMin": "9",
+  "SuperDiceMax": "10",
+
+  "BasicElement": "Metal - Contact",
+  "StandardElement": "Pierce - Range",
+  "SpecialElement": "Pierce - Range",
+  "SuperElement": "Pierce - Range",
+
+  "BasicHardFail": "Nerf to user's next attack.",
+  "BasicFail": "No effect.",
+  "BasicPartFail": "Buff to user's next attack.",
+  "BasicPartHit": "-6HP on target.",
+  "BasicHit": "Buff to user's next attack. -6HP on target.",
+  "BasicHardHit": "Buff to user's next two attacks. -12HP on target.",
+
+  "StandardHardFail": "User can't attack next turn.'",
+  "StandardFail": "No effect.",
+  "StandardPartFail": "-3HP to target.",
+  "StandardPartHit": "-6HP to target.",
+  "StandardHit": "-6HP to target and one target ally.",
+  "StandardHardHit": "-6HP to target and three target allies",
+
+  "SpecialHardFail": "-6HP to user.",
+  "SpecialFail": "-6HP to user.",
+  "SpecialPartFail": "-6HP to user.",
+  "SpecialPartHit": "-12HP to target.",
+  "SpecialHit": "-12HP to target.",
+  "SpecialHardHit": "-12HP to target.",
+
+  "SuperHardFail": "This Digimon can't attack next turn.",
+  "SuperFail": "No effect.",
+  "SuperPartFail": "-3HP to target. This Digimon can't attack next turn.",
+  "SuperPartHit": "-6HP to target. This Digimon can't attack next turn.",
+  "SuperHit": "-12HP to target. This Digimon can't attack next turn.",
+  "SuperHardHit": "-24HP to target."
+}
